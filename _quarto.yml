@@ -2,22 +2,20 @@ project:
   type: website
 
 website:
-  description: "A blog built with Quarto"
-  site-url: https://your-website-url.example.com # you must change this appropriately for RSS feeds to work properly
+  description: "Machine learning tutorials, Python projects, and dataset engineering."
+  site-url: https://Muztahid-2020331021.github.io/Machine-Learning-Blog/
   title: "Machine Learning Blog"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        href: https://github.com/Muztahid-2020331021
+      - icon: linkedin
+        href: https://www.linkedin.com/in/muztahid-hassan-sajid/ 
+
 format:
   html:
     theme:
       - cosmo
       - brand
     css: styles.css
-
-
-
