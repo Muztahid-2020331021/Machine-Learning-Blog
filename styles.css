@@ -1,0 +1,21 @@
+/* 1. Completely hide Quarto's default icon container so its JavaScript cannot interfere */
+.quarto-navbar-tools .quarto-color-scheme-toggle .bi {
+    display: none !important;
+}
+
+/* 2. Build a brand new icon directly on the parent button (Moon for Light Mode) */
+.quarto-navbar-tools .quarto-color-scheme-toggle::after {
+    font-family: "bootstrap-icons" !important;
+    content: "\f497" !important; /* Bootstrap Moon Icon */
+    font-size: 1.15rem;
+    line-height: 1;
+    display: inline-block;
+    padding: 0 4px; /* Keeps the spacing nice in the navbar */
+}
+
+/* 3. Switch to the Sun icon when Dark Mode is active */
+/* We target both the body class and html attribute to cover all Quarto versions */
+body.quarto-dark .quarto-navbar-tools .quarto-color-scheme-toggle::after,
+html[data-bs-theme="dark"] .quarto-navbar-tools .quarto-color-scheme-toggle::after {
+    content: "\f5a2" !important; /* Bootstrap Sun Icon */
+}
