@@ -1,1 +1,15 @@
 /* css styles */
+/* Change the default toggle switch to a Moon icon (for Light Mode) */
+.quarto-color-scheme-toggle .bi::before {
+    content: "\f497" !important; 
+}
+
+/* Change the toggle switch to a Sun icon (for Dark Mode) */
+body.quarto-dark .quarto-color-scheme-toggle .bi::before {
+    content: "\f5a2" !important; 
+}
+
+/* Optional: Make the icon slightly larger so it matches the GitHub/LinkedIn icons */
+.quarto-color-scheme-toggle .bi {
+    font-size: 1.1rem;
+}
