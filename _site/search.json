@@ -25,13 +25,23 @@
     "href": "index.html",
     "title": "Machine Learning Blog",
     "section": "",
-    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 27, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Machine Learning Tutorial\n\n\n\nPython\n\nTutorial\n\nNLP\n\n\n\n\n\n\n\n\n\nApr 27, 2026\n\n\nMd Muztahid Hassan\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 24, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\nnews\n\ncode\n\nanalysis\n\n\n\n\n\n\n\n\n\nApr 27, 2026\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nMy First Machine Learning Tutorial\n\n\n\nPython\n\nTutorial\n\nNLP\n\n\n\n\n\n\n\n\n\nApr 27, 2026\n\n\nMd Muztahid Hassan\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 24, 2026\n\n\nTristan O’Malley\n\n\n\n\n\nNo matching items",
+    "crumbs": [
+      "Home",
+      "Machine Learning",
+      "More tutorials coming soon..."
+    ]
   },
   {
     "objectID": "posts/Tutorial-Blog/index.html",
     "href": "posts/Tutorial-Blog/index.html",
     "title": "My First Machine Learning Tutorial",
     "section": "",
-    "text": "import pandas as pd\nprint(\"Welcome to my Machine Learning Blog!\")\n\nWelcome to my Machine Learning Blog!"
+    "text": "import pandas as pd\nprint(\"Welcome to my Machine Learning Blog!\")\n\nWelcome to my Machine Learning Blog!",
+    "crumbs": [
+      "Home",
+      "Python",
+      "My First Machine Learning Tutorial"
+    ]
   }
 ]
