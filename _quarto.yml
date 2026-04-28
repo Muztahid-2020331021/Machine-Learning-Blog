@@ -2,16 +2,40 @@ project:
   type: website
 
 website:
-  description: "Machine learning tutorials, Python projects, and dataset engineering."
-  site-url: https://Muztahid-2020331021.github.io/Machine-Learning-Blog/
   title: "Machine Learning Blog"
+  site-url: https://Muztahid-2020331021.github.io/Machine-Learning-Blog/
+  description: "Machine learning tutorials, Python projects, and dataset engineering."
+  
+  # 1. Enable the Search Bar
+  search: true
+
+  # 2. Configure the Top Navbar
   navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Articles" # We will create this listing page later if needed
+        href: index.qmd 
+      - text: "About"
+        href: about.qmd
     right:
-      - about.qmd
       - icon: github
         href: https://github.com/Muztahid-2020331021
       - icon: linkedin
-        href: https://www.linkedin.com/in/muztahid-hassan-sajid/ 
+        href: https://www.linkedin.com/in/muztahid-hassan-sajid/ # Keep your actual link here
+
+  # 3. Enable the Left Sidebar Navigation
+  sidebar:
+    style: "docked"
+    background: light
+    contents:
+      - section: "Python"
+        contents:
+          - posts/Tutorial-Blog/index.ipynb # This points to your existing tutorial
+      - section: "Machine Learning"
+        contents:
+          - text: "More tutorials coming soon..."
+            href: index.qmd
 
 format:
   html:
@@ -19,3 +43,9 @@ format:
       light: cosmo
       dark: darkly
     css: styles.css
+    
+    # 4. Enable the Right Sidebar (Table of Contents)
+    toc: true
+    toc-location: right
+    toc-title: "ON THIS PAGE"
+    toc-depth: 3 # Captures headings up to ### (H3)
