@@ -32,6 +32,6 @@
     "href": "posts/Tutorial-Blog/index.html",
     "title": "My First Machine Learning Tutorial",
     "section": "",
-    "text": "import pandas as pd\nprint(\"Welcome to my Machine Learning Blog!\")"
+    "text": "import pandas as pd\nprint(\"Welcome to my Machine Learning Blog!\")\n\nWelcome to my Machine Learning Blog!"
   }
 ]

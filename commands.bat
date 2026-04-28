@@ -1,4 +1,4 @@
 git add .
-git commit -m "Ran notebook cells to generate output"
+git commit -m "Update batch commands"
 git push
-quarto publish gh-pages
+quarto publish gh-pages --no-prompt --no-browser

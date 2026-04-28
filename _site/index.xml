@@ -43,7 +43,7 @@
 
 
 
-<div id="0c6bcf9d" class="cell">
+<div id="0c6bcf9d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
@@ -54,6 +54,9 @@ background-color: null;
 font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Welcome to my Machine Learning Blog!"</span>)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Welcome to my Machine Learning Blog!</code></pre>
+</div>
 </div>
 
 
