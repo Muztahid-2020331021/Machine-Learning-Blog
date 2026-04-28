@@ -1,15 +1,25 @@
-/* css styles */
-/* Change the default toggle switch to a Moon icon (for Light Mode) */
-.quarto-color-scheme-toggle .bi::before {
-    content: "\f497" !important; 
+/* 1. Hide Quarto's default injected SVG or background graphic */
+.quarto-color-scheme-toggle svg {
+    display: none !important;
+}
+.quarto-color-scheme-toggle .bi {
+    background-image: none !important;
 }
 
-/* Change the toggle switch to a Sun icon (for Dark Mode) */
+/* 2. Force the Moon icon for Light Mode */
+.quarto-color-scheme-toggle .bi::before {
+    content: "\f497" !important; 
+    font-family: "bootstrap-icons" !important;
+    display: inline-block !important;
+}
+
+/* 3. Force the Sun icon for Dark Mode */
 body.quarto-dark .quarto-color-scheme-toggle .bi::before {
     content: "\f5a2" !important; 
 }
 
-/* Optional: Make the icon slightly larger so it matches the GitHub/LinkedIn icons */
-.quarto-color-scheme-toggle .bi {
-    font-size: 1.1rem;
+/* 4. Adjust the size to perfectly match the GitHub/LinkedIn icons */
+.quarto-color-scheme-toggle .bi::before {
+    font-size: 1.15rem;
+    vertical-align: middle;
 }
