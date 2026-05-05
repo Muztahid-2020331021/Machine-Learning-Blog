@@ -37,7 +37,7 @@ website:
         section-style: "flat"
 
   page-footer:
-    left: "© 2026 Your Name. All rights reserved."
+    left: "© 2026 Md Muzthahid Hassan. All rights reserved."
     center:
       - icon: github
         href: https://github.com/Muztahid-2020331021
@@ -50,7 +50,7 @@ website:
   search: true
   back-to-top-navigation: true
 
-  # google-analytics: "G-XXXXXXXXXX"   # Uncomment to activate
+  google-analytics: "G-HRWVF9ZMF1"
 
 format:
   html:

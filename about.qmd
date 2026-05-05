@@ -10,16 +10,16 @@ about:
   links:
     - icon: github
       text: GitHub
-      href: https://github.com/YOUR_USERNAME
+      href: https://github.com/Muztahid-2020331021
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com/in/YOUR_USERNAME
+      href: https://www.linkedin.com/in/muztahid-hassan-sajid/
     - icon: globe
       text: Portfolio
       href: https://www.sajid.me
     - icon: envelope
       text: Email
-      href: mailto:your@email.com
+      href: sajid191693@gmail.com
 ---
 
 ```{=html}

@@ -15,7 +15,7 @@ listing:
 ---
 
 <div class="hero" style="border-radius: 16px; margin-bottom: 3rem;">
-  <h1>Hi, I'm Your Name</h1>
+  <h1>Hi, I'm Md Muztahid Hassan</h1>
   <p>I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.</p>
   <a href="about.qmd" class="btn-primary-custom">Learn more about me</a>
 </div>
