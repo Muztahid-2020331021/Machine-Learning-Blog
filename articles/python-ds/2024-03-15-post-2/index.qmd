@@ -1,0 +1,97 @@
+---
+title: Getting Started with Python Data Analysis
+description: A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.
+author: Your Name
+date: 2024-03-15
+image: thumbnail.png
+toc: true
+toc-depth: 3
+draft: false
+order: 1
+---
+
+Data analysis is one of the most in-demand skills of the decade, and Python's ecosystem makes it
+remarkably accessible. In this post we'll cover the essentials: loading data with **pandas**,
+exploring it visually with **matplotlib**, and running everything interactively in **Jupyter**.
+
+---
+
+## Setting Up Your Environment
+
+Before writing a single line of analysis code, you need a working environment. The fastest path
+is a virtual environment with the three core packages installed.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install pandas matplotlib jupyter
+```
+
+::: {.callout-tip}
+## Pro Tip
+Always check for missing values with `df.isnull().sum()` before any analysis. Silently missing
+data is the leading cause of misleading results.
+:::
+
+Once installed, launch Jupyter with `jupyter notebook` and create a new Python 3 kernel.
+
+---
+
+## Loading and Exploring Data
+
+The first thing you'll do in almost every project is load a CSV file and peek at its shape.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data.csv")
+print(df.head())
+```
+
+After `df.head()` you'll want a quick statistical summary:
+
+| Method | What it shows |
+|---|---|
+| `df.shape` | (rows, columns) |
+| `df.dtypes` | data type per column |
+| `df.describe()` | count, mean, std, min/max |
+| `df.isnull().sum()` | missing values per column |
+
+These four lines form a reliable first-pass audit of any new dataset.
+
+---
+
+## Visualising with Matplotlib
+
+A histogram is the fastest way to understand the distribution of a numeric column.
+
+```python
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.hist(df["value_column"], bins=30, color="#3B82F6", edgecolor="white")
+ax.set_title("Distribution of value_column")
+ax.set_xlabel("Value")
+ax.set_ylabel("Frequency")
+plt.tight_layout()
+plt.savefig("distribution.png", dpi=150)
+plt.show()
+```
+
+> "A picture is worth a thousand words—and in data analysis, a good chart is worth a thousand
+> rows of summary statistics."
+>
+> — Hadley Wickham, *R for Data Science*
+
+---
+
+## Next Steps
+
+You now have the foundation. From here, the natural progressions are:
+
+- **Seaborn** for statistical plots with less boilerplate
+- **Plotly** for interactive, web-ready visualisations
+- **scikit-learn** when you're ready to move from exploration to modelling
+- **Polars** as a faster alternative to pandas for large datasets
+
+Keep iterating, keep plotting, and don't be afraid to look at your data from five different
+angles before drawing any conclusions.

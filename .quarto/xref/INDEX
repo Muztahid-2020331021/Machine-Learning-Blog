@@ -1,0 +1,23 @@
+{
+  "articles/career-writing/2024-02-28-post-3/index.qmd": {
+    "index.html": "de5b2435"
+  },
+  "articles/machine-learning/2025-05-02-intro-to-ml/index.qmd": {
+    "index.html": "7f7fbc87"
+  },
+  "articles/python-ds/2024-03-15-post-2/index.qmd": {
+    "index.html": "c81efed5"
+  },
+  "articles/web-dev/css tutorial/index.qmd": {
+    "index.html": "bcb9ea0f"
+  },
+  "articles/web-dev/html tutorial/index.qmd": {
+    "index.html": "06eea282"
+  },
+  "about.qmd": {
+    "about.html": "610d231d"
+  },
+  "articles/index.qmd": {
+    "index.html": "ba870b3c"
+  }
+}

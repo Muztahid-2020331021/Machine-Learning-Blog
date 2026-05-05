@@ -1,8 +1,47 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/articles/web-dev/css tutorial/index.html",
+      "/articles/web-dev/html tutorial/index.html",
+      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
+      "/articles/python-ds/2024-03-15-post-2/index.html",
+      "/articles/career-writing/2024-02-28-post-3/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/python-ds/index.html",
+    "items": [
+      "/articles/python-ds/2024-03-15-post-2/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/machine-learning/index.html",
+    "items": [
+      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html"
+    ]
+  },
+  {
     "listing": "/articles/index.html",
     "items": [
-      "/articles/posts/Tutorial-Blog/index.html"
+      "/articles/career-writing/2024-02-28-post-3/index.html",
+      "/articles/python-ds/2024-03-15-post-2/index.html",
+      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
+      "/articles/web-dev/html tutorial/index.html",
+      "/articles/web-dev/css tutorial/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/career-writing/index.html",
+    "items": [
+      "/articles/career-writing/2024-02-28-post-3/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/web-dev/index.html",
+    "items": [
+      "/articles/web-dev/html tutorial/index.html",
+      "/articles/web-dev/css tutorial/index.html"
     ]
   }
 ]

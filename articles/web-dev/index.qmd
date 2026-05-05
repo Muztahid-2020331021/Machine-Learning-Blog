@@ -1,0 +1,16 @@
+---
+title: "Web Development"
+description: "Learn web development skills with tutorials and resources."
+listing:
+  contents: "*/index.qmd"
+  sort: "date asc"
+  type: default
+  fields: [title, description, date]
+  field-links: [title]
+toc: true
+page-layout: article
+---
+
+Welcome to the **Web Development** section. Here you will find tutorials and insights on web development.
+
+## Featured Articles

@@ -1,0 +1,125 @@
+<%
+const grouped = {};
+const topicEarliestDate = {};
+const topicLinks = {};
+
+items.forEach(item => {
+  let p = item.path.replace(/\\/g, '/').replace(/^\//, '').replace(/^articles\//, '');
+  const parts = p.split('/');
+  let topicKey = parts[0];
+  if (!topicKey || topicKey.includes('.') || parts.length < 2) return;
+
+  let topicTitle = topicKey.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  if (topicKey === 'python-ds') topicTitle = 'Python & Data Science';
+  if (topicKey === 'career-writing') topicTitle = 'Career & Writing';
+  if (topicKey === 'operating-systems') topicTitle = 'Operating Systems';
+
+  if (!grouped[topicTitle]) {
+    grouped[topicTitle] = [];
+    topicEarliestDate[topicTitle] = new Date(item.date).getTime();
+    topicLinks[topicTitle] = topicKey + '/index.html';
+  } else {
+    const itemTime = new Date(item.date).getTime();
+    if (itemTime < topicEarliestDate[topicTitle]) {
+      topicEarliestDate[topicTitle] = itemTime;
+    }
+  }
+  grouped[topicTitle].push(item);
+});
+
+const sortedTopics = Object.keys(grouped).sort((a, b) => {
+  return topicEarliestDate[a] - topicEarliestDate[b];
+});
+%>
+
+<div class="list grouped-listing">
+<% if (sortedTopics.length === 0) { %>
+<p>No articles found.</p>
+<% } %>
+
+<% sortedTopics.forEach(topic => { %>
+<section class="topic-group" style="margin-bottom: 3rem;">
+<h2 class="topic-header" style="border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1.5rem;">
+<a href="<%= topicLinks[topic] %>" style="text-decoration: none;">
+<%= topic %>
+</a>
+</h2>
+<div class="posts-list" style="padding-left: 1rem;">
+<% grouped[topic].forEach((item, index) => { %>
+<div class="post-item" <%= metadataAttrs(item) %> data-search="<%= item.title.toLowerCase() %> <%= topic.toLowerCase() %>" style="margin-bottom: 1rem; display: flex; align-items: baseline;">
+<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">
+<%= index + 1 %>.
+</span>
+<div class="post-content">
+<a href="<%- item.path %>" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">
+<%= item.title %>
+</a>
+</div>
+</div>
+<% }); %>
+</div>
+</section>
+<% }); %>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.quarto-listing-filter');
+  if (!container) return;
+
+  const originalInput = container.querySelector('input.search');
+  if (!originalInput) return;
+
+  // Clone the input to remove all event listeners attached by Quarto
+  const searchInput = originalInput.cloneNode(true);
+  searchInput.setAttribute('placeholder', 'Search by Topic or Article');
+  originalInput.parentNode.replaceChild(searchInput, originalInput);
+
+  function updateVisibility() {
+    const term = searchInput.value.toLowerCase().trim();
+    const items = document.querySelectorAll('.post-item');
+    let anyVisible = false;
+    
+    // Filter items
+    items.forEach(item => {
+      const searchData = (item.getAttribute('data-search') || "").toLowerCase();
+      if (searchData.indexOf(term) !== -1) {
+        item.style.setProperty('display', 'flex', 'important');
+        anyVisible = true;
+      } else {
+        item.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // Hide/Show topic groups based on visible items
+    const topicGroups = document.querySelectorAll('.topic-group');
+    topicGroups.forEach(group => {
+      const allPosts = Array.from(group.querySelectorAll('.post-item'));
+      const visibleInGroup = allPosts.some(i => i.style.display !== 'none');
+      if (visibleInGroup) {
+        group.style.setProperty('display', 'block', 'important');
+      } else {
+        group.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    // Toggle "No matching items" message
+    const noMatch = document.querySelector('.listing-no-matching');
+    if (noMatch) {
+      if (!anyVisible && term !== "") {
+        noMatch.style.setProperty('display', 'block', 'important');
+        noMatch.classList.remove('d-none');
+      } else {
+        noMatch.style.setProperty('display', 'none', 'important');
+        noMatch.classList.add('d-none');
+      }
+    }
+  }
+
+  // Listen for typing
+  searchInput.addEventListener('input', updateVisibility);
+  
+  // Initial check
+  updateVisibility();
+});
+</script>

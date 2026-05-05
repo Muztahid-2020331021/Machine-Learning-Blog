@@ -1,83 +1,1241 @@
+/*-- scss:uses --*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Fira+Code&display=swap');
+
 /*-- scss:defaults --*/
-// ─── Variables used in our custom design ──────────────
+// ─── Brand Colors ─────────────────────────────────────────────
+$primary:        #3B82F6;
+$secondary:      #10B981;
+$accent:         #F59E0B;
+$danger:         #EF4444;
+$text-dark:      #1F2937;
+$text-light:     #F9FAFB;
+$muted:          #6B7280;
 $bg-light:       #FFFFFF;
 $bg-dark:        #111827;
-$text-dark:      #1F2937;
-$muted:          #6B7280;
 $card-bg-light:  #F3F4F6;
-$transition-base: all 0.25s ease;
-$transition-fast: all 0.15s ease;
+$card-bg-dark:   #1a1a2e;
+$primary-light:  #93C5FD;
+
+// Card border colors
+$card-border-light:       rgba(0, 0, 0, 0.08);
+$card-border-light-hover: rgba(0, 0, 0, 0.22);
+$card-border-dark:        rgba(255, 255, 255, 0.08);
+$card-border-dark-hover:  rgba(255, 255, 255, 0.25);
+
+// ─── Typography ───────────────────────────────────────────────
+$font-heading:   'Merriweather', Georgia, serif;
+$font-body:      'Inter', system-ui, sans-serif;
+$font-mono:      'Fira Code', 'Cascadia Code', monospace;
+
+// ─── Fluid Type Scale ─────────────────────────────────────────
+$text-sm:        clamp(0.8rem,  1vw,   0.9rem);
+$text-base:      clamp(1rem,    1.2vw, 1.1rem);
+$text-lg:        clamp(1.1rem,  1.5vw, 1.25rem);
+$text-xl:        clamp(1.25rem, 2vw,   1.5rem);
+$text-2xl:       clamp(1.5rem,  2.5vw, 2rem);
+$text-3xl:       clamp(2rem,    4vw,   3rem);
+
+// ─── Spacing Scale ────────────────────────────────────────────
+$spacing-xs:     0.25rem;
+$spacing-sm:     0.5rem;
+$spacing-md:     1rem;
+$spacing-lg:     1.5rem;
+$spacing-xl:     2.5rem;
+$spacing-2xl:    4rem;
+
+// ─── Border Radius ────────────────────────────────────────────
+$radius-sm:      4px;
 $radius-md:      8px;
+$radius-lg:      16px;
+$radius-full:    9999px;
+
+// ─── Shadows ──────────────────────────────────────────────────
+$shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md:      0 4px 12px rgba(0, 0, 0, 0.12);
+$shadow-lg:      0 8px 30px rgba(0, 0, 0, 0.16);
+$shadow-hover:   0 12px 40px rgba(0, 0, 0, 0.20);
+
+// ─── Breakpoints ──────────────────────────────────────────────
+$bp-sm:          576px;
+$bp-md:          768px;
+$bp-lg:          992px;
+$bp-xl:          1200px;
+
+// ─── Transitions ──────────────────────────────────────────────
+$transition-fast:   all 0.15s ease;
+$transition-base:   all 0.25s ease;
+$transition-slow:   all 0.4s ease;
 
 /*-- scss:rules --*/
+// ─── Base ─────────────────────────────────────────────────────
+body {
+  font-family: $font-body;
+  font-size: $text-base;
+  color: $text-dark;
+  line-height: 1.75;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  line-height: 1.3;
+}
 
-// ─── Navbar (Modern Pill Design) ──────────────────────────────
+h1 { font-size: $text-3xl; }
+h2 { font-size: $text-2xl; }
+h3 { font-size: $text-xl;  }
+
+// ─── Navbar ───────────────────────────────────────────────────
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: $bg-light;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba($primary, 0.9) !important;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.15); 
   transition: $transition-base;
-  padding: 0.5rem 1rem;
 
-  .navbar-brand {
-    font-weight: 700; // Makes your site title bold like "Bytes & Beyond"
-    font-size: 1.25rem;
+  .navbar-brand,
+  .navbar-title,
+  .nav-link,
+  .navbar-nav .nav-link i,
+  .quarto-color-scheme-toggle {
+    color: $text-light !important;
   }
 
-  // Forces the links into the exact center
-  .navbar-collapse .navbar-nav.me-auto {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    gap: 0.25rem; // Slight spacing between the links
+  .navbar-brand img {
+    height: 36px;
+    width: auto;
   }
 
-  // The Links
-  .nav-link {
+  // ─── Text Links (Home, Blog, About) ───
+  // We explicitly exclude GitHub, LinkedIn, Search, and Tools from the underline effect
+  .nav-link:not(.compact):not(.quarto-navigation-tool):not(:has(i.bi-github)):not(:has(i.bi-linkedin)):not(:has(i.bi-globe)):not(#quarto-search):not(.quarto-search-button) {
     font-weight: 500;
-    color: $muted;
-    padding: 0.4rem 0.8rem !important;
-    border-radius: $radius-md; // Rounds the corners into a pill
+    position: relative;
+    border-radius: $radius-md; 
     transition: $transition-fast;
+    margin: 0 2px; 
 
-    // Removes our old underline animation
-    &::after { display: none !important; }
-
-    // Hover state
-    &:hover {
-      color: #0066CC;
-      background-color: rgba(0,0,0,0.03); // Very subtle gray background
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 2px; 
+      left: 50%;
+      transform: translateX(-50%); 
+      width: 0;
+      height: 2px;
+      background: $text-light;
+      transition: $transition-base;
     }
 
-    // Active state (The highlighted pill)
-    &.active {
+    &.active::after {
+      width: calc(100% - 1rem); 
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  // ─── Navbar Icons (GitHub, LinkedIn, Search) ───
+  // We explicitly include the GitHub and LinkedIn icons here so they scale
+  .nav-link.compact,
+  .quarto-navigation-tool,
+  .nav-link:has(i.bi-github),
+  .nav-link:has(i.bi-linkedin),
+  .nav-link:has(i.bi-globe),
+  #quarto-search,
+  .quarto-search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-full; 
+    padding: 0 !important; 
+    margin-left: $spacing-xs;
+    transition: $transition-base;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: scale(1.25); // This makes them pop and grow larger
+    }
+
+    &::after {
+      display: none !important;
+    }
+    
+    i { 
+      margin: 0 !important; 
+    } 
+  }
+
+  // ─── Theme Toggle Button ───
+  .quarto-color-scheme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-full;
+    transition: $transition-base;
+    margin-left: $spacing-sm;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      // Increased from 1.1 to 1.25 to perfectly match the social and search icons!
+      transform: rotate(15deg) scale(1.25);
+    }
+
+    i.bi {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      background-color: $text-light !important;
+      transition: $transition-slow;
+      
+      svg, &::before {
+        display: none !important;
+      }
+
+      -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
+
+    &.alternate i.bi {
+      -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/%3E%3C/svg%3E") no-repeat center / contain;
+      mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z'/%3E%3C/svg%3E") no-repeat center / contain;
+    }
+  }
+}
+
+// ─── Home page section header ─────────────────────────────────
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    font-size: $text-2xl;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .view-all-link {
+    font-size: $text-sm;
+    font-weight: 600;
+    color: $primary;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: $transition-fast;
+
+    &:hover {
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+  }
+}
+
+// ─── Hero (kept for optional use) ─────────────────────────────
+.hero {
+  padding: $spacing-2xl $spacing-md;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #10b981 50%, #f8fafc 100%);
+  color: #0f172a; // Deep navy text for contrast against green/white sections
+  box-shadow: $shadow-md;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  h1 { 
+    font-family: $font-heading;
+    font-size: $text-3xl; 
+    margin-bottom: $spacing-md;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0f172a;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: $text-lg;
+    max-width: 650px;
+    margin: 0 auto $spacing-lg;
+    color: rgba(15, 23, 42, 0.85); // Slate-navy with high readability
+    line-height: 1.8;
+    font-weight: 500;
+  }
+
+  .btn-primary-custom {
+    display: inline-block;
+    padding: $spacing-sm $spacing-xl;
+    background: #0f172a; 
+    color: #ffffff !important;
+    border-radius: $radius-full;
+    font-weight: 600;
+    text-decoration: none;
+    transition: $transition-base;
+    box-shadow: $shadow-md;
+    border: 2px solid transparent;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+      background: #0f172a !important;
+      color: #e2e8f0 !important;
+      border-color: #e2e8f0 !important;
+    }
+  }
+}
+
+// Dark mode refinement for Hero
+[data-bs-theme="dark"],
+body.quarto-dark {
+  .hero {
+    background: linear-gradient(135deg, #051937 0%, #065f46 50%, #111827 100%);
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.1);
+
+    h1, p { color: #f8fafc; }
+    p { opacity: 0.8; }
+    
+    .btn-primary-custom {
+      background: $primary;
+      color: #ffffff !important;
+      
+      &:hover {
+        background: $primary !important;
+        color: #e2e8f0 !important;
+        border-color: #e2e8f0 !important;
+      }
+    }
+  }
+}
+
+// ─── Blog Grid container ──────────────────────────────────────
+.quarto-listing-container-grid {
+  padding: $spacing-md 0;
+}
+
+// ─── Post Cards ───────────────────────────────────────────────
+.quarto-grid-item.card {
+  background: $card-bg-light;
+  border: 1px solid $card-border-light;
+  border-radius: $radius-lg;
+  padding: 0; 
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  // Gradient top accent
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, $primary, $secondary);
+    z-index: 10;
+  }
+
+  .card-body {
+    padding: $spacing-lg !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    // Inject "Read Article →" CTA
+    &::after {
+      content: 'Read Article →';
+      display: block;
+      margin-top: auto;
+      padding-top: $spacing-md;
+      font-weight: 600;
+      color: $primary;
+      font-size: 0.85rem;
+      transition: $transition-fast;
+    }
+  }
+
+  &:hover {
+    border-color: $card-border-light-hover;
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+    background: $bg-light;
+
+    .card-body::after {
+      color: $secondary;
+      padding-left: 4px;
+    }
+
+    // Underline the title on hover
+    .listing-title,
+    .card-title {
+      text-decoration: underline;
+    }
+
+    // Turn muted text dark (date, description)
+    .card-text,
+    .text-muted,
+    .listing-description p,
+    .listing-date {
       color: $text-dark !important;
-      background-color: $card-bg-light !important; // Prominent gray background
+      transition: $transition-fast;
+    }
+  }
+
+  // ── Title ──
+  .listing-title,
+  .card-title {
+    font-family: $font-body;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $primary;
+    text-decoration: none;
+    margin-bottom: $spacing-sm;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  // ── Description ──
+  .listing-description,
+  .card-text {
+    font-size: $text-sm;
+    color: $muted;
+    line-height: 1.6;
+    margin-bottom: $spacing-md;
+  }
+
+  .card-attribution {
+    padding-top: $spacing-sm;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    
+    .listing-date {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
       font-weight: 600;
     }
   }
 }
 
-// Dark Mode Overrides for the Navbar
-.quarto-dark .navbar {
-  background-color: $bg-dark;
-  border-bottom-color: rgba(255,255,255,0.08);
+// ─── Quarto's own listing category pills ─────────────────────
+// These are rendered by Quarto inside .listing-categories
+.listing-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-xs;
+}
 
-  .nav-link {
-    color: rgba(255,255,255,0.7);
-    
-    &:hover {
-      color: #fff;
-      background-color: rgba(255,255,255,0.05);
-    }
-    
-    &.active {
-      color: #fff !important;
-      background-color: rgba(255,255,255,0.1) !important;
+.listing-category {
+  display: inline-block;
+  padding: 2px 10px;
+  background: rgba($primary, 0.1);
+  color: $primary;
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: $radius-full;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  transition: $transition-fast;
+
+  // Independent hover state just for the tag
+  &:hover {
+    background: rgba($primary, 0.25) !important;
+    color: darken($primary, 15%) !important;
+    transform: translateY(-1px); // A tiny lift for tactile feedback
+  }
+}
+
+// ─── Quarto listing date ──────────────────────────────────────
+.listing-date,
+.listing-file-modified-sort {
+  font-size: $text-sm;
+  color: $muted;
+}
+
+// ─── Quarto listing reading time ──────────────────────────────
+.listing-reading-time {
+  font-size: $text-sm;
+  color: $muted;
+}
+
+// ─── Badge / Category pill (used in inline .qmd content) ─────
+.badge-category {
+  display: inline-block;
+  padding: 2px $spacing-sm;
+  background: $primary;
+  color: $text-light;
+  border-radius: $radius-full;
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: $spacing-xs;
+}
+
+// ─── Topic pills wrapper ───────────────────────────────────────
+.topic-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin: $spacing-md 0;
+}
+
+// ─── Post Page ────────────────────────────────────────────────
+.quarto-post-content,
+article.post {
+  max-width: 70ch;
+  margin: 0 auto;
+
+  > p:first-of-type::first-letter {
+    float: left;
+    font-size: 3.5rem;
+    font-family: $font-heading;
+    font-weight: 700;
+    line-height: 0.8;
+    margin: 0.05em $spacing-sm 0 0;
+    color: $primary;
+  }
+
+  blockquote {
+    border-left: 4px solid $primary;
+    padding: $spacing-md $spacing-lg;
+    margin: $spacing-xl 0;
+    background: rgba($primary, 0.05);
+    border-radius: 0 $radius-md $radius-md 0;
+    font-style: italic;
+    color: $muted;
+  }
+
+  code:not(pre > code) {
+    background: rgba($primary, 0.08);
+    color: $primary;
+    padding: 2px 6px;
+    border-radius: $radius-sm;
+    font-family: $font-mono;
+    font-size: 0.875em;
+  }
+
+  pre {
+    background: #1e1e2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: $radius-lg;
+    padding: $spacing-lg;
+    overflow-x: auto;
+    box-shadow: $shadow-md;
+
+    code {
+      font-family: $font-mono;
+      font-size: $text-sm;
+      color: #e2e8f0;
+      background: transparent !important;
+      padding: 0;
     }
   }
 }
 
+// ─── TOC ──────────────────────────────────────────────────────
+#TOC {
+  position: sticky;
+  top: 80px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  font-size: $text-sm;
+  padding: $spacing-md;
+  border-left: 2px solid rgba($primary, 0.2);
 
+  a {
+    color: $muted;
+    text-decoration: none;
+    display: block;
+    padding: 3px 0;
+    transition: $transition-fast;
+    border-left: 2px solid transparent;
+    margin-left: -2px;
+
+    &:hover,
+    &.active {
+      color: $secondary;
+      padding-left: $spacing-sm;
+      border-left-color: $secondary;
+    }
+  }
+
+  @media (max-width: $bp-lg) {
+    position: relative;
+    top: 0;
+    max-height: none;
+    border-left: none;
+    border-top: 2px solid rgba($primary, 0.2);
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// ─── About Page ───────────────────────────────────────────────
+.about-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: $spacing-2xl;
+  align-items: start;
+
+  .about-photo {
+    width: 100%;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-lg;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+
+    .about-photo {
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+// ─── Footer ───────────────────────────────────────────────────
+.nav-footer {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: $spacing-lg $spacing-xl;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: $text-sm;
+  color: $muted;
+
+  .social-icons a {
+    color: $muted;
+    margin: 0 $spacing-sm;
+    font-size: $text-lg;
+    transition: $transition-fast;
+
+    &:hover {
+      color: $primary;
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: $spacing-md;
+  }
+}
+
+// ─── Dark Mode ────────────────────────────────────────────────
+// [data-bs-theme="dark"] is on <html> → "... body" child selector works.
+// .quarto-dark is on <body> itself   → must use "body.quarto-dark".
+[data-bs-theme="dark"] body,
+body.quarto-dark {
+  color: $text-light;
+  background: $bg-dark;
+}
+
+[data-bs-theme="dark"],
+body.quarto-dark {
+  // Cards
+  .quarto-grid-item.card {
+    background: $card-bg-dark;
+    border-color: $card-border-dark;
+
+    .card-body::after {
+      color: $primary-light;
+    }
+
+    &:hover {
+      border-color: $card-border-dark-hover;
+      background: lighten($card-bg-dark, 3%); 
+      
+      .card-body::after {
+        color: $secondary !important;
+      }
+
+      // Ensure text turns light on hover in dark mode
+      .card-text,
+      .text-muted,
+      .listing-description p,
+      .listing-date {
+        color: $text-light !important;
+      }
+    }
+
+    .listing-description,
+    .card-text { color: rgba(255, 255, 255, 0.55); }
+  }
+
+  // Category pills
+  .listing-category {
+    background: rgba($primary, 0.15);
+    border-color: rgba($primary, 0.3);
+    color: $primary-light;
+    transition: $transition-fast;
+
+    // The independent hover state for tags in Dark Mode
+    &:hover {
+      background: rgba($primary, 0.4) !important; // Stronger background
+      color: $text-light !important; // Bright white text
+      border-color: rgba($primary, 0.6);
+    }
+  }
+
+  .listing-date,
+  .listing-reading-time { color: rgba(255, 255, 255, 0.45); }
+
+  // Section header
+  .section-header h2 { color: $text-light; }
+
+  // Inline code
+  code:not(pre > code) {
+    background: rgba($primary, 0.15);
+    color: $primary-light;
+  }
+
+  blockquote {
+    background: rgba($primary, 0.08);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  // Navbar
+  .navbar { 
+    background: rgba(darken($primary, 35%), 0.85) !important; 
+    border-bottom-color: rgba($primary, 0.3); 
+    box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.6);
+    
+    .navbar-brand,
+    .navbar-title,
+    .nav-link,
+    .navbar-nav .nav-link i,
+    .quarto-color-scheme-toggle {
+      color: $text-light !important;
+    }
+
+    .nav-link:not(.compact):not(.quarto-navigation-tool):not(:has(i.bi-github)):not(:has(i.bi-linkedin)):not(:has(i.bi-globe)):not(#quarto-search):not(.quarto-search-button) {
+      &::after {
+        background: $primary; 
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    // Hover background pill for ALL the icons (Toggle, GitHub, LinkedIn, Search)
+    .quarto-color-scheme-toggle:hover,
+    .nav-link.compact:hover,
+    .quarto-navigation-tool:hover,
+    .nav-link:has(i.bi-github):hover,
+    .nav-link:has(i.bi-linkedin):hover,
+    .nav-link:has(i.bi-globe):hover,
+    #quarto-search:hover,
+    .quarto-search-button:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  #quarto-back-to-top {
+    background: rgba(darken($primary, 35%), 0.85) !important;
+
+    &:hover {
+      background: darken($primary, 25%) !important;
+    }
+  }
+
+  #TOC a                { color: rgba(255, 255, 255, 0.5); }
+  .nav-footer           { border-top-color: rgba(255, 255, 255, 0.08); }
+  .badge-category       { background: $primary; color: $text-light; }
+}
+
+// ─── Utilities ────────────────────────────────────────────────
+#quarto-back-to-top {
+  left: auto !important;
+  right: 2rem !important;
+  transform: none !important;
+  background: rgba($primary, 0.9) !important;
+  color: $text-light !important;
+  border: none !important;
+  border-radius: $radius-md !important;
+  padding: 0.6rem 1rem !important;
+  transition: $transition-base !important;
+  box-shadow: $shadow-md !important;
+
+  &:hover {
+    background: $primary !important;
+    transform: translateY(-3px) !important;
+    box-shadow: $shadow-lg !important;
+    color: $text-light !important;
+  }
+}
+
+// ─── Sidebar Custom Styling ────────────────────────────────────
+.quarto-sidebar {
+  padding-top: $spacing-lg !important;
+  border-right: 1px solid rgba($muted, 0.1) !important;
+
+  .sidebar-title,
+  .sidebar-section-link,
+  .sidebar-item-text {
+    &[role="presentation"],
+    &:not(a) {
+      font-size: 0.7rem !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.1em !important;
+      font-weight: 700 !important;
+      color: $muted !important;
+      margin-top: $spacing-md !important;
+      padding-left: $spacing-md !important;
+      margin-bottom: $spacing-xs !important;
+      display: block;
+    }
+  }
+
+  .sidebar-item {
+    margin: 2px $spacing-sm !important;
+
+    .sidebar-link {
+      color: inherit !important;
+      opacity: 0.7;
+      font-size: 0.85rem !important;
+      padding: 0.5rem $spacing-md !important;
+      border-radius: $radius-sm !important;
+      transition: $transition-fast !important;
+      border-left: 3px solid transparent !important;
+      display: flex;
+      align-items: center;
+
+      &:hover, &:hover .menu-text {
+        opacity: 1;
+        color: $secondary !important;
+        text-decoration: underline !important;
+        background: transparent !important;
+      }
+
+      &.active {
+        opacity: 1;
+        background: rgba($primary, 0.1) !important;
+        color: $primary !important;
+        border-left: 3px solid $primary !important;
+        font-weight: 600 !important;
+        
+        &:hover {
+          background: rgba($primary, 0.15) !important;
+          color: $secondary !important;
+          border-left-color: $primary !important;
+        }
+      }
+    }
+  }
+
+  // Sidebar search button
+  .quarto-sidebar-search {
+    padding: 0 $spacing-md $spacing-md $spacing-md !important;
+    
+    .aa-DetachedSearchButton {
+      border-radius: $radius-md !important;
+      border: 1px solid rgba($muted, 0.2) !important;
+      background: rgba($muted, 0.05) !important;
+    }
+  }
+
+  // Flatten sidebar visually for topics
+  .quarto-sidebar .sidebar-item-section {
+    .sidebar-section.depth2,
+    .sidebar-section.depth3 {
+      display: none !important;
+    }
+    
+    .sidebar-item-toggle {
+      display: none !important;
+    }
+
+    .sidebar-item-container {
+      padding-right: 0 !important;
+    }
+  }
+}
+
+// Dark mode refinements for sidebar
+[data-bs-theme="dark"],
+body.quarto-dark {
+  .quarto-sidebar {
+    background-color: #0f172a !important;
+    
+    .sidebar-link {
+      color: rgba(255, 255, 255, 0.6) !important;
+      
+      &:hover, &:hover .menu-text {
+        color: $secondary !important;
+        text-decoration: underline !important;
+        background: transparent !important;
+      }
+      
+      &.active {
+        color: #a78bfa !important;
+        background: rgba(139, 92, 246, 0.15) !important;
+        border-left-color: #8b5cf6 !important;
+      }
+    }
+
+    .sidebar-title {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, $primary, $secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider-fancy {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, $primary, $secondary, transparent);
+  border-radius: $radius-full;
+  margin: $spacing-xl 0;
+}
+
+// ─── Main Content Links ───────────────────────────────────────
+#quarto-document-content a:not(.sidebar-link):not(.nav-link):not(.btn):not(.about-link):not(.view-all-link):not(.btn-primary-custom),
+.topic-header a,
+.post-title {
+  color: $primary;
+  text-decoration: none;
+  transition: $transition-fast;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: $secondary !important;
+    border-bottom-color: $secondary !important;
+    text-decoration: none !important; 
+  }
+}
+
+// Dark mode variant
+[data-bs-theme="dark"] body,
+body.quarto-dark {
+  #quarto-document-content a:not(.sidebar-link):not(.nav-link):not(.btn):not(.about-link):not(.listing-title):not(.view-all-link):not(.btn-primary-custom),
+  .topic-header a,
+  .post-title {
+    color: $primary-light;
+    
+    &:hover {
+      color: $secondary !important;
+      border-bottom-color: $secondary !important;
+    }
+  }
+}
+
+// ─── About Page Redesign ──────────────────────────────────────
+.intro-lead {
+  font-size: $text-lg;
+  font-weight: 700;
+  color: $primary;
+  margin-bottom: $spacing-md;
+  line-height: 1.4;
+}
+
+// Timeline
+.timeline-container {
+  position: relative;
+  padding: $spacing-md 0 $spacing-md 35px;
+  margin: $spacing-lg 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, $primary, $secondary, transparent);
+    opacity: 0.3;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: $spacing-lg;
+
+  .timeline-dot {
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: $primary;
+    border: 3px solid $bg-light;
+    border-radius: $radius-full;
+    z-index: 10;
+    box-shadow: $shadow-sm;
+  }
+
+  .timeline-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $muted;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+
+  .timeline-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+    color: $text-dark;
+    line-height: 1.2;
+  }
+
+  .timeline-org {
+    font-size: 0.9rem;
+    color: $primary;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+// Skills Grid
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: $spacing-md;
+  margin: $spacing-lg 0;
+}
+
+.skill-category-card {
+  background: $bg-light;
+  border: 1px solid $card-border-light;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+
+  h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $muted;
+    margin-top: 0;
+    margin-bottom: $spacing-sm;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 4px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-md;
+    border-color: $primary;
+  }
+}
+
+// Project Grid (Mini version for About page)
+.about-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: $spacing-lg;
+  margin: $spacing-xl 0;
+}
+
+.about-project-card {
+  background: $card-bg-light;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  border: 1px solid $card-border-light;
+  transition: $transition-base;
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+
+  .project-icon {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-sm;
+    color: $primary;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: $spacing-xs;
+    color: $primary;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $muted;
+    margin-bottom: 0;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    background: $bg-light;
+    box-shadow: $shadow-lg;
+    transform: scale(1.02);
+    border-color: $secondary;
+    
+    h3 { color: $secondary; }
+  }
+}
+
+// Dark Mode Overrides for About Page
+[data-bs-theme="dark"],
+body.quarto-dark {
+  .timeline-item {
+    .timeline-dot { border-color: $bg-dark; background: $primary-light; }
+    .timeline-title { color: $text-light; }
+    .timeline-org { color: $primary-light; }
+  }
+
+  .skill-category-card {
+    background: $card-bg-dark;
+    border-color: $card-border-dark;
+    h4 { border-bottom-color: rgba(255,255,255,0.05); }
+    &:hover { border-color: $primary-light; }
+  }
+
+  .about-project-card {
+    background: rgba(255,255,255,0.03);
+    border-color: $card-border-dark;
+    
+    &:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: $secondary;
+    }
+  }
+}
+
+// ─── Search Bar (Floating Pill) ────────────────────────────────
+.quarto-listing-filter {
+  width: 50%; // Set to half of the main body width
+  margin: 0 0 $spacing-xl 0;
+
+  &.input-group {
+    background: $bg-light !important;
+    border-radius: $radius-full !important;
+    padding: $spacing-xs $spacing-sm !important; // Reverted padding to restore original shape
+    box-shadow: $shadow-sm !important;
+    border: 1px solid $card-border-light !important;
+    transition: $transition-base !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden;
+
+    &:focus-within {
+      box-shadow: $shadow-md !important;
+      border-color: $primary !important;
+      transform: translateY(-2px);
+    }
+
+    .input-group-text {
+      background: transparent !important;
+      border: none !important;
+      color: $primary !important;
+      padding-left: $spacing-sm !important;
+      font-size: 1.1rem !important;
+    }
+
+    input.search.form-control {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      font-family: $font-body !important;
+      font-size: $text-base !important;
+      padding: $spacing-sm $spacing-md !important;
+      color: $text-dark !important;
+
+      &::placeholder {
+        color: $muted !important;
+        opacity: 0.6 !important;
+      }
+    }
+  }
+}
+
+// Dark mode search bar
+[data-bs-theme="dark"],
+body.quarto-dark {
+  .quarto-listing-filter.input-group {
+    background: $card-bg-dark !important;
+    border-color: $card-border-dark !important;
+    
+    &:focus-within {
+      border-color: $primary-light !important;
+      box-shadow: 0 0 15px rgba($primary, 0.3) !important;
+    }
+
+    .input-group-text {
+      color: $primary-light !important;
+    }
+
+    input.search.form-control {
+      color: $text-light !important;
+      
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+    }
+  }
+}
+
+// ─── Disable Meta Links in Listings ───────────────────────────
+.quarto-listing-default {
+  .listing-description a,
+  .metadata a {
+    color: inherit !important;
+    text-decoration: none !important;
+    pointer-events: none !important;
+    cursor: default !important;
+    
+    &:hover {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+// ─── Aggressive Sidebar Hover Fix ─────────────────────────────
+.sidebar-navigation .sidebar-link:hover,
+.sidebar-navigation .sidebar-link:hover span,
+.quarto-sidebar .sidebar-link:hover,
+.quarto-sidebar .sidebar-link:hover span {
+  color: $secondary !important;
+  text-decoration: underline !important;
+}
+
+// ─── Aggressive Sidebar Active Fix ────────────────────────────
+.sidebar-navigation .sidebar-link.active,
+.sidebar-navigation .sidebar-link.active span,
+.quarto-sidebar .sidebar-link.active,
+.quarto-sidebar .sidebar-link.active span {
+  color: $primary !important;
+  font-weight: 700 !important;
+  background-color: transparent !important;
+  border-left-color: transparent !important;
+}

@@ -1,49 +1,106 @@
 project:
   type: website
+  output-dir: _site
+  pre-render: python scripts/sort_sidebar.py
 
 website:
-  title: "Machine Learning Blog"
-  site-url: https://Muztahid-2020331021.github.io/Machine-Learning-Blog/
-  description: "Machine learning tutorials, Python projects, and dataset engineering."
-  
-  # 1. Enable the Search Bar
-  search: true
+  title: "My Professional Blog"
+  site-url: "https://muztahid.github.io/machine-learning-blog/"
+  description: "Thoughts on code, data, and the craft of writing."
+  favicon: assets/images/favicon.ico
+  open-graph: true
+  twitter-card: true
 
-  # 2. Configure the Top Navbar
   navbar:
+    logo: assets/images/logo.png
     left:
-      - text: "Articles" # We will create this listing page later if needed
-        href: articles/index.qmd 
+      - text: "Home"
+        href: index.qmd
+      - text: "Articles"
+        href: articles/index.qmd
       - text: "About"
         href: about.qmd
     right:
       - icon: github
         href: https://github.com/Muztahid-2020331021
       - icon: linkedin
-        href: https://www.linkedin.com/in/muztahid-hassan-sajid/ # Keep your actual link here
+        href: https://www.linkedin.com/in/muztahid-hassan-sajid/
+      - icon: globe
+        href: https://www.sajid.me
 
-  # 3. Enable the Left Sidebar Navigation
   sidebar:
     style: "docked"
-    background: light
     contents:
-      - section: "Python"
-        contents:
-          - posts/Tutorial-Blog/index.ipynb # This points to your existing tutorial
-      - section: "Machine Learning"
-        contents:
-          - text: "More tutorials coming soon..."
-            href: index.qmd
+      - text: "TOPICS"
+      - section: "Articles"
+        contents: "articles/*/**/index.qmd"
+        section-style: "flat"
+
+  page-footer:
+    left: "© 2026 Your Name. All rights reserved."
+    center:
+      - icon: github
+        href: https://github.com/Muztahid-2020331021
+      - icon: globe
+        href: https://www.sajid.me
+      - icon: linkedin
+        href: https://www.linkedin.com/in/muztahid-hassan-sajid/
+    right: "Built with [Quarto](https://quarto.org)"
+
+  search: true
+  back-to-top-navigation: true
+
+  # google-analytics: "G-XXXXXXXXXX"   # Uncomment to activate
 
 format:
   html:
     theme:
       light: [flatly, styles/main.scss]
       dark:  [darkly, styles/main.scss]
-    css: styles.css
-    
-    # 4. Enable the Right Sidebar (Table of Contents)
     toc: true
+    toc-depth: 3
     toc-location: right
-    toc-title: "ON THIS PAGE"
-    toc-depth: 3 # Captures headings up to ### (H3)
+    number-sections: false
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    include-after-body:
+      - text: |
+          <script>
+          window.addEventListener('scroll', function() {
+            const btn = document.getElementById('quarto-back-to-top');
+            if (!btn) return;
+
+            const scrollPos = window.scrollY;
+            const totalHeight = document.documentElement.scrollHeight;
+            const viewportHeight = window.innerHeight;
+            const bottomThreshold = 15;
+
+            if (scrollPos <= 0 || (scrollPos + viewportHeight >= totalHeight - bottomThreshold)) {
+              btn.style.setProperty('display', 'none', 'important');
+            } else if (scrollPos > 100) {
+              btn.style.setProperty('display', 'block', 'important');
+            }
+          });
+
+          document.addEventListener('DOMContentLoaded', function() {
+            const currentUrl = window.location.href.toLowerCase();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            
+            if (currentUrl.includes('/articles/') || currentUrl.includes('\\articles\\') || currentUrl.endsWith('articles/')) {
+              navLinks.forEach(link => {
+                if (link.innerText.trim() === 'Articles') {
+                  link.classList.add('active');
+                } else if (link.innerText.trim() === 'Home' || link.innerText.trim() === 'About') {
+                  link.classList.remove('active');
+                }
+              });
+            }
+          });
+          </script>
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false

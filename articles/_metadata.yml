@@ -1,0 +1,8 @@
+sidebar: 
+  style: "docked"
+  contents:
+    - text: "TOPICS"
+    - section: "Articles"
+      href: index.qmd
+      contents: auto
+bread-crumbs: true

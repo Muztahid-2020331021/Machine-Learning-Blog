@@ -1,0 +1,34 @@
+---
+title: Getting Started with HTML
+description: A beginner-friendly walkthrough of HTML fundamentals.
+author: Your Name
+date: 2026-03-16 14:00:00
+image: thumbnail.png
+toc: true
+toc-depth: 3
+draft: false
+order: 1
+---
+
+HTML (HyperText Markup Language) is the backbone of the web. It structures content and defines how it should be displayed in browsers. In this post, we'll cover the essentials of HTML, including its syntax, common tags, and best practices for writing clean and semantic code.
+
+## What is HTML?
+
+HTML is a markup language, not a programming language. It uses tags to define elements on a webpage, such as headings, paragraphs, links, images, and more. Each tag has a specific purpose and can be nested within other tags to create complex structures.
+
+## Basic HTML Structure
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First HTML Page</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is my first HTML page.</p>
+</body>
+</html> 
+```

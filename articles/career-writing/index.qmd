@@ -1,0 +1,16 @@
+---
+title: "Career & Writing"
+description: "Insights on professional growth, soft skills, and the craft of technical writing."
+listing:
+  contents: "*/index.qmd"
+  sort: "date asc"
+  type: default
+  fields: [title, description, date]
+  field-links: [title]
+toc: true
+page-layout: article
+---
+
+Welcome to the **Career & Writing** section. This is where I share thoughts on the non-technical side of being a developer.
+
+## Articles

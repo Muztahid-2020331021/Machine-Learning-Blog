@@ -1,0 +1,74 @@
+---
+title: Why Every Developer Should Write
+description: Writing sharpens thinking. Here is why developers should blog more.
+author: Your Name
+date: 2024-02-28
+image: thumbnail.png
+toc: true
+draft: false
+order: 1
+---
+
+Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,
+spotting edge cases, and reasoning about trade-offs. Yet the same people often tell me they
+"can't write." I think they've confused *polish* with *clarity*, and that's a fixable mistake.
+
+---
+
+## Writing Is Thinking Made Visible
+
+When you write, you're not transcribing thoughts that are already finished. You're *discovering*
+what you actually think. The discipline of forming a sentence forces you to choose between
+ideas, discard the weak ones, and commit to the strong ones.
+
+![A developer writing at a desk](thumbnail.png){fig-alt="Developer writing at a desk" fig-align="center" width="80%"}
+
+> "I write to find out what I think."
+>
+> — Joan Didion
+
+---
+
+## Five Reasons Developers Should Blog
+
+1. **Teaching solidifies understanding.** The "Feynman technique"—explain a concept simply until
+   you can't—exposes every gap in your knowledge faster than any test.
+2. **Your future self will thank you.** A post explaining how you solved a tricky CORS issue is a
+   personal reference you'll return to, and it'll save someone else three hours of debugging.
+3. **Writing compounds.** Thirty posts means thirty permanent search-indexed artifacts of your
+   expertise. That's a form of leverage most developers ignore entirely.
+4. **It builds professional credibility.** Recruiters, hiring managers, and peers read blogs.
+   A thoughtful post demonstrates judgment in a way a résumé cannot.
+5. **It builds the habit of finishing things.** A blog post has a clear done state. That's
+   rarer and more valuable than it sounds.
+
+---
+
+## Common Objections (and Why They Don't Hold)
+
+**"I don't have anything original to say."** You don't need to be first. You need to be *useful*.
+A beginner's explanation of a hard topic is often more helpful than the expert's, because you
+remember what confused you.
+
+**"No one will read it."** Write for one person: your past self, six months ago. If it would
+have helped you then, publish it.
+
+**"I don't have time."** A 400-word post once a month is better than nothing. Write rough. Edit
+once. Ship.
+
+---
+
+## How to Start
+
+The tooling friction is lower than ever:
+
+- [Quarto](https://quarto.org) — code-friendly, renders to HTML, PDF, or slides from one source
+- [Ghost](https://ghost.org) — beautifully minimal hosted blogging
+- [Obsidian Publish](https://obsidian.md/publish) — if you already live in Obsidian
+
+Pick whichever puts the least distance between you and the publish button. The best tool is the
+one you'll actually use.
+
+> "Amateurs sit and wait for inspiration. The rest of us just show up and get to work."
+>
+> — Stephen King, *On Writing*

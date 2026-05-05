@@ -1,8 +1,29 @@
 ---
-title: "Welcome to My World"
+title: ""
 page-layout: full
+toc: false
+sidebar: false
+listing:
+  - id: featured-posts
+    contents: 
+      - "articles/*/*/index.qmd"
+    sort: "date desc"
+    type: grid
+    grid-columns: 3
+    max-items: 6
+    fields: [date, title, description]
 ---
 
-Hello! I am Muztahid. I write about Python, Natural Language Processing, and the math behind Machine Learning.
+<div class="hero" style="border-radius: 16px; margin-bottom: 3rem;">
+  <h1>Hi, I'm Your Name</h1>
+  <p>I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.</p>
+  <a href="about.qmd" class="btn-primary-custom">Learn more about me</a>
+</div>
 
-Check out my latest [Articles](articles/index.qmd) or learn more [About Me](about.qmd).
+<div class="section-header">
+  <h2>Latest Articles</h2>
+  <a href="articles/index.html" class="view-all-link">View all articles →</a>
+</div>
+
+::: {#featured-posts}
+:::
