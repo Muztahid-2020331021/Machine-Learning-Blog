@@ -154,6 +154,20 @@
     "text": "I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job.\nI spend my days building data pipelines, exploring new frameworks, and trying to explain complex things in plain language. This blog is where I share what I learn—including the mistakes.\nWhen I’m not coding, I’m usually reading, hiking, or arguing about editors."
   },
   {
+    "objectID": "about.html#what-i-write-about",
+    "href": "about.html#what-i-write-about",
+    "title": "About Me",
+    "section": "📝 What I Write About",
+    "text": "📝 What I Write About\nIn this blog, I explore the intersection of data engineering, software development, and technical communication. My articles range from deep dives into Python and SQL to tutorials on building modern web applications. I aim to break down complex architectural patterns and tools into digestible, actionable insights."
+  },
+  {
+    "objectID": "about.html#my-goal",
+    "href": "about.html#my-goal",
+    "title": "About Me",
+    "section": "🎯 My Goal",
+    "text": "🎯 My Goal\nThe goal of this blog is to create a resource that I wish I had when I started my journey. I believe in the power of “learning in public”—by documenting my process and the challenges I face, I hope to help others avoid common pitfalls and inspire them to build their own projects. Writing forces me to understand topics more deeply, and my aim is to pass that clarity on to you."
+  },
+  {
     "objectID": "about.html#technical-skills",
     "href": "about.html#technical-skills",
     "title": "About Me",
@@ -173,13 +187,6 @@
     "title": "About Me",
     "section": "🎓 Education",
     "text": "🎓 Education\n\n  \n    \n    2019\n    BSc Computer Science\n    University of Somewhere"
-  },
-  {
-    "objectID": "about.html#featured-projects",
-    "href": "about.html#featured-projects",
-    "title": "About Me",
-    "section": "✨ Featured Projects",
-    "text": "✨ Featured Projects\n\n  \n    \n    Data Pipeline 2.0\n    An automated ETL pipeline handling 10M+ records daily using Python and Snowflake.\n  \n  \n    \n    ML Forecast Engine\n    Time-series forecasting model for retail demand with 92% accuracy."
   },
   {
     "objectID": "articles/career-writing/index.html",
@@ -358,19 +365,5 @@
       "Articles",
       "Web Development"
     ]
-  },
-  {
-    "objectID": "about.html#what-i-write-about",
-    "href": "about.html#what-i-write-about",
-    "title": "About Me",
-    "section": "📝 What I Write About",
-    "text": "📝 What I Write About\nIn this blog, I explore the intersection of data engineering, software development, and technical communication. My articles range from deep dives into Python and SQL to tutorials on building modern web applications. I aim to break down complex architectural patterns and tools into digestible, actionable insights."
-  },
-  {
-    "objectID": "about.html#my-goal",
-    "href": "about.html#my-goal",
-    "title": "About Me",
-    "section": "🎯 My Goal",
-    "text": "🎯 My Goal\nThe goal of this blog is to create a resource that I wish I had when I started my journey. I believe in the power of “learning in public”—by documenting my process and the challenges I face, I hope to help others avoid common pitfalls and inspire them to build their own projects. Writing forces me to understand topics more deeply, and my aim is to pass that clarity on to you."
   }
 ]

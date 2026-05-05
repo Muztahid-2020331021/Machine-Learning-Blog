@@ -19,5 +19,20 @@
   },
   "articles/index.qmd": {
     "index.html": "ba870b3c"
+  },
+  "articles/career-writing/index.qmd": {
+    "index.html": "f322dfa1"
+  },
+  "articles/machine-learning/index.qmd": {
+    "index.html": "9887ff48"
+  },
+  "articles/python-ds/index.qmd": {
+    "index.html": "c6e2bccf"
+  },
+  "articles/web-dev/index.qmd": {
+    "index.html": "d328f383"
+  },
+  "index.qmd": {
+    "index.html": "434db296"
   }
 }

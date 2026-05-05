@@ -5,7 +5,7 @@ project:
 
 website:
   title: "My Professional Blog"
-  site-url: "https://muztahid.github.io/machine-learning-blog/"
+  site-url: "https://muztahid-2020331021.github.io/Machine-Learning-Blog/"
   description: "Thoughts on code, data, and the craft of writing."
   favicon: assets/images/favicon.ico
   open-graph: true
