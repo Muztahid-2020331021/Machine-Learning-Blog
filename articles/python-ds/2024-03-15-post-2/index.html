@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name">
+<meta name="dcterms.date" content="2024-03-15">
+<meta name="description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
 
-<title>About Me – My Professional Blog</title>
+<title>Getting Started with Python Data Analysis – My Professional Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,30 +26,66 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/images/favicon.ico" rel="icon">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-21d8cb3cf36d844f2b460ddd74593bcc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-df41296829c3f12c787afcad2a4b96e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-21d8cb3cf36d844f2b460ddd74593bcc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/images/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-21d8cb3cf36d844f2b460ddd74593bcc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-df41296829c3f12c787afcad2a4b96e2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-21d8cb3cf36d844f2b460ddd74593bcc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,17 +116,17 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="About Me – My Professional Blog">
-<meta property="og:description" content="Thoughts on code, data, and the craft of writing.">
-<meta property="og:image" content="https://muztahid.github.io/machine-learning-blog/assets/images/profile.jpg">
+<meta property="og:title" content="Getting Started with Python Data Analysis – My Professional Blog">
+<meta property="og:description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
+<meta property="og:image" content="https://muztahid.github.io/machine-learning-blog/articles/python-ds/2024-03-15-post-2/thumbnail.png">
 <meta property="og:site_name" content="My Professional Blog">
-<meta name="twitter:title" content="About Me – My Professional Blog">
-<meta name="twitter:description" content="Thoughts on code, data, and the craft of writing.">
-<meta name="twitter:image" content="https://muztahid.github.io/machine-learning-blog/assets/images/profile.jpg">
+<meta name="twitter:title" content="Getting Started with Python Data Analysis – My Professional Blog">
+<meta name="twitter:description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
+<meta name="twitter:image" content="https://muztahid.github.io/machine-learning-blog/articles/python-ds/2024-03-15-post-2/thumbnail.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -256,11 +295,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/images/logo.png" alt="" class="navbar-logo light-content">
-    <img src="./assets/images/logo.png" alt="" class="navbar-logo dark-content">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">My Professional Blog</span>
     </a>
   </div>
@@ -271,15 +310,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./articles/index.html"> 
+    <a class="nav-link active" href="../../../articles/index.html" aria-current="page"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -306,130 +345,262 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/index.html">Python &amp; Data Science</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/2024-03-15-post-2/index.html">Getting Started with Python Data Analysis</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">TOPICS</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../articles/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Articles</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../articles/career-writing/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Career &amp; Writing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why Every Developer Should Write</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../articles/machine-learning/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Machine Learning</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Machine Learning</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../articles/python-ds/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python &amp; Data Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Getting Started with Python Data Analysis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../articles/web-dev/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Web Development</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/web-dev/html tutorial/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started with HTML</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/web-dev/css tutorial/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting Started with CSS</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setting-up-your-environment" id="toc-setting-up-your-environment" class="nav-link active" data-scroll-target="#setting-up-your-environment">Setting Up Your Environment</a></li>
+  <li><a href="#loading-and-exploring-data" id="toc-loading-and-exploring-data" class="nav-link" data-scroll-target="#loading-and-exploring-data">Loading and Exploring Data</a></li>
+  <li><a href="#visualising-with-matplotlib" id="toc-visualising-with-matplotlib" class="nav-link" data-scroll-target="#visualising-with-matplotlib">Visualising with Matplotlib</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="assets/images/profile.jpg" class="about-image
-  round " style="height: 200px; width: 200px;">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/index.html">Python &amp; Data Science</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/2024-03-15-post-2/index.html">Getting Started with Python Data Analysis</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">About Me</h1>
+<h1 class="title">Getting Started with Python Data Analysis</h1>
 </div>
+
+<div>
+  <div class="description">
+    A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.
+  </div>
+</div>
+
+
 <div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
 
-<div class="intro-lead">
-  I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job.
-</div>
-<p>I spend my days building data pipelines, exploring new frameworks, and trying to explain complex things in plain language. This blog is where I share what I learn—including the mistakes.</p>
-<p>When I’m not coding, I’m usually reading, hiking, or arguing about editors.</p>
-<hr>
-<section id="what-i-write-about" class="level2">
-<h2 data-anchor-id="what-i-write-about">📝 What I Write About</h2>
-<p>In this blog, I explore the intersection of data engineering, software development, and technical communication. My articles range from deep dives into Python and SQL to tutorials on building modern web applications. I aim to break down complex architectural patterns and tools into digestible, actionable insights.</p>
-</section>
-<section id="my-goal" class="level2">
-<h2 data-anchor-id="my-goal">🎯 My Goal</h2>
-<p>The goal of this blog is to create a resource that I wish I had when I started my journey. I believe in the power of “learning in public”—by documenting my process and the challenges I face, I hope to help others avoid common pitfalls and inspire them to build their own projects. Writing forces me to understand topics more deeply, and my aim is to pass that clarity on to you.</p>
-<hr>
-</section>
-<section id="technical-skills" class="level2">
-<h2 data-anchor-id="technical-skills">🛠️ Technical Skills</h2>
-<div class="skills-grid">
-  <div class="skill-category-card">
-    <h4>Data Engineering</h4>
-    <div class="skill-tags">
-      <span class="badge-category">Python</span>
-      <span class="badge-category">SQL</span>
-      <span class="badge-category">dbt</span>
-      <span class="badge-category">Docker</span>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 15, 2024</p>
     </div>
   </div>
-  <div class="skill-category-card">
-    <h4>Data Science</h4>
-    <div class="skill-tags">
-      <span class="badge-category">Pandas</span>
-      <span class="badge-category">Scikit-Learn</span>
-      <span class="badge-category">MLOps</span>
-    </div>
+  
+    
   </div>
-  <div class="skill-category-card">
-    <h4>Development</h4>
-    <div class="skill-tags">
-      <span class="badge-category">TypeScript</span>
-      <span class="badge-category">Quarto</span>
-      <span class="badge-category">SCSS</span>
-      <span class="badge-category">Git</span>
-    </div>
-  </div>
+  
+
+
+</header>
+
+
+<p>Data analysis is one of the most in-demand skills of the decade, and Python’s ecosystem makes it remarkably accessible. In this post we’ll cover the essentials: loading data with <strong>pandas</strong>, exploring it visually with <strong>matplotlib</strong>, and running everything interactively in <strong>Jupyter</strong>.</p>
+<hr>
+<section id="setting-up-your-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-your-environment">Setting Up Your Environment</h2>
+<p>Before writing a single line of analysis code, you need a working environment. The fastest path is a virtual environment with the three core packages installed.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate      <span class="co"># Windows: .venv\Scripts\activate</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Pro Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Always check for missing values with <code>df.isnull().sum()</code> before any analysis. Silently missing data is the leading cause of misleading results.</p>
+</div>
+</div>
+<p>Once installed, launch Jupyter with <code>jupyter notebook</code> and create a new Python 3 kernel.</p>
 <hr>
 </section>
-<section id="experience" class="level2">
-<h2 data-anchor-id="experience">🚀 Experience</h2>
-<div class="timeline-container">
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-year">2023 – Present</div>
-    <div class="timeline-title">Senior Data Engineer</div>
-    <div class="timeline-org">Company A</div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-year">2021 – 2023</div>
-    <div class="timeline-title">Data Engineer</div>
-    <div class="timeline-org">Company B</div>
-  </div>
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-year">2019 – 2021</div>
-    <div class="timeline-title">Junior Developer</div>
-    <div class="timeline-org">Company C</div>
-  </div>
-</div>
+<section id="loading-and-exploring-data" class="level2">
+<h2 class="anchored" data-anchor-id="loading-and-exploring-data">Loading and Exploring Data</h2>
+<p>The first thing you’ll do in almost every project is load a CSV file and peek at its shape.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data.csv"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After <code>df.head()</code> you’ll want a quick statistical summary:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>df.shape</code></td>
+<td>(rows, columns)</td>
+</tr>
+<tr class="even">
+<td><code>df.dtypes</code></td>
+<td>data type per column</td>
+</tr>
+<tr class="odd">
+<td><code>df.describe()</code></td>
+<td>count, mean, std, min/max</td>
+</tr>
+<tr class="even">
+<td><code>df.isnull().sum()</code></td>
+<td>missing values per column</td>
+</tr>
+</tbody>
+</table>
+<p>These four lines form a reliable first-pass audit of any new dataset.</p>
 <hr>
 </section>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">🎓 Education</h2>
-<div class="timeline-container">
-  <div class="timeline-item">
-    <div class="timeline-dot"></div>
-    <div class="timeline-year">2019</div>
-    <div class="timeline-title">BSc Computer Science</div>
-    <div class="timeline-org">University of Somewhere</div>
-  </div>
-</div>
+<section id="visualising-with-matplotlib" class="level2">
+<h2 class="anchored" data-anchor-id="visualising-with-matplotlib">Visualising with Matplotlib</h2>
+<p>A histogram is the fastest way to understand the distribution of a numeric column.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.hist(df[<span class="st">"value_column"</span>], bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">"#3B82F6"</span>, edgecolor<span class="op">=</span><span class="st">"white"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Distribution of value_column"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Value"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Frequency"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"distribution.png"</span>, dpi<span class="op">=</span><span class="dv">150</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote class="blockquote">
+<p>“A picture is worth a thousand words—and in data analysis, a good chart is worth a thousand rows of summary statistics.”</p>
+<p>— Hadley Wickham, <em>R for Data Science</em></p>
+</blockquote>
+<hr>
+</section>
+<section id="next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
+<p>You now have the foundation. From here, the natural progressions are:</p>
+<ul>
+<li><strong>Seaborn</strong> for statistical plots with less boilerplate</li>
+<li><strong>Plotly</strong> for interactive, web-ready visualisations</li>
+<li><strong>scikit-learn</strong> when you’re ready to move from exploration to modelling</li>
+<li><strong>Polars</strong> as a faster alternative to pandas for large datasets</li>
+</ul>
+<p>Keep iterating, keep plotting, and don’t be afraid to look at your data from five different angles before drawing any conclusions.</p>
 
 
 </section>
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://github.com/YOUR_USERNAME" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://linkedin.com/in/YOUR_USERNAME" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://www.sajid.me" class="about-link" rel="" target="">
-    <i class="bi bi-globe"></i>
-     <span class="about-link-text">Portfolio</span>
-  </a>
-  <a href="mailto:your@email.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -445,6 +616,13 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -905,5 +1083,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
