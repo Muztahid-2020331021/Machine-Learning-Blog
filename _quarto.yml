@@ -12,10 +12,8 @@ website:
   # 2. Configure the Top Navbar
   navbar:
     left:
-      - text: "Home"
-        href: index.qmd
       - text: "Articles" # We will create this listing page later if needed
-        href: index.qmd 
+        href: articles/index.qmd 
       - text: "About"
         href: about.qmd
     right:
@@ -40,8 +38,8 @@ website:
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [flatly, styles/main.scss]
+      dark:  [darkly, styles/main.scss]
     css: styles.css
     
     # 4. Enable the Right Sidebar (Table of Contents)

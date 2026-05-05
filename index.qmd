@@ -1,15 +1,8 @@
 ---
-title: "Machine Learning Blog"
-listing:
-  contents: posts
-  feed: true
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+title: "Welcome to My World"
 page-layout: full
-title-block-banner: true
 ---
 
+Hello! I am Muztahid. I write about Python, Natural Language Processing, and the math behind Machine Learning.
 
+Check out my latest [Articles](articles/index.qmd) or learn more [About Me](about.qmd).

@@ -1,0 +1,83 @@
+/*-- scss:defaults --*/
+// ─── Variables used in our custom design ──────────────
+$bg-light:       #FFFFFF;
+$bg-dark:        #111827;
+$text-dark:      #1F2937;
+$muted:          #6B7280;
+$card-bg-light:  #F3F4F6;
+$transition-base: all 0.25s ease;
+$transition-fast: all 0.15s ease;
+$radius-md:      8px;
+
+/*-- scss:rules --*/
+
+
+// ─── Navbar (Modern Pill Design) ──────────────────────────────
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: $bg-light;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  transition: $transition-base;
+  padding: 0.5rem 1rem;
+
+  .navbar-brand {
+    font-weight: 700; // Makes your site title bold like "Bytes & Beyond"
+    font-size: 1.25rem;
+  }
+
+  // Forces the links into the exact center
+  .navbar-collapse .navbar-nav.me-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 0.25rem; // Slight spacing between the links
+  }
+
+  // The Links
+  .nav-link {
+    font-weight: 500;
+    color: $muted;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: $radius-md; // Rounds the corners into a pill
+    transition: $transition-fast;
+
+    // Removes our old underline animation
+    &::after { display: none !important; }
+
+    // Hover state
+    &:hover {
+      color: #0066CC;
+      background-color: rgba(0,0,0,0.03); // Very subtle gray background
+    }
+
+    // Active state (The highlighted pill)
+    &.active {
+      color: $text-dark !important;
+      background-color: $card-bg-light !important; // Prominent gray background
+      font-weight: 600;
+    }
+  }
+}
+
+// Dark Mode Overrides for the Navbar
+.quarto-dark .navbar {
+  background-color: $bg-dark;
+  border-bottom-color: rgba(255,255,255,0.08);
+
+  .nav-link {
+    color: rgba(255,255,255,0.7);
+    
+    &:hover {
+      color: #fff;
+      background-color: rgba(255,255,255,0.05);
+    }
+    
+    &.active {
+      color: #fff !important;
+      background-color: rgba(255,255,255,0.1) !important;
+    }
+  }
+}
+
+
