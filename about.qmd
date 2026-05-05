@@ -7,19 +7,6 @@ about:
   template: jolla
   image-shape: round
   image-width: 200px
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/Muztahid-2020331021
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/muztahid-hassan-sajid/
-    - icon: globe
-      text: Portfolio
-      href: https://www.sajid.me
-    - icon: envelope
-      text: Email
-      href: sajid191693@gmail.com
 ---
 
 ```{=html}
@@ -119,3 +106,13 @@ The goal of this blog is to create a resource that I wish I had when I started m
   </div>
 </div>
 ```
+
+---
+
+## 📬 Contact Info
+
+* **GitHub:** <https://github.com/Muztahid-2020331021>
+* **LinkedIn:** <https://www.linkedin.com/in/muztahid-hassan-sajid/>
+* **Portfolio:** <https://www.sajid.me>
+* **Email:** <sajid191693@gmail.com>
+

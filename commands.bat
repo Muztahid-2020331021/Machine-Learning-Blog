@@ -1,4 +1,4 @@
 git add .
-git commit -m "huge update to the website"
+git commit -m "page-footer fixed and contact info added"
 git push
 quarto publish gh-pages --no-prompt --no-browser
