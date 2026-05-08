@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
       "/articles/web-dev/css tutorial/index.html",
       "/articles/web-dev/html tutorial/index.html",
       "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
@@ -24,11 +25,18 @@
   {
     "listing": "/articles/index.html",
     "items": [
-      "/articles/career-writing/2024-02-28-post-3/index.html",
       "/articles/python-ds/2024-03-15-post-2/index.html",
+      "/articles/career-writing/2024-02-28-post-3/index.html",
       "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
       "/articles/web-dev/html tutorial/index.html",
-      "/articles/web-dev/css tutorial/index.html"
+      "/articles/web-dev/css tutorial/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Exploratory Data Analysis (EDA)/index.html",
+    "items": [
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html"
     ]
   },
   {
