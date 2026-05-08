@@ -1,6 +1,6 @@
 <%
 const grouped = {};
-const topicEarliestDate = {};
+const topicSortValue = {};
 const topicLinks = {};
 
 items.forEach(item => {
@@ -12,23 +12,24 @@ items.forEach(item => {
   let topicTitle = topicKey.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   if (topicKey === 'python-ds') topicTitle = 'Python & Data Science';
   if (topicKey === 'career-writing') topicTitle = 'Career & Writing';
-  if (topicKey === 'operating-systems') topicTitle = 'Operating Systems';
+  if (topicKey.toLowerCase() === 'eda' || topicKey.toLowerCase() === 'exploratory data analysis (eda)') topicTitle = 'EDA';
 
   if (!grouped[topicTitle]) {
     grouped[topicTitle] = [];
-    topicEarliestDate[topicTitle] = new Date(item.date).getTime();
-    topicLinks[topicTitle] = topicKey + '/index.html';
+    // Use the first item's order to determine topic position (since items are sorted by order asc)
+    topicSortValue[topicTitle] = item.order || 999;
+    topicLinks[topicTitle] = encodeURIComponent(topicKey) + '/index.html';
   } else {
-    const itemTime = new Date(item.date).getTime();
-    if (itemTime < topicEarliestDate[topicTitle]) {
-      topicEarliestDate[topicTitle] = itemTime;
+    // Keep the smallest order seen for this topic
+    if (item.order && item.order < topicSortValue[topicTitle]) {
+        topicSortValue[topicTitle] = item.order;
     }
   }
   grouped[topicTitle].push(item);
 });
 
 const sortedTopics = Object.keys(grouped).sort((a, b) => {
-  return topicEarliestDate[a] - topicEarliestDate[b];
+  return topicSortValue[a] - topicSortValue[b];
 });
 %>
 

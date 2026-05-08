@@ -7,7 +7,7 @@ image: thumbnail.png
 toc: true
 toc-depth: 3
 draft: false
-order: 2
+order: 5
 ---
 
 CSS (Cascading Style Sheets) is used to style and layout web pages. It allows you to control the appearance of HTML elements, including colors, fonts, spacing, and overall design.

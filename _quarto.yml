@@ -3,6 +3,9 @@ project:
   output-dir: _site
   pre-render: python scripts/sort_sidebar.py
 
+metadata-files:
+  - _sidebar.yml
+
 website:
   title: "My Professional Blog"
   site-url: "https://muztahid-2020331021.github.io/Machine-Learning-Blog/"
@@ -27,14 +30,6 @@ website:
         href: https://www.linkedin.com/in/muztahid-hassan-sajid/
       - icon: globe
         href: https://www.sajid.me
-
-  sidebar:
-    style: "docked"
-    contents:
-      - text: "TOPICS"
-      - section: "Articles"
-        contents: "articles/*/**/index.qmd"
-        section-style: "flat"
 
   page-footer:
     left: "© 2026 Md Muztahid Hassan. All rights reserved."

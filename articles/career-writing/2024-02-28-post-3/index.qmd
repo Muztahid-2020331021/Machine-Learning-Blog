@@ -6,7 +6,7 @@ date: 2024-02-28
 image: thumbnail.png
 toc: true
 draft: false
-order: 1
+order: 2
 ---
 
 Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,

@@ -1,0 +1,36 @@
+website:
+  sidebar:
+    style: docked
+    contents:
+    - text: TOPICS
+    - section: Articles
+      href: articles/index.html
+      section-style: flat
+      contents:
+      - section: Python & Data Science
+        href: articles/python-ds/index.html
+        contents:
+        - text: Getting Started with Python Data Analysis
+          href: articles/python-ds/2024-03-15-post-2/index.html
+      - section: Career & Writing
+        href: articles/career-writing/index.html
+        contents:
+        - text: Why Every Developer Should Write
+          href: articles/career-writing/2024-02-28-post-3/index.html
+      - section: Machine Learning
+        href: articles/machine-learning/index.html
+        contents:
+        - text: Introduction to Machine Learning
+          href: articles/machine-learning/2025-05-02-intro-to-ml/index.html
+      - section: Web Dev
+        href: articles/web-dev/index.html
+        contents:
+        - text: Getting Started with HTML
+          href: articles/web-dev/html%20tutorial/index.html
+        - text: Getting Started with CSS
+          href: articles/web-dev/css%20tutorial/index.html
+      - section: EDA
+        href: articles/Exploratory%20Data%20Analysis%20%28EDA%29/index.html
+        contents:
+        - text: Introduction to EDA
+          href: articles/Exploratory%20Data%20Analysis%20%28EDA%29/Introduction%20to%20EDA/index.html

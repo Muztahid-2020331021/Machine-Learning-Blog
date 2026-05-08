@@ -1,38 +1,44 @@
 {
   "articles/career-writing/2024-02-28-post-3/index.qmd": {
-    "index.html": "de5b2435"
-  },
-  "articles/machine-learning/2025-05-02-intro-to-ml/index.qmd": {
-    "index.html": "7f7fbc87"
+    "index.html": "d3014bfb"
   },
   "articles/python-ds/2024-03-15-post-2/index.qmd": {
-    "index.html": "c81efed5"
+    "index.html": "9fadb66f"
   },
   "articles/web-dev/css tutorial/index.qmd": {
-    "index.html": "bcb9ea0f"
+    "index.html": "30b7b544"
   },
   "articles/web-dev/html tutorial/index.qmd": {
-    "index.html": "06eea282"
-  },
-  "about.qmd": {
-    "about.html": "610d231d"
+    "index.html": "00620d09"
   },
   "articles/index.qmd": {
-    "index.html": "ba870b3c"
+    "index.html": "b8b78297"
+  },
+  "about.qmd": {
+    "about.html": "ed4c266c"
   },
   "articles/career-writing/index.qmd": {
-    "index.html": "f322dfa1"
+    "index.html": "6d10a087"
+  },
+  "articles/Exploratory Data Analysis (EDA)/index.qmd": {
+    "index.html": "b5e560a0"
+  },
+  "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.ipynb": {
+    "index.html": "a44b0ace"
+  },
+  "articles/machine-learning/2025-05-02-intro-to-ml/index.qmd": {
+    "index.html": "a13f2a24"
   },
   "articles/machine-learning/index.qmd": {
-    "index.html": "9887ff48"
+    "index.html": "dfdceea0"
   },
   "articles/python-ds/index.qmd": {
-    "index.html": "c6e2bccf"
+    "index.html": "ae36c36e"
   },
   "articles/web-dev/index.qmd": {
-    "index.html": "d328f383"
+    "index.html": "93279e85"
   },
   "index.qmd": {
-    "index.html": "434db296"
+    "index.html": "4bfd60b2"
   }
 }

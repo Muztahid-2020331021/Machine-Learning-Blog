@@ -4,9 +4,11 @@ description: "Articles organized by topic"
 toc: false
 page-layout: article
 listing:
-  contents: "*/*/index.qmd"
+  contents: 
+    - "*/*/index.qmd"
+    - "*/*/index.ipynb"
   template: grouped.ejs
-  sort: "date asc"
+  sort: "order asc"
   filter-ui: true
   sort-ui: false
 ---

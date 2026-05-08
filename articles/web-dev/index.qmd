@@ -1,5 +1,6 @@
 ---
 title: "Web Development"
+date: "2025-05-10 10:00:00"
 description: "Learn web development skills with tutorials and resources."
 listing:
   contents: "*/index.qmd"

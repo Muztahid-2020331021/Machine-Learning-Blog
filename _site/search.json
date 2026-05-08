@@ -4,46 +4,28 @@
     "href": "index.html",
     "title": "\nHi, I’m Md Muztahid Hassan\n",
     "section": "",
-    "text": "I’m a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.\n\nLearn more about me\n\n\n\nLatest Articles\n\nView all articles →\n\n\n\n\n\n\n\n\nGetting Started with CSS\n\n\nA beginner-friendly walkthrough of CSS fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\nGetting Started with HTML\n\n\nA beginner-friendly walkthrough of HTML fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\nIntroduction to Machine Learning\n\n\nA beginner-friendly guide to what Machine Learning is and why it matters.\n\n\n\nMay 2, 2025\n\n\n\n\n\n\n\n\n\n\nGetting Started with Python Data Analysis\n\n\nA beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.\n\n\n\nMar 15, 2024\n\n\n\n\n\n\n\n\n\n\nWhy Every Developer Should Write\n\n\nWriting sharpens thinking. Here is why developers should blog more.\n\n\n\nFeb 28, 2024\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "I’m a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.\n\nLearn more about me\n\n\n\nLatest Articles\n\nView all articles →\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\n\n\n\nGetting Started with CSS\n\n\nA beginner-friendly walkthrough of CSS fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\nGetting Started with HTML\n\n\nA beginner-friendly walkthrough of HTML fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\nIntroduction to Machine Learning\n\n\nA beginner-friendly guide to what Machine Learning is and why it matters.\n\n\n\nMay 2, 2025\n\n\n\n\n\n\n\n\n\n\nGetting Started with Python Data Analysis\n\n\nA beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.\n\n\n\nMar 15, 2024\n\n\n\n\n\n\n\n\n\n\nWhy Every Developer Should Write\n\n\nWriting sharpens thinking. Here is why developers should blog more.\n\n\n\nFeb 28, 2024\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "articles/web-dev/html tutorial/index.html",
     "href": "articles/web-dev/html tutorial/index.html",
     "title": "Getting Started with HTML",
     "section": "",
-    "text": "HTML (HyperText Markup Language) is the backbone of the web. It structures content and defines how it should be displayed in browsers. In this post, we’ll cover the essentials of HTML, including its syntax, common tags, and best practices for writing clean and semantic code.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with HTML"
-    ]
+    "text": "HTML (HyperText Markup Language) is the backbone of the web. It structures content and defines how it should be displayed in browsers. In this post, we’ll cover the essentials of HTML, including its syntax, common tags, and best practices for writing clean and semantic code."
   },
   {
     "objectID": "articles/web-dev/html tutorial/index.html#what-is-html",
     "href": "articles/web-dev/html tutorial/index.html#what-is-html",
     "title": "Getting Started with HTML",
     "section": "What is HTML?",
-    "text": "What is HTML?\nHTML is a markup language, not a programming language. It uses tags to define elements on a webpage, such as headings, paragraphs, links, images, and more. Each tag has a specific purpose and can be nested within other tags to create complex structures.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with HTML"
-    ]
+    "text": "What is HTML?\nHTML is a markup language, not a programming language. It uses tags to define elements on a webpage, such as headings, paragraphs, links, images, and more. Each tag has a specific purpose and can be nested within other tags to create complex structures."
   },
   {
     "objectID": "articles/web-dev/html tutorial/index.html#basic-html-structure",
     "href": "articles/web-dev/html tutorial/index.html#basic-html-structure",
     "title": "Getting Started with HTML",
     "section": "Basic HTML Structure",
-    "text": "Basic HTML Structure\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;My First HTML Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello, World!&lt;/h1&gt;\n    &lt;p&gt;This is my first HTML page.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with HTML"
-    ]
+    "text": "Basic HTML Structure\n&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n    &lt;meta charset=\"UTF-8\"&gt;\n    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n    &lt;title&gt;My First HTML Page&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;h1&gt;Hello, World!&lt;/h1&gt;\n    &lt;p&gt;This is my first HTML page.&lt;/p&gt;\n&lt;/body&gt;\n&lt;/html&gt;"
   },
   {
     "objectID": "articles/python-ds/index.html",
@@ -80,6 +62,13 @@
       "Articles",
       "Machine Learning"
     ]
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/index.html",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "Welcome to the Exploratory Data Analysis (EDA) section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
     "objectID": "articles/career-writing/2024-02-28-post-3/index.html",
@@ -189,6 +178,13 @@
     "text": "🎓 Education\n\n  \n    \n    2019\n    BSc Computer Science\n    University of Somewhere"
   },
   {
+    "objectID": "about.html#contact-info",
+    "href": "about.html#contact-info",
+    "title": "About Me",
+    "section": "📬 Contact Info",
+    "text": "📬 Contact Info\n\nGitHub: https://github.com/Muztahid-2020331021\nLinkedIn: https://www.linkedin.com/in/muztahid-hassan-sajid/\nPortfolio: https://www.sajid.me\nEmail: sajid191693@gmail.com"
+  },
+  {
     "objectID": "articles/career-writing/index.html",
     "href": "articles/career-writing/index.html",
     "title": "Career & Writing",
@@ -211,6 +207,13 @@
       "Articles",
       "Career & Writing"
     ]
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+    "title": "Introduction to EDA",
+    "section": "",
+    "text": "Back to top"
   },
   {
     "objectID": "articles/machine-learning/2025-05-02-intro-to-ml/index.html",
@@ -308,39 +311,21 @@
     "href": "articles/web-dev/css tutorial/index.html",
     "title": "Getting Started with CSS",
     "section": "",
-    "text": "CSS (Cascading Style Sheets) is used to style and layout web pages. It allows you to control the appearance of HTML elements, including colors, fonts, spacing, and overall design.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with CSS"
-    ]
+    "text": "CSS (Cascading Style Sheets) is used to style and layout web pages. It allows you to control the appearance of HTML elements, including colors, fonts, spacing, and overall design."
   },
   {
     "objectID": "articles/web-dev/css tutorial/index.html#what-is-css",
     "href": "articles/web-dev/css tutorial/index.html#what-is-css",
     "title": "Getting Started with CSS",
     "section": "What is CSS?",
-    "text": "What is CSS?\nCSS is a stylesheet language that describes how HTML elements should be rendered on screen, in print, or other media. It separates the presentation of a document from its structure, making it easier to maintain and update the look and feel of a website.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with CSS"
-    ]
+    "text": "What is CSS?\nCSS is a stylesheet language that describes how HTML elements should be rendered on screen, in print, or other media. It separates the presentation of a document from its structure, making it easier to maintain and update the look and feel of a website."
   },
   {
     "objectID": "articles/web-dev/css tutorial/index.html#basic-css-syntax",
     "href": "articles/web-dev/css tutorial/index.html#basic-css-syntax",
     "title": "Getting Started with CSS",
     "section": "Basic CSS Syntax",
-    "text": "Basic CSS Syntax\nselector {\n    property: value;\n}\nIn this syntax: - selector is the HTML element you want to style. - property is the CSS property you want to modify. - value is the value for that property.\nFor example, to change the color of all paragraphs to blue, you would write:\np {\n    color: blue;\n}\nThis will apply the blue color to all &lt;p&gt; elements on the page. You can also target specific elements using classes and IDs for more precise styling.\n/* Targeting elements with a class */\n.my-class {\n    font-size: 18px;\n}\n/* Targeting an element with an ID */\n#my-id {\n    background-color: yellow;\n}",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Web Development",
-      "Getting Started with CSS"
-    ]
+    "text": "Basic CSS Syntax\nselector {\n    property: value;\n}\nIn this syntax: - selector is the HTML element you want to style. - property is the CSS property you want to modify. - value is the value for that property.\nFor example, to change the color of all paragraphs to blue, you would write:\np {\n    color: blue;\n}\nThis will apply the blue color to all &lt;p&gt; elements on the page. You can also target specific elements using classes and IDs for more precise styling.\n/* Targeting elements with a class */\n.my-class {\n    font-size: 18px;\n}\n/* Targeting an element with an ID */\n#my-id {\n    background-color: yellow;\n}"
   },
   {
     "objectID": "articles/web-dev/index.html",
@@ -351,7 +336,7 @@
     "crumbs": [
       "Home",
       "Articles",
-      "Web Development"
+      "Web Dev"
     ]
   },
   {
@@ -363,14 +348,7 @@
     "crumbs": [
       "Home",
       "Articles",
-      "Web Development"
+      "Web Dev"
     ]
-  },
-  {
-    "objectID": "about.html#contact-info",
-    "href": "about.html#contact-info",
-    "title": "About Me",
-    "section": "📬 Contact Info",
-    "text": "📬 Contact Info\n\nGitHub: https://github.com/Muztahid-2020331021\nLinkedIn: https://www.linkedin.com/in/muztahid-hassan-sajid/\nPortfolio: https://www.sajid.me\nEmail: sajid191693@gmail.com"
   }
 ]

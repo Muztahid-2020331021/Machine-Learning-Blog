@@ -7,7 +7,7 @@ image: thumbnail.png
 toc: true
 toc-depth: 3
 draft: false
-order: 1
+order: 4
 ---
 
 HTML (HyperText Markup Language) is the backbone of the web. It structures content and defines how it should be displayed in browsers. In this post, we'll cover the essentials of HTML, including its syntax, common tags, and best practices for writing clean and semantic code.

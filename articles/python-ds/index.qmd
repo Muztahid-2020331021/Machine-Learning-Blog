@@ -1,5 +1,6 @@
 ---
 title: "Python & Data Science"
+date: "2019-01-01 00:00:00"
 description: "Mastering data analysis, visualization, and machine learning with Python."
 listing:
   contents: "*/index.qmd"

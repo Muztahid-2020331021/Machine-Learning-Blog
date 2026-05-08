@@ -3,7 +3,7 @@ title: Introduction to Machine Learning
 description: A beginner-friendly guide to what Machine Learning is and why it matters.
 author: Your Name
 date: 2025-05-02
-order: 1
+order: 3
 ---
 
 ## What is Machine Learning?

@@ -1,0 +1,15 @@
+---
+title: "Exploratory Data Analysis (EDA)"
+date: "2026-05-06 23:00:00"
+description: "A comprehensive guide to EDA techniques, tools, and best practices for uncovering insights in data."
+listing:
+  contents: "*/index.*"
+  sort: "date asc"
+  type: default
+  fields: [title, description, date]
+  field-links: [title]
+toc: true
+page-layout: article
+---
+
+Welcome to the **Exploratory Data Analysis (EDA)** section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.
