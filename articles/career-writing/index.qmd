@@ -3,7 +3,9 @@ title: "Career & Writing"
 date: "2020-01-01 00:00:00"
 description: "Insights on professional growth, soft skills, and the craft of technical writing."
 listing:
-  contents: "*/index.*"
+  contents: 
+    - "*/index.qmd"
+    - "*/index.ipynb"
   sort: "date asc"
   type: default
   fields: [title, description, date]
