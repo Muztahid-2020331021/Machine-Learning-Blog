@@ -91,13 +91,15 @@ def update_order_in_file(file_path, order, is_ipynb=False):
             data['order'] = order
 
             new_yaml = yaml.dump(data, sort_keys=False, default_flow_style=False).strip()
-            new_raw_content = f"---\n{new_yaml}\n---" + raw_content[match.end():]
+            new_raw_content = f"---\n{new_yaml}\n---\n" + raw_content[match.end():].lstrip()
             first_cell['source'] = [line + '\n' for line in new_raw_content.split('\n')]
-
-            while first_cell['source'] and first_cell['source'][-1] == '\n':
+            
+            # Ensure the last element doesn't have an extra newline if it shouldn't, 
+            # but preserve at least one if the cell only contains frontmatter.
+            if first_cell['source'] and first_cell['source'][-1] == '\n':
                 first_cell['source'].pop()
-            if first_cell['source']:
-                first_cell['source'][-1] = first_cell['source'][-1].rstrip('\n')
+            if first_cell['source'] and first_cell['source'][-1].endswith('\n\n'):
+                first_cell['source'][-1] = first_cell['source'][-1].rstrip('\n') + '\n'
 
             with open(file_path, 'w', encoding='utf-8') as f:
                 json.dump(nb, f, indent=1)

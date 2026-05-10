@@ -49,6 +49,7 @@ website:
 
 format:
   html:
+    from: markdown+hard_line_breaks
     theme:
       light: [flatly, styles/main.scss]
       dark:  [darkly, styles/main.scss]

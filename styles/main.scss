@@ -559,22 +559,64 @@ article.post {
   overflow-y: auto;
   font-size: $text-sm;
   padding: $spacing-md;
-  border-left: 2px solid rgba($primary, 0.2);
+  
+  // Glassmorphism styling
+  background: rgba($bg-light, 0.8);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    
+    ul {
+      // Indent nested lists (H3, H4)
+      padding-left: $spacing-md;
+      margin-top: 4px;
+    }
+  }
+
+  li {
+    margin-bottom: 4px;
+  }
 
   a {
     color: $muted;
     text-decoration: none;
     display: block;
-    padding: 3px 0;
+    padding: 6px 10px;
     transition: $transition-fast;
-    border-left: 2px solid transparent;
-    margin-left: -2px;
+    border-radius: $radius-sm;
+    border-left: 3px solid transparent;
+
+    // Typographic Hierarchy: Top level (H2)
+    font-weight: 600;
 
     &:hover,
     &.active {
       color: $secondary;
-      padding-left: $spacing-sm;
+      background: rgba($secondary, 0.08);
       border-left-color: $secondary;
+      padding-left: 14px;
+    }
+  }
+
+  // Typographic Hierarchy: Nested levels (H3+)
+  ul ul a {
+    font-weight: 400;
+    font-size: 0.95em;
+    border-left: none;
+    padding-left: 8px;
+    
+    &:hover,
+    &.active {
+      background: transparent;
+      padding-left: 8px;
+      color: $secondary;
     }
   }
 
@@ -582,8 +624,6 @@ article.post {
     position: relative;
     top: 0;
     max-height: none;
-    border-left: none;
-    border-top: 2px solid rgba($primary, 0.2);
     margin-bottom: $spacing-lg;
   }
 }
@@ -761,7 +801,14 @@ body.quarto-dark {
     }
   }
 
-  #TOC a                { color: rgba(255, 255, 255, 0.5); }
+  #TOC {
+    background: rgba($card-bg-dark, 0.8);
+    border-color: rgba(255, 255, 255, 0.08);
+    a {
+      color: rgba(255, 255, 255, 0.55);
+      &:hover, &.active { color: $secondary !important; }
+    }
+  }
   .nav-footer           { border-top-color: rgba(255, 255, 255, 0.08); }
   .badge-category       { background: $primary; color: $text-light; }
 }
@@ -1240,4 +1287,18 @@ body.quarto-dark {
   font-weight: 700 !important;
   background-color: transparent !important;
   border-left-color: transparent !important;
+}
+
+// ─── Notebook Cell Spacing ────────────────────────────────────
+// Apply spacing between cells on individual article pages, but
+// NOT on the main Articles listing page to keep contents close together.
+body:not(:has(.grouped-listing)) .cell {
+  margin-bottom: $spacing-xl;
+}
+
+// ─── Listing Page Fixes ───────────────────────────────────────
+// Prevents Quarto's markdown+hard_line_breaks from injecting excessive
+// vertical spacing into our custom EJS template output.
+.grouped-listing br {
+  display: none !important;
 }

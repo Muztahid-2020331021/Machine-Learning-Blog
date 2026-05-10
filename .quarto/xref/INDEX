@@ -40,5 +40,11 @@
   },
   "index.qmd": {
     "index.html": "4bfd60b2"
+  },
+  "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.ipynb": {
+    "index.html": "4d0ce869"
+  },
+  "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.ipynb": {
+    "index.html": "82d42bb3"
   }
 }
