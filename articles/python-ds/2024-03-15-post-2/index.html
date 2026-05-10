@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-ec5a784e883e7fb9fb3ac7ed3f3a4d70.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-098d2f3e3df4e8705eec4fd44441c042.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-ec5a784e883e7fb9fb3ac7ed3f3a4d70.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -472,6 +472,18 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
  <span class="menu-text">Introduction to EDA</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bivariate and Multivariate Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EDA on Titanic Dataset (Project)</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -533,11 +545,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<p>Data analysis is one of the most in-demand skills of the decade, and Python’s ecosystem makes it remarkably accessible. In this post we’ll cover the essentials: loading data with <strong>pandas</strong>, exploring it visually with <strong>matplotlib</strong>, and running everything interactively in <strong>Jupyter</strong>.</p>
+<p>Data analysis is one of the most in-demand skills of the decade, and Python’s ecosystem makes it<br>
+remarkably accessible. In this post we’ll cover the essentials: loading data with <strong>pandas</strong>,<br>
+exploring it visually with <strong>matplotlib</strong>, and running everything interactively in <strong>Jupyter</strong>.</p>
 <hr>
 <section id="setting-up-your-environment" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-your-environment">Setting Up Your Environment</h2>
-<p>Before writing a single line of analysis code, you need a working environment. The fastest path is a virtual environment with the three core packages installed.</p>
+<p>Before writing a single line of analysis code, you need a working environment. The fastest path<br>
+is a virtual environment with the three core packages installed.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate      <span class="co"># Windows: .venv\Scripts\activate</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -551,7 +566,8 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Always check for missing values with <code>df.isnull().sum()</code> before any analysis. Silently missing data is the leading cause of misleading results.</p>
+<p>Always check for missing values with <code>df.isnull().sum()</code> before any analysis. Silently missing<br>
+data is the leading cause of misleading results.</p>
 </div>
 </div>
 <p>Once installed, launch Jupyter with <code>jupyter notebook</code> and create a new Python 3 kernel.</p>
@@ -607,7 +623,8 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"distribution.png"</span>, dpi<span class="op">=</span><span class="dv">150</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <blockquote class="blockquote">
-<p>“A picture is worth a thousand words—and in data analysis, a good chart is worth a thousand rows of summary statistics.”</p>
+<p>“A picture is worth a thousand words—and in data analysis, a good chart is worth a thousand<br>
+rows of summary statistics.”</p>
 <p>— Hadley Wickham, <em>R for Data Science</em></p>
 </blockquote>
 <hr>
@@ -621,7 +638,8 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <li><strong>scikit-learn</strong> when you’re ready to move from exploration to modelling</li>
 <li><strong>Polars</strong> as a faster alternative to pandas for large datasets</li>
 </ul>
-<p>Keep iterating, keep plotting, and don’t be afraid to look at your data from five different angles before drawing any conclusions.</p>
+<p>Keep iterating, keep plotting, and don’t be afraid to look at your data from five different<br>
+angles before drawing any conclusions.</p>
 
 
 </section>
