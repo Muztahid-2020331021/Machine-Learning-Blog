@@ -97,6 +97,6 @@ format:
           </script>
 
 execute:
-  freeze: auto
+  freeze: true
   echo: true
   warning: false

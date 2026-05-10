@@ -1,4 +1,4 @@
 git add .
-git commit -m "Added EDA project on the Titanic dataset"
+git commit -m "Fixed freeze issue"
 git push
 quarto publish gh-pages --no-prompt --no-browser
