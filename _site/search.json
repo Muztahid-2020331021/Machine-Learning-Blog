@@ -68,7 +68,70 @@
     "href": "articles/Exploratory Data Analysis (EDA)/index.html",
     "title": "Exploratory Data Analysis (EDA)",
     "section": "",
-    "text": "Welcome to the Exploratory Data Analysis (EDA) section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\n\n\nMay 10, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Welcome to the Exploratory Data Analysis (EDA) section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\n\n\nMay 10, 2026\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "",
+    "text": "Bivariate analysis involves examining the relationship between two variables."
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "",
+    "text": "Bivariate analysis involves examining the relationship between two variables."
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "Multivariate Analysis",
+    "text": "Multivariate Analysis\nMultivariate analysis involves examining the relationships among three or more variables.\nHere are some common techniques for both types of analysis:\nWe will use titanic, tips, iris, and flights datasets for our examples.\n\nimport seaborn as sns\nimport pandas as pd\n\ntitanic = sns.load_dataset('titanic')\ntips = sns.load_dataset('tips')\nflights = sns.load_dataset('flights')\niris = sns.load_dataset('iris')"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "1. Scatterplot (Numerical - Numerical)",
+    "text": "1. Scatterplot (Numerical - Numerical)\nIf we want to analyze the relationship between two numerical variables: total_bill and tip, we can use a scatterplot.\n\ntips.head()\n\n\n\n\n\n\n\n\ntotal_bill\ntip\nsex\nsmoker\nday\ntime\nsize\n\n\n\n\n0\n16.99\n1.01\nFemale\nNo\nSun\nDinner\n2\n\n\n1\n10.34\n1.66\nMale\nNo\nSun\nDinner\n3\n\n\n2\n21.01\n3.50\nMale\nNo\nSun\nDinner\n3\n\n\n3\n23.68\n3.31\nMale\nNo\nSun\nDinner\n2\n\n\n4\n24.59\n3.61\nFemale\nNo\nSun\nDinner\n4\n\n\n\n\n\n\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip')\n\n\n\n\n\n\n\n\nLet’s say we want to know the male and female status of customers in the scatterplot. We can use the hue parameter to differentiate between them.\n\nIn this case, we can say that it is a multivariate analysis because we are analyzing the relationship between three variables: total_bill, tip, and sex.\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')\n\n\n\n\n\n\n\n\nIf we want to find who are the smokers and non-smokers in the scatterplot, we can use the style parameter.\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='smoker')"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "2. Bar plot (Numerical - Categorical)",
+    "text": "2. Bar plot (Numerical - Categorical)\nIf we want to analyze the relationship between a numerical variable and a categorical variable, we can use a bar plot. We will use the titanic dataset for this example.\n\ntitanic.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nsns.barplot(data=titanic, x = \"pclass\", y = \"age\", hue = \"sex\")"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "3. Box plot (Numerical - Categorical)",
+    "text": "3. Box plot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.boxplot(data = titanic, x = \"pclass\", y = \"age\", hue = \"survived\")"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "4. Kdeplot (Numerical - Categorical)",
+    "text": "4. Kdeplot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.kdeplot(data = titanic, x = \"age\", hue = \"survived\", fill = True)"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "5. Pairplot (Numerical - Numerical)",
+    "text": "5. Pairplot (Numerical - Numerical)\nIf we want to analyze the relationship between multiple numerical variables, we can use a pairplot. We will use the iris dataset for this example.\n\niris.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nsns.pairplot(data = iris)"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "6. Line plot (Numerical - Numerical)",
+    "text": "6. Line plot (Numerical - Numerical)\nWe will use the flights dataset for this example.\n\nflights.head()\n\n\n\n\n\n\n\n\nyear\nmonth\npassengers\n\n\n\n\n0\n1949\nJan\n112\n\n\n1\n1949\nFeb\n118\n\n\n2\n1949\nMar\n132\n\n\n3\n1949\nApr\n129\n\n\n4\n1949\nMay\n121\n\n\n\n\n\n\n\n\nnew_data = flights.groupby('year', as_index=False)['passengers'].sum()\nnew_data.head()\n\n\n\n\n\n\n\n\nyear\npassengers\n\n\n\n\n0\n1949\n1520\n\n\n1\n1950\n1676\n\n\n2\n1951\n2042\n\n\n3\n1952\n2364\n\n\n4\n1953\n2700\n\n\n\n\n\n\n\n\nsns.lineplot(data = new_data, x = 'year', y = 'passengers')\n\n\n\n\n\n\n\n\n\nThese are the manual techniques for bivariate and multivariate analysis. To automate this process, we can use the ydata-profiling library, which provides a comprehensive report of the dataset, including bivariate and multivariate analysis.\n\n\nfrom ydata_profiling import ProfileReport\nprof = ProfileReport(titanic)\nprof.to_file(output_file='output.html')\n\nThis will generate an HTML file with a detailed report of the titanic dataset, including bivariate and multivariate analysis. You can open the output.html file in your browser to explore the report."
   },
   {
     "objectID": "articles/career-writing/2024-02-28-post-3/index.html",
@@ -207,6 +270,13 @@
       "Articles",
       "Career & Writing"
     ]
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+    "title": "EDA on Titanic Dataset (Project)",
+    "section": "",
+    "text": "At first we need to import the necessary libraries\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nNow we will load the dataset\n\ndata = pd.read_csv('train.csv')\ndata.head()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\ndata.shape\n\n(891, 12)\n\n\n\ndata.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 12 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   PassengerId  891 non-null    int64  \n 1   Survived     891 non-null    int64  \n 2   Pclass       891 non-null    int64  \n 3   Name         891 non-null    object \n 4   Sex          891 non-null    object \n 5   Age          714 non-null    float64\n 6   SibSp        891 non-null    int64  \n 7   Parch        891 non-null    int64  \n 8   Ticket       891 non-null    object \n 9   Fare         891 non-null    float64\n 10  Cabin        204 non-null    object \n 11  Embarked     889 non-null    object \ndtypes: float64(2), int64(5), object(5)\nmemory usage: 83.7+ KB\n\n\n\ndata.isnull().sum()\n\nPassengerId      0\nSurvived         0\nPclass           0\nName             0\nSex              0\nAge            177\nSibSp            0\nParch            0\nTicket           0\nFare             0\nCabin          687\nEmbarked         2\ndtype: int64\n\n\n\nsns.countplot(x='Survived', data=data)\n\n\n\n\n\n\n\n\n\nsns.countplot(x='Pclass', data=data)\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.\nIf we want to do the multivariate analysis, we can do like this.\n\nsns.countplot(data = data, x = 'Survived', hue='Pclass')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.\nOn the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.\n\nsns.countplot(data = data, x = 'Survived', hue='Sex')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.\n\nsns.displot(data=data, x='Age', kde = True)\n\n\n\n\n\n\n\n\nInsights:\nThere are some outliers in the age column. We can see that the graph is skewed to the right, which means that there are more younger passengers than older passengers. The majority of the passengers were between the ages of 20 and 40.\n\n\n\n Back to top"
   },
   {
     "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
@@ -371,75 +441,5 @@
       "Articles",
       "Web Dev"
     ]
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "",
-    "text": "Bivariate analysis involves examining the relationship between two variables."
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "",
-    "text": "Bivariate analysis involves examining the relationship between two variables."
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "Multivariate Analysis",
-    "text": "Multivariate Analysis\nMultivariate analysis involves examining the relationships among three or more variables.\nHere are some common techniques for both types of analysis:\nWe will use titanic, tips, iris, and flights datasets for our examples.\n\nimport seaborn as sns\nimport pandas as pd\n\ntitanic = sns.load_dataset('titanic')\ntips = sns.load_dataset('tips')\nflights = sns.load_dataset('flights')\niris = sns.load_dataset('iris')"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "1. Scatterplot (Numerical - Numerical)",
-    "text": "1. Scatterplot (Numerical - Numerical)\nIf we want to analyze the relationship between two numerical variables: total_bill and tip, we can use a scatterplot.\n\ntips.head()\n\n\n\n\n\n\n\n\ntotal_bill\ntip\nsex\nsmoker\nday\ntime\nsize\n\n\n\n\n0\n16.99\n1.01\nFemale\nNo\nSun\nDinner\n2\n\n\n1\n10.34\n1.66\nMale\nNo\nSun\nDinner\n3\n\n\n2\n21.01\n3.50\nMale\nNo\nSun\nDinner\n3\n\n\n3\n23.68\n3.31\nMale\nNo\nSun\nDinner\n2\n\n\n4\n24.59\n3.61\nFemale\nNo\nSun\nDinner\n4\n\n\n\n\n\n\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip')\n\n\n\n\n\n\n\n\nLet’s say we want to know the male and female status of customers in the scatterplot. We can use the hue parameter to differentiate between them.\n\nIn this case, we can say that it is a multivariate analysis because we are analyzing the relationship between three variables: total_bill, tip, and sex.\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')\n\n\n\n\n\n\n\n\nIf we want to find who are the smokers and non-smokers in the scatterplot, we can use the style parameter.\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='smoker')"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "2. Bar plot (Numerical - Categorical)",
-    "text": "2. Bar plot (Numerical - Categorical)\nIf we want to analyze the relationship between a numerical variable and a categorical variable, we can use a bar plot. We will use the titanic dataset for this example.\n\ntitanic.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nsns.barplot(data=titanic, x = \"pclass\", y = \"age\", hue = \"sex\")"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "3. Box plot (Numerical - Categorical)",
-    "text": "3. Box plot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.boxplot(data = titanic, x = \"pclass\", y = \"age\", hue = \"survived\")"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "4. Kdeplot (Numerical - Categorical)",
-    "text": "4. Kdeplot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.kdeplot(data = titanic, x = \"age\", hue = \"survived\", fill = True)"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "5. Pairplot (Numerical - Numerical)",
-    "text": "5. Pairplot (Numerical - Numerical)\nIf we want to analyze the relationship between multiple numerical variables, we can use a pairplot. We will use the iris dataset for this example.\n\niris.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nsns.pairplot(data = iris)"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "6. Line plot (Numerical - Numerical)",
-    "text": "6. Line plot (Numerical - Numerical)\nWe will use the flights dataset for this example.\n\nflights.head()\n\n\n\n\n\n\n\n\nyear\nmonth\npassengers\n\n\n\n\n0\n1949\nJan\n112\n\n\n1\n1949\nFeb\n118\n\n\n2\n1949\nMar\n132\n\n\n3\n1949\nApr\n129\n\n\n4\n1949\nMay\n121\n\n\n\n\n\n\n\n\nnew_data = flights.groupby('year', as_index=False)['passengers'].sum()\nnew_data.head()\n\n\n\n\n\n\n\n\nyear\npassengers\n\n\n\n\n0\n1949\n1520\n\n\n1\n1950\n1676\n\n\n2\n1951\n2042\n\n\n3\n1952\n2364\n\n\n4\n1953\n2700\n\n\n\n\n\n\n\n\nsns.lineplot(data = new_data, x = 'year', y = 'passengers')\n\n\n\n\n\n\n\n\n\nThese are the manual techniques for bivariate and multivariate analysis. To automate this process, we can use the ydata-profiling library, which provides a comprehensive report of the dataset, including bivariate and multivariate analysis.\n\n\nfrom ydata_profiling import ProfileReport\nprof = ProfileReport(titanic)\nprof.to_file(output_file='output.html')\n\nThis will generate an HTML file with a detailed report of the titanic dataset, including bivariate and multivariate analysis. You can open the output.html file in your browser to explore the report."
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-    "title": "EDA on Titanic Dataset (Project)",
-    "section": "",
-    "text": "At first we need to import the necessary libraries\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nNow we will load the dataset\n\ndata = pd.read_csv('train.csv')\ndata.head()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\ndata.shape\n\n(891, 12)\n\n\n\ndata.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 12 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   PassengerId  891 non-null    int64  \n 1   Survived     891 non-null    int64  \n 2   Pclass       891 non-null    int64  \n 3   Name         891 non-null    object \n 4   Sex          891 non-null    object \n 5   Age          714 non-null    float64\n 6   SibSp        891 non-null    int64  \n 7   Parch        891 non-null    int64  \n 8   Ticket       891 non-null    object \n 9   Fare         891 non-null    float64\n 10  Cabin        204 non-null    object \n 11  Embarked     889 non-null    object \ndtypes: float64(2), int64(5), object(5)\nmemory usage: 83.7+ KB\n\n\n\ndata.isnull().sum()\n\nPassengerId      0\nSurvived         0\nPclass           0\nName             0\nSex              0\nAge            177\nSibSp            0\nParch            0\nTicket           0\nFare             0\nCabin          687\nEmbarked         2\ndtype: int64\n\n\n\nsns.countplot(x='Survived', data=data)\n\n\n\n\n\n\n\n\n\nsns.countplot(x='Pclass', data=data)\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.\nIf we want to do the multivariate analysis, we can do like this.\n\nsns.countplot(data = data, x = 'Survived', hue='Pclass')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.\nOn the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.\n\nsns.countplot(data = data, x = 'Survived', hue='Sex')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.\n\nsns.displot(data=data, x='Age', kde = True)\n\n\n\n\n\n\n\n\nInsights:\nThere are some outliers in the age column. We can see that the graph is skewed to the right, which means that there are more younger passengers than older passengers. The majority of the passengers were between the ages of 20 and 40.\n\n\n\n Back to top"
   }
 ]
