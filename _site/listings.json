@@ -44,12 +44,10 @@
     ]
   },
   {
-    "listing": "/articles/Exploratory Data Analysis (EDA)/index.html",
+    "listing": "/articles/Feature Engineering/index.html",
     "items": [
-      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
+      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+      "/articles/Feature Engineering/Feature Scaling/index.html"
     ]
   },
   {
@@ -59,17 +57,19 @@
     ]
   },
   {
+    "listing": "/articles/Exploratory Data Analysis (EDA)/index.html",
+    "items": [
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
+    ]
+  },
+  {
     "listing": "/articles/web-dev/index.html",
     "items": [
       "/articles/web-dev/html tutorial/index.html",
       "/articles/web-dev/css tutorial/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/Feature Engineering/index.html",
-    "items": [
-      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
-      "/articles/Feature Engineering/Feature Scaling/index.html"
     ]
   }
 ]

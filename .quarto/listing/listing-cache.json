@@ -8,6 +8,10 @@
       "*/index.qmd",
       "*/index.ipynb"
     ],
+    "articles\\Feature Engineering\\index.qmd": [
+      "*/index.qmd",
+      "*/index.ipynb"
+    ],
     "articles\\index.qmd": [
       "*/*/index.qmd",
       "*/*/index.ipynb"
@@ -24,10 +28,6 @@
     "index.qmd": [
       "articles/*/*/index.qmd",
       "articles/*/*/index.ipynb"
-    ],
-    "articles\\Feature Engineering\\index.qmd": [
-      "*/index.qmd",
-      "*/index.ipynb"
     ]
   }
 }
