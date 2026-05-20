@@ -684,13 +684,13 @@ Imagine you are building a classification model to predict whether an email is s
 <p>If a question arises that how computer knows the rank by ordinal encoding? We can explain that with an example. Suppose the <code>Education</code> feature has two value: <code>MSc</code> and <code>BSc</code>. The rank of <code>MSc</code> is greater that the rank of <code>BSc</code>. We assign greater value to the <code>MSc</code>(suppose 2) and relatively smaller value to <code>BSc</code>(suppose 1). This is how the computer recognizes the rank.</p>
 <p>Now let’s see them in practical.<br>
 First, import libraries and load the dataset. You can download the dataset from <a href="customer.csv" download="">here</a>.</p>
-<div id="96919042" class="cell" data-execution_count="2">
+<div id="96919042" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"customer.csv"</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -759,10 +759,10 @@ First, import libraries and load the dataset. You can download the dataset from 
 <code>education</code> -&gt; Ordinal<br>
 <code>purchased</code> -&gt; Label Encoding (Because this is the target variable)<br>
 Actually we won’t use the <code>age</code>and <code>gender</code> columns for our learning. So, we will omit them.</p>
-<div id="83d701dc" class="cell" data-execution_count="3">
+<div id="83d701dc" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.iloc[:,<span class="dv">2</span>:]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.sample(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -777,33 +777,33 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">14</th>
+<th data-quarto-table-cell-role="th">34</th>
+<td>Average</td>
+<td>School</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>Poor</td>
+<td>UG</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19</th>
 <td>Poor</td>
 <td>PG</td>
 <td>Yes</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">20</th>
-<td>Average</td>
-<td>School</td>
+<th data-quarto-table-cell-role="th">47</th>
+<td>Good</td>
+<td>PG</td>
 <td>Yes</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">31</th>
-<td>Poor</td>
-<td>School</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
 <th data-quarto-table-cell-role="th">37</th>
 <td>Average</td>
 <td>PG</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">48</th>
-<td>Good</td>
-<td>UG</td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -812,31 +812,77 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 </div>
 </div>
 </div>
-<div id="fae6c2ea" class="cell" data-execution_count="4">
+<div id="fae6c2ea" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>(50, 3)</code></pre>
 </div>
 </div>
-<div id="881c2492" class="cell" data-execution_count="5">
+<div id="881c2492" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x_train, x_test, y_train, y_test <span class="op">=</span> train_test_split(df.drop(<span class="st">'purchased'</span>, axis<span class="op">=</span><span class="dv">1</span>), df[<span class="st">'purchased'</span>], test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>x_train.shape, x_test.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>((35, 2), (15, 2))</code></pre>
 </div>
 </div>
 <p>During fitting the data into ordinal encoding, we need to do some work manually. We need to specify the ranks manually from lower to higher. Otherwise, it will be randomly ranked.</p>
-<div id="c082988c" class="cell" data-execution_count="6">
+<div id="c082988c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>oe <span class="op">=</span> OrdinalEncoder(categories<span class="op">=</span>[[<span class="st">'Poor'</span>,<span class="st">'Average'</span>,<span class="st">'Good'</span>],[<span class="st">'School'</span>,<span class="st">'UG'</span>,<span class="st">'PG'</span>]])</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>oe.fit(x_train)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x_train <span class="op">=</span> pd.DataFrame(oe.transform(x_train), columns<span class="op">=</span>x_train.columns)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x_test <span class="op">=</span> pd.DataFrame(oe.transform(x_test), columns<span class="op">=</span>x_test.columns)</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>x_train.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">review</th>
+<th data-quarto-table-cell-role="th">education</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>0.0</td>
+<td>2.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>0.0</td>
+<td>2.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>2.0</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>1.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="36c5a326" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x_test.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
@@ -857,52 +903,6 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>0.0</td>
-<td>2.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>0.0</td>
-<td>2.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>2.0</td>
-<td>1.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>1.0</td>
-<td>1.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="36c5a326" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x_test.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
 <td>2.0</td>
 <td>1.0</td>
 </tr>
@@ -927,19 +927,19 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 </div>
 </div>
 </div>
-<div id="76b823c8" class="cell" data-execution_count="8">
+<div id="76b823c8" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>oe.categories_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>[array(['Poor', 'Average', 'Good'], dtype=object),
  array(['School', 'UG', 'PG'], dtype=object)]</code></pre>
 </div>
 </div>
 <p>Now we will use label encoder on our target column <code>purchased</code>.</p>
-<div id="203993cb" class="cell" data-execution_count="9">
+<div id="203993cb" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>le <span class="op">=</span> LabelEncoder()</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>le.fit(y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
@@ -1619,19 +1619,19 @@ function forceTheme(elementId) {
 forceTheme('sk-container-id-1');</script>
 </div>
 </div>
-<div id="e76e7ca0" class="cell" data-execution_count="10">
+<div id="e76e7ca0" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>le.classes_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>array(['No', 'Yes'], dtype=object)</code></pre>
 </div>
 </div>
-<div id="c5abb307" class="cell" data-execution_count="11">
+<div id="c5abb307" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> le.transform(y_train)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> le.transform(y_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="79c0625e" class="cell" data-execution_count="12">
+<div id="79c0625e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>y_train</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>array([1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1,
        1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0])</code></pre>
 </div>
@@ -1715,10 +1715,10 @@ For each row, the system places a <strong>1</strong> in the column that matches 
 <li><strong>Production Brittleness:</strong> It will crash or throw errors in a real-world environment if it encounters a brand-new category it did not see during training.</li>
 </ul>
 <p>Now let’s see them in practical.</p>
-<div id="77a8bbf2" class="cell" data-execution_count="13">
+<div id="77a8bbf2" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"customer.csv"</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -1781,21 +1781,21 @@ For each row, the system places a <strong>1</strong> in the column that matches 
 </div>
 </div>
 <p>We will use one-hot encoding on the <code>gender</code> column as it is a nominal feature. It we do so, we will find two columns because we have two unique values. Now the number of total columns is 5 and after applying one-hot encoding, there will be 7 columns.</p>
-<div id="760d2d24" class="cell" data-execution_count="14">
+<div id="760d2d24" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'gender'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>gender
 Female    29
 Male      21
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="386a5d4d" class="cell">
+<div id="386a5d4d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ohe <span class="op">=</span> OneHotEncoder(sparse_output<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> ohe.fit_transform(df[[<span class="st">'gender'</span>]])</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(new_data, columns<span class="op">=</span>[<span class="st">"Female"</span>, <span class="st">"Male"</span>]).head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -1841,9 +1841,9 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Look here we can see that it has created two columns for two unique values.</p>
 <p>We have one problem that is, we have to add these two columns to the main dataset and remove the <code>gender</code> column. This manual process is time consuming. We can use <code>get_dummies</code> function to automatically add them.</p>
-<div id="bfb27408" class="cell" data-execution_count="16">
+<div id="bfb27408" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'gender'</span>]).head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 

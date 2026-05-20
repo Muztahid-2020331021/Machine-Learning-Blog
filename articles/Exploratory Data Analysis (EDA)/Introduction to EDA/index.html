@@ -132,13 +132,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <meta property="og:description" content="An introductory article on Exploratory Data Analysis (EDA)">
 <meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index_files/figure-html/cell-11-output-1.png">
 <meta property="og:site_name" content="My Professional Blog">
-<meta property="og:image:height" content="432">
-<meta property="og:image:width" content="571">
+<meta property="og:image:height" content="858">
+<meta property="og:image:width" content="1186">
 <meta name="twitter:title" content="Introduction to EDA – My Professional Blog">
 <meta name="twitter:description" content="An introductory article on Exploratory Data Analysis (EDA)">
 <meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index_files/figure-html/cell-11-output-1.png">
-<meta name="twitter:image-height" content="432">
-<meta name="twitter:image-width" content="571">
+<meta name="twitter:image-height" content="858">
+<meta name="twitter:image-width" content="1186">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -605,13 +605,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <section id="univariate-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="univariate-analysis">Univariate Analysis</h2>
 <p>We will use titanic dataset as an example to perform univariate analysis.</p>
-<div id="c54cd00c" class="cell" data-execution_count="6">
+<div id="c54cd00c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'titanic'</span>)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -737,9 +737,9 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <ol type="1">
 <li>How Big is the Dataset?</li>
 </ol>
-<div id="692f8a4a" class="cell" data-execution_count="7">
+<div id="692f8a4a" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>(891, 15)</code></pre>
 </div>
 </div>
@@ -747,9 +747,9 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <li>How does the data look like?<br>
 For this, we can use the sample() method to get a random sample of the data.</li>
 </ol>
-<div id="a84ad3a3" class="cell" data-execution_count="8">
+<div id="a84ad3a3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.sample(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -776,88 +776,88 @@ For this, we can use the sample() method to get a random sample of the data.</li
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">58</th>
-<td>1</td>
-<td>2</td>
-<td>female</td>
-<td>5.0</td>
-<td>1</td>
-<td>2</td>
-<td>27.7500</td>
-<td>S</td>
-<td>Second</td>
-<td>child</td>
-<td>False</td>
-<td>NaN</td>
-<td>Southampton</td>
-<td>yes</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">844</th>
-<td>0</td>
-<td>3</td>
-<td>male</td>
-<td>17.0</td>
-<td>0</td>
-<td>0</td>
-<td>8.6625</td>
-<td>S</td>
-<td>Third</td>
-<td>man</td>
-<td>True</td>
-<td>NaN</td>
-<td>Southampton</td>
-<td>no</td>
-<td>True</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">8</th>
-<td>1</td>
-<td>3</td>
-<td>female</td>
-<td>27.0</td>
-<td>0</td>
-<td>2</td>
-<td>11.1333</td>
-<td>S</td>
-<td>Third</td>
-<td>woman</td>
-<td>False</td>
-<td>NaN</td>
-<td>Southampton</td>
-<td>yes</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">450</th>
+<th data-quarto-table-cell-role="th">723</th>
 <td>0</td>
 <td>2</td>
 <td>male</td>
-<td>36.0</td>
-<td>1</td>
-<td>2</td>
-<td>27.7500</td>
-<td>S</td>
-<td>Second</td>
-<td>man</td>
-<td>True</td>
-<td>NaN</td>
-<td>Southampton</td>
-<td>no</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">228</th>
-<td>0</td>
-<td>2</td>
-<td>male</td>
-<td>18.0</td>
+<td>50.0</td>
 <td>0</td>
 <td>0</td>
 <td>13.0000</td>
 <td>S</td>
 <td>Second</td>
+<td>man</td>
+<td>True</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>no</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">876</th>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>20.0</td>
+<td>0</td>
+<td>0</td>
+<td>9.8458</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>no</td>
+<td>True</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">514</th>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>24.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.4958</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>no</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">496</th>
+<td>1</td>
+<td>1</td>
+<td>female</td>
+<td>54.0</td>
+<td>1</td>
+<td>0</td>
+<td>78.2667</td>
+<td>C</td>
+<td>First</td>
+<td>woman</td>
+<td>False</td>
+<td>D</td>
+<td>Cherbourg</td>
+<td>yes</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">129</th>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>45.0</td>
+<td>0</td>
+<td>0</td>
+<td>6.9750</td>
+<td>S</td>
+<td>Third</td>
 <td>man</td>
 <td>True</td>
 <td>NaN</td>
@@ -874,7 +874,7 @@ For this, we can use the sample() method to get a random sample of the data.</li
 <ol start="3" type="1">
 <li>What are the data types of the columns?</li>
 </ol>
-<div id="11a55b41" class="cell" data-execution_count="9">
+<div id="11a55b41" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -904,9 +904,9 @@ memory usage: 80.7+ KB</code></pre>
 <ol start="4" type="1">
 <li>Are there any missing values?</li>
 </ol>
-<div id="dd0ffb62" class="cell" data-execution_count="10">
+<div id="dd0ffb62" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>survived         0
 pclass           0
 sex              0
@@ -928,9 +928,9 @@ dtype: int64</code></pre>
 <ol start="5" type="1">
 <li>How does the data look mathematically?</li>
 </ol>
-<div id="db885295" class="cell" data-execution_count="11">
+<div id="db885295" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -1028,18 +1028,18 @@ dtype: int64</code></pre>
 <ol start="6" type="1">
 <li>Are there duplicate values?</li>
 </ol>
-<div id="d0c27bdd" class="cell" data-execution_count="12">
+<div id="d0c27bdd" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.duplicated().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>np.int64(107)</code></pre>
 </div>
 </div>
 <ol start="7" type="1">
 <li>How is the correlation between cols?</li>
 </ol>
-<div id="9bfe009b" class="cell" data-execution_count="13">
+<div id="9bfe009b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df.corr(numeric_only<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -1153,9 +1153,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>If we want to see the correlation of a specific column with other columns, we can do it like this:</p>
-<div id="b881f38b" class="cell" data-execution_count="15">
+<div id="b881f38b" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df.corr(numeric_only<span class="op">=</span><span class="va">True</span>)[<span class="st">'survived'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>survived      1.000000
 pclass       -0.338481
 age          -0.077221
@@ -1173,22 +1173,22 @@ Name: survived, dtype: float64</code></pre>
 <li><strong>Countplot</strong><br>
 We can use countplot to visualize the distribution of categorical data.</li>
 </ol>
-<div id="20706d0b" class="cell" data-execution_count="17">
+<div id="20706d0b" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(df, x<span class="op">=</span><span class="st">"survived"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="502eb305" class="cell" data-execution_count="19">
+<div id="502eb305" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(df, x<span class="op">=</span><span class="st">"embarked"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-12-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1197,7 +1197,7 @@ We can use countplot to visualize the distribution of categorical data.</li>
 <li><strong>Pie Chart</strong><br>
 We can also use pie charts to visualize the distribution of categorical data.</li>
 </ol>
-<div id="b28232b1" class="cell" data-execution_count="21">
+<div id="b28232b1" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"survived"</span>].value_counts().plot(kind<span class="op">=</span><span class="st">"pie"</span>, autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>, labels<span class="op">=</span>[<span class="st">""</span>, <span class="st">""</span>])</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.legend(</span>
@@ -1212,12 +1212,12 @@ We can also use pie charts to visualize the distribution of categorical data.</l
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-13-output-1.png" width="571" height="389" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="f8992abc" class="cell" data-execution_count="22">
+<div id="f8992abc" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"embarked"</span>].value_counts().plot(kind<span class="op">=</span><span class="st">"pie"</span>, autopct<span class="op">=</span><span class="st">"</span><span class="sc">%.2f%%</span><span class="st">"</span>, labels<span class="op">=</span>[<span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>])</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>plt.legend(</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"Port of Embarkation"</span>,</span>
@@ -1230,7 +1230,7 @@ We can also use pie charts to visualize the distribution of categorical data.</l
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-14-output-1.png" width="557" height="389" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1242,9 +1242,9 @@ We can also use pie charts to visualize the distribution of categorical data.</l
 <li><strong>Histogram</strong><br>
 We use histograms to visualize the distribution of numerical data.</li>
 </ol>
-<div id="fd7e2dac" class="cell" data-execution_count="24">
+<div id="fd7e2dac" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>plt.hist(df[<span class="st">'age'</span>],bins<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(array([100., 346., 188.,  69.,  11.]),
  array([ 0.42 , 16.336, 32.252, 48.168, 64.084, 80.   ]),
  &lt;BarContainer object of 5 artists&gt;)</code></pre>
@@ -1252,7 +1252,7 @@ We use histograms to visualize the distribution of numerical data.</li>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-15-output-2.png" width="575" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1261,12 +1261,12 @@ We use histograms to visualize the distribution of numerical data.</li>
 <li><strong>Distribution Plot</strong><br>
 We can also use distribution plots to visualize the distribution of numerical data.</li>
 </ol>
-<div id="dc81df9f" class="cell" data-execution_count="25">
+<div id="dc81df9f" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"age"</span>, kde <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-16-output-1.png" width="470" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1275,38 +1275,38 @@ We can also use distribution plots to visualize the distribution of numerical da
 <li><strong>Box Plot</strong><br>
 We use box plots to visualize the distribution of numerical data and identify outliers.</li>
 </ol>
-<div id="635cd4cb" class="cell" data-execution_count="26">
+<div id="635cd4cb" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">"age"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-17-output-1.png" width="545" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Here are some functions that are also necessary for Univariate EDA:</p>
-<div id="9f3785d4" class="cell" data-execution_count="27">
+<div id="9f3785d4" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>].<span class="bu">min</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="27">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>np.float64(0.42)</code></pre>
 </div>
 </div>
-<div id="70c9d3c3" class="cell" data-execution_count="28">
+<div id="70c9d3c3" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>].<span class="bu">max</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>np.float64(80.0)</code></pre>
 </div>
 </div>
-<div id="bd2d1e68" class="cell" data-execution_count="29">
+<div id="bd2d1e68" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>np.float64(29.69911764705882)</code></pre>
 </div>
 </div>
-<div id="81985f17" class="cell" data-execution_count="30">
+<div id="81985f17" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age'</span>].skew()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>np.float64(0.38910778230082704)</code></pre>
 </div>
 </div>
