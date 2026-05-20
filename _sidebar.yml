@@ -47,3 +47,5 @@ website:
           href: articles/Feature%20Engineering/Introduction%20to%20Feature%20Engineering/index.html
         - text: Feature Scaling
           href: articles/Feature%20Engineering/Feature%20Scaling/index.html
+        - text: Handling Categorical Feature
+          href: articles/Feature%20Engineering/Handling%20Categorical%20Feature/index.html

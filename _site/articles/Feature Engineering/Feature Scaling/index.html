@@ -549,6 +549,12 @@ window.Quarto = {
  <span class="menu-text">Feature Scaling</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Categorical Feature</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -1220,7 +1226,7 @@ window.Quarto = {
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-16-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1247,7 +1253,7 @@ The answer is no because scaling only change the spread of the dataset. It merel
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-17-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1268,7 +1274,7 @@ The answer is no because scaling only change the spread of the dataset. It merel
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-18-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1288,7 +1294,7 @@ The answer is no because scaling only change the spread of the dataset. It merel
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-19-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1365,7 +1371,7 @@ Scaled 0.875</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-22-output-1.png" width="600" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1398,7 +1404,7 @@ Scaled 0.875</code></pre>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-25-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1528,7 +1534,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-27-output-1.png" width="597" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1538,7 +1544,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-28-output-1.png" width="589" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1551,7 +1557,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-29-output-1.png" width="588" height="431" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1578,10 +1584,10 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>x_train_scaled <span class="op">=</span> scaler.transform(x_train)</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>x_test_scaled <span class="op">=</span> scaler.transform(x_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="56d1f065" class="cell" data-execution_count="35">
+<div id="56d1f065" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x_train_scaled <span class="op">=</span> pd.DataFrame(x_train_scaled, columns<span class="op">=</span>x_train.columns)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>x_train_scaled.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
@@ -1625,10 +1631,10 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 </div>
 </div>
 </div>
-<div id="221b5bce" class="cell" data-execution_count="34">
+<div id="221b5bce" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>x_test_scaled <span class="op">=</span> pd.DataFrame(x_test_scaled, columns<span class="op">=</span>x_train.columns)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>x_test_scaled.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <div>
 
 
@@ -1673,9 +1679,9 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 </div>
 </div>
 <p>Look at the values of the <code>x_train_scaled</code> and <code>x_test_scaled</code> dataset. The values are between 0 and 1.</p>
-<div id="0e8db0df" class="cell" data-execution_count="36">
+<div id="0e8db0df" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(x_train.describe(), <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 
 
@@ -1734,9 +1740,9 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 </div>
 </div>
 </div>
-<div id="c78d6c98" class="cell" data-execution_count="37">
+<div id="c78d6c98" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(x_train_scaled.describe(), <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <div>
 
 
@@ -1797,7 +1803,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 </div>
 <p>We can see the difference between the <code>mean</code> values of before and after scaling.</p>
 <p>Now we will see the visualization of the differences of before and after scaling.</p>
-<div id="063cbb45" class="cell" data-execution_count="41">
+<div id="063cbb45" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">5</span>))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">'Before Scaling'</span>)</span>
@@ -1811,7 +1817,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-36-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-36-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1821,7 +1827,7 @@ You can download the dataset from <a href="wine_data.csv" download="">here</a>.<
 <h3 class="anchored" data-anchor-id="effect-of-scaling-on-the-kde-plots-of-the-dataset">Effect of scaling on the KDE plots of the dataset</h3>
 <p>Now we will see them on KDE plot.<br>
 At first for the <code>Alcohol</code> column.</p>
-<div id="572b6145" class="cell" data-execution_count="43">
+<div id="572b6145" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">5</span>))</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">'Before Min-Max Scaling'</span>)</span>
@@ -1835,13 +1841,13 @@ At first for the <code>Alcohol</code> column.</p>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-37-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-37-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Same for the feature <code>Malic Acid</code></p>
-<div id="82ad88ef" class="cell" data-execution_count="44">
+<div id="82ad88ef" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">5</span>))</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_title(<span class="st">'Before Min-Max Scaling'</span>)</span>
@@ -1855,7 +1861,7 @@ At first for the <code>Alcohol</code> column.</p>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-38-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-38-output-1.png" width="1142" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>

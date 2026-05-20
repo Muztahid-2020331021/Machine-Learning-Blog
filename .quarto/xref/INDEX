@@ -58,5 +58,8 @@
   },
   "articles/Feature Engineering/Introduction to Feature Engineering/index.ipynb": {
     "index.html": "14cb9343"
+  },
+  "articles/Feature Engineering/Handling Categorical Feature/index.ipynb": {
+    "index.html": "4c0e7f68"
   }
 }

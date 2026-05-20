@@ -132,13 +132,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <meta property="og:description" content="A simple EDA project on the Titanic dataset using Python and its libraries.">
 <meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index_files/figure-html/cell-7-output-1.png">
 <meta property="og:site_name" content="My Professional Blog">
-<meta property="og:image:height" content="432">
-<meta property="og:image:width" content="571">
+<meta property="og:image:height" content="858">
+<meta property="og:image:width" content="1186">
 <meta name="twitter:title" content="EDA on Titanic Dataset (Project) – My Professional Blog">
 <meta name="twitter:description" content="A simple EDA project on the Titanic dataset using Python and its libraries.">
 <meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index_files/figure-html/cell-7-output-1.png">
-<meta name="twitter:image-height" content="432">
-<meta name="twitter:image-width" content="571">
+<meta name="twitter:image-height" content="858">
+<meta name="twitter:image-width" content="1186">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -520,6 +520,12 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
  <span class="menu-text">Feature Scaling</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Handling Categorical Feature</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -573,14 +579,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 
 <p>At first we need to import the necessary libraries</p>
-<div id="7f5b5ed2" class="cell">
+<div id="7f5b5ed2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now we will load the dataset. You can download the dataset from <a href="train.csv" download="">here</a>.</p>
-<div id="04605397" class="cell">
+<div id="04605397" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'train.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -687,13 +693,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div id="8960b65b" class="cell">
+<div id="8960b65b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>(891, 12)</code></pre>
 </div>
 </div>
-<div id="a5aff656" class="cell">
+<div id="a5aff656" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -717,7 +723,7 @@ dtypes: float64(2), int64(5), object(5)
 memory usage: 83.7+ KB</code></pre>
 </div>
 </div>
-<div id="7d8bcc42" class="cell">
+<div id="7d8bcc42" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>PassengerId      0
@@ -735,22 +741,22 @@ Embarked         2
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="765e8c04" class="cell">
+<div id="765e8c04" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'Survived'</span>, data<span class="op">=</span>data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-7-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="84fd27c4" class="cell">
+<div id="84fd27c4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'Pclass'</span>, data<span class="op">=</span>data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -758,12 +764,12 @@ dtype: int64</code></pre>
 <p><strong>Insights:</strong><br>
 If we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.</p>
 <p>If we want to do the multivariate analysis, we can do like this.</p>
-<div id="43d8a3d6" class="cell">
+<div id="43d8a3d6" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> data, x <span class="op">=</span> <span class="st">'Survived'</span>, hue<span class="op">=</span><span class="st">'Pclass'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-9-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -771,24 +777,24 @@ If we look at the above graph, we can see that most of the passengers who were f
 <p><strong>Insights:</strong><br>
 If we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.<br>
 On the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.</p>
-<div id="cd9e28d7" class="cell">
+<div id="cd9e28d7" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> data, x <span class="op">=</span> <span class="st">'Survived'</span>, hue<span class="op">=</span><span class="st">'Sex'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-10-output-1.png" width="593" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p><strong>Insights:</strong><br>
 If we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.</p>
-<div id="cf2c68bf" class="cell">
+<div id="cf2c68bf" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>data, x<span class="op">=</span><span class="st">'Age'</span>, kde <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/cell-11-output-1.png" width="470" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
