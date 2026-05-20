@@ -24,6 +24,10 @@
     "index.qmd": [
       "articles/*/*/index.qmd",
       "articles/*/*/index.ipynb"
+    ],
+    "articles\\Feature Engineering\\index.qmd": [
+      "*/index.qmd",
+      "*/index.ipynb"
     ]
   }
 }

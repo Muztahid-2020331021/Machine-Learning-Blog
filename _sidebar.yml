@@ -40,3 +40,10 @@ website:
           href: articles/Exploratory%20Data%20Analysis%20%28EDA%29/EDA%20on%20Titanic%20Dataset%20%28Project%29/index.html
         - text: EDA on Visa Dataset (Project)
           href: articles/Exploratory%20Data%20Analysis%20%28EDA%29/EDA%20on%20Visa%20Dataset%20%28Project%29/index.html
+      - section: Feature Engineering
+        href: articles/Feature%20Engineering/index.html
+        contents:
+        - text: Introduction to Feature Engineering
+          href: articles/Feature%20Engineering/Introduction%20to%20Feature%20Engineering/index.html
+        - text: Feature Scaling
+          href: articles/Feature%20Engineering/Feature%20Scaling/index.html

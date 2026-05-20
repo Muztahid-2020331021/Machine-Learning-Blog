@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/Feature Engineering/Feature Scaling/index.html",
+      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
@@ -36,7 +38,9 @@
       "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
+      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html",
+      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+      "/articles/Feature Engineering/Feature Scaling/index.html"
     ]
   },
   {
@@ -59,6 +63,13 @@
     "items": [
       "/articles/web-dev/html tutorial/index.html",
       "/articles/web-dev/css tutorial/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Feature Engineering/index.html",
+    "items": [
+      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+      "/articles/Feature Engineering/Feature Scaling/index.html"
     ]
   }
 ]

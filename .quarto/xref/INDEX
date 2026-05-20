@@ -49,5 +49,14 @@
   },
   "articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.ipynb": {
     "index.html": "76f2b5c6"
+  },
+  "articles/Feature Engineering/Feature Scaling/index.ipynb": {
+    "index.html": "0f157601"
+  },
+  "articles/Feature Engineering/index.qmd": {
+    "index.html": "239eb527"
+  },
+  "articles/Feature Engineering/Introduction to Feature Engineering/index.ipynb": {
+    "index.html": "14cb9343"
   }
 }
