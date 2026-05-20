@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2024-02-28">
-<meta name="description" content="Writing sharpens thinking. Here is why developers should blog more.">
+<meta name="author" content="Md Muztahid Hassan">
+<meta name="dcterms.date" content="2026-05-19">
+<meta name="description" content="An introductory article on Feature Engineering">
 
-<title>Why Every Developer Should Write – My Professional Blog</title>
+<title>Introduction to Feature Engineering – My Professional Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,6 +25,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -90,13 +125,17 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Why Every Developer Should Write – My Professional Blog">
-<meta property="og:description" content="Writing sharpens thinking. Here is why developers should blog more.">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/career-writing/2024-02-28-post-3/thumbnail.png">
+<meta property="og:title" content="Introduction to Feature Engineering – My Professional Blog">
+<meta property="og:description" content="An introductory article on Feature Engineering">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
 <meta property="og:site_name" content="My Professional Blog">
-<meta name="twitter:title" content="Why Every Developer Should Write – My Professional Blog">
-<meta name="twitter:description" content="Writing sharpens thinking. Here is why developers should blog more.">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/career-writing/2024-02-28-post-3/thumbnail.png">
+<meta property="og:image:height" content="492">
+<meta property="og:image:width" content="868">
+<meta name="twitter:title" content="Introduction to Feature Engineering – My Professional Blog">
+<meta name="twitter:description" content="An introductory article on Feature Engineering">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
+<meta name="twitter:image-height" content="492">
+<meta name="twitter:image-width" content="868">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -324,7 +363,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/index.html">Career &amp; Writing</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/2024-02-28-post-3/index.html">Why Every Developer Should Write</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Feature Engineering</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -369,14 +408,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../../articles/career-writing/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Career &amp; Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Why Every Developer Should Write</span></a>
   </div>
 </li>
@@ -492,10 +531,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#writing-is-thinking-made-visible" id="toc-writing-is-thinking-made-visible" class="nav-link active" data-scroll-target="#writing-is-thinking-made-visible">Writing Is Thinking Made Visible</a></li>
-  <li><a href="#five-reasons-developers-should-blog" id="toc-five-reasons-developers-should-blog" class="nav-link" data-scroll-target="#five-reasons-developers-should-blog">Five Reasons Developers Should Blog</a></li>
-  <li><a href="#common-objections-and-why-they-dont-hold" id="toc-common-objections-and-why-they-dont-hold" class="nav-link" data-scroll-target="#common-objections-and-why-they-dont-hold">Common Objections (and Why They Don’t Hold)</a></li>
-  <li><a href="#how-to-start" id="toc-how-to-start" class="nav-link" data-scroll-target="#how-to-start">How to Start</a></li>
+  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link active" data-scroll-target="#feature-engineering">Feature Engineering</a>
+  <ul class="collapse">
+  <li><a href="#feature-transformation" id="toc-feature-transformation" class="nav-link" data-scroll-target="#feature-transformation">Feature Transformation</a></li>
+  <li><a href="#feature-construction" id="toc-feature-construction" class="nav-link" data-scroll-target="#feature-construction">Feature Construction</a></li>
+  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
+  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature Extraction</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -503,14 +545,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/index.html">Career &amp; Writing</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/2024-02-28-post-3/index.html">Why Every Developer Should Write</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Why Every Developer Should Write</h1>
+<h1 class="title">Introduction to Feature Engineering</h1>
 </div>
 
 <div>
   <div class="description">
-    Writing sharpens thinking. Here is why developers should blog more.
+    An introductory article on Feature Engineering
   </div>
 </div>
 
@@ -520,14 +562,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Md Muztahid Hassan </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2024</p>
+      <p class="date">May 19, 2026</p>
     </div>
   </div>
   
@@ -539,70 +581,98 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<p>Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,<br>
-spotting edge cases, and reasoning about trade-offs. Yet the same people often tell me they<br>
-“can’t write.” I think they’ve confused <em>polish</em> with <em>clarity</em>, and that’s a fixable mistake.</p>
-<hr>
-<section id="writing-is-thinking-made-visible" class="level2">
-<h2 class="anchored" data-anchor-id="writing-is-thinking-made-visible">Writing Is Thinking Made Visible</h2>
-<p>When you write, you’re not transcribing thoughts that are already finished. You’re <em>discovering</em><br>
-what you actually think. The discipline of forming a sentence forces you to choose between<br>
-ideas, discard the weak ones, and commit to the strong ones.</p>
+<section id="feature-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
+<p>Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.</p>
+<p>At first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.</p>
+<p>The features are also known as columns or independent variables.</p>
+<p>There is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.</p>
+<p>So, the steps are: <code>Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training</code></p>
+<p>Let’s try to understand what are in the feature engineering.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Feature Engineering</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── Feature Transformation</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── Missing Value Handling</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   ├── Handling Categorical Feature</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── Outlier Detection</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── Feature Scaling</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── Feature Construction</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>├── Feature Selection</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>└── Feature Extraction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Here is a high-level overview of the feature engineering process.</p>
+<section id="feature-transformation" class="level3">
+<h3 class="anchored" data-anchor-id="feature-transformation">Feature Transformation</h3>
+<ol type="1">
+<li><p><strong>Missing Value Handling</strong>:</p>
+<p>Here is an image for example.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="thumbnail.png" class="img-fluid figure-img" style="width:80.0%" alt="Developer writing at a desk"></p>
-<figcaption>A developer writing at a desk</figcaption>
+<p><img src="images/im1.png" class="img-fluid figure-img"></p>
+<figcaption>Missing Value Handling.png</figcaption>
 </figure>
 </div>
-<blockquote class="blockquote">
-<p>“I write to find out what I think.”</p>
-<p>— Joan Didion</p>
-</blockquote>
-<hr>
-</section>
-<section id="five-reasons-developers-should-blog" class="level2">
-<h2 class="anchored" data-anchor-id="five-reasons-developers-should-blog">Five Reasons Developers Should Blog</h2>
-<ol type="1">
-<li><strong>Teaching solidifies understanding.</strong> The “Feynman technique”—explain a concept simply until<br>
-you can’t—exposes every gap in your knowledge faster than any test.</li>
-<li><strong>Your future self will thank you.</strong> A post explaining how you solved a tricky CORS issue is a<br>
-personal reference you’ll return to, and it’ll save someone else three hours of debugging.</li>
-<li><strong>Writing compounds.</strong> Thirty posts means thirty permanent search-indexed artifacts of your<br>
-expertise. That’s a form of leverage most developers ignore entirely.</li>
-<li><strong>It builds professional credibility.</strong> Recruiters, hiring managers, and peers read blogs.<br>
-A thoughtful post demonstrates judgment in a way a résumé cannot.</li>
-<li><strong>It builds the habit of finishing things.</strong> A blog post has a clear done state. That’s<br>
-rarer and more valuable than it sounds.</li>
+<p>In the image, we can see that some cells values are <code>NaN</code> which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.</p></li>
+<li><p><strong>Handling Categorical Feature</strong>:</p>
+<p>Here is an image for example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im2.png" class="img-fluid figure-img"></p>
+<figcaption>Handling Categorical Feature.png</figcaption>
+</figure>
+</div>
+<p>We can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.</p></li>
+<li><p><strong>Outlier Detection</strong>:</p>
+<p>Here is an image for example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im3.png" class="img-fluid figure-img"></p>
+<figcaption>Outlier Detection.png</figcaption>
+</figure>
+</div>
+<p>In the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.</p></li>
+<li><p><strong>Feature Scaling</strong>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im4.png" class="img-fluid figure-img"></p>
+<figcaption>Feature Scaling.png</figcaption>
+</figure>
+</div>
+<p>If we look at this data, we can see that the value range of the <code>Age</code> column is very lower than the value range of the <code>Salary</code> column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the <code>Salary</code> column than the <code>Age</code> column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.</p></li>
 </ol>
-<hr>
 </section>
-<section id="common-objections-and-why-they-dont-hold" class="level2">
-<h2 class="anchored" data-anchor-id="common-objections-and-why-they-dont-hold">Common Objections (and Why They Don’t Hold)</h2>
-<p><strong>“I don’t have anything original to say.”</strong> You don’t need to be first. You need to be <em>useful</em>.<br>
-A beginner’s explanation of a hard topic is often more helpful than the expert’s, because you<br>
-remember what confused you.</p>
-<p><strong>“No one will read it.”</strong> Write for one person: your past self, six months ago. If it would<br>
-have helped you then, publish it.</p>
-<p><strong>“I don’t have time.”</strong> A 400-word post once a month is better than nothing. Write rough. Edit<br>
-once. Ship.</p>
-<hr>
+<section id="feature-construction" class="level3">
+<h3 class="anchored" data-anchor-id="feature-construction">Feature Construction</h3>
+<p>We can create new features from the existing features by feature construction.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im5.png" class="img-fluid figure-img"></p>
+<figcaption>Feature Construction.png</figcaption>
+</figure>
+</div>
+<p>Look at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.</p>
 </section>
-<section id="how-to-start" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-start">How to Start</h2>
-<p>The tooling friction is lower than ever:</p>
-<ul>
-<li><a href="https://quarto.org">Quarto</a> — code-friendly, renders to HTML, PDF, or slides from one source</li>
-<li><a href="https://ghost.org">Ghost</a> — beautifully minimal hosted blogging</li>
-<li><a href="https://obsidian.md/publish">Obsidian Publish</a> — if you already live in Obsidian</li>
-</ul>
-<p>Pick whichever puts the least distance between you and the publish button. The best tool is the<br>
-one you’ll actually use.</p>
-<blockquote class="blockquote">
-<p>“Amateurs sit and wait for inspiration. The rest of us just show up and get to work.”</p>
-<p>— Stephen King, <em>On Writing</em></p>
-</blockquote>
+<section id="feature-selection" class="level3">
+<h3 class="anchored" data-anchor-id="feature-selection">Feature Selection</h3>
+<p>We will use MNIST handwritten digit dataset for this example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im6.png" class="img-fluid figure-img"></p>
+<figcaption>Feature Selection1.png</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im7.png" class="img-fluid figure-img"></p>
+<figcaption>Feature Selection2.png</figcaption>
+</figure>
+</div>
+<p>In the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.</p>
+</section>
+<section id="feature-extraction" class="level3">
+<h3 class="anchored" data-anchor-id="feature-extraction">Feature Extraction</h3>
+<p>Suppose we have two independent features <code>Number of Rooms</code> and <code>Number of Bedrooms</code> and we have a target variable <code>Price</code>. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature <code>Area</code>. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature.</p>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->

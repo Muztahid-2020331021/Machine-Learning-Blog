@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2024-02-28">
-<meta name="description" content="Writing sharpens thinking. Here is why developers should blog more.">
+<meta name="dcterms.date" content="2026-05-19">
+<meta name="description" content="A comprehensive guide to transforming raw data into powerful, model-ready features that drive better machine learning predictions.">
 
-<title>Why Every Developer Should Write – My Professional Blog</title>
+<title>Feature Engineering – My Professional Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -29,28 +28,30 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../assets/images/favicon.ico" rel="icon">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,6 +79,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HRWVF9ZMF1"></script>
 
 <script type="text/javascript">
@@ -89,15 +119,42 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Why Every Developer Should Write – My Professional Blog">
-<meta property="og:description" content="Writing sharpens thinking. Here is why developers should blog more.">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/career-writing/2024-02-28-post-3/thumbnail.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Feature Engineering – My Professional Blog">
+<meta property="og:description" content="A comprehensive guide to transforming raw data into powerful, model-ready features that drive better machine learning predictions.">
 <meta property="og:site_name" content="My Professional Blog">
-<meta name="twitter:title" content="Why Every Developer Should Write – My Professional Blog">
-<meta name="twitter:description" content="Writing sharpens thinking. Here is why developers should blog more.">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/career-writing/2024-02-28-post-3/thumbnail.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Feature Engineering – My Professional Blog">
+<meta name="twitter:description" content="A comprehensive guide to transforming raw data into powerful, model-ready features that drive better machine learning predictions.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -269,11 +326,11 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo light-content">
-    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">My Professional Blog</span>
     </a>
   </div>
@@ -284,15 +341,15 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../articles/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../articles/index.html" aria-current="page"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -324,7 +381,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/index.html">Career &amp; Writing</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/2024-02-28-post-3/index.html">Why Every Developer Should Write</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Feature Engineering</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -341,7 +398,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Articles</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -350,7 +407,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/python-ds/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/python-ds/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python &amp; Data Science</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -359,7 +416,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started with Python Data Analysis</span></a>
   </div>
 </li>
@@ -367,16 +424,16 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/career-writing/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/career-writing/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Career &amp; Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Why Every Developer Should Write</span></a>
   </div>
 </li>
@@ -384,7 +441,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/machine-learning/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/machine-learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -393,7 +450,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Machine Learning</span></a>
   </div>
 </li>
@@ -401,7 +458,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/web-dev/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/web-dev/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Web Dev</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -410,13 +467,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/web-dev/html tutorial/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/web-dev/html tutorial/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started with HTML</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/web-dev/css tutorial/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/web-dev/css tutorial/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started with CSS</span></a>
   </div>
 </li>
@@ -424,7 +481,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -433,25 +490,25 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bivariate and Multivariate Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Titanic Dataset (Project)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Visa Dataset (Project)</span></a>
   </div>
 </li>
@@ -459,7 +516,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Engineering</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -468,13 +525,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Scaling</span></a>
   </div>
 </li>
@@ -487,47 +544,32 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#writing-is-thinking-made-visible" id="toc-writing-is-thinking-made-visible" class="nav-link active" data-scroll-target="#writing-is-thinking-made-visible">Writing Is Thinking Made Visible</a></li>
-  <li><a href="#five-reasons-developers-should-blog" id="toc-five-reasons-developers-should-blog" class="nav-link" data-scroll-target="#five-reasons-developers-should-blog">Five Reasons Developers Should Blog</a></li>
-  <li><a href="#common-objections-and-why-they-dont-hold" id="toc-common-objections-and-why-they-dont-hold" class="nav-link" data-scroll-target="#common-objections-and-why-they-dont-hold">Common Objections (and Why They Don’t Hold)</a></li>
-  <li><a href="#how-to-start" id="toc-how-to-start" class="nav-link" data-scroll-target="#how-to-start">How to Start</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/index.html">Career &amp; Writing</a></li><li class="breadcrumb-item"><a href="../../../articles/career-writing/2024-02-28-post-3/index.html">Why Every Developer Should Write</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Why Every Developer Should Write</h1>
+<h1 class="title">Feature Engineering</h1>
 </div>
 
 <div>
   <div class="description">
-    Writing sharpens thinking. Here is why developers should blog more.
+    A comprehensive guide to transforming raw data into powerful, model-ready features that drive better machine learning predictions.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 28, 2024</p>
+      <p class="date">May 19, 2026</p>
     </div>
   </div>
   
@@ -539,73 +581,50 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<p>Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,<br>
-spotting edge cases, and reasoning about trade-offs. Yet the same people often tell me they<br>
-“can’t write.” I think they’ve confused <em>polish</em> with <em>clarity</em>, and that’s a fixable mistake.</p>
-<hr>
-<section id="writing-is-thinking-made-visible" class="level2">
-<h2 class="anchored" data-anchor-id="writing-is-thinking-made-visible">Writing Is Thinking Made Visible</h2>
-<p>When you write, you’re not transcribing thoughts that are already finished. You’re <em>discovering</em><br>
-what you actually think. The discipline of forming a sentence forces you to choose between<br>
-ideas, discard the weak ones, and commit to the strong ones.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="thumbnail.png" class="img-fluid figure-img" style="width:80.0%" alt="Developer writing at a desk"></p>
-<figcaption>A developer writing at a desk</figcaption>
-</figure>
+<p>Welcome to the <strong>Feature Engineering</strong> section. Here, we delve into the techniques and tools that help us transform raw data into meaningful variables to enhance the predictive power of our machine learning models.</p>
+
+
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1779211380000" data-listing-file-modified-sort="1779271526364" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="818" data-listing-title-sort="Introduction to Feature Engineering">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="no-external">Introduction to Feature Engineering</a>
+</h3>
+<div class="delink listing-description"><a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="no-external">
+<p>An introductory article on Feature Engineering</p>
+</a></div>
 </div>
-<blockquote class="blockquote">
-<p>“I write to find out what I think.”</p>
-<p>— Joan Didion</p>
-</blockquote>
-<hr>
-</section>
-<section id="five-reasons-developers-should-blog" class="level2">
-<h2 class="anchored" data-anchor-id="five-reasons-developers-should-blog">Five Reasons Developers Should Blog</h2>
-<ol type="1">
-<li><strong>Teaching solidifies understanding.</strong> The “Feynman technique”—explain a concept simply until<br>
-you can’t—exposes every gap in your knowledge faster than any test.</li>
-<li><strong>Your future self will thank you.</strong> A post explaining how you solved a tricky CORS issue is a<br>
-personal reference you’ll return to, and it’ll save someone else three hours of debugging.</li>
-<li><strong>Writing compounds.</strong> Thirty posts means thirty permanent search-indexed artifacts of your<br>
-expertise. That’s a form of leverage most developers ignore entirely.</li>
-<li><strong>It builds professional credibility.</strong> Recruiters, hiring managers, and peers read blogs.<br>
-A thoughtful post demonstrates judgment in a way a résumé cannot.</li>
-<li><strong>It builds the habit of finishing things.</strong> A blog post has a clear done state. That’s<br>
-rarer and more valuable than it sounds.</li>
-</ol>
-<hr>
-</section>
-<section id="common-objections-and-why-they-dont-hold" class="level2">
-<h2 class="anchored" data-anchor-id="common-objections-and-why-they-dont-hold">Common Objections (and Why They Don’t Hold)</h2>
-<p><strong>“I don’t have anything original to say.”</strong> You don’t need to be first. You need to be <em>useful</em>.<br>
-A beginner’s explanation of a hard topic is often more helpful than the expert’s, because you<br>
-remember what confused you.</p>
-<p><strong>“No one will read it.”</strong> Write for one person: your past self, six months ago. If it would<br>
-have helped you then, publish it.</p>
-<p><strong>“I don’t have time.”</strong> A 400-word post once a month is better than nothing. Write rough. Edit<br>
-once. Ship.</p>
-<hr>
-</section>
-<section id="how-to-start" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-start">How to Start</h2>
-<p>The tooling friction is lower than ever:</p>
-<ul>
-<li><a href="https://quarto.org">Quarto</a> — code-friendly, renders to HTML, PDF, or slides from one source</li>
-<li><a href="https://ghost.org">Ghost</a> — beautifully minimal hosted blogging</li>
-<li><a href="https://obsidian.md/publish">Obsidian Publish</a> — if you already live in Obsidian</li>
-</ul>
-<p>Pick whichever puts the least distance between you and the publish button. The best tool is the<br>
-one you’ll actually use.</p>
-<blockquote class="blockquote">
-<p>“Amateurs sit and wait for inspiration. The rest of us just show up and get to work.”</p>
-<p>— Stephen King, <em>On Writing</em></p>
-</blockquote>
-
-
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<div class="metadata">
+<a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="no-external">
+<div class="listing-date">
+May 19, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1779212280000" data-listing-file-modified-sort="1779272118142" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1203" data-listing-title-sort="Feature Scaling">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../articles/Feature Engineering/Feature Scaling/index.html" class="no-external">Feature Scaling</a>
+</h3>
+<div class="delink listing-description"><a href="../../articles/Feature Engineering/Feature Scaling/index.html" class="no-external">
+<p>A comprehensive guide to normalizing diverse variables into balanced, uniformly scaled data that optimizes machine learning model performance.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../articles/Feature Engineering/Feature Scaling/index.html" class="no-external">
+<div class="listing-date">
+May 19, 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1088,5 +1107,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

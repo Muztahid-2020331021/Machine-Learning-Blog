@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "\nHi, I’m Md Muztahid Hassan\n",
     "section": "",
-    "text": "I’m a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.\n\nLearn more about me\n\n\n\nLatest Articles\n\nView all articles →\n\n\n\n\n\n\n\n\nEDA on Visa Dataset (Project)\n\n\nA simple EDA project on the Visa dataset using Python and its libraries.\n\n\n\nMay 14, 2026\n\n\n\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\nMay 10, 2026\n\n\n\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\n\n\n\nGetting Started with CSS\n\n\nA beginner-friendly walkthrough of CSS fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\n\n\n\n\nGetting Started with HTML\n\n\nA beginner-friendly walkthrough of HTML fundamentals.\n\n\n\nMar 16, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
+    "text": "I’m a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job. I write about code, data, and the ideas that keep me up at night.\n\nLearn more about me\n\n\n\nLatest Articles\n\nView all articles →\n\n\n\n\n\n\n\n\nFeature Scaling\n\n\nA comprehensive guide to normalizing diverse variables into balanced, uniformly scaled data that optimizes machine learning model performance.\n\n\n\nMay 19, 2026\n\n\n\n\n\n\n\n\n\n\nIntroduction to Feature Engineering\n\n\nAn introductory article on Feature Engineering\n\n\n\nMay 19, 2026\n\n\n\n\n\n\n\n\n\n\nEDA on Visa Dataset (Project)\n\n\nA simple EDA project on the Visa dataset using Python and its libraries.\n\n\n\nMay 14, 2026\n\n\n\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\nMay 10, 2026\n\n\n\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\nMay 6, 2026\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "articles/web-dev/html tutorial/index.html",
@@ -64,219 +64,39 @@
     ]
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/index.html",
-    "title": "Exploratory Data Analysis (EDA)",
+    "objectID": "articles/Feature Engineering/index.html",
+    "href": "articles/Feature Engineering/index.html",
+    "title": "Feature Engineering",
     "section": "",
-    "text": "Welcome to the Exploratory Data Analysis (EDA) section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\n\n\nMay 10, 2026\n\n\n\n\n\n\n\nEDA on Visa Dataset (Project)\n\n\nA simple EDA project on the Visa dataset using Python and its libraries.\n\n\n\n\n\nMay 14, 2026\n\n\n\n\n\nNo matching items\n Back to top"
+    "text": "Welcome to the Feature Engineering section. Here, we delve into the techniques and tools that help us transform raw data into meaningful variables to enhance the predictive power of our machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to Feature Engineering\n\n\nAn introductory article on Feature Engineering\n\n\n\n\n\nMay 19, 2026\n\n\n\n\n\n\n\nFeature Scaling\n\n\nA comprehensive guide to normalizing diverse variables into balanced, uniformly scaled data that optimizes machine learning model performance.\n\n\n\n\n\nMay 19, 2026\n\n\n\n\n\nNo matching items\n Back to top"
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-    "title": "EDA on Titanic Dataset (Project)",
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+    "title": "Introduction to EDA",
     "section": "",
-    "text": "At first we need to import the necessary libraries\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nNow we will load the dataset. You can download the dataset from here.\n\ndata = pd.read_csv('train.csv')\ndata.head()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\ndata.shape\n\n(891, 12)\n\n\n\ndata.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 12 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   PassengerId  891 non-null    int64  \n 1   Survived     891 non-null    int64  \n 2   Pclass       891 non-null    int64  \n 3   Name         891 non-null    object \n 4   Sex          891 non-null    object \n 5   Age          714 non-null    float64\n 6   SibSp        891 non-null    int64  \n 7   Parch        891 non-null    int64  \n 8   Ticket       891 non-null    object \n 9   Fare         891 non-null    float64\n 10  Cabin        204 non-null    object \n 11  Embarked     889 non-null    object \ndtypes: float64(2), int64(5), object(5)\nmemory usage: 83.7+ KB\n\n\n\ndata.isnull().sum()\n\nPassengerId      0\nSurvived         0\nPclass           0\nName             0\nSex              0\nAge            177\nSibSp            0\nParch            0\nTicket           0\nFare             0\nCabin          687\nEmbarked         2\ndtype: int64\n\n\n\nsns.countplot(x='Survived', data=data)\n\n\n\n\n\n\n\n\n\nsns.countplot(x='Pclass', data=data)\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.\nIf we want to do the multivariate analysis, we can do like this.\n\nsns.countplot(data = data, x = 'Survived', hue='Pclass')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.\nOn the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.\n\nsns.countplot(data = data, x = 'Survived', hue='Sex')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.\n\nsns.displot(data=data, x='Age', kde = True)\n\n\n\n\n\n\n\n\nInsights:\nThere are some outliers in the age column. We can see that the graph is skewed to the right, which means that there are more younger passengers than older passengers. The majority of the passengers were between the ages of 20 and 40.\n\n\n\n Back to top"
+    "text": "Exploratory Data Analysis (EDA) is a crucial step in the data analysis process. It involves summarizing the main characteristics of a dataset, often using visual methods. The goal of EDA is to gain insights into the data, identify patterns, detect anomalies, and test hypotheses."
   },
   {
-    "objectID": "articles/career-writing/index.html",
-    "href": "articles/career-writing/index.html",
-    "title": "Career & Writing",
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#exploratory-data-analysis-eda",
+    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#exploratory-data-analysis-eda",
+    "title": "Introduction to EDA",
     "section": "",
-    "text": "Welcome to the Career & Writing section. This is where I share thoughts on the non-technical side of being a developer.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing"
-    ]
+    "text": "Exploratory Data Analysis (EDA) is a crucial step in the data analysis process. It involves summarizing the main characteristics of a dataset, often using visual methods. The goal of EDA is to gain insights into the data, identify patterns, detect anomalies, and test hypotheses."
   },
   {
-    "objectID": "articles/career-writing/index.html#articles",
-    "href": "articles/career-writing/index.html#articles",
-    "title": "Career & Writing",
-    "section": "Articles",
-    "text": "Articles",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing"
-    ]
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#types-of-eda",
+    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#types-of-eda",
+    "title": "Introduction to EDA",
+    "section": "Types of EDA",
+    "text": "Types of EDA\n\nUnivariate Analysis: This type of analysis focuses on a single variable. It includes techniques such as frequency distribution, measures of central tendency (mean, median, mode), and measures of dispersion (range, variance, standard deviation).\nBivariate Analysis: This analysis examines the relationship between two variables. Common techniques include scatter plots, correlation coefficients, and cross-tabulations.\nMultivariate Analysis: This type of analysis involves more than two variables. Techniques include multiple regression, principal component analysis (PCA), and cluster analysis."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job.\nI spend my days building data pipelines, exploring new frameworks, and trying to explain complex things in plain\nlanguage. This blog is where I share what I learn—including the mistakes.\nWhen I’m not coding, I’m usually reading, hiking, or arguing about editors."
-  },
-  {
-    "objectID": "about.html#what-i-write-about",
-    "href": "about.html#what-i-write-about",
-    "title": "About Me",
-    "section": "📝 What I Write About",
-    "text": "📝 What I Write About\nIn this blog, I explore the intersection of data engineering, software development, and technical communication. My articles range from deep dives into Python and SQL to tutorials on building modern web applications. I aim to break down complex architectural patterns and tools into digestible, actionable insights."
-  },
-  {
-    "objectID": "about.html#my-goal",
-    "href": "about.html#my-goal",
-    "title": "About Me",
-    "section": "🎯 My Goal",
-    "text": "🎯 My Goal\nThe goal of this blog is to create a resource that I wish I had when I started my journey. I believe in the power of “learning in public”—by documenting my process and the challenges I face, I hope to help others avoid common pitfalls and inspire them to build their own projects. Writing forces me to understand topics more deeply, and my aim is to pass that clarity on to you."
-  },
-  {
-    "objectID": "about.html#technical-skills",
-    "href": "about.html#technical-skills",
-    "title": "About Me",
-    "section": "🛠️ Technical Skills",
-    "text": "🛠️ Technical Skills\n\n  \n    Data Engineering\n    \n      Python\n      SQL\n      dbt\n      Docker\n    \n  \n  \n    Data Science\n    \n      Pandas\n      Scikit-Learn\n      MLOps\n    \n  \n  \n    Development\n    \n      TypeScript\n      Quarto\n      SCSS\n      Git"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "🚀 Experience",
-    "text": "🚀 Experience\n\n  \n    \n    2023 – Present\n    Senior Data Engineer\n    Company A\n  \n  \n    \n    2021 – 2023\n    Data Engineer\n    Company B\n  \n  \n    \n    2019 – 2021\n    Junior Developer\n    Company C"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "🎓 Education",
-    "text": "🎓 Education\n\n  \n    \n    2019\n    BSc Computer Science\n    University of Somewhere"
-  },
-  {
-    "objectID": "about.html#contact-info",
-    "href": "about.html#contact-info",
-    "title": "About Me",
-    "section": "📬 Contact Info",
-    "text": "📬 Contact Info\n\nGitHub: https://github.com/Muztahid-2020331021\nLinkedIn: https://www.linkedin.com/in/muztahid-hassan-sajid/\nPortfolio: https://www.sajid.me\nEmail: sajid191693@gmail.com"
-  },
-  {
-    "objectID": "articles/career-writing/2024-02-28-post-3/index.html",
-    "href": "articles/career-writing/2024-02-28-post-3/index.html",
-    "title": "Why Every Developer Should Write",
-    "section": "",
-    "text": "Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,\nspotting edge cases, and reasoning about trade-offs. Yet the same people often tell me they\n“can’t write.” I think they’ve confused polish with clarity, and that’s a fixable mistake.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing",
-      "Why Every Developer Should Write"
-    ]
-  },
-  {
-    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#writing-is-thinking-made-visible",
-    "href": "articles/career-writing/2024-02-28-post-3/index.html#writing-is-thinking-made-visible",
-    "title": "Why Every Developer Should Write",
-    "section": "Writing Is Thinking Made Visible",
-    "text": "Writing Is Thinking Made Visible\nWhen you write, you’re not transcribing thoughts that are already finished. You’re discovering\nwhat you actually think. The discipline of forming a sentence forces you to choose between\nideas, discard the weak ones, and commit to the strong ones.\n\n\n\nA developer writing at a desk\n\n\n\n“I write to find out what I think.”\n— Joan Didion",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing",
-      "Why Every Developer Should Write"
-    ]
-  },
-  {
-    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#five-reasons-developers-should-blog",
-    "href": "articles/career-writing/2024-02-28-post-3/index.html#five-reasons-developers-should-blog",
-    "title": "Why Every Developer Should Write",
-    "section": "Five Reasons Developers Should Blog",
-    "text": "Five Reasons Developers Should Blog\n\nTeaching solidifies understanding. The “Feynman technique”—explain a concept simply until\nyou can’t—exposes every gap in your knowledge faster than any test.\nYour future self will thank you. A post explaining how you solved a tricky CORS issue is a\npersonal reference you’ll return to, and it’ll save someone else three hours of debugging.\nWriting compounds. Thirty posts means thirty permanent search-indexed artifacts of your\nexpertise. That’s a form of leverage most developers ignore entirely.\nIt builds professional credibility. Recruiters, hiring managers, and peers read blogs.\nA thoughtful post demonstrates judgment in a way a résumé cannot.\nIt builds the habit of finishing things. A blog post has a clear done state. That’s\nrarer and more valuable than it sounds.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing",
-      "Why Every Developer Should Write"
-    ]
-  },
-  {
-    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#common-objections-and-why-they-dont-hold",
-    "href": "articles/career-writing/2024-02-28-post-3/index.html#common-objections-and-why-they-dont-hold",
-    "title": "Why Every Developer Should Write",
-    "section": "Common Objections (and Why They Don’t Hold)",
-    "text": "Common Objections (and Why They Don’t Hold)\n“I don’t have anything original to say.” You don’t need to be first. You need to be useful.\nA beginner’s explanation of a hard topic is often more helpful than the expert’s, because you\nremember what confused you.\n“No one will read it.” Write for one person: your past self, six months ago. If it would\nhave helped you then, publish it.\n“I don’t have time.” A 400-word post once a month is better than nothing. Write rough. Edit\nonce. Ship.",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing",
-      "Why Every Developer Should Write"
-    ]
-  },
-  {
-    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#how-to-start",
-    "href": "articles/career-writing/2024-02-28-post-3/index.html#how-to-start",
-    "title": "Why Every Developer Should Write",
-    "section": "How to Start",
-    "text": "How to Start\nThe tooling friction is lower than ever:\n\nQuarto — code-friendly, renders to HTML, PDF, or slides from one source\nGhost — beautifully minimal hosted blogging\nObsidian Publish — if you already live in Obsidian\n\nPick whichever puts the least distance between you and the publish button. The best tool is the\none you’ll actually use.\n\n“Amateurs sit and wait for inspiration. The rest of us just show up and get to work.”\n— Stephen King, On Writing",
-    "crumbs": [
-      "Home",
-      "Articles",
-      "Career & Writing",
-      "Why Every Developer Should Write"
-    ]
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "",
-    "text": "Bivariate analysis involves examining the relationship between two variables."
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "",
-    "text": "Bivariate analysis involves examining the relationship between two variables."
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "Multivariate Analysis",
-    "text": "Multivariate Analysis\nMultivariate analysis involves examining the relationships among three or more variables.\nHere are some common techniques for both types of analysis:\nWe will use titanic, tips, iris, and flights datasets for our examples.\n\nimport seaborn as sns\nimport pandas as pd\n\ntitanic = sns.load_dataset('titanic')\ntips = sns.load_dataset('tips')\nflights = sns.load_dataset('flights')\niris = sns.load_dataset('iris')"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "1. Scatterplot (Numerical - Numerical)",
-    "text": "1. Scatterplot (Numerical - Numerical)\nIf we want to analyze the relationship between two numerical variables: total_bill and tip, we can use a scatterplot.\n\ntips.head()\n\n\n\n\n\n\n\n\ntotal_bill\ntip\nsex\nsmoker\nday\ntime\nsize\n\n\n\n\n0\n16.99\n1.01\nFemale\nNo\nSun\nDinner\n2\n\n\n1\n10.34\n1.66\nMale\nNo\nSun\nDinner\n3\n\n\n2\n21.01\n3.50\nMale\nNo\nSun\nDinner\n3\n\n\n3\n23.68\n3.31\nMale\nNo\nSun\nDinner\n2\n\n\n4\n24.59\n3.61\nFemale\nNo\nSun\nDinner\n4\n\n\n\n\n\n\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip')\n\n\n\n\n\n\n\n\nLet’s say we want to know the male and female status of customers in the scatterplot. We can use the hue parameter to differentiate between them.\n\nIn this case, we can say that it is a multivariate analysis because we are analyzing the relationship between three variables: total_bill, tip, and sex.\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')\n\n\n\n\n\n\n\n\nIf we want to find who are the smokers and non-smokers in the scatterplot, we can use the style parameter.\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='smoker')"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "2. Bar plot (Numerical - Categorical)",
-    "text": "2. Bar plot (Numerical - Categorical)\nIf we want to analyze the relationship between a numerical variable and a categorical variable, we can use a bar plot. We will use the titanic dataset for this example.\n\ntitanic.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nsns.barplot(data=titanic, x = \"pclass\", y = \"age\", hue = \"sex\")"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "3. Box plot (Numerical - Categorical)",
-    "text": "3. Box plot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.boxplot(data = titanic, x = \"pclass\", y = \"age\", hue = \"survived\")"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "4. Kdeplot (Numerical - Categorical)",
-    "text": "4. Kdeplot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.kdeplot(data = titanic, x = \"age\", hue = \"survived\", fill = True)"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "5. Pairplot (Numerical - Numerical)",
-    "text": "5. Pairplot (Numerical - Numerical)\nIf we want to analyze the relationship between multiple numerical variables, we can use a pairplot. We will use the iris dataset for this example.\n\niris.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nsns.pairplot(data = iris)"
-  },
-  {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
-    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
-    "title": "Bivariate and Multivariate Analysis",
-    "section": "6. Line plot (Numerical - Numerical)",
-    "text": "6. Line plot (Numerical - Numerical)\nWe will use the flights dataset for this example.\n\nflights.head()\n\n\n\n\n\n\n\n\nyear\nmonth\npassengers\n\n\n\n\n0\n1949\nJan\n112\n\n\n1\n1949\nFeb\n118\n\n\n2\n1949\nMar\n132\n\n\n3\n1949\nApr\n129\n\n\n4\n1949\nMay\n121\n\n\n\n\n\n\n\n\nnew_data = flights.groupby('year', as_index=False)['passengers'].sum()\nnew_data.head()\n\n\n\n\n\n\n\n\nyear\npassengers\n\n\n\n\n0\n1949\n1520\n\n\n1\n1950\n1676\n\n\n2\n1951\n2042\n\n\n3\n1952\n2364\n\n\n4\n1953\n2700\n\n\n\n\n\n\n\n\nsns.lineplot(data = new_data, x = 'year', y = 'passengers')\n\n\n\n\n\n\n\n\n\nThese are the manual techniques for bivariate and multivariate analysis. To automate this process, we can use the ydata-profiling library, which provides a comprehensive report of the dataset, including bivariate and multivariate analysis.\n\n\nfrom ydata_profiling import ProfileReport\nprof = ProfileReport(titanic)\nprof.to_file(output_file='output.html')\n\nThis will generate an HTML file with a detailed report of the titanic dataset, including bivariate and multivariate analysis. You can open the output.html file in your browser to explore the report."
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#univariate-analysis",
+    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#univariate-analysis",
+    "title": "Introduction to EDA",
+    "section": "Univariate Analysis",
+    "text": "Univariate Analysis\nWe will use titanic dataset as an example to perform univariate analysis.\n\nimport pandas as pd\nimport seaborn as sns\n\ndf = sns.load_dataset('titanic')\ndf.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\nBelow can be the manual steps for performing univariate analysis. We can go through some questions to perform univariate analysis.\n\nHow Big is the Dataset?\n\n\ndf.shape\n\n(891, 15)\n\n\n\nHow does the data look like?\nFor this, we can use the sample() method to get a random sample of the data.\n\n\ndf.sample(5)\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n58\n1\n2\nfemale\n5.0\n1\n2\n27.7500\nS\nSecond\nchild\nFalse\nNaN\nSouthampton\nyes\nFalse\n\n\n844\n0\n3\nmale\n17.0\n0\n0\n8.6625\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n8\n1\n3\nfemale\n27.0\n0\n2\n11.1333\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nFalse\n\n\n450\n0\n2\nmale\n36.0\n1\n2\n27.7500\nS\nSecond\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n228\n0\n2\nmale\n18.0\n0\n0\n13.0000\nS\nSecond\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nWhat are the data types of the columns?\n\n\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 15 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   survived     891 non-null    int64   \n 1   pclass       891 non-null    int64   \n 2   sex          891 non-null    object  \n 3   age          714 non-null    float64 \n 4   sibsp        891 non-null    int64   \n 5   parch        891 non-null    int64   \n 6   fare         891 non-null    float64 \n 7   embarked     889 non-null    object  \n 8   class        891 non-null    category\n 9   who          891 non-null    object  \n 10  adult_male   891 non-null    bool    \n 11  deck         203 non-null    category\n 12  embark_town  889 non-null    object  \n 13  alive        891 non-null    object  \n 14  alone        891 non-null    bool    \ndtypes: bool(2), category(2), float64(2), int64(4), object(5)\nmemory usage: 80.7+ KB\n\n\n\nAre there any missing values?\n\n\ndf.isnull().sum()\n\nsurvived         0\npclass           0\nsex              0\nage            177\nsibsp            0\nparch            0\nfare             0\nembarked         2\nclass            0\nwho              0\nadult_male       0\ndeck           688\nembark_town      2\nalive            0\nalone            0\ndtype: int64\n\n\n\nHow does the data look mathematically?\n\n\ndf.describe()\n\n\n\n\n\n\n\n\nsurvived\npclass\nage\nsibsp\nparch\nfare\n\n\n\n\ncount\n891.000000\n891.000000\n714.000000\n891.000000\n891.000000\n891.000000\n\n\nmean\n0.383838\n2.308642\n29.699118\n0.523008\n0.381594\n32.204208\n\n\nstd\n0.486592\n0.836071\n14.526497\n1.102743\n0.806057\n49.693429\n\n\nmin\n0.000000\n1.000000\n0.420000\n0.000000\n0.000000\n0.000000\n\n\n25%\n0.000000\n2.000000\n20.125000\n0.000000\n0.000000\n7.910400\n\n\n50%\n0.000000\n3.000000\n28.000000\n0.000000\n0.000000\n14.454200\n\n\n75%\n1.000000\n3.000000\n38.000000\n1.000000\n0.000000\n31.000000\n\n\nmax\n1.000000\n3.000000\n80.000000\n8.000000\n6.000000\n512.329200\n\n\n\n\n\n\n\n\nAre there duplicate values?\n\n\ndf.duplicated().sum()\n\nnp.int64(107)\n\n\n\nHow is the correlation between cols?\n\n\ndf.corr(numeric_only=True)\n\n\n\n\n\n\n\n\nsurvived\npclass\nage\nsibsp\nparch\nfare\nadult_male\nalone\n\n\n\n\nsurvived\n1.000000\n-0.338481\n-0.077221\n-0.035322\n0.081629\n0.257307\n-0.557080\n-0.203367\n\n\npclass\n-0.338481\n1.000000\n-0.369226\n0.083081\n0.018443\n-0.549500\n0.094035\n0.135207\n\n\nage\n-0.077221\n-0.369226\n1.000000\n-0.308247\n-0.189119\n0.096067\n0.280328\n0.198270\n\n\nsibsp\n-0.035322\n0.083081\n-0.308247\n1.000000\n0.414838\n0.159651\n-0.253586\n-0.584471\n\n\nparch\n0.081629\n0.018443\n-0.189119\n0.414838\n1.000000\n0.216225\n-0.349943\n-0.583398\n\n\nfare\n0.257307\n-0.549500\n0.096067\n0.159651\n0.216225\n1.000000\n-0.182024\n-0.271832\n\n\nadult_male\n-0.557080\n0.094035\n0.280328\n-0.253586\n-0.349943\n-0.182024\n1.000000\n0.404744\n\n\nalone\n-0.203367\n0.135207\n0.198270\n-0.584471\n-0.583398\n-0.271832\n0.404744\n1.000000\n\n\n\n\n\n\n\nIf we want to see the correlation of a specific column with other columns, we can do it like this:\n\ndf.corr(numeric_only=True)['survived']\n\nsurvived      1.000000\npclass       -0.338481\nage          -0.077221\nsibsp        -0.035322\nparch         0.081629\nfare          0.257307\nadult_male   -0.557080\nalone        -0.203367\nName: survived, dtype: float64\n\n\n\nFor Categorical Data\n\nCountplot\nWe can use countplot to visualize the distribution of categorical data.\n\n\nsns.countplot(df, x=\"survived\")\n\n\n\n\n\n\n\n\n\nsns.countplot(df, x=\"embarked\")\n\n\n\n\n\n\n\n\n\nPie Chart\nWe can also use pie charts to visualize the distribution of categorical data.\n\n\nimport matplotlib.pyplot as plt\ndf[\"survived\"].value_counts().plot(kind=\"pie\", autopct=\"%.2f%%\", labels=[\"\", \"\"])\nplt.legend(\n    title = \"Status\",\n    labels=[\"Did Not Survive (0)\", \"Survived (1)\"],\n    bbox_to_anchor=(1, 0.5),\n    loc=\"center left\",\n)\nplt.ylabel(\"\") \n\nplt.show()\n\n\n\n\n\n\n\n\n\ndf[\"embarked\"].value_counts().plot(kind=\"pie\", autopct=\"%.2f%%\", labels=[\"\", \"\", \"\"])\nplt.legend(\n    title = \"Port of Embarkation\",\n    labels=[\"Southampton (S)\", \"Cherbourg (C)\", \"Queenstown (Q)\"],\n    bbox_to_anchor=(1, 0.5),\n    loc=\"center left\",\n)\nplt.ylabel(\"\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nFor Numerical Data\n\nHistogram\nWe use histograms to visualize the distribution of numerical data.\n\n\nplt.hist(df['age'],bins=5)\n\n(array([100., 346., 188.,  69.,  11.]),\n array([ 0.42 , 16.336, 32.252, 48.168, 64.084, 80.   ]),\n &lt;BarContainer object of 5 artists&gt;)\n\n\n\n\n\n\n\n\n\n\nDistribution Plot\nWe can also use distribution plots to visualize the distribution of numerical data.\n\n\nsns.displot(data=df, x=\"age\", kde = True)\n\n\n\n\n\n\n\n\n\nBox Plot\nWe use box plots to visualize the distribution of numerical data and identify outliers.\n\n\nsns.boxplot(data=df, x=\"age\")\n\n\n\n\n\n\n\n\nHere are some functions that are also necessary for Univariate EDA:\n\ndf['age'].min()\n\nnp.float64(0.42)\n\n\n\ndf['age'].max()\n\nnp.float64(80.0)\n\n\n\ndf['age'].mean()\n\nnp.float64(29.69911764705882)\n\n\n\ndf['age'].skew()\n\nnp.float64(0.38910778230082704)"
   },
   {
     "objectID": "articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html",
@@ -370,32 +190,261 @@
     "text": "For Feature Engineering:\nwe need to focus on the following points\n\nMissing value - No\nCategorical handler - Yes\nOutlier - Yes\nImbalance - Yes\nDuplicate - No\nDrop any column - Yes\nScaling - Yes\nTransformation - Yes"
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
-    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
-    "title": "Introduction to EDA",
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+    "title": "Bivariate and Multivariate Analysis",
     "section": "",
-    "text": "Exploratory Data Analysis (EDA) is a crucial step in the data analysis process. It involves summarizing the main characteristics of a dataset, often using visual methods. The goal of EDA is to gain insights into the data, identify patterns, detect anomalies, and test hypotheses."
+    "text": "Bivariate analysis involves examining the relationship between two variables."
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#exploratory-data-analysis-eda",
-    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#exploratory-data-analysis-eda",
-    "title": "Introduction to EDA",
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bivariate-analysis",
+    "title": "Bivariate and Multivariate Analysis",
     "section": "",
-    "text": "Exploratory Data Analysis (EDA) is a crucial step in the data analysis process. It involves summarizing the main characteristics of a dataset, often using visual methods. The goal of EDA is to gain insights into the data, identify patterns, detect anomalies, and test hypotheses."
+    "text": "Bivariate analysis involves examining the relationship between two variables."
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#types-of-eda",
-    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#types-of-eda",
-    "title": "Introduction to EDA",
-    "section": "Types of EDA",
-    "text": "Types of EDA\n\nUnivariate Analysis: This type of analysis focuses on a single variable. It includes techniques such as frequency distribution, measures of central tendency (mean, median, mode), and measures of dispersion (range, variance, standard deviation).\nBivariate Analysis: This analysis examines the relationship between two variables. Common techniques include scatter plots, correlation coefficients, and cross-tabulations.\nMultivariate Analysis: This type of analysis involves more than two variables. Techniques include multiple regression, principal component analysis (PCA), and cluster analysis."
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#multivariate-analysis",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "Multivariate Analysis",
+    "text": "Multivariate Analysis\nMultivariate analysis involves examining the relationships among three or more variables.\nHere are some common techniques for both types of analysis:\nWe will use titanic, tips, iris, and flights datasets for our examples.\n\nimport seaborn as sns\nimport pandas as pd\n\ntitanic = sns.load_dataset('titanic')\ntips = sns.load_dataset('tips')\nflights = sns.load_dataset('flights')\niris = sns.load_dataset('iris')"
   },
   {
-    "objectID": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#univariate-analysis",
-    "href": "articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html#univariate-analysis",
-    "title": "Introduction to EDA",
-    "section": "Univariate Analysis",
-    "text": "Univariate Analysis\nWe will use titanic dataset as an example to perform univariate analysis.\n\nimport pandas as pd\nimport seaborn as sns\n\ndf = sns.load_dataset('titanic')\ndf.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\nBelow can be the manual steps for performing univariate analysis. We can go through some questions to perform univariate analysis.\n\nHow Big is the Dataset?\n\n\ndf.shape\n\n(891, 15)\n\n\n\nHow does the data look like?\nFor this, we can use the sample() method to get a random sample of the data.\n\n\ndf.sample(5)\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n58\n1\n2\nfemale\n5.0\n1\n2\n27.7500\nS\nSecond\nchild\nFalse\nNaN\nSouthampton\nyes\nFalse\n\n\n844\n0\n3\nmale\n17.0\n0\n0\n8.6625\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n8\n1\n3\nfemale\n27.0\n0\n2\n11.1333\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nFalse\n\n\n450\n0\n2\nmale\n36.0\n1\n2\n27.7500\nS\nSecond\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n228\n0\n2\nmale\n18.0\n0\n0\n13.0000\nS\nSecond\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nWhat are the data types of the columns?\n\n\ndf.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 15 columns):\n #   Column       Non-Null Count  Dtype   \n---  ------       --------------  -----   \n 0   survived     891 non-null    int64   \n 1   pclass       891 non-null    int64   \n 2   sex          891 non-null    object  \n 3   age          714 non-null    float64 \n 4   sibsp        891 non-null    int64   \n 5   parch        891 non-null    int64   \n 6   fare         891 non-null    float64 \n 7   embarked     889 non-null    object  \n 8   class        891 non-null    category\n 9   who          891 non-null    object  \n 10  adult_male   891 non-null    bool    \n 11  deck         203 non-null    category\n 12  embark_town  889 non-null    object  \n 13  alive        891 non-null    object  \n 14  alone        891 non-null    bool    \ndtypes: bool(2), category(2), float64(2), int64(4), object(5)\nmemory usage: 80.7+ KB\n\n\n\nAre there any missing values?\n\n\ndf.isnull().sum()\n\nsurvived         0\npclass           0\nsex              0\nage            177\nsibsp            0\nparch            0\nfare             0\nembarked         2\nclass            0\nwho              0\nadult_male       0\ndeck           688\nembark_town      2\nalive            0\nalone            0\ndtype: int64\n\n\n\nHow does the data look mathematically?\n\n\ndf.describe()\n\n\n\n\n\n\n\n\nsurvived\npclass\nage\nsibsp\nparch\nfare\n\n\n\n\ncount\n891.000000\n891.000000\n714.000000\n891.000000\n891.000000\n891.000000\n\n\nmean\n0.383838\n2.308642\n29.699118\n0.523008\n0.381594\n32.204208\n\n\nstd\n0.486592\n0.836071\n14.526497\n1.102743\n0.806057\n49.693429\n\n\nmin\n0.000000\n1.000000\n0.420000\n0.000000\n0.000000\n0.000000\n\n\n25%\n0.000000\n2.000000\n20.125000\n0.000000\n0.000000\n7.910400\n\n\n50%\n0.000000\n3.000000\n28.000000\n0.000000\n0.000000\n14.454200\n\n\n75%\n1.000000\n3.000000\n38.000000\n1.000000\n0.000000\n31.000000\n\n\nmax\n1.000000\n3.000000\n80.000000\n8.000000\n6.000000\n512.329200\n\n\n\n\n\n\n\n\nAre there duplicate values?\n\n\ndf.duplicated().sum()\n\nnp.int64(107)\n\n\n\nHow is the correlation between cols?\n\n\ndf.corr(numeric_only=True)\n\n\n\n\n\n\n\n\nsurvived\npclass\nage\nsibsp\nparch\nfare\nadult_male\nalone\n\n\n\n\nsurvived\n1.000000\n-0.338481\n-0.077221\n-0.035322\n0.081629\n0.257307\n-0.557080\n-0.203367\n\n\npclass\n-0.338481\n1.000000\n-0.369226\n0.083081\n0.018443\n-0.549500\n0.094035\n0.135207\n\n\nage\n-0.077221\n-0.369226\n1.000000\n-0.308247\n-0.189119\n0.096067\n0.280328\n0.198270\n\n\nsibsp\n-0.035322\n0.083081\n-0.308247\n1.000000\n0.414838\n0.159651\n-0.253586\n-0.584471\n\n\nparch\n0.081629\n0.018443\n-0.189119\n0.414838\n1.000000\n0.216225\n-0.349943\n-0.583398\n\n\nfare\n0.257307\n-0.549500\n0.096067\n0.159651\n0.216225\n1.000000\n-0.182024\n-0.271832\n\n\nadult_male\n-0.557080\n0.094035\n0.280328\n-0.253586\n-0.349943\n-0.182024\n1.000000\n0.404744\n\n\nalone\n-0.203367\n0.135207\n0.198270\n-0.584471\n-0.583398\n-0.271832\n0.404744\n1.000000\n\n\n\n\n\n\n\nIf we want to see the correlation of a specific column with other columns, we can do it like this:\n\ndf.corr(numeric_only=True)['survived']\n\nsurvived      1.000000\npclass       -0.338481\nage          -0.077221\nsibsp        -0.035322\nparch         0.081629\nfare          0.257307\nadult_male   -0.557080\nalone        -0.203367\nName: survived, dtype: float64\n\n\n\nFor Categorical Data\n\nCountplot\nWe can use countplot to visualize the distribution of categorical data.\n\n\nsns.countplot(df, x=\"survived\")\n\n\n\n\n\n\n\n\n\nsns.countplot(df, x=\"embarked\")\n\n\n\n\n\n\n\n\n\nPie Chart\nWe can also use pie charts to visualize the distribution of categorical data.\n\n\nimport matplotlib.pyplot as plt\ndf[\"survived\"].value_counts().plot(kind=\"pie\", autopct=\"%.2f%%\", labels=[\"\", \"\"])\nplt.legend(\n    title = \"Status\",\n    labels=[\"Did Not Survive (0)\", \"Survived (1)\"],\n    bbox_to_anchor=(1, 0.5),\n    loc=\"center left\",\n)\nplt.ylabel(\"\") \n\nplt.show()\n\n\n\n\n\n\n\n\n\ndf[\"embarked\"].value_counts().plot(kind=\"pie\", autopct=\"%.2f%%\", labels=[\"\", \"\", \"\"])\nplt.legend(\n    title = \"Port of Embarkation\",\n    labels=[\"Southampton (S)\", \"Cherbourg (C)\", \"Queenstown (Q)\"],\n    bbox_to_anchor=(1, 0.5),\n    loc=\"center left\",\n)\nplt.ylabel(\"\")\nplt.show()\n\n\n\n\n\n\n\n\n\n\nFor Numerical Data\n\nHistogram\nWe use histograms to visualize the distribution of numerical data.\n\n\nplt.hist(df['age'],bins=5)\n\n(array([100., 346., 188.,  69.,  11.]),\n array([ 0.42 , 16.336, 32.252, 48.168, 64.084, 80.   ]),\n &lt;BarContainer object of 5 artists&gt;)\n\n\n\n\n\n\n\n\n\n\nDistribution Plot\nWe can also use distribution plots to visualize the distribution of numerical data.\n\n\nsns.displot(data=df, x=\"age\", kde = True)\n\n\n\n\n\n\n\n\n\nBox Plot\nWe use box plots to visualize the distribution of numerical data and identify outliers.\n\n\nsns.boxplot(data=df, x=\"age\")\n\n\n\n\n\n\n\n\nHere are some functions that are also necessary for Univariate EDA:\n\ndf['age'].min()\n\nnp.float64(0.42)\n\n\n\ndf['age'].max()\n\nnp.float64(80.0)\n\n\n\ndf['age'].mean()\n\nnp.float64(29.69911764705882)\n\n\n\ndf['age'].skew()\n\nnp.float64(0.38910778230082704)"
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#scatterplot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "1. Scatterplot (Numerical - Numerical)",
+    "text": "1. Scatterplot (Numerical - Numerical)\nIf we want to analyze the relationship between two numerical variables: total_bill and tip, we can use a scatterplot.\n\ntips.head()\n\n\n\n\n\n\n\n\ntotal_bill\ntip\nsex\nsmoker\nday\ntime\nsize\n\n\n\n\n0\n16.99\n1.01\nFemale\nNo\nSun\nDinner\n2\n\n\n1\n10.34\n1.66\nMale\nNo\nSun\nDinner\n3\n\n\n2\n21.01\n3.50\nMale\nNo\nSun\nDinner\n3\n\n\n3\n23.68\n3.31\nMale\nNo\nSun\nDinner\n2\n\n\n4\n24.59\n3.61\nFemale\nNo\nSun\nDinner\n4\n\n\n\n\n\n\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip')\n\n\n\n\n\n\n\n\nLet’s say we want to know the male and female status of customers in the scatterplot. We can use the hue parameter to differentiate between them.\n\nIn this case, we can say that it is a multivariate analysis because we are analyzing the relationship between three variables: total_bill, tip, and sex.\n\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex')\n\n\n\n\n\n\n\n\nIf we want to find who are the smokers and non-smokers in the scatterplot, we can use the style parameter.\n\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', style='smoker')"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#bar-plot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "2. Bar plot (Numerical - Categorical)",
+    "text": "2. Bar plot (Numerical - Categorical)\nIf we want to analyze the relationship between a numerical variable and a categorical variable, we can use a bar plot. We will use the titanic dataset for this example.\n\ntitanic.head()\n\n\n\n\n\n\n\n\nsurvived\npclass\nsex\nage\nsibsp\nparch\nfare\nembarked\nclass\nwho\nadult_male\ndeck\nembark_town\nalive\nalone\n\n\n\n\n0\n0\n3\nmale\n22.0\n1\n0\n7.2500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nFalse\n\n\n1\n1\n1\nfemale\n38.0\n1\n0\n71.2833\nC\nFirst\nwoman\nFalse\nC\nCherbourg\nyes\nFalse\n\n\n2\n1\n3\nfemale\n26.0\n0\n0\n7.9250\nS\nThird\nwoman\nFalse\nNaN\nSouthampton\nyes\nTrue\n\n\n3\n1\n1\nfemale\n35.0\n1\n0\n53.1000\nS\nFirst\nwoman\nFalse\nC\nSouthampton\nyes\nFalse\n\n\n4\n0\n3\nmale\n35.0\n0\n0\n8.0500\nS\nThird\nman\nTrue\nNaN\nSouthampton\nno\nTrue\n\n\n\n\n\n\n\n\nsns.barplot(data=titanic, x = \"pclass\", y = \"age\", hue = \"sex\")"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#box-plot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "3. Box plot (Numerical - Categorical)",
+    "text": "3. Box plot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.boxplot(data = titanic, x = \"pclass\", y = \"age\", hue = \"survived\")"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#kdeplot-numerical---categorical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "4. Kdeplot (Numerical - Categorical)",
+    "text": "4. Kdeplot (Numerical - Categorical)\nWe will use the same titanic dataset for this example.\n\nsns.kdeplot(data = titanic, x = \"age\", hue = \"survived\", fill = True)"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#pairplot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "5. Pairplot (Numerical - Numerical)",
+    "text": "5. Pairplot (Numerical - Numerical)\nIf we want to analyze the relationship between multiple numerical variables, we can use a pairplot. We will use the iris dataset for this example.\n\niris.head()\n\n\n\n\n\n\n\n\nsepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n\n\n\n\n0\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n1\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n2\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n3\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n4\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n\n\n\n\n\n\nsns.pairplot(data = iris)"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
+    "href": "articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html#line-plot-numerical---numerical",
+    "title": "Bivariate and Multivariate Analysis",
+    "section": "6. Line plot (Numerical - Numerical)",
+    "text": "6. Line plot (Numerical - Numerical)\nWe will use the flights dataset for this example.\n\nflights.head()\n\n\n\n\n\n\n\n\nyear\nmonth\npassengers\n\n\n\n\n0\n1949\nJan\n112\n\n\n1\n1949\nFeb\n118\n\n\n2\n1949\nMar\n132\n\n\n3\n1949\nApr\n129\n\n\n4\n1949\nMay\n121\n\n\n\n\n\n\n\n\nnew_data = flights.groupby('year', as_index=False)['passengers'].sum()\nnew_data.head()\n\n\n\n\n\n\n\n\nyear\npassengers\n\n\n\n\n0\n1949\n1520\n\n\n1\n1950\n1676\n\n\n2\n1951\n2042\n\n\n3\n1952\n2364\n\n\n4\n1953\n2700\n\n\n\n\n\n\n\n\nsns.lineplot(data = new_data, x = 'year', y = 'passengers')\n\n\n\n\n\n\n\n\n\nThese are the manual techniques for bivariate and multivariate analysis. To automate this process, we can use the ydata-profiling library, which provides a comprehensive report of the dataset, including bivariate and multivariate analysis.\n\n\nfrom ydata_profiling import ProfileReport\nprof = ProfileReport(titanic)\nprof.to_file(output_file='output.html')\n\nThis will generate an HTML file with a detailed report of the titanic dataset, including bivariate and multivariate analysis. You can open the output.html file in your browser to explore the report."
+  },
+  {
+    "objectID": "articles/career-writing/2024-02-28-post-3/index.html",
+    "href": "articles/career-writing/2024-02-28-post-3/index.html",
+    "title": "Why Every Developer Should Write",
+    "section": "",
+    "text": "Most developers I know are extraordinarily good at thinking in systems—at decomposing problems,\nspotting edge cases, and reasoning about trade-offs. Yet the same people often tell me they\n“can’t write.” I think they’ve confused polish with clarity, and that’s a fixable mistake.",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing",
+      "Why Every Developer Should Write"
+    ]
+  },
+  {
+    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#writing-is-thinking-made-visible",
+    "href": "articles/career-writing/2024-02-28-post-3/index.html#writing-is-thinking-made-visible",
+    "title": "Why Every Developer Should Write",
+    "section": "Writing Is Thinking Made Visible",
+    "text": "Writing Is Thinking Made Visible\nWhen you write, you’re not transcribing thoughts that are already finished. You’re discovering\nwhat you actually think. The discipline of forming a sentence forces you to choose between\nideas, discard the weak ones, and commit to the strong ones.\n\n\n\nA developer writing at a desk\n\n\n\n“I write to find out what I think.”\n— Joan Didion",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing",
+      "Why Every Developer Should Write"
+    ]
+  },
+  {
+    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#five-reasons-developers-should-blog",
+    "href": "articles/career-writing/2024-02-28-post-3/index.html#five-reasons-developers-should-blog",
+    "title": "Why Every Developer Should Write",
+    "section": "Five Reasons Developers Should Blog",
+    "text": "Five Reasons Developers Should Blog\n\nTeaching solidifies understanding. The “Feynman technique”—explain a concept simply until\nyou can’t—exposes every gap in your knowledge faster than any test.\nYour future self will thank you. A post explaining how you solved a tricky CORS issue is a\npersonal reference you’ll return to, and it’ll save someone else three hours of debugging.\nWriting compounds. Thirty posts means thirty permanent search-indexed artifacts of your\nexpertise. That’s a form of leverage most developers ignore entirely.\nIt builds professional credibility. Recruiters, hiring managers, and peers read blogs.\nA thoughtful post demonstrates judgment in a way a résumé cannot.\nIt builds the habit of finishing things. A blog post has a clear done state. That’s\nrarer and more valuable than it sounds.",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing",
+      "Why Every Developer Should Write"
+    ]
+  },
+  {
+    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#common-objections-and-why-they-dont-hold",
+    "href": "articles/career-writing/2024-02-28-post-3/index.html#common-objections-and-why-they-dont-hold",
+    "title": "Why Every Developer Should Write",
+    "section": "Common Objections (and Why They Don’t Hold)",
+    "text": "Common Objections (and Why They Don’t Hold)\n“I don’t have anything original to say.” You don’t need to be first. You need to be useful.\nA beginner’s explanation of a hard topic is often more helpful than the expert’s, because you\nremember what confused you.\n“No one will read it.” Write for one person: your past self, six months ago. If it would\nhave helped you then, publish it.\n“I don’t have time.” A 400-word post once a month is better than nothing. Write rough. Edit\nonce. Ship.",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing",
+      "Why Every Developer Should Write"
+    ]
+  },
+  {
+    "objectID": "articles/career-writing/2024-02-28-post-3/index.html#how-to-start",
+    "href": "articles/career-writing/2024-02-28-post-3/index.html#how-to-start",
+    "title": "Why Every Developer Should Write",
+    "section": "How to Start",
+    "text": "How to Start\nThe tooling friction is lower than ever:\n\nQuarto — code-friendly, renders to HTML, PDF, or slides from one source\nGhost — beautifully minimal hosted blogging\nObsidian Publish — if you already live in Obsidian\n\nPick whichever puts the least distance between you and the publish button. The best tool is the\none you’ll actually use.\n\n“Amateurs sit and wait for inspiration. The rest of us just show up and get to work.”\n— Stephen King, On Writing",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing",
+      "Why Every Developer Should Write"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I'm a developer and writer who believes that explaining things clearly is the hardest—and most rewarding—part of the job.\nI spend my days building data pipelines, exploring new frameworks, and trying to explain complex things in plain\nlanguage. This blog is where I share what I learn—including the mistakes.\nWhen I’m not coding, I’m usually reading, hiking, or arguing about editors."
+  },
+  {
+    "objectID": "about.html#what-i-write-about",
+    "href": "about.html#what-i-write-about",
+    "title": "About Me",
+    "section": "📝 What I Write About",
+    "text": "📝 What I Write About\nIn this blog, I explore the intersection of data engineering, software development, and technical communication. My articles range from deep dives into Python and SQL to tutorials on building modern web applications. I aim to break down complex architectural patterns and tools into digestible, actionable insights."
+  },
+  {
+    "objectID": "about.html#my-goal",
+    "href": "about.html#my-goal",
+    "title": "About Me",
+    "section": "🎯 My Goal",
+    "text": "🎯 My Goal\nThe goal of this blog is to create a resource that I wish I had when I started my journey. I believe in the power of “learning in public”—by documenting my process and the challenges I face, I hope to help others avoid common pitfalls and inspire them to build their own projects. Writing forces me to understand topics more deeply, and my aim is to pass that clarity on to you."
+  },
+  {
+    "objectID": "about.html#technical-skills",
+    "href": "about.html#technical-skills",
+    "title": "About Me",
+    "section": "🛠️ Technical Skills",
+    "text": "🛠️ Technical Skills\n\n  \n    Data Engineering\n    \n      Python\n      SQL\n      dbt\n      Docker\n    \n  \n  \n    Data Science\n    \n      Pandas\n      Scikit-Learn\n      MLOps\n    \n  \n  \n    Development\n    \n      TypeScript\n      Quarto\n      SCSS\n      Git"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "🚀 Experience",
+    "text": "🚀 Experience\n\n  \n    \n    2023 – Present\n    Senior Data Engineer\n    Company A\n  \n  \n    \n    2021 – 2023\n    Data Engineer\n    Company B\n  \n  \n    \n    2019 – 2021\n    Junior Developer\n    Company C"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "🎓 Education",
+    "text": "🎓 Education\n\n  \n    \n    2019\n    BSc Computer Science\n    University of Somewhere"
+  },
+  {
+    "objectID": "about.html#contact-info",
+    "href": "about.html#contact-info",
+    "title": "About Me",
+    "section": "📬 Contact Info",
+    "text": "📬 Contact Info\n\nGitHub: https://github.com/Muztahid-2020331021\nLinkedIn: https://www.linkedin.com/in/muztahid-hassan-sajid/\nPortfolio: https://www.sajid.me\nEmail: sajid191693@gmail.com"
+  },
+  {
+    "objectID": "articles/career-writing/index.html",
+    "href": "articles/career-writing/index.html",
+    "title": "Career & Writing",
+    "section": "",
+    "text": "Welcome to the Career & Writing section. This is where I share thoughts on the non-technical side of being a developer.",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing"
+    ]
+  },
+  {
+    "objectID": "articles/career-writing/index.html#articles",
+    "href": "articles/career-writing/index.html#articles",
+    "title": "Career & Writing",
+    "section": "Articles",
+    "text": "Articles",
+    "crumbs": [
+      "Home",
+      "Articles",
+      "Career & Writing"
+    ]
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+    "title": "EDA on Titanic Dataset (Project)",
+    "section": "",
+    "text": "At first we need to import the necessary libraries\n\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nNow we will load the dataset. You can download the dataset from here.\n\ndata = pd.read_csv('train.csv')\ndata.head()\n\n\n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\ndata.shape\n\n(891, 12)\n\n\n\ndata.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 891 entries, 0 to 890\nData columns (total 12 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   PassengerId  891 non-null    int64  \n 1   Survived     891 non-null    int64  \n 2   Pclass       891 non-null    int64  \n 3   Name         891 non-null    object \n 4   Sex          891 non-null    object \n 5   Age          714 non-null    float64\n 6   SibSp        891 non-null    int64  \n 7   Parch        891 non-null    int64  \n 8   Ticket       891 non-null    object \n 9   Fare         891 non-null    float64\n 10  Cabin        204 non-null    object \n 11  Embarked     889 non-null    object \ndtypes: float64(2), int64(5), object(5)\nmemory usage: 83.7+ KB\n\n\n\ndata.isnull().sum()\n\nPassengerId      0\nSurvived         0\nPclass           0\nName             0\nSex              0\nAge            177\nSibSp            0\nParch            0\nTicket           0\nFare             0\nCabin          687\nEmbarked         2\ndtype: int64\n\n\n\nsns.countplot(x='Survived', data=data)\n\n\n\n\n\n\n\n\n\nsns.countplot(x='Pclass', data=data)\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.\nIf we want to do the multivariate analysis, we can do like this.\n\nsns.countplot(data = data, x = 'Survived', hue='Pclass')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.\nOn the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.\n\nsns.countplot(data = data, x = 'Survived', hue='Sex')\n\n\n\n\n\n\n\n\nInsights:\nIf we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.\n\nsns.displot(data=data, x='Age', kde = True)\n\n\n\n\n\n\n\n\nInsights:\nThere are some outliers in the age column. We can see that the graph is skewed to the right, which means that there are more younger passengers than older passengers. The majority of the passengers were between the ages of 20 and 40.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "articles/Exploratory Data Analysis (EDA)/index.html",
+    "href": "articles/Exploratory Data Analysis (EDA)/index.html",
+    "title": "Exploratory Data Analysis (EDA)",
+    "section": "",
+    "text": "Welcome to the Exploratory Data Analysis (EDA) section. Here, we delve into the techniques and tools that help us understand and visualize data before applying machine learning models.\n\n\n\n\n\n\n\n\n\nIntroduction to EDA\n\n\nAn introductory article on Exploratory Data Analysis (EDA)\n\n\n\n\n\nMay 6, 2026\n\n\n\n\n\n\n\nBivariate and Multivariate Analysis\n\n\nThis chapter delves into the techniques of bivariate and multivariate analysis, which are essential for understanding relationships between multiple variables in a dataset.\n\n\n\n\n\nMay 9, 2026\n\n\n\n\n\n\n\nEDA on Titanic Dataset (Project)\n\n\nA simple EDA project on the Titanic dataset using Python and its libraries.\n\n\n\n\n\nMay 10, 2026\n\n\n\n\n\n\n\nEDA on Visa Dataset (Project)\n\n\nA simple EDA project on the Visa dataset using Python and its libraries.\n\n\n\n\n\nMay 14, 2026\n\n\n\n\n\nNo matching items\n Back to top"
+  },
+  {
+    "objectID": "articles/Feature Engineering/Feature Scaling/index.html",
+    "href": "articles/Feature Engineering/Feature Scaling/index.html",
+    "title": "Feature Scaling",
+    "section": "",
+    "text": "Feature Scaling is a technique to standardize the independent features present in a dataset in a specific range.\n\n\n\nIQ\nCGPA\nPlacement\n\n\n\n\n110\n3.5\nYes\n\n\n\nLook at this table. The IQ and CGPA have different number ranges. If we use these features directly in a machine learning model, the model might give more weight to the feature with a larger range (IQ) and less weight to the feature with a smaller range (CGPA). This can lead to biased predictions.\nTo do the scaling, there are two types of feature scaling.\n\nStandardization (z-score normalization)\nNormalization (Min-Max Scaling)"
+  },
+  {
+    "objectID": "articles/Feature Engineering/Feature Scaling/index.html#introduction",
+    "href": "articles/Feature Engineering/Feature Scaling/index.html#introduction",
+    "title": "Feature Scaling",
+    "section": "",
+    "text": "Feature Scaling is a technique to standardize the independent features present in a dataset in a specific range.\n\n\n\nIQ\nCGPA\nPlacement\n\n\n\n\n110\n3.5\nYes\n\n\n\nLook at this table. The IQ and CGPA have different number ranges. If we use these features directly in a machine learning model, the model might give more weight to the feature with a larger range (IQ) and less weight to the feature with a smaller range (CGPA). This can lead to biased predictions.\nTo do the scaling, there are two types of feature scaling.\n\nStandardization (z-score normalization)\nNormalization (Min-Max Scaling)"
+  },
+  {
+    "objectID": "articles/Feature Engineering/Feature Scaling/index.html#standardization-z-score-normalization",
+    "href": "articles/Feature Engineering/Feature Scaling/index.html#standardization-z-score-normalization",
+    "title": "Feature Scaling",
+    "section": "Standardization (z-score normalization)",
+    "text": "Standardization (z-score normalization)\n\\[z = \\frac{x - \\mu}{\\sigma}\\]\nWhere:\n\n\\(z\\) is the calculated z-score\n\\(x\\) is the original data value\n\\(\\mu\\) is the population mean (average) of the dataset\n\\(\\sigma\\) is the population standard deviation of the dataset\n\nHere is an example,\n\n\n\nAge\nScaled Age (Z-Score)\n\n\n\n\n27\n-0.42\n\n\n15\n-1.10\n\n\n33\n-0.08\n\n\n63\n1.61\n\n\n\nThe mean(\\(\\mu\\)) of Age column is 34.5 and the standard deviation (\\(\\sigma\\)) is 17.68. If we use these two value and calculate the Scaled Age column using the formula, we will get the actual standized value.\n\nThere is a fixed rule for this standardized technique that is the mean of standardized values (in this case Scaled Age) will be 0 and the standardard deviation will be 1.\n\nHere is an image that shows the concept of Standardization.\n\n\n\nStandardization\n\n\nNow we will see this in practical. At first, let’s import the library.\n\nimport numpy as np # linear algebra\nimport pandas as pd # data processing\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\nNow we will load the dataset. You can download the dataset from here.\n\ndf = pd.read_csv(\"Social_Network_Ads.csv\")\ndf.head()\n\n\n\n\n\n\n\n\nUser ID\nGender\nAge\nEstimatedSalary\nPurchased\n\n\n\n\n0\n15624510\nMale\n19\n19000\n0\n\n\n1\n15810944\nMale\n35\n20000\n0\n\n\n2\n15668575\nFemale\n26\n43000\n0\n\n\n3\n15603246\nFemale\n27\n57000\n0\n\n\n4\n15804002\nMale\n19\n76000\n0\n\n\n\n\n\n\n\nWe don’t need the User ID column. So we can omit this.\n\ndf = df.iloc[:,2:]\ndf.head()\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\nPurchased\n\n\n\n\n0\n19\n19000\n0\n\n\n1\n35\n20000\n0\n\n\n2\n26\n43000\n0\n\n\n3\n27\n57000\n0\n\n\n4\n19\n76000\n0\n\n\n\n\n\n\n\n\ndf.shape\n\n(400, 3)\n\n\nNow we will separate the data to training and testing.\n\nfrom sklearn.model_selection import train_test_split\nx_train, x_test, y_train, y_test = train_test_split(df.drop('Purchased', axis=1), df['Purchased'], test_size=0.3, random_state=0)\nx_train.shape, x_test.shape \n\n((280, 2), (120, 2))\n\n\n\nx_train.head()\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\n\n\n\n\n92\n26\n15000\n\n\n223\n60\n102000\n\n\n234\n38\n112000\n\n\n232\n40\n107000\n\n\n377\n42\n53000\n\n\n\n\n\n\n\n\npd.DataFrame(y_train.head())\n\n\n\n\n\n\n\n\nPurchased\n\n\n\n\n92\n0\n\n\n223\n1\n\n\n234\n0\n\n\n232\n1\n\n\n377\n0\n\n\n\n\n\n\n\n\nx_test.head()\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\n\n\n\n\n132\n30\n87000\n\n\n309\n38\n50000\n\n\n341\n35\n75000\n\n\n196\n30\n79000\n\n\n246\n35\n50000\n\n\n\n\n\n\n\n\npd.DataFrame(y_test.head())\n\n\n\n\n\n\n\n\nPurchased\n\n\n\n\n132\n0\n\n\n309\n0\n\n\n341\n0\n\n\n196\n0\n\n\n246\n0\n\n\n\n\n\n\n\nNow we will use the Standardization technique.\n\nfrom sklearn.preprocessing import StandardScaler\nscaler = StandardScaler()\nscaler.fit(x_train)\n\nx_train_scaled = pd.DataFrame(scaler.transform(x_train), columns=x_train.columns)\nx_test_scaled = pd.DataFrame(scaler.transform(x_test), columns=x_test.columns)\n\n\nThe Golden Rule: Why don’t we fit the test data?\nYou might wonder why there isn’t a line of code saying scaler.fit(x_test).\nIn machine learning, your test data represents “unseen future data.” If you calculate the mean and standard deviation using the test data, you are allowing information about your test set to “leak” into your model before you actually test it. This is called Data Leakage, and it will give you a falsely high accuracy score that will crash when deployed in the real world.\nBy only fitting on x_train, you ensure your model is scaling the “future” data based solely on the rules it learned from the past.\nThe means of Age and EstimatedSalary columns.\n\nscaler.mean_\n\narray([3.78642857e+01, 6.98071429e+04])\n\n\n\nx_train_scaled.head()\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\n\n\n\n\n0\n-1.163172\n-1.584970\n\n\n1\n2.170181\n0.930987\n\n\n2\n0.013305\n1.220177\n\n\n3\n0.209385\n1.075582\n\n\n4\n0.405465\n-0.486047\n\n\n\n\n\n\n\nHere we can see that the range of the data has changed.\nLet’s see all the info of the x_train and x_train_scaled data.\n\nnp.round(x_train.describe(), 2)\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\n\n\n\n\ncount\n280.00\n280.00\n\n\nmean\n37.86\n69807.14\n\n\nstd\n10.22\n34641.20\n\n\nmin\n18.00\n15000.00\n\n\n25%\n30.00\n43000.00\n\n\n50%\n37.00\n70500.00\n\n\n75%\n46.00\n88000.00\n\n\nmax\n60.00\n150000.00\n\n\n\n\n\n\n\n\nnp.round(x_train_scaled.describe(), 2)\n\n\n\n\n\n\n\n\nAge\nEstimatedSalary\n\n\n\n\ncount\n280.00\n280.00\n\n\nmean\n0.00\n0.00\n\n\nstd\n1.00\n1.00\n\n\nmin\n-1.95\n-1.58\n\n\n25%\n-0.77\n-0.78\n\n\n50%\n-0.08\n0.02\n\n\n75%\n0.80\n0.53\n\n\nmax\n2.17\n2.32\n\n\n\n\n\n\n\nLook at the mean and standard deviation of the table for the scaled data. The mean is 0 and the standard deviation is 1. But for the non-scaled data, they are different.\n\n\nEffect of Scaling\nNow we will see the visualization.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 5))\n\nax[0].set_title(\"Before Scaling\")\nax[0].scatter(x_train['Age'], x_train['EstimatedSalary'])\n\nax[1].set_title(\"After Scaling\")\nax[1].scatter(x_train_scaled['Age'], x_train_scaled['EstimatedSalary'], color='red')\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nLook at the graphs carefully, the scatter plot is not changed. It only changed the spread or the range. The distance between the points is remains the same.\n\nQuestion: Does scaling remove the outliers in the dataset?\nThe answer is no because scaling only change the spread of the dataset. It merely changes their units, meaning a massive outlier remains proportionally massive on the new scale.\n\nNow we will see the KDE plot of both datasets.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 5))\n\nax[0].set_title(\"Before Scaling\")\nsns.kdeplot(data= x_train, x='Age', ax=ax[0])\nsns.kdeplot(data= x_train, x='EstimatedSalary', color='red', ax=ax[0])\n\nax[1].set_title(\"After Scaling\")\nsns.kdeplot(data= x_train_scaled, x='Age', ax=ax[1])\nsns.kdeplot(data= x_train_scaled, x='EstimatedSalary', color='red', ax=ax[1])\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nLook at the bell curves of the dataset before and after scaling. Though both features are normally distributed, the graph before scaling does not show that. When two columns are plotted at the same place, they will show this problem.\nNow we will see that the actual data of the Age column and scaled data of the Age column are the same. Just the range is changed.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 5))\n\nax[0].set_title(\"Before Scaling\")\nsns.kdeplot(data=x_train, x='Age', ax=ax[0])\n\nax[1].set_title(\"After Scaling\")\nsns.kdeplot(data=x_train_scaled, x='Age', color='red', ax=ax[1])\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nSame thing we can apply on the EstimatedSalary column.\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 5))\n\nax[0].set_title(\"Before Scaling\")\nsns.kdeplot(data=x_train, x='EstimatedSalary', ax=ax[0])\n\nax[1].set_title(\"After Scaling\")\nsns.kdeplot(data=x_train_scaled, x='EstimatedSalary', color='red', ax=ax[1])\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nWhy scaling is so important?\nK-Nearest Neighbors (KNN) is highly sensitive to Scaling. It is a distance-based algorithm. It calculates the Euclidean distance between data points to find the nearest neighbors.\nIn our dataset:\n* Age ranges from ~18 to 60.\n* EstimatedSalary ranges from ~15,000 to 150,000.\nWhen calculating distance: \\(\\sqrt{(Age_1 - Age_2)^2 + (Salary_1 - Salary_2)^2}\\)\nBecause the Salary values are so much larger, the \\((Salary_1 - Salary_2)^2\\) term completely dominates the distance. The model effectively ignores the Age column. Scaling brings both to the same range, allowing the model to consider both features equally.\n\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn_scaled = KNeighborsClassifier(n_neighbors=5)\n\nknn.fit(x_train, y_train)\nknn_scaled.fit(x_train_scaled, y_train)\n\ny_pred = knn.predict(x_test)\ny_pred_scaled = knn_scaled.predict(x_test_scaled)\n\nprint(\"Actual\", accuracy_score(y_test, y_pred))\nprint(\"Scaled\", accuracy_score(y_test, y_pred_scaled))\n\nActual 0.825\nScaled 0.9166666666666666\n\n\nAs you can see, for distance-based algorithms like KNN, Scaling is not just a ‘good practice’—it’s mandatory for the model to work correctly.\n\n\nModels that do NOT need Scaling\nOn the other hand, Tree-based algorithms (like Decision Trees, Random Forests, XGBoost) are completely immune to the scale of the features.\nA decision tree splits data based on simple rules (e.g., “Is Age &gt; 40?”). The mathematical magnitude of the number doesn’t affect the split at all. Let’s see this in action using a Decision Tree Classifier:\n\nfrom sklearn.tree import DecisionTreeClassifier\n\ndt = DecisionTreeClassifier(random_state=0)\ndt_scaled = DecisionTreeClassifier(random_state=0)\n\ndt.fit(x_train, y_train)\ndt_scaled.fit(x_train_scaled, y_train)\n\ny_pred_dt = dt.predict(x_test)\ny_pred_dt_scaled = dt_scaled.predict(x_test_scaled)\n\nprint(\"Actual\", accuracy_score(y_test, y_pred_dt))\nprint(\"Scaled\", accuracy_score(y_test, y_pred_dt_scaled))\n\nActual 0.875\nScaled 0.875\n\n\n\n\nEffect of outlier\nWe will add some outlier to the data. Then we will see if there is any difference between the scaled and the non-scaled data.\n\nnew_data = pd.DataFrame({\n    'Age': [5, 90, 95],\n    'EstimatedSalary': [1000, 250000, 350000],\n    'Purchased': [0, 1, 1]\n})\n\n# Use pd.concat instead of append\ndf = pd.concat([df, new_data], ignore_index=True)\n\nplt.scatter(df['Age'], df['EstimatedSalary'])\n\n\n\n\n\n\n\n\n\nx_train, x_test, y_train, y_test = train_test_split(df.drop('Purchased', axis=1), df['Purchased'], test_size=0.3, random_state=0)\nx_train.shape, x_test.shape \n\n((282, 2), (121, 2))\n\n\n\nscaler = StandardScaler()\nscaler.fit(x_train)\n\nx_train_scaled = pd.DataFrame(scaler.transform(x_train), columns=x_train.columns)\nx_test_scaled = pd.DataFrame(scaler.transform(x_test), columns=x_test.columns)\n\n\nfig, ax = plt.subplots(1, 2, figsize=(12, 5))\n\nax[0].set_title(\"Before Scaling\")\nax[0].scatter(x_train['Age'], x_train['EstimatedSalary'])\n\nax[1].set_title(\"After Scaling\")\nax[1].scatter(x_train_scaled['Age'], x_train_scaled['EstimatedSalary'], color='red')\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nWe can show that the outlier has the same effect even after scaling. So scaling does not remove the outlier problems."
+  },
+  {
+    "objectID": "articles/Feature Engineering/Feature Scaling/index.html#min-max-scaling-normalization",
+    "href": "articles/Feature Engineering/Feature Scaling/index.html#min-max-scaling-normalization",
+    "title": "Feature Scaling",
+    "section": "Min-Max Scaling (Normalization)",
+    "text": "Min-Max Scaling (Normalization)\nMin-Max Scaling is a data preprocessing technique that transforms numerical features to fall within a specific, bounded range—typically between exactly 0 and 1. By compressing or stretching the data while maintaining its original distribution shape, it prevents variables with inherently larger numbers from dominating those with smaller scales. This is especially important for distance-based machine learning algorithms like K-Nearest Neighbors (KNN) or neural networks.\n\nThe Formula\nTo calculate the scaled value of a data point, you subtract the feature’s minimum value and divide by its range:\n\\[X_{scaled} = \\frac{X - X_{min}}{X_{max} - X_{min}}\\]\nWhere:\n\n\\(X\\) is the original data point.\n\\(X_{min}\\) is the minimum value within that feature column.\n\\(X_{max}\\) is the maximum value within that feature column.\n\\(X_{scaled}\\) is the newly normalized value.\n\n\n\n\nWeight\nScaled Weight (Rounded to 3 decimals)\n\n\n\n\n130\n1.000\n\n\n67\n0.357\n\n\n81\n0.500\n\n\n61\n0.296\n\n\n32\n0.000\n\n\n54\n0.224\n\n\n\nThe minimum weight (32) and maximum weight (130) were identified, giving a range of 98 (130 - 32). Each weight was then calculated using the formula \\(X_{scaled} = \\frac{X - 32}{98}\\).\nHere is an image that shows the difference between scaled and non-scaled data on scatter plot.\n\n\n\nMin-Max Scaling\n\n\nNow we will see the practical. At first load the dataset.\nYou can download the dataset from here.\n\ndf = pd.read_csv('wine_data.csv', header=None, usecols=[0,1,2])\ndf.columns = ['Class label', 'Alcohol', 'Malic acid']\n\ndf.head()\n\n\n\n\n\n\n\n\nClass label\nAlcohol\nMalic acid\n\n\n\n\n0\n1\n14.23\n1.71\n\n\n1\n1\n13.20\n1.78\n\n\n2\n1\n13.16\n2.36\n\n\n3\n1\n14.37\n1.95\n\n\n4\n1\n13.24\n2.59\n\n\n\n\n\n\n\n\n\nVisualizing the KDE plot and Scatterplot of actual data\nThe distribution of the features Alcohol and Malic acid.\n\nsns.kdeplot(data=df, x='Alcohol')\n\n\n\n\n\n\n\n\n\nsns.kdeplot(data=df, x='Malic acid')\n\n\n\n\n\n\n\n\nHere is a scatter-plot that shows the Class label (The target variable) keeping the features Alcohol and Malic acid along the x and y axis respectively.\n\ncolor_dict = {1: 'red', 2: 'blue', 3: 'green'}\n\nsns.scatterplot(data=df, x='Alcohol', y= 'Malic acid', hue='Class label', palette=color_dict)\n\n\n\n\n\n\n\n\nNow we will split the data into train and test dataset.\n\nx_train, x_test, y_train, y_test = train_test_split(df.drop('Class label', axis=1), df['Class label'], test_size=0.3, random_state=0)\nx_train.shape, x_test.shape\n\n((124, 2), (54, 2))\n\n\n\n\nEffect of scaling on Scatterplot of the dataset\nNow we will find the scaled value of x_train and x_test dataset.\n\nfrom sklearn.preprocessing import MinMaxScaler\n\nscaler = MinMaxScaler()\n\nscaler.fit(x_train)\n\nx_train_scaled = scaler.transform(x_train)\nx_test_scaled = scaler.transform(x_test)\n\n\nx_train_scaled = pd.DataFrame(x_train_scaled, columns=x_train.columns)\nx_train_scaled.head()\n\n\n\n\n\n\n\n\nAlcohol\nMalic acid\n\n\n\n\n0\n0.720430\n0.203782\n\n\n1\n0.319892\n0.084034\n\n\n2\n0.602151\n0.712185\n\n\n3\n0.572581\n0.563025\n\n\n4\n0.760753\n0.130252\n\n\n\n\n\n\n\n\nx_test_scaled = pd.DataFrame(x_test_scaled, columns=x_train.columns)\nx_test_scaled.head()\n\n\n\n\n\n\n\n\nAlcohol\nMalic acid\n\n\n\n\n0\n0.728495\n0.163866\n\n\n1\n0.473118\n0.373950\n\n\n2\n0.360215\n0.050420\n\n\n3\n0.680108\n0.176471\n\n\n4\n0.543011\n1.031513\n\n\n\n\n\n\n\nLook at the values of the x_train_scaled and x_test_scaled dataset. The values are between 0 and 1.\n\nnp.round(x_train.describe(), 2)\n\n\n\n\n\n\n\n\nAlcohol\nMalic acid\n\n\n\n\ncount\n124.00\n124.00\n\n\nmean\n12.98\n2.38\n\n\nstd\n0.80\n1.14\n\n\nmin\n11.03\n0.89\n\n\n25%\n12.36\n1.61\n\n\n50%\n13.04\n1.88\n\n\n75%\n13.64\n3.25\n\n\nmax\n14.75\n5.65\n\n\n\n\n\n\n\n\nnp.round(x_train_scaled.describe(), 2)\n\n\n\n\n\n\n\n\nAlcohol\nMalic acid\n\n\n\n\ncount\n124.00\n124.00\n\n\nmean\n0.53\n0.31\n\n\nstd\n0.22\n0.24\n\n\nmin\n0.00\n0.00\n\n\n25%\n0.36\n0.15\n\n\n50%\n0.54\n0.21\n\n\n75%\n0.70\n0.50\n\n\nmax\n1.00\n1.00\n\n\n\n\n\n\n\nWe can see the difference between the mean values of before and after scaling.\nNow we will see the visualization of the differences of before and after scaling.\n\nfig, ax = plt.subplots(1, 2, figsize=(12,5))\n\nax[0].set_title('Before Scaling')\nsns.scatterplot(data=x_train, x='Alcohol', y='Malic acid', hue=y_train, palette=color_dict, ax=ax[0])\n\nax[1].set_title('After Scaling')\nsns.scatterplot(data=x_train_scaled, x='Alcohol', y='Malic acid', hue=y_train, palette=color_dict, ax=ax[1])\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nEffect of scaling on the KDE plots of the dataset\nNow we will see them on KDE plot.\nAt first for the Alcohol column.\n\nfig, ax = plt.subplots(1, 2, figsize=(12,5))\n\nax[0].set_title('Before Min-Max Scaling')\nsns.kdeplot(data=x_train, x='Alcohol', ax=ax[0])\n\nax[1].set_title('After Min-Max Scaling')\nsns.kdeplot(data=x_train_scaled, x='Alcohol', ax=ax[1])\n\nfig.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\nSame for the feature Malic Acid\n\nfig, ax = plt.subplots(1, 2, figsize=(12,5))\n\nax[0].set_title('Before Min-Max Scaling')\nsns.kdeplot(data=x_train, x='Malic acid', ax=ax[0])\n\nax[1].set_title('After Min-Max Scaling')\nsns.kdeplot(data=x_train_scaled, x='Malic acid', ax=ax[1])\n\nfig.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+    "href": "articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+    "title": "Introduction to Feature Engineering",
+    "section": "",
+    "text": "Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.\nAt first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.\nThe features are also known as columns or independent variables.\nThere is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.\nSo, the steps are: Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training\nLet’s try to understand what are in the feature engineering.\nFeature Engineering\n├── Feature Transformation\n│   ├── Missing Value Handling\n│   ├── Handling Categorical Feature\n│   ├── Outlier Detection\n│   └── Feature Scaling\n├── Feature Construction\n├── Feature Selection\n└── Feature Extraction\nHere is a high-level overview of the feature engineering process.\n\n\n\nMissing Value Handling:\nHere is an image for example.\n\n\n\nMissing Value Handling.png\n\n\nIn the image, we can see that some cells values are NaN which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.\nHandling Categorical Feature:\nHere is an image for example.\n\n\n\nHandling Categorical Feature.png\n\n\nWe can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.\nOutlier Detection:\nHere is an image for example.\n\n\n\nOutlier Detection.png\n\n\nIn the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.\nFeature Scaling:\n\n\n\nFeature Scaling.png\n\n\nIf we look at this data, we can see that the value range of the Age column is very lower than the value range of the Salary column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the Salary column than the Age column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.\n\n\n\n\nWe can create new features from the existing features by feature construction.\n\n\n\nFeature Construction.png\n\n\nLook at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.\n\n\n\nWe will use MNIST handwritten digit dataset for this example.\n\n\n\nFeature Selection1.png\n\n\n\n\n\nFeature Selection2.png\n\n\nIn the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.\n\n\n\nSuppose we have two independent features Number of Rooms and Number of Bedrooms and we have a target variable Price. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature Area. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature."
+  },
+  {
+    "objectID": "articles/Feature Engineering/Introduction to Feature Engineering/index.html#feature-engineering",
+    "href": "articles/Feature Engineering/Introduction to Feature Engineering/index.html#feature-engineering",
+    "title": "Introduction to Feature Engineering",
+    "section": "",
+    "text": "Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.\nAt first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.\nThe features are also known as columns or independent variables.\nThere is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.\nSo, the steps are: Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training\nLet’s try to understand what are in the feature engineering.\nFeature Engineering\n├── Feature Transformation\n│   ├── Missing Value Handling\n│   ├── Handling Categorical Feature\n│   ├── Outlier Detection\n│   └── Feature Scaling\n├── Feature Construction\n├── Feature Selection\n└── Feature Extraction\nHere is a high-level overview of the feature engineering process.\n\n\n\nMissing Value Handling:\nHere is an image for example.\n\n\n\nMissing Value Handling.png\n\n\nIn the image, we can see that some cells values are NaN which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.\nHandling Categorical Feature:\nHere is an image for example.\n\n\n\nHandling Categorical Feature.png\n\n\nWe can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.\nOutlier Detection:\nHere is an image for example.\n\n\n\nOutlier Detection.png\n\n\nIn the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.\nFeature Scaling:\n\n\n\nFeature Scaling.png\n\n\nIf we look at this data, we can see that the value range of the Age column is very lower than the value range of the Salary column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the Salary column than the Age column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.\n\n\n\n\nWe can create new features from the existing features by feature construction.\n\n\n\nFeature Construction.png\n\n\nLook at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.\n\n\n\nWe will use MNIST handwritten digit dataset for this example.\n\n\n\nFeature Selection1.png\n\n\n\n\n\nFeature Selection2.png\n\n\nIn the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.\n\n\n\nSuppose we have two independent features Number of Rooms and Number of Bedrooms and we have a target variable Price. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature Area. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature."
   },
   {
     "objectID": "articles/machine-learning/2025-05-02-intro-to-ml/index.html",
