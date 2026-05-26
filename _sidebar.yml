@@ -49,3 +49,7 @@ website:
           href: articles/Feature%20Engineering/Feature%20Scaling/index.html
         - text: Handling Categorical Feature
           href: articles/Feature%20Engineering/Handling%20Categorical%20Feature/index.html
+        - text: Train-Test Split & Column Transformer
+          href: articles/Feature%20Engineering/Train-Test%20Split%20%26%20Column%20Transformer/index.html
+        - text: Machine Learning Pipelines
+          href: articles/Feature%20Engineering/Machine%20Learning%20Pipelines/index.html

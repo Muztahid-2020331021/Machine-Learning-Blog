@@ -61,5 +61,11 @@
   },
   "articles/Feature Engineering/Handling Categorical Feature/index.ipynb": {
     "index.html": "4c0e7f68"
+  },
+  "articles/Feature Engineering/Machine Learning Pipelines/index.ipynb": {
+    "index.html": "a4d37fac"
+  },
+  "articles/Feature Engineering/Train-Test Split & Column Transformer/index.ipynb": {
+    "index.html": "4b67e137"
   }
 }
