@@ -6,11 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2024-03-15">
-<meta name="description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
+<meta name="author" content="Md Muztahid Hassan">
+<meta name="dcterms.date" content="2026-05-21">
+<meta name="description" content="A comprehensive guide to securely partitioning data and building automated preprocessing pipelines that prevent data leakage and streamline model training.">
 
-<title>Getting Started with Python Data Analysis – My Professional Blog</title>
+<title>Train-Test Split &amp; Column Transformer – My Professional Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -123,16 +123,46 @@ gtag('js', new Date());
 gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
-<meta property="og:title" content="Getting Started with Python Data Analysis – My Professional Blog">
-<meta property="og:description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/python-ds/2024-03-15-post-2/thumbnail.png">
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Train-Test Split &amp; Column Transformer – My Professional Blog">
+<meta property="og:description" content="A comprehensive guide to securely partitioning data and building automated preprocessing pipelines that prevent data leakage and streamline model training.">
 <meta property="og:site_name" content="My Professional Blog">
-<meta name="twitter:title" content="Getting Started with Python Data Analysis – My Professional Blog">
-<meta name="twitter:description" content="A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/python-ds/2024-03-15-post-2/thumbnail.png">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Train-Test Split &amp; Column Transformer – My Professional Blog">
+<meta name="twitter:description" content="A comprehensive guide to securely partitioning data and building automated preprocessing pipelines that prevent data leakage and streamline model training.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -359,7 +389,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/index.html">Python &amp; Data Science</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/2024-03-15-post-2/index.html">Getting Started with Python Data Analysis</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Train-Test Split &amp; Column Transformer</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -387,14 +417,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../../../articles/python-ds/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python &amp; Data Science</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Started with Python Data Analysis</span></a>
   </div>
 </li>
@@ -545,10 +575,15 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setting-up-your-environment" id="toc-setting-up-your-environment" class="nav-link active" data-scroll-target="#setting-up-your-environment">Setting Up Your Environment</a></li>
-  <li><a href="#loading-and-exploring-data" id="toc-loading-and-exploring-data" class="nav-link" data-scroll-target="#loading-and-exploring-data">Loading and Exploring Data</a></li>
-  <li><a href="#visualising-with-matplotlib" id="toc-visualising-with-matplotlib" class="nav-link" data-scroll-target="#visualising-with-matplotlib">Visualising with Matplotlib</a></li>
-  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps">Next Steps</a></li>
+  <li><a href="#train-test-split" id="toc-train-test-split" class="nav-link active" data-scroll-target="#train-test-split">Train-Test Split</a>
+  <ul class="collapse">
+  <li><a href="#choosing-the-right-split-ratio" id="toc-choosing-the-right-split-ratio" class="nav-link" data-scroll-target="#choosing-the-right-split-ratio">Choosing the Right Split Ratio</a></li>
+  </ul></li>
+  <li><a href="#column-transformer" id="toc-column-transformer" class="nav-link" data-scroll-target="#column-transformer">Column Transformer</a>
+  <ul class="collapse">
+  <li><a href="#without-column-transformer-the-manual-approach" id="toc-without-column-transformer-the-manual-approach" class="nav-link" data-scroll-target="#without-column-transformer-the-manual-approach">Without Column Transformer (The manual approach)</a></li>
+  <li><a href="#with-column-transformer-the-automated-approach" id="toc-with-column-transformer-the-automated-approach" class="nav-link" data-scroll-target="#with-column-transformer-the-automated-approach">With Column Transformer (The automated approach)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -556,14 +591,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/index.html">Python &amp; Data Science</a></li><li class="breadcrumb-item"><a href="../../../articles/python-ds/2024-03-15-post-2/index.html">Getting Started with Python Data Analysis</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Getting Started with Python Data Analysis</h1>
+<h1 class="title">Train-Test Split &amp; Column Transformer</h1>
 </div>
 
 <div>
   <div class="description">
-    A beginner-friendly walkthrough of pandas, matplotlib, and Jupyter.
+    A comprehensive guide to securely partitioning data and building automated preprocessing pipelines that prevent data leakage and streamline model training.
   </div>
 </div>
 
@@ -573,14 +608,14 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Md Muztahid Hassan </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2024</p>
+      <p class="date">May 21, 2026</p>
     </div>
   </div>
   
@@ -592,103 +627,594 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<p>Data analysis is one of the most in-demand skills of the decade, and Python’s ecosystem makes it<br>
-remarkably accessible. In this post we’ll cover the essentials: loading data with <strong>pandas</strong>,<br>
-exploring it visually with <strong>matplotlib</strong>, and running everything interactively in <strong>Jupyter</strong>.</p>
-<hr>
-<section id="setting-up-your-environment" class="level2">
-<h2 class="anchored" data-anchor-id="setting-up-your-environment">Setting Up Your Environment</h2>
-<p>Before writing a single line of analysis code, you need a working environment. The fastest path<br>
-is a virtual environment with the three core packages installed.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> .venv/bin/activate      <span class="co"># Windows: .venv\Scripts\activate</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Pro Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Always check for missing values with <code>df.isnull().sum()</code> before any analysis. Silently missing<br>
-data is the leading cause of misleading results.</p>
-</div>
-</div>
-<p>Once installed, launch Jupyter with <code>jupyter notebook</code> and create a new Python 3 kernel.</p>
-<hr>
-</section>
-<section id="loading-and-exploring-data" class="level2">
-<h2 class="anchored" data-anchor-id="loading-and-exploring-data">Loading and Exploring Data</h2>
-<p>The first thing you’ll do in almost every project is load a CSV file and peek at its shape.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"data.csv"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>After <code>df.head()</code> you’ll want a quick statistical summary:</p>
-<table class="caption-top table">
+<section id="train-test-split" class="level2">
+<h2 class="anchored" data-anchor-id="train-test-split">Train-Test Split</h2>
+<p>Before trusting a machine learning model to make real-world decisions, we need to know if it actually <em>learned</em> the data, or if it just memorized it.</p>
+<p>Think of training a model like a student preparing for a test. If you give the student the exact final exam to practice with, they will score 100% just by memorizing the answers—but they will fail in the real world.</p>
+<p>To solve this, we randomly split our dataset into two parts:</p>
+<ul>
+<li><strong>The Training Set (Usually 70-80%):</strong> The practice homework. The model uses this large chunk of data to learn patterns and build its mathematical rules.</li>
+<li><strong>The Testing Set (Usually 20-30%):</strong> The final exam. This data is kept completely hidden during the training phase. We use it at the very end to test the model’s accuracy on brand-new, unseen information.</li>
+</ul>
+<p><strong>Why is this essential?</strong><br>
+It prevents <strong>overfitting</strong> (when a model memorizes the training data but fails on new data) and gives you an honest metric of how your model will perform in production. In Python, Scikit-Learn’s <code>train_test_split</code> handles this shuffling and dividing in just one line of code!</p>
+<section id="choosing-the-right-split-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="choosing-the-right-split-ratio">Choosing the Right Split Ratio</h3>
+<p>There is no single rule—the perfect split depends entirely on your total dataset size:</p>
+<ul>
+<li><strong>Small Data (&lt; 10,000 rows) <span class="math inline">\(\rightarrow\)</span> 70/30 or 80/20 Split:</strong> You need a larger percentage dedicated to testing to ensure the results are statistically reliable.</li>
+<li><strong>Large Data (&gt; 10,000 rows) <span class="math inline">\(\rightarrow\)</span> 80/20 or 90/10 Split:</strong> 10% of a large number is still plenty of data to test with, allowing you to feed more data to the model.</li>
+<li><strong>Massive Data (Millions of rows) <span class="math inline">\(\rightarrow\)</span> 99/1 Split:</strong> 1% of a million is still 10,000 rows! That is more than enough for a test set, leaving 99% for the model to learn from.</li>
+</ul>
+<p>Let’s see them in practical. You can download the dataset from <a href="covid_toy.csv" download="">here</a></p>
+<div id="3743ffd2" class="cell" data-execution_count="129">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"covid_toy.csv"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="129">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
 <thead>
 <tr class="header">
-<th>Method</th>
-<th>What it shows</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">fever</th>
+<th data-quarto-table-cell-role="th">cough</th>
+<th data-quarto-table-cell-role="th">city</th>
+<th data-quarto-table-cell-role="th">has_covid</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>df.shape</code></td>
-<td>(rows, columns)</td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>60</td>
+<td>Male</td>
+<td>103.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+<td>No</td>
 </tr>
 <tr class="even">
-<td><code>df.dtypes</code></td>
-<td>data type per column</td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>27</td>
+<td>Male</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+<td>Yes</td>
 </tr>
 <tr class="odd">
-<td><code>df.describe()</code></td>
-<td>count, mean, std, min/max</td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>42</td>
+<td>Male</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+<td>No</td>
 </tr>
 <tr class="even">
-<td><code>df.isnull().sum()</code></td>
-<td>missing values per column</td>
+<th data-quarto-table-cell-role="th">3</th>
+<td>31</td>
+<td>Female</td>
+<td>98.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>65</td>
+<td>Female</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Mumbai</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
-<p>These four lines form a reliable first-pass audit of any new dataset.</p>
-<hr>
-</section>
-<section id="visualising-with-matplotlib" class="level2">
-<h2 class="anchored" data-anchor-id="visualising-with-matplotlib">Visualising with Matplotlib</h2>
-<p>A histogram is the fastest way to understand the distribution of a numeric column.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax.hist(df[<span class="st">"value_column"</span>], bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">"#3B82F6"</span>, edgecolor<span class="op">=</span><span class="st">"white"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Distribution of value_column"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Value"</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Frequency"</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">"distribution.png"</span>, dpi<span class="op">=</span><span class="dv">150</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<blockquote class="blockquote">
-<p>“A picture is worth a thousand words—and in data analysis, a good chart is worth a thousand<br>
-rows of summary statistics.”</p>
-<p>— Hadley Wickham, <em>R for Data Science</em></p>
-</blockquote>
-<hr>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>You now have the foundation. From here, the natural progressions are:</p>
-<ul>
-<li><strong>Seaborn</strong> for statistical plots with less boilerplate</li>
-<li><strong>Plotly</strong> for interactive, web-ready visualisations</li>
-<li><strong>scikit-learn</strong> when you’re ready to move from exploration to modelling</li>
-<li><strong>Polars</strong> as a faster alternative to pandas for large datasets</li>
-</ul>
-<p>Keep iterating, keep plotting, and don’t be afraid to look at your data from five different<br>
-angles before drawing any conclusions.</p>
+
+</div>
+</div>
+</div>
+<p>For train-test split, we use function <code>train_test_split</code> from sklearn. It returns four outputs: <code>x_train</code>, <code>x_test</code>, <code>y_train</code>, <code>y_test</code>. We usually need to pass 4 parameters to the <code>train_test_split</code> function: <code>Input Features</code>, <code>Target Variable</code>, <code>Test-ratio</code> and <code>random_state</code>. At let’s check the size of the dataset.</p>
+<div id="140b6314" class="cell" data-execution_count="130">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="130">
+<pre><code>(100, 6)</code></pre>
+</div>
+</div>
+<p>So, we can use 80-20 ratio of train-test split.</p>
+<div id="59b3e41a" class="cell" data-execution_count="131">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>input_features <span class="op">=</span> df.drop(<span class="st">'has_covid'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>target_variable <span class="op">=</span> df[<span class="st">'has_covid'</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>x_train, x_test, y_train, y_test <span class="op">=</span> train_test_split(input_features, target_variable, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now let’s see the shape of the train and test dataset.</p>
+<div id="c0e8197b" class="cell" data-execution_count="132">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x_train.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="132">
+<pre><code>(80, 5)</code></pre>
+</div>
+</div>
+<div id="b2e1fc64" class="cell" data-execution_count="133">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x_test.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="133">
+<pre><code>(20, 5)</code></pre>
+</div>
+</div>
+<div id="e988324a" class="cell" data-execution_count="134">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>y_train.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="134">
+<pre><code>(80,)</code></pre>
+</div>
+</div>
+<div id="07eddeca" class="cell" data-execution_count="135">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>y_test.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="135">
+<pre><code>(20,)</code></pre>
+</div>
+</div>
+<div id="979e03f9" class="cell" data-execution_count="136">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x_train.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="136">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">fever</th>
+<th data-quarto-table-cell-role="th">cough</th>
+<th data-quarto-table-cell-role="th">city</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">55</th>
+<td>81</td>
+<td>Female</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Mumbai</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">88</th>
+<td>5</td>
+<td>Female</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>19</td>
+<td>Female</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">42</th>
+<td>27</td>
+<td>Male</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">69</th>
+<td>73</td>
+<td>Female</td>
+<td>103.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="b5051ec2" class="cell" data-execution_count="137">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>y_train.to_frame().head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="137">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">has_covid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">55</th>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">88</th>
+<td>No</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">42</th>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">69</th>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Here <code>y_train</code> is a pandas series. Not a dataframe.</p>
+</section>
+</section>
+<section id="column-transformer" class="level2">
+<h2 class="anchored" data-anchor-id="column-transformer">Column Transformer</h2>
+<p>In the real world, datasets are almost always a messy mix of numbers (like Age or Salary) and text categories (like City or Gender). Because numbers and text require completely different treatments—you need to scale numbers, but you need to encode text—you cannot apply a single rule to your entire dataset at once.</p>
+<p>In the past, programmers had to manually slice their datasets apart, process the numbers and text separately, and then carefully glue everything back together.</p>
+<p>The Column Transformer completely automates this. It automatically routes the correct columns to the correct tools, processes them simultaneously, and automatically stitches everything back together into a single, clean, model-ready dataset. It saves time, reduces messy code, and prevents mistakes.</p>
+<p>Now let’s see them in practical. We will again use the <code>covid_toy</code> dataset.</p>
+<section id="without-column-transformer-the-manual-approach" class="level3">
+<h3 class="anchored" data-anchor-id="without-column-transformer-the-manual-approach">Without Column Transformer (The manual approach)</h3>
+<div id="39ab1221" class="cell" data-execution_count="138">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="16007d1c" class="cell" data-execution_count="139">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"covid_toy.csv"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="139">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">fever</th>
+<th data-quarto-table-cell-role="th">cough</th>
+<th data-quarto-table-cell-role="th">city</th>
+<th data-quarto-table-cell-role="th">has_covid</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>60</td>
+<td>Male</td>
+<td>103.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>27</td>
+<td>Male</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>42</td>
+<td>Male</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>31</td>
+<td>Female</td>
+<td>98.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>65</td>
+<td>Female</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Mumbai</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Let’s find out if there is any missing value.</p>
+<div id="1f48bb99" class="cell" data-execution_count="140">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="140">
+<pre><code>age           0
+gender        0
+fever        10
+cough         0
+city          0
+has_covid     0
+dtype: int64</code></pre>
+</div>
+</div>
+<p>Here we can see that there are 10 null values. So we need to handle this and other columns should be untouched. After handling the null values in the <code>fever</code> column, we need to update to the main dataframe.</p>
+<div id="7a757225" class="cell" data-execution_count="141">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x_train,x_test,y_train,y_test <span class="op">=</span> train_test_split(df.drop(columns<span class="op">=</span>[<span class="st">'has_covid'</span>]),df[<span class="st">'has_covid'</span>],</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                                                test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>x_train.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="141">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">fever</th>
+<th data-quarto-table-cell-role="th">cough</th>
+<th data-quarto-table-cell-role="th">city</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">55</th>
+<td>81</td>
+<td>Female</td>
+<td>101.0</td>
+<td>Mild</td>
+<td>Mumbai</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">88</th>
+<td>5</td>
+<td>Female</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>19</td>
+<td>Female</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Kolkata</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">42</th>
+<td>27</td>
+<td>Male</td>
+<td>100.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">69</th>
+<td>73</td>
+<td>Female</td>
+<td>103.0</td>
+<td>Mild</td>
+<td>Delhi</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="f6c327af" class="cell" data-execution_count="142">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adding simple imputer to fever col</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>si <span class="op">=</span> SimpleImputer()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>x_train_fever <span class="op">=</span> si.fit_transform(x_train[[<span class="st">'fever'</span>]])</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># also the test data</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>x_test_fever <span class="op">=</span> si.transform(x_test[[<span class="st">'fever'</span>]])</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>x_train_fever.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="142">
+<pre><code>(80, 1)</code></pre>
+</div>
+</div>
+<div id="99eb77be" class="cell" data-execution_count="143">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>x_train_fever[:<span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="143">
+<pre><code>array([[101.],
+       [100.],
+       [100.],
+       [100.],
+       [103.],
+       [103.],
+       [102.],
+       [101.],
+       [101.],
+       [101.]])</code></pre>
+</div>
+</div>
+<p>Again, we need to convert it to dataframe and add it to the main dataframe.</p>
+<p>There are mix of different columns in the real world datasets. So we need to feature engineer every column separately. Like <code>age</code> doesn’t need ordinal or nominal encoding as its value is numeric. So we need to handle this column in a separate way.<br>
+The <code>gender</code> and <code>city</code> columns needs <code>one-hot encoding</code> and the <code>cough</code> column needs <code>ordinal</code> encoding. So we can feel that the manual approach is very time consuming.</p>
+<div id="43c5ff85" class="cell" data-execution_count="144">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordinalencoding -&gt; cough</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>oe <span class="op">=</span> OrdinalEncoder(categories<span class="op">=</span>[[<span class="st">'Mild'</span>,<span class="st">'Strong'</span>]])</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>x_train_cough <span class="op">=</span> oe.fit_transform(x_train[[<span class="st">'cough'</span>]])</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co"># also the test data</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>x_test_cough <span class="op">=</span> oe.transform(x_test[[<span class="st">'cough'</span>]])</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>x_train_cough.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="144">
+<pre><code>(80, 1)</code></pre>
+</div>
+</div>
+<div id="e6383a04" class="cell" data-execution_count="145">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x_train_cough[:<span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="145">
+<pre><code>array([[0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [1.],
+       [0.],
+       [1.],
+       [0.],
+       [0.]])</code></pre>
+</div>
+</div>
+<p>Now we will use <code>one-hot encoding</code> on the <code>gender</code> and <code>city</code> columns.</p>
+<div id="55187052" class="cell" data-execution_count="146">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OneHotEncoding -&gt; gender,city</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>ohe <span class="op">=</span> OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>,sparse_output<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>x_train_gender_city <span class="op">=</span> ohe.fit_transform(x_train[[<span class="st">'gender'</span>,<span class="st">'city'</span>]])</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># also the test data</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>x_test_gender_city <span class="op">=</span> ohe.transform(x_test[[<span class="st">'gender'</span>,<span class="st">'city'</span>]])</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>x_train_gender_city.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="146">
+<pre><code>(80, 4)</code></pre>
+</div>
+</div>
+<div id="a4e87132" class="cell" data-execution_count="147">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x_train_gender_city[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="147">
+<pre><code>array([[0., 0., 0., 1.],
+       [0., 0., 1., 0.],
+       [0., 0., 1., 0.],
+       [1., 1., 0., 0.],
+       [0., 1., 0., 0.]])</code></pre>
+</div>
+</div>
+<p>Now we have to add them to the main dataset.</p>
+<div id="fcba1ca4" class="cell" data-execution_count="148">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracting Age</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>x_train_age <span class="op">=</span> x_train.drop(columns<span class="op">=</span>[<span class="st">'gender'</span>,<span class="st">'fever'</span>,<span class="st">'cough'</span>,<span class="st">'city'</span>]).values</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>x_train_age[:<span class="dv">10</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="148">
+<pre><code>array([[81],
+       [ 5],
+       [19],
+       [27],
+       [73],
+       [70],
+       [49],
+       [51],
+       [64],
+       [83]])</code></pre>
+</div>
+</div>
+<div id="08ba4aa6" class="cell" data-execution_count="149">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># also the test data</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>x_test_age <span class="op">=</span> x_test.drop(columns<span class="op">=</span>[<span class="st">'gender'</span>,<span class="st">'fever'</span>,<span class="st">'cough'</span>,<span class="st">'city'</span>]).values</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>x_train_age.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="149">
+<pre><code>(80, 1)</code></pre>
+</div>
+</div>
+<div id="0986e2bb" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x_train_transformed <span class="op">=</span> np.concatenate((x_train_age,x_train_fever,x_train_gender_city,x_train_cough),axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># also the test data</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>x_test_transformed <span class="op">=</span> np.concatenate((x_test_age,x_test_fever,x_test_gender_city,x_test_cough),axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>x_train_transformed.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="150">
+<pre><code>((80, 7), (80, 5))</code></pre>
+</div>
+</div>
+<div id="49462fd2" class="cell" data-execution_count="151">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x_train_transformed[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="151">
+<pre><code>array([[ 81., 101.,   0.,   0.,   0.,   1.,   0.],
+       [  5., 100.,   0.,   0.,   1.,   0.,   0.],
+       [ 19., 100.,   0.,   0.,   1.,   0.,   0.],
+       [ 27., 100.,   1.,   1.,   0.,   0.,   0.],
+       [ 73., 103.,   0.,   1.,   0.,   0.,   0.]])</code></pre>
+</div>
+</div>
+<p>So, we can see that the manual approach is very time consuming and error prone. We can automate this process using <code>ColumnTransformer</code>.</p>
+</section>
+<section id="with-column-transformer-the-automated-approach" class="level3">
+<h3 class="anchored" data-anchor-id="with-column-transformer-the-automated-approach">With Column Transformer (The automated approach)</h3>
+<p>Here is a template of how to use <code>ColumnTransformer</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.compose <span class="im">import</span> ColumnTransformer</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Define the transformer</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># It automatically encodes gender/city and passes age, fever, and cough through untouched</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>transformer <span class="op">=</span> ColumnTransformer(</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    transformers<span class="op">=</span>[</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'Name what you want'</span>, OneHotEncoder(drop<span class="op">=</span><span class="st">'first'</span>, sparse_output<span class="op">=</span><span class="va">False</span>), [<span class="st">'gender'</span>, <span class="st">'city'</span>])</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>    remainder<span class="op">=</span><span class="st">'passthrough'</span> <span class="co"># use 'drop' if you want to drop the other columns instead of passing them through</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Fit and transform the training data (replaces np.concatenate entirely)</span></span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>x_train_transformed <span class="op">=</span> transformer.fit_transform(x_train)</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. ONLY transform the testing data</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>x_test_transformed <span class="op">=</span> transformer.transform(x_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now let’s see them in practical.</p>
+<div id="55dbd3e2" class="cell" data-execution_count="152">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.compose <span class="im">import</span> ColumnTransformer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b0693d3c" class="cell" data-execution_count="154">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>transformer <span class="op">=</span> ColumnTransformer(transformers<span class="op">=</span>[</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'tnf1'</span>,SimpleImputer(),[<span class="st">'fever'</span>]),</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'tnf2'</span>,OrdinalEncoder(categories<span class="op">=</span>[[<span class="st">'Mild'</span>,<span class="st">'Strong'</span>]]),[<span class="st">'cough'</span>]),</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'tnf3'</span>,OneHotEncoder(sparse_output<span class="op">=</span><span class="va">False</span>,drop<span class="op">=</span><span class="st">'first'</span>),[<span class="st">'gender'</span>,<span class="st">'city'</span>])</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>],remainder<span class="op">=</span><span class="st">'passthrough'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f889c1d5" class="cell" data-execution_count="156">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> transformer.fit_transform(x_train)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>new_data.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="156">
+<pre><code>(80, 7)</code></pre>
+</div>
+</div>
+<p>Look it’s like a magic! We have transformed the dataset in just 3 lines of code. The <code>ColumnTransformer</code> automatically handled the one-hot encoding for the specified columns and passed the rest through without any extra work from us. This not only saves time but also ensures that we don’t accidentally mess up our data by forgetting to concatenate or misaligning columns.</p>
+<div id="811683ca" class="cell" data-execution_count="157">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>new_data[:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="157">
+<pre><code>array([[101.,   0.,   0.,   0.,   0.,   1.,  81.],
+       [100.,   0.,   0.,   0.,   1.,   0.,   5.],
+       [100.,   0.,   0.,   0.,   1.,   0.,  19.],
+       [100.,   0.,   1.,   1.,   0.,   0.,  27.],
+       [103.,   0.,   0.,   1.,   0.,   0.,  73.]])</code></pre>
+</div>
+</div>
+
+
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
