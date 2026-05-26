@@ -558,6 +558,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   <li><a href="#cross-validation-using-pipeline" id="toc-cross-validation-using-pipeline" class="nav-link" data-scroll-target="#cross-validation-using-pipeline">Cross Validation using Pipeline</a></li>
   <li><a href="#saving-the-pipeline" id="toc-saving-the-pipeline" class="nav-link" data-scroll-target="#saving-the-pipeline">Saving the pipeline</a></li>
   </ul></li>
+  <li><a href="#predict-using-pipelines" id="toc-predict-using-pipelines" class="nav-link" data-scroll-target="#predict-using-pipelines">Predict using pipelines</a></li>
   </ul>
 </nav>
     </div>
@@ -3916,8 +3917,11 @@ forceTheme('sk-container-id-27');</script>
 <div id="5d182b48" class="cell" data-execution_count="752">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>pickle.dump(pipe,<span class="bu">open</span>(<span class="st">'pipe.pkl'</span>,<span class="st">'wb'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>This will create a file named <code>pipe.pkl</code> in your current directory. This file contains the entire pipeline object. So when we will load this file, we will get the entire pipeline object with all the steps of the pipeline.<br>
-## Predict using pipelines</p>
+<p>This will create a file named <code>pipe.pkl</code> in your current directory. This file contains the entire pipeline object. So when we will load this file, we will get the entire pipeline object with all the steps of the pipeline.</p>
+</section>
+</section>
+<section id="predict-using-pipelines" class="level2">
+<h2 class="anchored" data-anchor-id="predict-using-pipelines">Predict using pipelines</h2>
 <div id="dd8d7d62" class="cell" data-execution_count="753">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>pipe <span class="op">=</span> pickle.load(<span class="bu">open</span>(<span class="st">'pipe.pkl'</span>,<span class="st">'rb'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -3936,7 +3940,6 @@ forceTheme('sk-container-id-27');</script>
 </div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
