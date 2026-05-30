@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/Feature Engineering/Data Transformation Techniques/index.html",
       "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
       "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
       "/articles/Feature Engineering/Handling Categorical Feature/index.html",
@@ -46,7 +47,8 @@
       "/articles/Feature Engineering/Feature Scaling/index.html",
       "/articles/Feature Engineering/Handling Categorical Feature/index.html",
       "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
-      "/articles/Feature Engineering/Machine Learning Pipelines/index.html"
+      "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
+      "/articles/Feature Engineering/Data Transformation Techniques/index.html"
     ]
   },
   {
@@ -56,7 +58,14 @@
       "/articles/Feature Engineering/Feature Scaling/index.html",
       "/articles/Feature Engineering/Handling Categorical Feature/index.html",
       "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
-      "/articles/Feature Engineering/Machine Learning Pipelines/index.html"
+      "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
+      "/articles/Feature Engineering/Data Transformation Techniques/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/career-writing/index.html",
+    "items": [
+      "/articles/career-writing/2024-02-28-post-3/index.html"
     ]
   },
   {
@@ -66,12 +75,6 @@
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/career-writing/index.html",
-    "items": [
-      "/articles/career-writing/2024-02-28-post-3/index.html"
     ]
   },
   {

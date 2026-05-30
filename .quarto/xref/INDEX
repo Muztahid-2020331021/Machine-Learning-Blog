@@ -67,5 +67,8 @@
   },
   "articles/Feature Engineering/Train-Test Split & Column Transformer/index.ipynb": {
     "index.html": "4b67e137"
+  },
+  "articles/Feature Engineering/Data Transformation Techniques/index.ipynb": {
+    "index.html": "d78c7cba"
   }
 }
