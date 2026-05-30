@@ -1,4 +1,4 @@
 git add .
-git commit -m "Updated Machine Learning pipeline"
+git commit -m "Added Data Transformation Techniques"
 git push origin main
 quarto publish gh-pages --no-prompt --no-browser
