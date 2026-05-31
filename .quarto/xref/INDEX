@@ -70,5 +70,8 @@
   },
   "articles/Feature Engineering/Data Transformation Techniques/index.ipynb": {
     "index.html": "d78c7cba"
+  },
+  "articles/Feature Engineering/Outlier Detection and Removal/index.ipynb": {
+    "index.html": "9a173df4"
   }
 }

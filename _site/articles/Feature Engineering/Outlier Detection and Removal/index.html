@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Md Muztahid Hassan">
-<meta name="dcterms.date" content="2026-05-10">
-<meta name="description" content="A simple EDA project on the Titanic dataset using Python and its libraries.">
+<meta name="dcterms.date" content="2026-05-31">
+<meta name="description" content="Discover methods to identify and handle anomalous data points using the Interquartile Range (IQR) method, comparing trimming and capping strategies to prepare cleaner datasets for machine learning.">
 
-<title>EDA on Titanic Dataset (Project) – My Professional Blog</title>
+<title>Outlier Detection and Removal – My Professional Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -127,18 +127,47 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="EDA on Titanic Dataset (Project) – My Professional Blog">
-<meta property="og:description" content="A simple EDA project on the Titanic dataset using Python and its libraries.">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index_files/figure-html/cell-7-output-1.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Outlier Detection and Removal – My Professional Blog">
+<meta property="og:description" content="Discover methods to identify and handle anomalous data points using the Interquartile Range (IQR) method, comparing trimming and capping strategies to prepare cleaner datasets for machine learning.">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Outlier Detection and Removal/images/IQR_graph.png">
 <meta property="og:site_name" content="My Professional Blog">
-<meta property="og:image:height" content="858">
-<meta property="og:image:width" content="1186">
-<meta name="twitter:title" content="EDA on Titanic Dataset (Project) – My Professional Blog">
-<meta name="twitter:description" content="A simple EDA project on the Titanic dataset using Python and its libraries.">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index_files/figure-html/cell-7-output-1.png">
-<meta name="twitter:image-height" content="858">
-<meta name="twitter:image-width" content="1186">
+<meta property="og:image:height" content="4500">
+<meta property="og:image:width" content="9000">
+<meta name="twitter:title" content="Outlier Detection and Removal – My Professional Blog">
+<meta name="twitter:description" content="Discover methods to identify and handle anomalous data points using the Interquartile Range (IQR) method, comparing trimming and capping strategies to prepare cleaner datasets for machine learning.">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Outlier Detection and Removal/images/IQR_graph.png">
+<meta name="twitter:image-height" content="4500">
+<meta name="twitter:image-width" content="9000">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -366,7 +395,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">EDA on Titanic Dataset (Project)</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Outlier Detection and Removal</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -559,8 +588,19 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#interquartile-range-iqr-technique" id="toc-interquartile-range-iqr-technique" class="nav-link active" data-scroll-target="#interquartile-range-iqr-technique">Interquartile Range (IQR) Technique</a>
+  <ul class="collapse">
+  <li><a href="#trimming-vs.-capping-winsorization" id="toc-trimming-vs.-capping-winsorization" class="nav-link" data-scroll-target="#trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</a></li>
+  </ul></li>
+  <li><a href="#trimming" id="toc-trimming" class="nav-link" data-scroll-target="#trimming">Trimming</a></li>
+  <li><a href="#capping-winsorization-1" id="toc-capping-winsorization-1" class="nav-link" data-scroll-target="#capping-winsorization-1">Capping (Winsorization)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -568,12 +608,12 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">EDA on Titanic Dataset (Project)</h1>
+<h1 class="title">Outlier Detection and Removal</h1>
 </div>
 
 <div>
   <div class="description">
-    A simple EDA project on the Titanic dataset using Python and its libraries.
+    Discover methods to identify and handle anomalous data points using the Interquartile Range (IQR) method, comparing trimming and capping strategies to prepare cleaner datasets for machine learning.
   </div>
 </div>
 
@@ -590,7 +630,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 10, 2026</p>
+      <p class="date">May 31, 2026</p>
     </div>
   </div>
   
@@ -602,18 +642,70 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<p>At first we need to import the necessary libraries</p>
-<div id="7f5b5ed2" class="cell" data-execution_count="1">
+<section id="interquartile-range-iqr-technique" class="level2">
+<h2 class="anchored" data-anchor-id="interquartile-range-iqr-technique">Interquartile Range (IQR) Technique</h2>
+<p>The Interquartile Range (IQR) is a measure of statistical dispersion and is a widely used method for detecting outliers in a dataset. It represents the range between the first quartile (25th percentile, <span class="math inline">\(Q_1\)</span>) and the third quartile (75th percentile, <span class="math inline">\(Q_3\)</span>):</p>
+<p><span class="math display">\[\text{IQR} = Q_3 - Q_1\]</span></p>
+<section id="identifying-outliers" class="level4">
+<h4 class="anchored" data-anchor-id="identifying-outliers">Identifying Outliers:</h4>
+<p>Data points are considered outliers if they fall outside the bounds:<br>
+* <strong>Lower Bound:</strong> <span class="math inline">\(Q_1 - 1.5 \times \text{IQR}\)</span><br>
+* <strong>Upper Bound:</strong> <span class="math inline">\(Q_3 + 1.5 \times \text{IQR}\)</span></p>
+<p>Here is an image that shows the IQR method.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IQR_graph.png" class="img-fluid figure-img"></p>
+<figcaption>IQR_graph</figcaption>
+</figure>
+</div>
+<p>If there are any data points that fall outside these bounds, they are typically considered outliers. We can handle outliers in two ways:<br>
+1. Trimming<br>
+2. Capping</p>
+</section>
+<section id="trimming-vs.-capping-winsorization" class="level3">
+<h3 class="anchored" data-anchor-id="trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</h3>
+<p>When handling outliers, two common approaches are <strong>Trimming</strong> and <strong>Capping</strong>:</p>
+<section id="trimming-truncation" class="level4">
+<h4 class="anchored" data-anchor-id="trimming-truncation">1. Trimming (Truncation)</h4>
+<p>Trimming involves completely removing the outlier data points from the dataset.</p>
+<ul>
+<li><strong>Benefits:</strong>
+<ul>
+<li>Simple and straightforward to implement.</li>
+<li>Fully eliminates the influence of extreme values on models.</li>
+</ul></li>
+<li><strong>Limitations/Problems of Trimming:</strong>
+<ul>
+<li><strong>Loss of Information:</strong> If a row contains an outlier in one feature but valuable, normal information in all other features, trimming discards all of that valid information.</li>
+<li><strong>Reduced Data Size:</strong> In smaller datasets, removing rows can significantly reduce the amount of training data, potentially leading to overfitting or loss of statistical power.</li>
+<li><strong>Bias Induction:</strong> If outliers are not randomly distributed, deleting them can introduce systematic bias into the dataset.</li>
+</ul></li>
+<li><strong>When to use:</strong> Use when you have a large dataset and the outliers represent genuine errors or data corruption that does not carry useful information.</li>
+</ul>
+</section>
+<section id="capping-winsorization" class="level4">
+<h4 class="anchored" data-anchor-id="capping-winsorization">2. Capping (Winsorization)</h4>
+<p>Capping limits the extreme values by replacing outliers with the nearest non-outlier values (the threshold boundaries, e.g., the Lower and Upper bounds). That means, if a data point is below the lower bound, it is set to the lower bound value; if it is above the upper bound, it is set to the upper bound value.</p>
+<ul>
+<li><strong>Benefits:</strong>
+<ul>
+<li>Preserves the sample size (no data points are deleted).</li>
+<li>Prevents loss of potentially valuable information contained in other features of the outlier rows.</li>
+</ul></li>
+<li><strong>When to use:</strong> Use capping when your dataset is relatively small. If we have a large dataset, we should prefer trimming over capping.</li>
+</ul>
+<p>Now we will see them in code.</p>
+<div id="d199250b" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Now we will load the dataset. You can download the dataset from <a href="train.csv" download="">here</a>.</p>
-<div id="04605397" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'train.csv'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<p>Now we will load the dataset. You can download the dataset from <a href="placement.csv" download="">here</a>.</p>
+<div id="1b50425c" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'placement.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
@@ -621,95 +713,41 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">PassengerId</th>
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">SibSp</th>
-<th data-quarto-table-cell-role="th">Parch</th>
-<th data-quarto-table-cell-role="th">Ticket</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-<th data-quarto-table-cell-role="th">Cabin</th>
-<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">cgpa</th>
+<th data-quarto-table-cell-role="th">placement_exam_marks</th>
+<th data-quarto-table-cell-role="th">placed</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
+<td>7.19</td>
+<td>26.0</td>
 <td>1</td>
-<td>0</td>
-<td>3</td>
-<td>Braund, Mr. Owen Harris</td>
-<td>male</td>
-<td>22.0</td>
-<td>1</td>
-<td>0</td>
-<td>A/5 21171</td>
-<td>7.2500</td>
-<td>NaN</td>
-<td>S</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
-<td>female</td>
+<td>7.46</td>
 <td>38.0</td>
 <td>1</td>
-<td>0</td>
-<td>PC 17599</td>
-<td>71.2833</td>
-<td>C85</td>
-<td>C</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
-<td>3</td>
+<td>7.54</td>
+<td>40.0</td>
 <td>1</td>
-<td>3</td>
-<td>Heikkinen, Miss. Laina</td>
-<td>female</td>
-<td>26.0</td>
-<td>0</td>
-<td>0</td>
-<td>STON/O2. 3101282</td>
-<td>7.9250</td>
-<td>NaN</td>
-<td>S</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
-<td>4</td>
+<td>6.42</td>
+<td>8.0</td>
 <td>1</td>
-<td>1</td>
-<td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
-<td>female</td>
-<td>35.0</td>
-<td>1</td>
-<td>0</td>
-<td>113803</td>
-<td>53.1000</td>
-<td>C123</td>
-<td>S</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
-<td>5</td>
+<td>7.23</td>
+<td>17.0</td>
 <td>0</td>
-<td>3</td>
-<td>Allen, Mr. William Henry</td>
-<td>male</td>
-<td>35.0</td>
-<td>0</td>
-<td>0</td>
-<td>373450</td>
-<td>8.0500</td>
-<td>NaN</td>
-<td>S</td>
 </tr>
 </tbody>
 </table>
@@ -717,116 +755,352 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div id="8960b65b" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>(891, 12)</code></pre>
+<p>Here <code>placed</code> is a target column. At first, we will see the distribution of the <code>cgpa</code> and <code>placement_exam_marks</code> columns.</p>
+<div id="419ffa84" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">5</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">121</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'cgpa'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of CGPA'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">122</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'placement_exam_marks'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Placement Exam Marks'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div id="a5aff656" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Let’s see the statistical summary of the dataset.</p>
+<div id="6841c22a" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'placement_exam_marks'</span>].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>count    1000.000000
+mean       32.225000
+std        19.130822
+min         0.000000
+25%        17.000000
+50%        28.000000
+75%        44.000000
+max       100.000000
+Name: placement_exam_marks, dtype: float64</code></pre>
+</div>
+</div>
+<p><strong>Insights:</strong><br>
+Look at the max value of the <code>placement_exam_marks</code> column. It is 100, which is too much higher than the 75% value (which is 44). This indicates that there are some outliers in the <code>placement_exam_marks</code> column. Let’s see them in a boxplot.</p>
+<div id="fa8821bc" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df[<span class="st">'placement_exam_marks'</span>])</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Placement Exam Marks'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see the outliers in the boxplot. Now we will handle them using the IQR method.</p>
+<div id="96bbfd7d" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Q1, Q3 <span class="op">=</span> np.percentile(df[<span class="st">'placement_exam_marks'</span>], [<span class="dv">25</span>, <span class="dv">75</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Q1, Q3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>(np.float64(17.0), np.float64(44.0))</code></pre>
+</div>
+</div>
+<div id="3fcab8a2" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>IQR <span class="op">=</span> Q3 <span class="op">-</span> Q1</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>lower_bound <span class="op">=</span> Q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>upper_bound <span class="op">=</span> Q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> IQR</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>lower_bound, upper_bound</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<pre><code>(np.float64(-23.5), np.float64(84.5))</code></pre>
+</div>
+</div>
+<p>Let’s find the outliers. We will create a function to find the outliers using the IQR method.</p>
+<div id="19c63ca4" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detect_outliers_iqr(data, column):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generalized function to calculate IQR, lower &amp; upper bounds,</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">    and find outliers in a specified column of a DataFrame.</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate Q1 (25th percentile) and Q3 (75th percentile)</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    q1 <span class="op">=</span> data[column].quantile(<span class="fl">0.25</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    q3 <span class="op">=</span> data[column].quantile(<span class="fl">0.75</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate Interquartile Range (IQR)</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    iqr <span class="op">=</span> q3 <span class="op">-</span> q1</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Define bounds</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    lower_limit <span class="op">=</span> q1 <span class="op">-</span> <span class="fl">1.5</span> <span class="op">*</span> iqr</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    upper_limit <span class="op">=</span> q3 <span class="op">+</span> <span class="fl">1.5</span> <span class="op">*</span> iqr</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Identify outliers</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    outliers <span class="op">=</span> data[(data[column] <span class="op">&lt;</span> lower_limit) <span class="op">|</span> (data[column] <span class="op">&gt;</span> upper_limit)]</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"--- Outlier Detection Analysis for '</span><span class="sc">{</span>column<span class="sc">}</span><span class="ss">' ---"</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Q1 (25th percentile): </span><span class="sc">{</span>q1<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Q3 (75th percentile): </span><span class="sc">{</span>q3<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"IQR: </span><span class="sc">{</span>iqr<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Lower Limit (Bound): </span><span class="sc">{</span>lower_limit<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Upper Limit (Bound): </span><span class="sc">{</span>upper_limit<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Number of Outliers: </span><span class="sc">{</span><span class="bu">len</span>(outliers)<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lower_limit, upper_limit, outliers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>These are the outliers. Now we will either trim or cap them.</p>
+</section>
+</section>
+</section>
+<section id="trimming" class="level2">
+<h2 class="anchored" data-anchor-id="trimming">Trimming</h2>
+<p>Here is a generic function to trim the outliers.</p>
+<div id="8f0be2ec" class="cell" data-execution_count="38">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_clean_dataset(data, column, lower_limit, upper_limit):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generalized function to return a trimmed (outlier-free) dataset</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">    by removing values outside the specified lower and upper bounds.</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    clean_data <span class="op">=</span> data[(data[column] <span class="op">&gt;=</span> lower_limit) <span class="op">&amp;</span> (data[column] <span class="op">&lt;=</span> upper_limit)]</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"--- Dataset Trimming Report ---"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original shape: </span><span class="sc">{</span>data<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Cleaned shape: </span><span class="sc">{</span>clean_data<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Removed </span><span class="sc">{</span><span class="bu">len</span>(data) <span class="op">-</span> <span class="bu">len</span>(clean_data)<span class="sc">}</span><span class="ss"> outliers."</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> clean_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="eb80d23d" class="cell" data-execution_count="39">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>lower_bound, upper_bound, outliers_df <span class="op">=</span> detect_outliers_iqr(df, <span class="st">'placement_exam_marks'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>outliers_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 891 entries, 0 to 890
-Data columns (total 12 columns):
- #   Column       Non-Null Count  Dtype  
----  ------       --------------  -----  
- 0   PassengerId  891 non-null    int64  
- 1   Survived     891 non-null    int64  
- 2   Pclass       891 non-null    int64  
- 3   Name         891 non-null    object 
- 4   Sex          891 non-null    object 
- 5   Age          714 non-null    float64
- 6   SibSp        891 non-null    int64  
- 7   Parch        891 non-null    int64  
- 8   Ticket       891 non-null    object 
- 9   Fare         891 non-null    float64
- 10  Cabin        204 non-null    object 
- 11  Embarked     889 non-null    object 
-dtypes: float64(2), int64(5), object(5)
-memory usage: 83.7+ KB</code></pre>
+<pre><code>--- Outlier Detection Analysis for 'placement_exam_marks' ---
+Q1 (25th percentile): 17.0000
+Q3 (75th percentile): 44.0000
+IQR: 27.0000
+Lower Limit (Bound): -23.5000
+Upper Limit (Bound): 84.5000
+Number of Outliers: 15
+</code></pre>
 </div>
-</div>
-<div id="7d8bcc42" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>PassengerId      0
-Survived         0
-Pclass           0
-Name             0
-Sex              0
-Age            177
-SibSp            0
-Parch            0
-Ticket           0
-Fare             0
-Cabin          687
-Embarked         2
-dtype: int64</code></pre>
-</div>
-</div>
-<div id="765e8c04" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'Survived'</span>, data<span class="op">=</span>data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-7-output-1.png" width="593" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="84fd27c4" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(x<span class="op">=</span><span class="st">'Pclass'</span>, data<span class="op">=</span>data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-8-output-1.png" width="593" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Insights:</strong><br>
-If we look at the above graph, we can see that most of the passengers who were from the 3rd class in the Titanic.</p>
-<p>If we want to do the multivariate analysis, we can do like this.</p>
-<div id="43d8a3d6" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> data, x <span class="op">=</span> <span class="st">'Survived'</span>, hue<span class="op">=</span><span class="st">'Pclass'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-9-output-1.png" width="593" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Insights:</strong><br>
-If we look at the above graph, we can see that most of the passengers who died were from the 3rd class. This is because the 3rd class had less access to lifeboats and safety measures compared to the 1st and 2nd classes.<br>
-On the other hand, most of the passengers who survived were from the 1st class. This is because the 1st class had better access to lifeboats and safety measures compared to the 2nd and 3rd classes.</p>
-<div id="cd9e28d7" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> data, x <span class="op">=</span> <span class="st">'Survived'</span>, hue<span class="op">=</span><span class="st">'Sex'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="593" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Insights:</strong><br>
-If we look at the above graph, we can see that most of the passengers who died were male. On the other hand, most of the survivors were female.</p>
-<div id="cf2c68bf" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>data, x<span class="op">=</span><span class="st">'Age'</span>, kde <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-11-output-1.png" width="470" height="470" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Insights:</strong><br>
-There are some outliers in the age column. We can see that the graph is skewed to the right, which means that there are more younger passengers than older passengers. The majority of the passengers were between the ages of 20 and 40.</p>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cgpa</th>
+<th data-quarto-table-cell-role="th">placement_exam_marks</th>
+<th data-quarto-table-cell-role="th">placed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">9</th>
+<td>7.75</td>
+<td>94.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">40</th>
+<td>6.60</td>
+<td>86.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">61</th>
+<td>7.51</td>
+<td>86.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">134</th>
+<td>6.33</td>
+<td>93.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">162</th>
+<td>7.80</td>
+<td>90.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">283</th>
+<td>7.09</td>
+<td>87.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">290</th>
+<td>8.38</td>
+<td>87.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">311</th>
+<td>6.97</td>
+<td>87.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">324</th>
+<td>6.64</td>
+<td>90.0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">630</th>
+<td>6.56</td>
+<td>96.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">685</th>
+<td>6.05</td>
+<td>87.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">730</th>
+<td>6.14</td>
+<td>90.0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">771</th>
+<td>7.31</td>
+<td>86.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">846</th>
+<td>6.99</td>
+<td>97.0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">917</th>
+<td>5.95</td>
+<td>100.0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="c2919d8c" class="cell" data-execution_count="40">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_clean <span class="op">=</span> generate_clean_dataset(df, <span class="st">'placement_exam_marks'</span>, lower_bound, upper_bound)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Dataset Trimming Report ---
+Original shape: (1000, 3)
+Cleaned shape: (985, 3)
+Removed 15 outliers.</code></pre>
+</div>
+</div>
+<p>Now let’s see them in graphs.</p>
+<div id="7a3f3c9d" class="cell" data-execution_count="41">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'placement_exam_marks'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Placement Exam Marks before Trimming'</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">222</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df[<span class="st">'placement_exam_marks'</span>])</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Placement Exam Marks before Trimming'</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">223</span>)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_clean[<span class="st">'placement_exam_marks'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Placement Exam Marks after Trimming'</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">224</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df_clean[<span class="st">'placement_exam_marks'</span>])</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Placement Exam Marks after Trimming'</span>)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The kde plot is still right-skewed. If we want to make it normally distributed, we need log transformation. But this not today’s topic.</p>
+</section>
+<section id="capping-winsorization-1" class="level2">
+<h2 class="anchored" data-anchor-id="capping-winsorization-1">Capping (Winsorization)</h2>
+<div id="ae7fac8c" class="cell" data-execution_count="42">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cap_outliers_iqr(data, column, lower_limit, upper_limit):</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Generalized function to cap outliers in a specified column of a DataFrame.</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Replaces values below lower_limit with lower_limit and values above upper_limit with upper_limit.</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    capped_data <span class="op">=</span> data.copy()</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cap the values using clip</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    capped_data[column] <span class="op">=</span> capped_data[column].clip(lower<span class="op">=</span>lower_limit, upper<span class="op">=</span>upper_limit)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"--- Dataset Capping (Winsorization) Report for '</span><span class="sc">{</span>column<span class="sc">}</span><span class="ss">' ---"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original Min: </span><span class="sc">{</span>data[column]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss"> | Capped Min: </span><span class="sc">{</span>capped_data[column]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Original Max: </span><span class="sc">{</span>data[column]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss"> | Capped Max: </span><span class="sc">{</span>capped_data[column]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Number of values capped: </span><span class="sc">{</span><span class="bu">len</span>(data[ (data[column] <span class="op">&lt;</span> lower_limit) <span class="op">|</span> (data[column] <span class="op">&gt;</span> upper_limit) ])<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> capped_data</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="459955d2" class="cell" data-execution_count="43">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_capped <span class="op">=</span> cap_outliers_iqr(df, <span class="st">'placement_exam_marks'</span>, lower_bound, upper_bound)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Dataset Capping (Winsorization) Report for 'placement_exam_marks' ---
+Original Min: 0.0000 | Capped Min: 0.0000
+Original Max: 100.0000 | Capped Max: 84.5000
+Number of values capped: 15</code></pre>
+</div>
+</div>
+<div id="ae5321ba" class="cell" data-execution_count="44">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df.shape, df_capped.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>((1000, 3), (1000, 3))</code></pre>
+</div>
+</div>
+<p>Look at the shapes of the original and capped datasets. It is the same. Now let’s see them in graphs.</p>
+<div id="f110e553" class="cell" data-execution_count="45">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">8</span>))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df[<span class="st">'placement_exam_marks'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Placement Exam Marks before Trimming'</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">222</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df[<span class="st">'placement_exam_marks'</span>])</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Placement Exam Marks before Trimming'</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">223</span>)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_capped[<span class="st">'placement_exam_marks'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Placement Exam Marks after Capping'</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">224</span>)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df_capped[<span class="st">'placement_exam_marks'</span>])</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot of Placement Exam Marks after Capping'</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
