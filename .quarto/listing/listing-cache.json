@@ -12,8 +12,9 @@
       "*/*/index.qmd",
       "*/*/index.ipynb"
     ],
-    "articles\\machine-learning\\index.qmd": [
-      "*/index.qmd"
+    "articles\\Machine Learning\\index.qmd": [
+      "*/index.qmd",
+      "*/index.ipynb"
     ],
     "index.qmd": [
       "articles/*/*/index.qmd",
