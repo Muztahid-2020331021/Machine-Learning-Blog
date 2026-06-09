@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Md Muztahid Hassan">
-<meta name="dcterms.date" content="2026-05-19">
-<meta name="description" content="An introductory article on Feature Engineering">
+<meta name="dcterms.date" content="2026-06-09">
+<meta name="description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
 
-<title>Introduction to Feature Engineering – Muztahid’s ML Blog</title>
+<title>Introduction to Machine Learning – Muztahid’s ML Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -125,17 +90,17 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta property="og:description" content="An introductory article on Feature Engineering">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
+<meta property="og:title" content="Introduction to Machine Learning – Muztahid’s ML Blog">
+<meta property="og:description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Introduction to Machine Learning/images/im1.png">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta property="og:image:height" content="492">
-<meta property="og:image:width" content="868">
-<meta name="twitter:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta name="twitter:description" content="An introductory article on Feature Engineering">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
-<meta name="twitter:image-height" content="492">
-<meta name="twitter:image-width" content="868">
+<meta property="og:image:height" content="413">
+<meta property="og:image:width" content="779">
+<meta name="twitter:title" content="Introduction to Machine Learning – Muztahid’s ML Blog">
+<meta name="twitter:description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Introduction to Machine Learning/images/im1.png">
+<meta name="twitter:image-height" content="413">
+<meta name="twitter:image-width" content="779">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -363,7 +328,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Feature Engineering</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Machine Learning</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -510,13 +475,27 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link active" data-scroll-target="#feature-engineering">Feature Engineering</a>
+  <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link active" data-scroll-target="#what-is-machine-learning">What is Machine Learning?</a>
   <ul class="collapse">
-  <li><a href="#feature-transformation" id="toc-feature-transformation" class="nav-link" data-scroll-target="#feature-transformation">Feature Transformation</a></li>
-  <li><a href="#feature-construction" id="toc-feature-construction" class="nav-link" data-scroll-target="#feature-construction">Feature Construction</a></li>
-  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
-  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature Extraction</a></li>
+  <li><a href="#example-email-spam-detection" id="toc-example-email-spam-detection" class="nav-link" data-scroll-target="#example-email-spam-detection">Example: Email Spam Detection</a></li>
   </ul></li>
+  <li><a href="#applications-of-machine-learning" id="toc-applications-of-machine-learning" class="nav-link" data-scroll-target="#applications-of-machine-learning">Applications of Machine Learning</a></li>
+  <li><a href="#types-of-machine-learning" id="toc-types-of-machine-learning" class="nav-link" data-scroll-target="#types-of-machine-learning">Types of Machine Learning</a></li>
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning">Supervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">1. Regression</a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">2. Classification</a></li>
+  </ul></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering">Clustering</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#anomaly-detection" id="toc-anomaly-detection" class="nav-link" data-scroll-target="#anomaly-detection">Anomaly Detection</a></li>
+  <li><a href="#association-rule-based-learning" id="toc-association-rule-based-learning" class="nav-link" data-scroll-target="#association-rule-based-learning">Association Rule-Based Learning</a></li>
+  </ul></li>
+  <li><a href="#semi-supervised-learning" id="toc-semi-supervised-learning" class="nav-link" data-scroll-target="#semi-supervised-learning">Semi-Supervised Learning</a></li>
+  <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link" data-scroll-target="#reinforcement-learning">Reinforcement Learning</a></li>
+  <li><a href="#ml-project-development-lifecycle" id="toc-ml-project-development-lifecycle" class="nav-link" data-scroll-target="#ml-project-development-lifecycle">ML Project Development Lifecycle</a></li>
   </ul>
 </nav>
     </div>
@@ -526,12 +505,12 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Feature Engineering</h1>
+<h1 class="title">Introduction to Machine Learning</h1>
 </div>
 
 <div>
   <div class="description">
-    An introductory article on Feature Engineering
+    A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.
   </div>
 </div>
 
@@ -548,7 +527,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 19, 2026</p>
+      <p class="date">June 9, 2026</p>
     </div>
   </div>
   
@@ -560,98 +539,261 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<section id="feature-engineering" class="level2">
-<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
-<p>Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.</p>
-<p>At first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.</p>
-<p>The features are also known as columns or independent variables.</p>
-<p>There is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.</p>
-<p>So, the steps are: <code>Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training</code></p>
-<p>Let’s try to understand what are in the feature engineering.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Feature Engineering</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── Feature Transformation</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── Missing Value Handling</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   ├── Handling Categorical Feature</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── Outlier Detection</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── Feature Scaling</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── Feature Construction</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>├── Feature Selection</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>└── Feature Extraction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Here is a high-level overview of the feature engineering process.</p>
-<section id="feature-transformation" class="level3">
-<h3 class="anchored" data-anchor-id="feature-transformation">Feature Transformation</h3>
-<ol type="1">
-<li><p><strong>Missing Value Handling</strong>:</p>
-<p>Here is an image for example.</p>
+<section id="what-is-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to “learn” with data, without being explicitly programmed.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im1.png" class="img-fluid figure-img"></p>
-<figcaption>Missing Value Handling.png</figcaption>
+<figcaption>Traditional vs ML approach</figcaption>
 </figure>
 </div>
-<p>In the image, we can see that some cells values are <code>NaN</code> which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.</p></li>
-<li><p><strong>Handling Categorical Feature</strong>:</p>
-<p>Here is an image for example.</p>
+<p>In traditional programming, we provide the computer with both the data and the rules (algorithm) to process that data. In contrast, in machine learning, we provide the computer with data and the desired output, and it learns the rules (model) to achieve that output.</p>
+<section id="example-email-spam-detection" class="level3">
+<h3 class="anchored" data-anchor-id="example-email-spam-detection">Example: Email Spam Detection</h3>
+<p>In the early period, email spam detection was based on manually crafted rules, such as filtering emails containing certain keywords. People followed traditional programming to create these rules with code (like if-else statements). However, as spammers evolved their tactics, it became difficult to keep up with the changing patterns.</p>
+<p>With machine learning, we can train a model on a large dataset of emails labeled as “spam” or “not spam.” The model learns to identify patterns and features that distinguish spam from legitimate emails, allowing it to adapt to new types of spam without needing explicit rule updates.</p>
+</section>
+</section>
+<section id="applications-of-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="applications-of-machine-learning">Applications of Machine Learning</h2>
+<p>Machine learning has a wide range of applications across various industries. Some common applications include:<br>
+- <strong>Search Engines</strong>: Improving search results based on user behavior and preferences.<br>
+- <strong>Recommendation Systems</strong>: Suggesting products, movies, or content based on user interactions.<br>
+- <strong>Digital Advertising</strong>: Targeting ads to specific audiences based on their online behavior.<br>
+- <strong>Computer Vision</strong>: Enabling machines to interpret and understand visual information from the world.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im2.png" class="img-fluid figure-img"></p>
-<figcaption>Handling Categorical Feature.png</figcaption>
+<figcaption>Applications of Machine Learning</figcaption>
 </figure>
 </div>
-<p>We can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.</p></li>
-<li><p><strong>Outlier Detection</strong>:</p>
-<p>Here is an image for example.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im3.png" class="img-fluid figure-img"></p>
-<figcaption>Outlier Detection.png</figcaption>
+<figcaption>Differences</figcaption>
 </figure>
 </div>
-<p>In the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.</p></li>
-<li><p><strong>Feature Scaling</strong>:</p>
+</section>
+<section id="types-of-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-machine-learning">Types of Machine Learning</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im4.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Scaling.png</figcaption>
+<figcaption>Types of Machine Learning1</figcaption>
 </figure>
 </div>
-<p>If we look at this data, we can see that the value range of the <code>Age</code> column is very lower than the value range of the <code>Salary</code> column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the <code>Salary</code> column than the <code>Age</code> column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.</p></li>
-</ol>
-</section>
-<section id="feature-construction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-construction">Feature Construction</h3>
-<p>We can create new features from the existing features by feature construction.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im5.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Construction.png</figcaption>
+<figcaption>Types of Machine Learning2</figcaption>
 </figure>
 </div>
-<p>Look at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.</p>
 </section>
-<section id="feature-selection" class="level3">
-<h3 class="anchored" data-anchor-id="feature-selection">Feature Selection</h3>
-<p>We will use MNIST handwritten digit dataset for this example.</p>
+<section id="supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="supervised-learning">Supervised Learning</h2>
+<p>In supervised learning, the model is trained on a labeled dataset, which means that each training example is paired with an output label. The goal is for the model to learn a mapping from inputs to outputs so that it can predict the label for new, unseen data.</p>
+<p>Suppose we have a dataset like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>If we want to train a supervised learning model to predict whether a student will be placed (Y/N) based on their IQ and CGPA, we would use the <code>IQ</code> and <code>CGPA</code> as input features and the <code>Placement</code> as the output label. Then the model would learn from this data to make predictions on new students based on their IQ and CGPA. After training, we could input a new student’s IQ and CGPA, and the model would predict whether they are likely to be placed or not.</p>
+<p>There are two main types of supervised learning:</p>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">1. Regression</h3>
+<p>Regression is used when the output variable is continuous. The model learns to predict a numerical value based on the input features. For example, predicting house prices based on features like size, location, and number of bedrooms.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>size</th>
+<th>location</th>
+<th>bedrooms</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2000</td>
+<td>suburb</td>
+<td>3</td>
+<td>300000</td>
+</tr>
+<tr class="even">
+<td>1500</td>
+<td>city</td>
+<td>2</td>
+<td>250000</td>
+</tr>
+</tbody>
+</table>
+<p>Look here, the <code>price</code> is a continuous variable. So, we would use regression to predict the price of a house.</p>
+<p>There are so many regression algorithms, such as:<br>
+- Simple Linear Regression<br>
+- Multiple Linear Regression<br>
+- Polynomial Regression<br>
+- Ridge Regression<br>
+- Lasso Regression<br>
+- Elastic Net Regression<br>
+- Support Vector Regression<br>
+- Decision Tree Regression</p>
+<p>We will learn them going forward.</p>
+</section>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">2. Classification</h3>
+<p>Classification is used when the output variable is categorical. The model learns to predict a class label based on the input features. For example, there is a placement dataset where we want to predict whether a student will be placed (Y/N) based on their IQ and CGPA. In this case, the output variable is categorical (Y or N), so we would use classification algorithms to make predictions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Here, the <code>Placement</code> is a categorical variable. So, we would use classification to predict whether a student will be placed or not based on their IQ and CGPA.</p>
+<p>Common classification algorithms include:<br>
+- Logistic Regression<br>
+- Decision Trees<br>
+- Random Forest<br>
+- Support Vector Machines (SVM)<br>
+- K-Nearest Neighbors (KNN)<br>
+- Naive Bayes</p>
+</section>
+</section>
+<section id="unsupervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h2>
+<p>In unsupervised learning, the model is trained on an unlabeled dataset, which means that the training data does not have output labels. The goal is for the model to learn the underlying structure or patterns in the data without any guidance on what the output should be.</p>
+<p>Suppose we have a dataset of customer data with features like age, income, and spending habits, but we do not have any labels indicating customer segments. In this case, we can use unsupervised learning to identify natural groupings or clusters of customers based on their similarities in the feature space.</p>
+<section id="clustering" class="level3">
+<h3 class="anchored" data-anchor-id="clustering">Clustering</h3>
+<p>Clustering is a common unsupervised learning technique that groups similar data points together based on their features. The goal is to partition the data into clusters where data points within the same cluster are more similar to each other than to those in other clusters.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im6.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection1.png</figcaption>
+<figcaption>Clustering</figcaption>
 </figure>
 </div>
+<p>Suppose, we have a dataset of <code>CGPA</code> and <code>IQ</code> of students, and we want to group them into clusters based on their similarities. We can easily separate them into clusters and create labels for each cluster.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can use this clustered data for further analysis or to train a supervised learning model if we want to predict the cluster labels for new students based on their IQ and CGPA. One more mentionable example of clustering is customer segmentation, where businesses group customers based on their purchasing behavior, demographics, or other features to tailor marketing strategies and improve customer engagement.</p>
+<p>Common clustering algorithms include:<br>
+- K-Means Clustering<br>
+- K-Medoids Clustering<br>
+- DBSCAN (Density-Based Spatial Clustering of Applications with Noise)<br>
+- Hierarchical Clustering</p>
+</section>
+<section id="dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
+<p>Dimensionality reduction is another unsupervised learning technique that reduces the number of features in a dataset while retaining as much information as possible. This is particularly useful when dealing with high-dimensional data, which can be computationally expensive and may lead to overfitting. Here dimension means the number of features in the dataset.</p>
+<p>There is a concept called the “curse of dimensionality,” which refers to the challenges that arise when working with high-dimensional data. As the number of features increases, the volume of the feature space grows exponentially, making it difficult for models to learn effectively. Dimensionality reduction techniques help mitigate this issue by transforming the data into a lower-dimensional space while preserving important information.</p>
+<p><strong>Principal Component Analysis (PCA):</strong> This is a popular dimensionality reduction technique. Suppose we have a dataset with two features, <code>number of rooms</code> and <code>number of bathrooms</code>, for a set of houses. If we apply PCA to this dataset, we can transform these two features into a single principal component <code>house size</code>, which contains the same information as the original features but in a reduced dimensionality. There is a popular dataset called the MNIST dataset, which contains 28x28 = 784 features (pixels) for each image of handwritten digits. By applying PCA, we can reduce the dimension to 2 or 3 while retaining most of the variance in the data, making it easier to visualize and analyze.</p>
+</section>
+<section id="anomaly-detection" class="level3">
+<h3 class="anchored" data-anchor-id="anomaly-detection">Anomaly Detection</h3>
+<p>Anomaly detection is an unsupervised learning technique used to identify rare or unusual data points that deviate significantly from the majority of the data. These anomalies can indicate potential issues, such as fraud, network intrusions, or equipment failures.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/im7.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection2.png</figcaption>
+<figcaption>Anomaly Detection</figcaption>
 </figure>
 </div>
-<p>In the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.</p>
 </section>
-<section id="feature-extraction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-extraction">Feature Extraction</h3>
-<p>Suppose we have two independent features <code>Number of Rooms</code> and <code>Number of Bedrooms</code> and we have a target variable <code>Price</code>. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature <code>Area</code>. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature.</p>
+<section id="association-rule-based-learning" class="level3">
+<h3 class="anchored" data-anchor-id="association-rule-based-learning">Association Rule-Based Learning</h3>
+<p>Association rule-based learning is an unsupervised learning technique that discovers interesting relationships or associations between variables in large datasets. It is commonly used in market basket analysis to identify products that are frequently purchased together.</p>
+<p>We can see the application of association rule-based learning in supershops. In supershops, if there is a sports section, there will be a drinks(like energy drinks, protein shakes) section beside the sports section. This is because customers who buy sports equipment are likely to buy drinks as well. By analyzing the purchase patterns of customers, the store can identify these associations and optimize the layout of the store to increase sales.</p>
+</section>
+</section>
+<section id="semi-supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="semi-supervised-learning">Semi-Supervised Learning</h2>
+<p>Semi-supervised learning is a machine learning paradigm that combines both labeled and unlabeled data during the training process. This approach is particularly useful when obtaining labeled data is expensive or time-consuming, while unlabeled data is abundant. Most of the cases, we use semi-supervised learning in GenAI. For example, we want to train a image recognition model. We have a large dataset of images. It is expensive and time-consuming to label all the images. So, we can manually label a small portion (20% - 30%) of the dataset and label the remaining unlabeled data using models trained on the labeled data or we can use unsupervised learning techniques like clustering to group similar data points together and assign labels based on the clusters. This way, we can leverage the large amount of unlabeled data to improve the performance of our model while minimizing the need for extensive manual labeling.</p>
+</section>
+<section id="reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="reinforcement-learning">Reinforcement Learning</h2>
+<p>Reinforcement learning is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent receives feedback in the form of rewards or penalties based on its actions, and it aims to maximize the cumulative reward over time. Robotics, tesla self-driving cars, and game playing (like chess or Go) are some of the popular applications of reinforcement learning.</p>
+<p>Here is an image that shows the concept of reinforcement learning.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im8.png" class="img-fluid figure-img"></p>
+<figcaption>Reinforcement Learning</figcaption>
+</figure>
+</div>
+</section>
+<section id="ml-project-development-lifecycle" class="level2">
+<h2 class="anchored" data-anchor-id="ml-project-development-lifecycle">ML Project Development Lifecycle</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im9.png" class="img-fluid figure-img"></p>
+<figcaption>ML Project Development Lifecycle</figcaption>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
