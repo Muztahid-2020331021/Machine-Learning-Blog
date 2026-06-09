@@ -1,9 +1,5 @@
 {
   "listingMap": {
-    "articles\\career-writing\\index.qmd": [
-      "*/index.qmd",
-      "*/index.ipynb"
-    ],
     "articles\\Exploratory Data Analysis (EDA)\\index.qmd": [
       "*/index.qmd",
       "*/index.ipynb"
@@ -17,12 +13,6 @@
       "*/*/index.ipynb"
     ],
     "articles\\machine-learning\\index.qmd": [
-      "*/index.qmd"
-    ],
-    "articles\\python-ds\\index.qmd": [
-      "*/index.qmd"
-    ],
-    "articles\\web-dev\\index.qmd": [
       "*/index.qmd"
     ],
     "index.qmd": [

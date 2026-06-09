@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2021-01-01">
+<meta name="dcterms.date" content="2026-09-06">
 <meta name="description" content="A collection of articles on machine learning concepts, algorithms, and applications.">
 
 <title>Machine Learning – My Professional Blog</title>
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -381,7 +381,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../articles/machine-learning/index.html">Machine Learning</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Machine Learning</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -407,87 +407,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../articles/python-ds/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python &amp; Data Science</span></a>
+            <a href="../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">EDA</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../articles/python-ds/2024-03-15-post-2/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started with Python Data Analysis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../articles/career-writing/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Career &amp; Writing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../articles/career-writing/2024-02-28-post-3/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Why Every Developer Should Write</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../articles/machine-learning/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Machine Learning</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction to Machine Learning</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../articles/web-dev/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Web Dev</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../articles/web-dev/html tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started with HTML</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../articles/web-dev/css tutorial/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Getting Started with CSS</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EDA</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
@@ -518,11 +444,11 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Engineering</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
@@ -581,7 +507,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../articles/index.html">Articles</a></li><li class="breadcrumb-item"><a href="../../articles/machine-learning/index.html">Machine Learning</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Machine Learning</h1>
 </div>
@@ -599,7 +525,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2021</p>
+      <p class="date">September 6, 2026</p>
     </div>
   </div>
   
@@ -618,23 +544,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1746122400000" data-listing-file-modified-sort="1778250099722" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8" data-listing-title-sort="Introduction to Machine Learning">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="no-external">Introduction to Machine Learning</a>
-</h3>
-<div class="delink listing-description"><a href="../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="no-external">
-<p>A beginner-friendly guide to what Machine Learning is and why it matters.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="../../articles/machine-learning/2025-05-02-intro-to-ml/index.html" class="no-external">
-<div class="listing-date">
-May 2, 2025
-</div>
-</a>
-</div>
-</div>
+
 </div>
 <div class="listing-no-matching d-none">No matching items</div>
 </div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
