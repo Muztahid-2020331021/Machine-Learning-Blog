@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/Feature Engineering/Handling Missing Data/index.html",
       "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
       "/articles/Feature Engineering/Data Transformation Techniques/index.html",
       "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
@@ -28,7 +29,8 @@
       "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
       "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
       "/articles/Feature Engineering/Data Transformation Techniques/index.html",
-      "/articles/Feature Engineering/Outlier Detection and Removal/index.html"
+      "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
+      "/articles/Feature Engineering/Handling Missing Data/index.html"
     ]
   },
   {
@@ -49,7 +51,8 @@
       "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
       "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
       "/articles/Feature Engineering/Data Transformation Techniques/index.html",
-      "/articles/Feature Engineering/Outlier Detection and Removal/index.html"
+      "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
+      "/articles/Feature Engineering/Handling Missing Data/index.html"
     ]
   },
   {
