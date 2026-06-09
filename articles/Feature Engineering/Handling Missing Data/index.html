@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Md Muztahid Hassan">
-<meta name="dcterms.date" content="2026-05-19">
-<meta name="description" content="An introductory article on Feature Engineering">
+<meta name="dcterms.date" content="2026-06-02">
+<meta name="description" content="Discover key workflows to analyze, delete, and impute missing variables in datasets using statistical methods and KNN imputation.">
 
-<title>Introduction to Feature Engineering – Muztahid’s ML Blog</title>
+<title>Handling Missing Data – Muztahid’s ML Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -123,19 +123,22 @@ gtag('js', new Date());
 gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta property="og:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta property="og:description" content="An introductory article on Feature Engineering">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
+<meta property="og:title" content="Handling Missing Data – Muztahid’s ML Blog">
+<meta property="og:description" content="Discover key workflows to analyze, delete, and impute missing variables in datasets using statistical methods and KNN imputation.">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Missing Data/index_files/figure-html/cell-9-output-1.png">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta property="og:image:height" content="492">
-<meta property="og:image:width" content="868">
-<meta name="twitter:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta name="twitter:description" content="An introductory article on Feature Engineering">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
-<meta name="twitter:image-height" content="492">
-<meta name="twitter:image-width" content="868">
+<meta property="og:image:height" content="547">
+<meta property="og:image:width" content="1160">
+<meta name="twitter:title" content="Handling Missing Data – Muztahid’s ML Blog">
+<meta name="twitter:description" content="Discover key workflows to analyze, delete, and impute missing variables in datasets using statistical methods and KNN imputation.">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Missing Data/index_files/figure-html/cell-9-output-1.png">
+<meta name="twitter:image-height" content="547">
+<meta name="twitter:image-width" content="1160">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -363,7 +366,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Feature Engineering</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Handling Missing Data</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -493,13 +496,11 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link active" data-scroll-target="#feature-engineering">Feature Engineering</a>
-  <ul class="collapse">
-  <li><a href="#feature-transformation" id="toc-feature-transformation" class="nav-link" data-scroll-target="#feature-transformation">Feature Transformation</a></li>
-  <li><a href="#feature-construction" id="toc-feature-construction" class="nav-link" data-scroll-target="#feature-construction">Feature Construction</a></li>
-  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
-  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature Extraction</a></li>
-  </ul></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#simple-elimination-deletion" id="toc-simple-elimination-deletion" class="nav-link" data-scroll-target="#simple-elimination-deletion">1. Simple Elimination (Deletion)</a></li>
+  <li><a href="#statistical-imputationmean-median-mode" id="toc-statistical-imputationmean-median-mode" class="nav-link" data-scroll-target="#statistical-imputationmean-median-mode">2. Statistical Imputation(Mean, Median, Mode)</a></li>
+  <li><a href="#multivariate-imputation-iterativeimputer" id="toc-multivariate-imputation-iterativeimputer" class="nav-link" data-scroll-target="#multivariate-imputation-iterativeimputer">3. Multivariate Imputation (IterativeImputer)</a></li>
+  <li><a href="#knn-imputation" id="toc-knn-imputation" class="nav-link" data-scroll-target="#knn-imputation">KNN Imputation</a></li>
   </ul>
 </nav>
     </div>
@@ -509,12 +510,12 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Feature Engineering</h1>
+<h1 class="title">Handling Missing Data</h1>
 </div>
 
 <div>
   <div class="description">
-    An introductory article on Feature Engineering
+    Discover key workflows to analyze, delete, and impute missing variables in datasets using statistical methods and KNN imputation.
   </div>
 </div>
 
@@ -531,7 +532,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 19, 2026</p>
+      <p class="date">June 2, 2026</p>
     </div>
   </div>
   
@@ -543,98 +544,429 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<section id="feature-engineering" class="level2">
-<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
-<p>Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.</p>
-<p>At first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.</p>
-<p>The features are also known as columns or independent variables.</p>
-<p>There is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.</p>
-<p>So, the steps are: <code>Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training</code></p>
-<p>Let’s try to understand what are in the feature engineering.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Feature Engineering</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── Feature Transformation</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── Missing Value Handling</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   ├── Handling Categorical Feature</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── Outlier Detection</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── Feature Scaling</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── Feature Construction</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>├── Feature Selection</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>└── Feature Extraction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Here is a high-level overview of the feature engineering process.</p>
-<section id="feature-transformation" class="level3">
-<h3 class="anchored" data-anchor-id="feature-transformation">Feature Transformation</h3>
-<ol type="1">
-<li><p><strong>Missing Value Handling</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im1.png" class="img-fluid figure-img"></p>
-<figcaption>Missing Value Handling.png</figcaption>
-</figure>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In real-world datasets, missing values are a common occurrence due to data entry errors, system failures, or non-response in surveys. Properly handling these missing values is crucial because most machine learning algorithms cannot handle them natively, and incorrect handling can lead to biased models and inaccurate conclusions.</p>
+<p>Common strategies for dealing with missing data include:<br>
+- <strong>Deletion</strong>: Removing rows or columns with missing values (e.g., listwise or pairwise deletion).<br>
+- <strong>Imputation</strong>: Replacing missing values with estimated values, such as the mean, median, mode, or using advanced techniques like K-Nearest Neighbors (KNN) and MICE.<br>
+- <strong>Encoding</strong>: flagging missingness as a distinct category or feature.</p>
+<p>From the very beginning, we will explore them in practical.</p>
+<div id="b3d16165" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>In the image, we can see that some cells values are <code>NaN</code> which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.</p></li>
-<li><p><strong>Handling Categorical Feature</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im2.png" class="img-fluid figure-img"></p>
-<figcaption>Handling Categorical Feature.png</figcaption>
-</figure>
-</div>
-<p>We can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.</p></li>
-<li><p><strong>Outlier Detection</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im3.png" class="img-fluid figure-img"></p>
-<figcaption>Outlier Detection.png</figcaption>
-</figure>
-</div>
-<p>In the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.</p></li>
-<li><p><strong>Feature Scaling</strong>:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im4.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Scaling.png</figcaption>
-</figure>
-</div>
-<p>If we look at this data, we can see that the value range of the <code>Age</code> column is very lower than the value range of the <code>Salary</code> column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the <code>Salary</code> column than the <code>Age</code> column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.</p></li>
-</ol>
-</section>
-<section id="feature-construction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-construction">Feature Construction</h3>
-<p>We can create new features from the existing features by feature construction.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im5.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Construction.png</figcaption>
-</figure>
-</div>
-<p>Look at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.</p>
-</section>
-<section id="feature-selection" class="level3">
-<h3 class="anchored" data-anchor-id="feature-selection">Feature Selection</h3>
-<p>We will use MNIST handwritten digit dataset for this example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im6.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection1.png</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im7.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection2.png</figcaption>
-</figure>
-</div>
-<p>In the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.</p>
-</section>
-<section id="feature-extraction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-extraction">Feature Extraction</h3>
-<p>Suppose we have two independent features <code>Number of Rooms</code> and <code>Number of Bedrooms</code> and we have a target variable <code>Price</code>. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature <code>Area</code>. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature.</p>
+<div id="09229cd4" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'titanic'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
 
 
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">survived</th>
+<th data-quarto-table-cell-role="th">pclass</th>
+<th data-quarto-table-cell-role="th">sex</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">sibsp</th>
+<th data-quarto-table-cell-role="th">parch</th>
+<th data-quarto-table-cell-role="th">fare</th>
+<th data-quarto-table-cell-role="th">embarked</th>
+<th data-quarto-table-cell-role="th">class</th>
+<th data-quarto-table-cell-role="th">who</th>
+<th data-quarto-table-cell-role="th">adult_male</th>
+<th data-quarto-table-cell-role="th">deck</th>
+<th data-quarto-table-cell-role="th">embark_town</th>
+<th data-quarto-table-cell-role="th">alive</th>
+<th data-quarto-table-cell-role="th">alone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>7.2500</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>no</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1</td>
+<td>1</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>71.2833</td>
+<td>C</td>
+<td>First</td>
+<td>woman</td>
+<td>False</td>
+<td>C</td>
+<td>Cherbourg</td>
+<td>yes</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>1</td>
+<td>3</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>7.9250</td>
+<td>S</td>
+<td>Third</td>
+<td>woman</td>
+<td>False</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>yes</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>1</td>
+<td>1</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>53.1000</td>
+<td>S</td>
+<td>First</td>
+<td>woman</td>
+<td>False</td>
+<td>C</td>
+<td>Southampton</td>
+<td>yes</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>0</td>
+<td>3</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>8.0500</td>
+<td>S</td>
+<td>Third</td>
+<td>man</td>
+<td>True</td>
+<td>NaN</td>
+<td>Southampton</td>
+<td>no</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Let’s see if there are any missing values in the dataset.</p>
+<div id="ffd5d6d9" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>survived         0
+pclass           0
+sex              0
+age            177
+sibsp            0
+parch            0
+fare             0
+embarked         2
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      2
+alive            0
+alone            0
+dtype: int64</code></pre>
+</div>
+</div>
+<p>We can see that the <code>age</code>, <code>deck</code>, <code>embarked</code> and <code>embark_town</code> columns have missing values. Now let’s see how we can handle them.</p>
+<p>At first, we will see the simple elimination or deletion method.</p>
 </section>
+<section id="simple-elimination-deletion" class="level2">
+<h2 class="anchored" data-anchor-id="simple-elimination-deletion">1. Simple Elimination (Deletion)</h2>
+<p>When should we use deletion? We should use it on large datasets with a small percentage of missing values. Suppose we have a dataset with 1000 rows and only 50 rows have missing values. In that case, we can safely delete those 50 rows without losing much information. However, if a large portion of the dataset has missing values, deletion can lead to significant data loss and bias.<br>
+In a word, if we have 20% or less missing values, we can consider deletion.</p>
+<p>At first, let’s see the size of the dataset.</p>
+<div id="dd7bb7ef" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<pre><code>(891, 15)</code></pre>
+</div>
+</div>
+<p>If we delete the rows with missing values from <code>age</code> and <code>deck</code> columns, we will lose a significant portion of the dataset. So, we will only delete the rows with missing values from the <code>embarked</code> and <code>embark_town</code> columns. This will not affect our dataset much as only 2 rows have missing values in these columns.</p>
+<div id="8e13846f" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'embarked'</span>, <span class="st">'embark_town'</span>])</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_cleaned.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>(889, 15)</code></pre>
+</div>
+</div>
+<p>Look at the shape, two rows have been deleted from the dataset.</p>
+<div id="930cab81" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_cleaned.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>survived         0
+pclass           0
+sex              0
+age            177
+sibsp            0
+parch            0
+fare             0
+embarked         0
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      0
+alive            0
+alone            0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="statistical-imputationmean-median-mode" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-imputationmean-median-mode">2. Statistical Imputation(Mean, Median, Mode)</h2>
+<p>When should we use mean, median, or mode?<br>
+When we can numerical data, we can use mean or median. If we have categorical data, we can use mode. We should use mean when the data is normally distributed and does not have outliers. We should use median when the data is skewed or has outliers.</p>
+<div id="92e7de32" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'age'</span>].describe()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>count    712.000000
+mean      29.642093
+std       14.492933
+min        0.420000
+25%       20.000000
+50%       28.000000
+75%       38.000000
+max       80.000000
+Name: age, dtype: float64</code></pre>
+</div>
+</div>
+<p>This data is slightly right-skewed, because the mean is greater than the median. We have outliers in the data. Let’s visualize.</p>
+<div id="fe42bf9d" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sns.histplot(df_cleaned[<span class="st">'age'</span>], kde<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Age Distribution'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span>df_cleaned[<span class="st">'age'</span>])</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Age Boxplot'</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>So, we cannot use mean as it is affected by outliers. We will use median to impute the missing values in the <code>age</code> column.</p>
+<div id="86c3cde7" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> SimpleImputer</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>numeric_imputer <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'median'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df_cleaned.copy()</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'age'</span>] <span class="op">=</span> numeric_imputer.fit_transform(df_cleaned[[<span class="st">'age'</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b58c9a9d" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_cleaned.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>survived         0
+pclass           0
+sex              0
+age              0
+sibsp            0
+parch            0
+fare             0
+embarked         0
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      0
+alive            0
+alone            0
+dtype: int64</code></pre>
+</div>
+</div>
+<p>Look the missing values in the <code>age</code> column have been imputed with the median value. Now, let’s focus on the <code>deck</code> column.</p>
+<div id="6335c216" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_cleaned.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Index: 889 entries, 0 to 890
+Data columns (total 15 columns):
+ #   Column       Non-Null Count  Dtype   
+---  ------       --------------  -----   
+ 0   survived     889 non-null    int64   
+ 1   pclass       889 non-null    int64   
+ 2   sex          889 non-null    object  
+ 3   age          889 non-null    float64 
+ 4   sibsp        889 non-null    int64   
+ 5   parch        889 non-null    int64   
+ 6   fare         889 non-null    float64 
+ 7   embarked     889 non-null    object  
+ 8   class        889 non-null    category
+ 9   who          889 non-null    object  
+ 10  adult_male   889 non-null    bool    
+ 11  deck         201 non-null    category
+ 12  embark_town  889 non-null    object  
+ 13  alive        889 non-null    object  
+ 14  alone        889 non-null    bool    
+dtypes: bool(2), category(2), float64(2), int64(4), object(5)
+memory usage: 87.3+ KB</code></pre>
+</div>
+</div>
+<p>Look <code>deck</code> is a categorical column with only 201 non-missing values. In work, we may need to drop this column but for the sake of practice, we will impute the missing values with the mode.</p>
+<p>At first, which is the most frequent value in the <code>deck</code> column?</p>
+<div id="8b7ec9f2" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'deck'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>deck
+C    59
+B    45
+D    33
+E    32
+A    15
+F    13
+G     4
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>It is <code>C</code> with 59 occurrences. So, we will impute the missing values in the <code>deck</code> column with <code>C</code>.</p>
+<div id="f065202d" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>categorical_imputer <span class="op">=</span> SimpleImputer(strategy<span class="op">=</span><span class="st">'most_frequent'</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'deck'</span>] <span class="op">=</span> categorical_imputer.fit_transform(df_cleaned[[<span class="st">'deck'</span>]]).flatten()</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df_cleaned.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>survived       0
+pclass         0
+sex            0
+age            0
+sibsp          0
+parch          0
+fare           0
+embarked       0
+class          0
+who            0
+adult_male     0
+deck           0
+embark_town    0
+alive          0
+alone          0
+dtype: int64</code></pre>
+</div>
+</div>
+<div id="4c4d2224" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_cleaned[<span class="st">'deck'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<pre><code>deck
+C    747
+B     45
+D     33
+E     32
+A     15
+F     13
+G      4
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="multivariate-imputation-iterativeimputer" class="level2">
+<h2 class="anchored" data-anchor-id="multivariate-imputation-iterativeimputer">3. Multivariate Imputation (IterativeImputer)</h2>
+<p>Rather than just guessing the median age, we can use other features like <code>pclass (class)</code> and <code>fare</code> to predict the missing age. This is an advanced imputation technique that considers the relationships between features to provide more accurate estimates for missing values. We will learn them in Machine Learning section.</p>
+<div id="bceaf76e" class="cell" data-execution_count="33">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.experimental <span class="im">import</span> enable_iterative_imputer</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> IterativeImputer</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>it_imputer <span class="op">=</span> IterativeImputer(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># We use relevant numerical columns to estimate the age</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'age'</span>, <span class="st">'pclass'</span>, <span class="st">'fare'</span>]] <span class="op">=</span> it_imputer.fit_transform(df[[<span class="st">'age'</span>, <span class="st">'pclass'</span>, <span class="st">'fare'</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="644e826b" class="cell" data-execution_count="34">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>survived         0
+pclass           0
+sex              0
+age              0
+sibsp            0
+parch            0
+fare             0
+embarked         2
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      2
+alive            0
+alone            0
+dtype: int64</code></pre>
+</div>
+</div>
+</section>
+<section id="knn-imputation" class="level2">
+<h2 class="anchored" data-anchor-id="knn-imputation">KNN Imputation</h2>
+<p>It is actually a distance-based imputation method that uses the K-Nearest Neighbors algorithm to impute missing values.</p>
+<div id="0a4a96d2" class="cell" data-execution_count="35">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> sns.load_dataset(<span class="st">'titanic'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="5f3c3660" class="cell" data-execution_count="36">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.impute <span class="im">import</span> KNNImputer</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>knn_imputer <span class="op">=</span> KNNImputer(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>df[[<span class="st">'age'</span>]] <span class="op">=</span> knn_imputer.fit_transform(df[[<span class="st">'age'</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cae15234" class="cell" data-execution_count="37">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df.isnull().<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>survived         0
+pclass           0
+sex              0
+age              0
+sibsp            0
+parch            0
+fare             0
+embarked         2
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      2
+alive            0
+alone            0
+dtype: int64</code></pre>
+</div>
+</div>
+<p>We will learn KNN imputation in the Machine Learning section.</p>
+
+
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
