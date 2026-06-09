@@ -595,7 +595,12 @@ window.Quarto = {
   <ul>
   <li><a href="#interquartile-range-iqr-technique" id="toc-interquartile-range-iqr-technique" class="nav-link active" data-scroll-target="#interquartile-range-iqr-technique">Interquartile Range (IQR) Technique</a>
   <ul class="collapse">
-  <li><a href="#trimming-vs.-capping-winsorization" id="toc-trimming-vs.-capping-winsorization" class="nav-link" data-scroll-target="#trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</a></li>
+  <li><a href="#identifying-outliers" id="toc-identifying-outliers" class="nav-link" data-scroll-target="#identifying-outliers">Identifying Outliers:</a></li>
+  </ul></li>
+  <li><a href="#trimming-vs.-capping-winsorization" id="toc-trimming-vs.-capping-winsorization" class="nav-link" data-scroll-target="#trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</a>
+  <ul class="collapse">
+  <li><a href="#trimming-truncation" id="toc-trimming-truncation" class="nav-link" data-scroll-target="#trimming-truncation">1. Trimming (Truncation)</a></li>
+  <li><a href="#capping-winsorization" id="toc-capping-winsorization" class="nav-link" data-scroll-target="#capping-winsorization">2. Capping (Winsorization)</a></li>
   </ul></li>
   <li><a href="#trimming" id="toc-trimming" class="nav-link" data-scroll-target="#trimming">Trimming</a></li>
   <li><a href="#capping-winsorization-1" id="toc-capping-winsorization-1" class="nav-link" data-scroll-target="#capping-winsorization-1">Capping (Winsorization)</a></li>
@@ -646,8 +651,8 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="interquartile-range-iqr-technique">Interquartile Range (IQR) Technique</h2>
 <p>The Interquartile Range (IQR) is a measure of statistical dispersion and is a widely used method for detecting outliers in a dataset. It represents the range between the first quartile (25th percentile, <span class="math inline">\(Q_1\)</span>) and the third quartile (75th percentile, <span class="math inline">\(Q_3\)</span>):</p>
 <p><span class="math display">\[\text{IQR} = Q_3 - Q_1\]</span></p>
-<section id="identifying-outliers" class="level4">
-<h4 class="anchored" data-anchor-id="identifying-outliers">Identifying Outliers:</h4>
+<section id="identifying-outliers" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-outliers">Identifying Outliers:</h3>
 <p>Data points are considered outliers if they fall outside the bounds:<br>
 * <strong>Lower Bound:</strong> <span class="math inline">\(Q_1 - 1.5 \times \text{IQR}\)</span><br>
 * <strong>Upper Bound:</strong> <span class="math inline">\(Q_3 + 1.5 \times \text{IQR}\)</span></p>
@@ -662,11 +667,12 @@ window.Quarto = {
 1. Trimming<br>
 2. Capping</p>
 </section>
-<section id="trimming-vs.-capping-winsorization" class="level3">
-<h3 class="anchored" data-anchor-id="trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</h3>
+</section>
+<section id="trimming-vs.-capping-winsorization" class="level2">
+<h2 class="anchored" data-anchor-id="trimming-vs.-capping-winsorization">Trimming vs.&nbsp;Capping (Winsorization)</h2>
 <p>When handling outliers, two common approaches are <strong>Trimming</strong> and <strong>Capping</strong>:</p>
-<section id="trimming-truncation" class="level4">
-<h4 class="anchored" data-anchor-id="trimming-truncation">1. Trimming (Truncation)</h4>
+<section id="trimming-truncation" class="level3">
+<h3 class="anchored" data-anchor-id="trimming-truncation">1. Trimming (Truncation)</h3>
 <p>Trimming involves completely removing the outlier data points from the dataset.</p>
 <ul>
 <li><strong>Benefits:</strong>
@@ -683,8 +689,8 @@ window.Quarto = {
 <li><strong>When to use:</strong> Use when you have a large dataset and the outliers represent genuine errors or data corruption that does not carry useful information.</li>
 </ul>
 </section>
-<section id="capping-winsorization" class="level4">
-<h4 class="anchored" data-anchor-id="capping-winsorization">2. Capping (Winsorization)</h4>
+<section id="capping-winsorization" class="level3">
+<h3 class="anchored" data-anchor-id="capping-winsorization">2. Capping (Winsorization)</h3>
 <p>Capping limits the extreme values by replacing outliers with the nearest non-outlier values (the threshold boundaries, e.g., the Lower and Upper bounds). That means, if a data point is below the lower bound, it is set to the lower bound value; if it is above the upper bound, it is set to the upper bound value.</p>
 <ul>
 <li><strong>Benefits:</strong>
@@ -852,7 +858,6 @@ Look at the max value of the <code>placement_exam_marks</code> column. It is 100
 <span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> lower_limit, upper_limit, outliers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>These are the outliers. Now we will either trim or cap them.</p>
-</section>
 </section>
 </section>
 <section id="trimming" class="level2">

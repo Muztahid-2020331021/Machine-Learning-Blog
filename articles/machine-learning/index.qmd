@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning"
-date: "2021-01-01 00:00:00"
+date: "2026-09-06 14:45:00"
 description: "A collection of articles on machine learning concepts, algorithms, and applications."
 listing:
   contents: "*/index.qmd"
