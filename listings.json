@@ -12,34 +12,12 @@
       "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
-      "/articles/web-dev/css tutorial/index.html",
-      "/articles/web-dev/html tutorial/index.html",
-      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
-      "/articles/python-ds/2024-03-15-post-2/index.html",
-      "/articles/career-writing/2024-02-28-post-3/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/python-ds/index.html",
-    "items": [
-      "/articles/python-ds/2024-03-15-post-2/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/machine-learning/index.html",
-    "items": [
-      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html"
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html"
     ]
   },
   {
     "listing": "/articles/index.html",
     "items": [
-      "/articles/python-ds/2024-03-15-post-2/index.html",
-      "/articles/career-writing/2024-02-28-post-3/index.html",
-      "/articles/machine-learning/2025-05-02-intro-to-ml/index.html",
-      "/articles/web-dev/html tutorial/index.html",
-      "/articles/web-dev/css tutorial/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
@@ -63,12 +41,6 @@
     ]
   },
   {
-    "listing": "/articles/career-writing/index.html",
-    "items": [
-      "/articles/career-writing/2024-02-28-post-3/index.html"
-    ]
-  },
-  {
     "listing": "/articles/Feature Engineering/index.html",
     "items": [
       "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
@@ -81,10 +53,7 @@
     ]
   },
   {
-    "listing": "/articles/web-dev/index.html",
-    "items": [
-      "/articles/web-dev/html tutorial/index.html",
-      "/articles/web-dev/css tutorial/index.html"
-    ]
+    "listing": "/articles/machine-learning/index.html",
+    "items": []
   }
 ]
