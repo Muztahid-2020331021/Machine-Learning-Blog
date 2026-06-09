@@ -6,9 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Articles organized by topic">
+<meta name="author" content="Md Muztahid Hassan">
+<meta name="dcterms.date" content="2026-06-09">
+<meta name="description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
 
-<title>Articles – Muztahid’s ML Blog</title>
+<title>Introduction to Machine Learning – Muztahid’s ML Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -27,30 +29,28 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../assets/images/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../assets/images/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -78,35 +78,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-project','listing-website','listing-format','listing-execute','listing-engines','listing-language','listing-sidebar','listing-bread-crumbs','listing-title','listing-description','listing-author','listing-date','listing-toc','listing-order','listing-path','listing-outputHref','listing-date-modified','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
-      
-      searchColumns: ["listing-project","listing-website","listing-format","listing-execute","listing-engines","listing-language","listing-sidebar","listing-bread-crumbs","listing-title","listing-description","listing-author","listing-date","listing-toc","listing-order","listing-path","listing-outputHref","listing-date-modified","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HRWVF9ZMF1"></script>
 
 <script type="text/javascript">
@@ -118,45 +89,22 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Articles – Muztahid’s ML Blog">
-<meta property="og:description" content="Articles organized by topic">
+<meta property="og:title" content="Introduction to Machine Learning – Muztahid’s ML Blog">
+<meta property="og:description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Introduction to Machine Learning/images/im1.png">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta name="twitter:title" content="Articles – Muztahid’s ML Blog">
-<meta name="twitter:description" content="Articles organized by topic">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="413">
+<meta property="og:image:width" content="779">
+<meta name="twitter:title" content="Introduction to Machine Learning – Muztahid’s ML Blog">
+<meta name="twitter:description" content="A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Introduction to Machine Learning/images/im1.png">
+<meta name="twitter:image-height" content="413">
+<meta name="twitter:image-width" content="779">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -325,11 +273,11 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../assets/images/logo.png" alt="" class="navbar-logo light-content">
-    <img src="../assets/images/logo.png" alt="" class="navbar-logo dark-content">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Muztahid’s ML Blog</span>
     </a>
   </div>
@@ -340,15 +288,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../articles/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../articles/index.html" aria-current="page"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -380,7 +328,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../articles/index.html">Articles</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Machine Learning</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -397,7 +345,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../articles/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../../articles/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Articles</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -406,7 +354,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -415,25 +363,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bivariate and Multivariate Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Titanic Dataset (Project)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Visa Dataset (Project)</span></a>
   </div>
 </li>
@@ -441,7 +389,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Engineering</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -450,49 +398,49 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Scaling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Handling Categorical Feature</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Train-Test Split %26 Column Transformer/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Train-Test Split %26 Column Transformer/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Train-Test Split &amp; Column Transformer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Machine Learning Pipelines/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Machine Learning Pipelines/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning Pipelines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Data Transformation Techniques/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Data Transformation Techniques/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Transformation Techniques</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Outlier Detection and Removal/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Outlier Detection and Removal/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Outlier Detection and Removal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Feature Engineering/Handling Missing Data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Feature Engineering/Handling Missing Data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Handling Missing Data</span></a>
   </div>
 </li>
@@ -500,7 +448,7 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../articles/Machine Learning/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../../articles/Machine Learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -509,7 +457,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../articles/Machine Learning/Introduction to Machine Learning/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../articles/Machine Learning/Introduction to Machine Learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Machine Learning</span></a>
   </div>
 </li>
@@ -522,26 +470,66 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-machine-learning" id="toc-what-is-machine-learning" class="nav-link active" data-scroll-target="#what-is-machine-learning">What is Machine Learning?</a>
+  <ul class="collapse">
+  <li><a href="#example-email-spam-detection" id="toc-example-email-spam-detection" class="nav-link" data-scroll-target="#example-email-spam-detection">Example: Email Spam Detection</a></li>
+  </ul></li>
+  <li><a href="#applications-of-machine-learning" id="toc-applications-of-machine-learning" class="nav-link" data-scroll-target="#applications-of-machine-learning">Applications of Machine Learning</a></li>
+  <li><a href="#types-of-machine-learning" id="toc-types-of-machine-learning" class="nav-link" data-scroll-target="#types-of-machine-learning">Types of Machine Learning</a></li>
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning">Supervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">1. Regression</a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification">2. Classification</a></li>
+  </ul></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning">Unsupervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#clustering" id="toc-clustering" class="nav-link" data-scroll-target="#clustering">Clustering</a></li>
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a></li>
+  <li><a href="#anomaly-detection" id="toc-anomaly-detection" class="nav-link" data-scroll-target="#anomaly-detection">Anomaly Detection</a></li>
+  <li><a href="#association-rule-based-learning" id="toc-association-rule-based-learning" class="nav-link" data-scroll-target="#association-rule-based-learning">Association Rule-Based Learning</a></li>
+  </ul></li>
+  <li><a href="#semi-supervised-learning" id="toc-semi-supervised-learning" class="nav-link" data-scroll-target="#semi-supervised-learning">Semi-Supervised Learning</a></li>
+  <li><a href="#reinforcement-learning" id="toc-reinforcement-learning" class="nav-link" data-scroll-target="#reinforcement-learning">Reinforcement Learning</a></li>
+  <li><a href="#ml-project-development-lifecycle" id="toc-ml-project-development-lifecycle" class="nav-link" data-scroll-target="#ml-project-development-lifecycle">ML Project Development Lifecycle</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Articles</h1>
+<h1 class="title">Introduction to Machine Learning</h1>
 </div>
 
 <div>
   <div class="description">
-    Articles organized by topic
+    A foundational overview of machine learning concepts, paradigms, and workflows for building intelligent systems.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Md Muztahid Hassan </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 9, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -551,184 +539,264 @@ window.Quarto = {
 </header>
 
 
-<section id="contents" class="level2">
-<h2 class="anchored" data-anchor-id="contents">Contents</h2>
-
+<section id="what-is-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-machine-learning">What is Machine Learning?</h2>
+<p>Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to “learn” with data, without being explicitly programmed.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im1.png" class="img-fluid figure-img"></p>
+<figcaption>Traditional vs ML approach</figcaption>
+</figure>
+</div>
+<p>In traditional programming, we provide the computer with both the data and the rules (algorithm) to process that data. In contrast, in machine learning, we provide the computer with data and the desired output, and it learns the rules (model) to achieve that output.</p>
+<section id="example-email-spam-detection" class="level3">
+<h3 class="anchored" data-anchor-id="example-email-spam-detection">Example: Email Spam Detection</h3>
+<p>In the early period, email spam detection was based on manually crafted rules, such as filtering emails containing certain keywords. People followed traditional programming to create these rules with code (like if-else statements). However, as spammers evolved their tactics, it became difficult to keep up with the changing patterns.</p>
+<p>With machine learning, we can train a model on a large dataset of emails labeled as “spam” or “not spam.” The model learns to identify patterns and features that distinguish spam from legitimate emails, allowing it to adapt to new types of spam without needing explicit rule updates.</p>
+</section>
+</section>
+<section id="applications-of-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="applications-of-machine-learning">Applications of Machine Learning</h2>
+<p>Machine learning has a wide range of applications across various industries. Some common applications include:<br>
+- <strong>Search Engines</strong>: Improving search results based on user behavior and preferences.<br>
+- <strong>Recommendation Systems</strong>: Suggesting products, movies, or content based on user interactions.<br>
+- <strong>Digital Advertising</strong>: Targeting ads to specific audiences based on their online behavior.<br>
+- <strong>Computer Vision</strong>: Enabling machines to interpret and understand visual information from the world.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im2.png" class="img-fluid figure-img"></p>
+<figcaption>Applications of Machine Learning</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im3.png" class="img-fluid figure-img"></p>
+<figcaption>Differences</figcaption>
+</figure>
+</div>
+</section>
+<section id="types-of-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-machine-learning">Types of Machine Learning</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im4.png" class="img-fluid figure-img"></p>
+<figcaption>Types of Machine Learning1</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im5.png" class="img-fluid figure-img"></p>
+<figcaption>Types of Machine Learning2</figcaption>
+</figure>
+</div>
+</section>
+<section id="supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="supervised-learning">Supervised Learning</h2>
+<p>In supervised learning, the model is trained on a labeled dataset, which means that each training example is paired with an output label. The goal is for the model to learn a mapping from inputs to outputs so that it can predict the label for new, unseen data.</p>
+<p>Suppose we have a dataset like this:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>If we want to train a supervised learning model to predict whether a student will be placed (Y/N) based on their IQ and CGPA, we would use the <code>IQ</code> and <code>CGPA</code> as input features and the <code>Placement</code> as the output label. Then the model would learn from this data to make predictions on new students based on their IQ and CGPA. After training, we could input a new student’s IQ and CGPA, and the model would predict whether they are likely to be placed or not.</p>
+<p>There are two main types of supervised learning:</p>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">1. Regression</h3>
+<p>Regression is used when the output variable is continuous. The model learns to predict a numerical value based on the input features. For example, predicting house prices based on features like size, location, and number of bedrooms.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>size</th>
+<th>location</th>
+<th>bedrooms</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2000</td>
+<td>suburb</td>
+<td>3</td>
+<td>300000</td>
+</tr>
+<tr class="even">
+<td>1500</td>
+<td>city</td>
+<td>2</td>
+<td>250000</td>
+</tr>
+</tbody>
+</table>
+<p>Look here, the <code>price</code> is a continuous variable. So, we would use regression to predict the price of a house.</p>
+<p>There are so many regression algorithms, such as:<br>
+- Simple Linear Regression<br>
+- Multiple Linear Regression<br>
+- Polynomial Regression<br>
+- Ridge Regression<br>
+- Lasso Regression<br>
+- Elastic Net Regression<br>
+- Support Vector Regression<br>
+- Decision Tree Regression</p>
+<p>We will learn them going forward.</p>
+</section>
+<section id="classification" class="level3">
+<h3 class="anchored" data-anchor-id="classification">2. Classification</h3>
+<p>Classification is used when the output variable is categorical. The model learns to predict a class label based on the input features. For example, there is a placement dataset where we want to predict whether a student will be placed (Y/N) based on their IQ and CGPA. In this case, the output variable is categorical (Y or N), so we would use classification algorithms to make predictions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Placement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>N</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>Here, the <code>Placement</code> is a categorical variable. So, we would use classification to predict whether a student will be placed or not based on their IQ and CGPA.</p>
+<p>Common classification algorithms include:<br>
+- Logistic Regression<br>
+- Decision Trees<br>
+- Random Forest<br>
+- Support Vector Machines (SVM)<br>
+- K-Nearest Neighbors (KNN)<br>
+- Naive Bayes</p>
+</section>
+</section>
+<section id="unsupervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="unsupervised-learning">Unsupervised Learning</h2>
+<p>In unsupervised learning, the model is trained on an unlabeled dataset, which means that the training data does not have output labels. The goal is for the model to learn the underlying structure or patterns in the data without any guidance on what the output should be.</p>
+<p>Suppose we have a dataset of customer data with features like age, income, and spending habits, but we do not have any labels indicating customer segments. In this case, we can use unsupervised learning to identify natural groupings or clusters of customers based on their similarities in the feature space.</p>
+<section id="clustering" class="level3">
+<h3 class="anchored" data-anchor-id="clustering">Clustering</h3>
+<p>Clustering is a common unsupervised learning technique that groups similar data points together based on their features. The goal is to partition the data into clusters where data points within the same cluster are more similar to each other than to those in other clusters.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im6.png" class="img-fluid figure-img"></p>
+<figcaption>Clustering</figcaption>
+</figure>
+</div>
+<p>Suppose, we have a dataset of <code>CGPA</code> and <code>IQ</code> of students, and we want to group them into clusters based on their similarities. We can easily separate them into clusters and create labels for each cluster.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>IQ</th>
+<th>CGPA</th>
+<th>Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>95</td>
+<td>8.9</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>5.5</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td>96</td>
+<td>7.7</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+<p>Now we can use this clustered data for further analysis or to train a supervised learning model if we want to predict the cluster labels for new students based on their IQ and CGPA. One more mentionable example of clustering is customer segmentation, where businesses group customers based on their purchasing behavior, demographics, or other features to tailor marketing strategies and improve customer engagement.</p>
+<p>Common clustering algorithms include:<br>
+- K-Means Clustering<br>
+- K-Medoids Clustering<br>
+- DBSCAN (Density-Based Spatial Clustering of Applications with Noise)<br>
+- Hierarchical Clustering</p>
+</section>
+<section id="dimensionality-reduction" class="level3">
+<h3 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h3>
+<p>Dimensionality reduction is another unsupervised learning technique that reduces the number of features in a dataset while retaining as much information as possible. This is particularly useful when dealing with high-dimensional data, which can be computationally expensive and may lead to overfitting. Here dimension means the number of features in the dataset.</p>
+<p>There is a concept called the “curse of dimensionality,” which refers to the challenges that arise when working with high-dimensional data. As the number of features increases, the volume of the feature space grows exponentially, making it difficult for models to learn effectively. Dimensionality reduction techniques help mitigate this issue by transforming the data into a lower-dimensional space while preserving important information.</p>
+<p><strong>Principal Component Analysis (PCA):</strong> This is a popular dimensionality reduction technique. Suppose we have a dataset with two features, <code>number of rooms</code> and <code>number of bathrooms</code>, for a set of houses. If we apply PCA to this dataset, we can transform these two features into a single principal component <code>house size</code>, which contains the same information as the original features but in a reduced dimensionality. There is a popular dataset called the MNIST dataset, which contains 28x28 = 784 features (pixels) for each image of handwritten digits. By applying PCA, we can reduce the dimension to 2 or 3 while retaining most of the variance in the data, making it easier to visualize and analyze.</p>
+</section>
+<section id="anomaly-detection" class="level3">
+<h3 class="anchored" data-anchor-id="anomaly-detection">Anomaly Detection</h3>
+<p>Anomaly detection is an unsupervised learning technique used to identify rare or unusual data points that deviate significantly from the majority of the data. These anomalies can indicate potential issues, such as fraud, network intrusions, or equipment failures.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im7.png" class="img-fluid figure-img"></p>
+<figcaption>Anomaly Detection</figcaption>
+</figure>
+</div>
+</section>
+<section id="association-rule-based-learning" class="level3">
+<h3 class="anchored" data-anchor-id="association-rule-based-learning">Association Rule-Based Learning</h3>
+<p>Association rule-based learning is an unsupervised learning technique that discovers interesting relationships or associations between variables in large datasets. It is commonly used in market basket analysis to identify products that are frequently purchased together.</p>
+<p>We can see the application of association rule-based learning in supershops. In supershops, if there is a sports section, there will be a drinks(like energy drinks, protein shakes) section beside the sports section. This is because customers who buy sports equipment are likely to buy drinks as well. By analyzing the purchase patterns of customers, the store can identify these associations and optimize the layout of the store to increase sales.</p>
+</section>
+</section>
+<section id="semi-supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="semi-supervised-learning">Semi-Supervised Learning</h2>
+<p>Semi-supervised learning is a machine learning paradigm that combines both labeled and unlabeled data during the training process. This approach is particularly useful when obtaining labeled data is expensive or time-consuming, while unlabeled data is abundant. Most of the cases, we use semi-supervised learning in GenAI. For example, we want to train a image recognition model. We have a large dataset of images. It is expensive and time-consuming to label all the images. So, we can manually label a small portion (20% - 30%) of the dataset and label the remaining unlabeled data using models trained on the labeled data or we can use unsupervised learning techniques like clustering to group similar data points together and assign labels based on the clusters. This way, we can leverage the large amount of unlabeled data to improve the performance of our model while minimizing the need for extensive manual labeling.</p>
+</section>
+<section id="reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="reinforcement-learning">Reinforcement Learning</h2>
+<p>Reinforcement learning is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent receives feedback in the form of rewards or penalties based on its actions, and it aims to maximize the cumulative reward over time. Robotics, tesla self-driving cars, and game playing (like chess or Go) are some of the popular applications of reinforcement learning.</p>
+<p>Here is an image that shows the concept of reinforcement learning.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im8.png" class="img-fluid figure-img"></p>
+<figcaption>Reinforcement Learning</figcaption>
+</figure>
+</div>
+</section>
+<section id="ml-project-development-lifecycle" class="level2">
+<h2 class="anchored" data-anchor-id="ml-project-development-lifecycle">ML Project Development Lifecycle</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im9.png" class="img-fluid figure-img"></p>
+<figcaption>ML Project Development Lifecycle</figcaption>
+</figure>
+</div>
 
 
 </section>
 
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list grouped-listing">
-<section class="topic-group" style="margin-bottom: 2rem;">
-<h2 class="topic-header anchored" style="border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-<a href="Exploratory Data Analysis (EDA)/index.html" style="text-decoration: none;">EDA</a>
-</h2>
-<div class="posts-list" style="padding-left: 1rem;">
-<div class="post-item" data-index="0" data-listing-date-sort="1778086800000" data-listing-file-modified-sort="1780994857845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312" data-search="introduction to eda eda" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">1.</span>
-<div class="post-content">
-<a href="../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Introduction to EDA</a>
-</div>
-</div>
-<div class="post-item" data-index="1" data-listing-date-sort="1778346000000" data-listing-file-modified-sort="1780994857857" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="304" data-search="bivariate and multivariate analysis eda" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">2.</span>
-<div class="post-content">
-<a href="../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Bivariate and Multivariate Analysis</a>
-</div>
-</div>
-<div class="post-item" data-index="2" data-listing-date-sort="1778412600000" data-listing-file-modified-sort="1780994857861" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208" data-search="eda on titanic dataset (project) eda" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">3.</span>
-<div class="post-content">
-<a href="../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">EDA on Titanic Dataset (Project)</a>
-</div>
-</div>
-<div class="post-item" data-index="3" data-listing-date-sort="1778771700000" data-listing-file-modified-sort="1780994857879" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="981" data-search="eda on visa dataset (project) eda" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">4.</span>
-<div class="post-content">
-<a href="../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">EDA on Visa Dataset (Project)</a>
-</div>
-</div>
-</div>
-</section>
-<section class="topic-group" style="margin-bottom: 2rem;">
-<h2 class="topic-header anchored" style="border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-<a href="Feature Engineering/index.html" style="text-decoration: none;">Feature Engineering</a>
-</h2>
-<div class="posts-list" style="padding-left: 1rem;">
-<div class="post-item" data-index="4" data-listing-date-sort="1779211380000" data-listing-file-modified-sort="1780994857881" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="818" data-search="introduction to feature engineering feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">1.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Introduction to Feature Engineering</a>
-</div>
-</div>
-<div class="post-item" data-index="5" data-listing-date-sort="1779212280000" data-listing-file-modified-sort="1780994857893" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1203" data-search="feature scaling feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">2.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Feature Scaling/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Feature Scaling</a>
-</div>
-</div>
-<div class="post-item" data-index="6" data-listing-date-sort="1779289200000" data-listing-file-modified-sort="1780994857896" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1415" data-search="handling categorical feature feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">3.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Handling Categorical Feature/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Handling Categorical Feature</a>
-</div>
-</div>
-<div class="post-item" data-index="7" data-listing-date-sort="1779361200000" data-listing-file-modified-sort="1780994857900" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="839" data-search="train-test split &amp; column transformer feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">4.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Train-Test Split &amp; Column Transformer/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Train-Test Split &amp; Column Transformer</a>
-</div>
-</div>
-<div class="post-item" data-index="8" data-listing-date-sort="1779789480000" data-listing-file-modified-sort="1780994857906" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="849" data-search="machine learning pipelines feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">5.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Machine Learning Pipelines/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Machine Learning Pipelines</a>
-</div>
-</div>
-<div class="post-item" data-index="9" data-listing-date-sort="1780139406000" data-listing-file-modified-sort="1780994857919" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1582" data-search="data transformation techniques feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">6.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Data Transformation Techniques/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Data Transformation Techniques</a>
-</div>
-</div>
-<div class="post-item" data-index="10" data-listing-date-sort="1780237140000" data-listing-file-modified-sort="1780994857924" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="548" data-search="outlier detection and removal feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">7.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Outlier Detection and Removal/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Outlier Detection and Removal</a>
-</div>
-</div>
-<div class="post-item" data-index="11" data-listing-date-sort="1780397430000" data-listing-file-modified-sort="1780995653131" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="582" data-search="handling missing data feature engineering" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">8.</span>
-<div class="post-content">
-<a href="../articles/Feature Engineering/Handling Missing Data/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Handling Missing Data</a>
-</div>
-</div>
-</div>
-</section>
-<section class="topic-group" style="margin-bottom: 2rem;">
-<h2 class="topic-header anchored" style="border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; margin-bottom: 1rem;">
-<a href="Machine Learning/index.html" style="text-decoration: none;">Machine Learning</a>
-</h2>
-<div class="posts-list" style="padding-left: 1rem;">
-<div class="post-item" data-index="12" data-listing-date-sort="1781000737000" data-listing-file-modified-sort="1781024398103" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1466" data-search="introduction to machine learning machine learning" style="margin-bottom: 0.75rem; display: flex; align-items: baseline;">
-<span class="post-index" style="color: var(--muted); margin-right: 1rem; font-family: var(--font-mono); font-size: 0.9rem;">1.</span>
-<div class="post-content">
-<a href="../articles/Machine Learning/Introduction to Machine Learning/index.html" class="post-title" style="font-weight: 600; text-decoration: none; font-size: 1.1rem;">Introduction to Machine Learning</a>
-</div>
-</div>
-</div>
-</section>
-</div>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('.quarto-listing-filter');
-  if (!container) return;
-
-  const originalInput = container.querySelector('input.search');
-  if (!originalInput) return;
-
-  // Clone the input to remove all event listeners attached by Quarto
-  const searchInput = originalInput.cloneNode(true);
-  searchInput.setAttribute('placeholder', 'Search by Topic or Article');
-  originalInput.parentNode.replaceChild(searchInput, originalInput);
-
-  function updateVisibility() {
-    const term = searchInput.value.toLowerCase().trim();
-    const items = document.querySelectorAll('.post-item');
-    let anyVisible = false;
-    
-    // Filter items
-    items.forEach(item => {
-      const searchData = (item.getAttribute('data-search') || "").toLowerCase();
-      if (searchData.indexOf(term) !== -1) {
-        item.style.setProperty('display', 'flex', 'important');
-        anyVisible = true;
-      } else {
-        item.style.setProperty('display', 'none', 'important');
-      }
-    });
-
-    // Hide/Show topic groups based on visible items
-    const topicGroups = document.querySelectorAll('.topic-group');
-    topicGroups.forEach(group => {
-      const allPosts = Array.from(group.querySelectorAll('.post-item'));
-      const visibleInGroup = allPosts.some(i => i.style.display !== 'none');
-      if (visibleInGroup) {
-        group.style.setProperty('display', 'block', 'important');
-      } else {
-        group.style.setProperty('display', 'none', 'important');
-      }
-    });
-
-    // Toggle "No matching items" message
-    const noMatch = document.querySelector('.listing-no-matching');
-    if (noMatch) {
-      if (!anyVisible && term !== "") {
-        noMatch.style.setProperty('display', 'block', 'important');
-        noMatch.classList.remove('d-none');
-      } else {
-        noMatch.style.setProperty('display', 'none', 'important');
-        noMatch.classList.add('d-none');
-      }
-    }
-  }
-
-  // Listen for typing
-  searchInput.addEventListener('input', updateVisibility);
-  
-  // Initial check
-  updateVisibility();
-});
-</script>
-<div class="listing-no-matching d-none">No matching items</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1211,5 +1279,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

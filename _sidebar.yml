@@ -37,3 +37,8 @@ website:
           href: articles/Feature%20Engineering/Outlier%20Detection%20and%20Removal/index.html
         - text: Handling Missing Data
           href: articles/Feature%20Engineering/Handling%20Missing%20Data/index.html
+      - section: Machine Learning
+        href: articles/Machine%20Learning/index.html
+        contents:
+        - text: Introduction to Machine Learning
+          href: articles/Machine%20Learning/Introduction%20to%20Machine%20Learning/index.html
