@@ -551,11 +551,12 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#types-of-linear-regression" id="toc-types-of-linear-regression" class="nav-link" data-scroll-target="#types-of-linear-regression">Types of Linear Regression</a></li>
+  </ul></li>
   <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a></li>
   <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple Linear Regression</a></li>
   <li><a href="#polynomial-linear-regression" id="toc-polynomial-linear-regression" class="nav-link" data-scroll-target="#polynomial-linear-regression">Polynomial Linear Regression</a></li>
   <li><a href="#equation-of-simple-linear-regression" id="toc-equation-of-simple-linear-regression" class="nav-link" data-scroll-target="#equation-of-simple-linear-regression">Equation of Simple Linear Regression</a></li>
-  </ul></li>
+  <li><a href="#practical-implementation-of-simple-linear-regression" id="toc-practical-implementation-of-simple-linear-regression" class="nav-link" data-scroll-target="#practical-implementation-of-simple-linear-regression">Practical Implementation of Simple Linear Regression</a></li>
   </ul>
 </nav>
     </div>
@@ -599,8 +600,8 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This is a supervised regression Model. It is used to model the relationship between a single independent variable (X) and a dependent variable (Y) by fitting a straight line to the observed data.</p>
 <p><strong>Why Simple Linear Regression is at the beginning and why not other models?</strong><br>
 1. Easy to understand<br>
@@ -613,6 +614,7 @@ window.Quarto = {
 <li>Polynomial Linear Regression</li>
 <li>Regularized Linear Regression (Ridge, Lasso)</li>
 </ol>
+</section>
 </section>
 <section id="simple-linear-regression" class="level2">
 <h2 class="anchored" data-anchor-id="simple-linear-regression">Simple Linear Regression</h2>
@@ -739,6 +741,9 @@ window.Quarto = {
 </figure>
 </div>
 <p>Now we will try to implement the simple linear regression model in practical.</p>
+</section>
+<section id="practical-implementation-of-simple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="practical-implementation-of-simple-linear-regression">Practical Implementation of Simple Linear Regression</h2>
 <div id="9b19d89c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1665,7 +1670,6 @@ y = mx + b
 <p>In machine learning, we don’t call <code>m</code> and <code>b</code> as intercept and slope. We call them as <code>weight</code> and <code>bias</code> respectively.</p>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
