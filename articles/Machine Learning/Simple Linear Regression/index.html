@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Md Muztahid Hassan">
-<meta name="dcterms.date" content="2026-05-20">
-<meta name="description" content="A comprehensive guide to transforming non-numeric categories into structured, numeric formats that algorithms can effectively process and learn from.">
+<meta name="dcterms.date" content="2026-06-15">
+<meta name="description" content="An introductory guide to linear regression concepts followed by a hands-on Python implementation using scikit-learn to predict salary packages based on student CGPA.">
 
-<title>Handling Categorical Feature – Muztahid’s ML Blog</title>
+<title>Linear Regression – Muztahid’s ML Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -127,13 +127,48 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Handling Categorical Feature – Muztahid’s ML Blog">
-<meta property="og:description" content="A comprehensive guide to transforming non-numeric categories into structured, numeric formats that algorithms can effectively process and learn from.">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Linear Regression – Muztahid’s ML Blog">
+<meta property="og:description" content="An introductory guide to linear regression concepts followed by a hands-on Python implementation using scikit-learn to predict salary packages based on student CGPA.">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Simple Linear Regression/images/im1.png">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta name="twitter:title" content="Handling Categorical Feature – Muztahid’s ML Blog">
-<meta name="twitter:description" content="A comprehensive guide to transforming non-numeric categories into structured, numeric formats that algorithms can effectively process and learn from.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image:height" content="379">
+<meta property="og:image:width" content="1125">
+<meta name="twitter:title" content="Linear Regression – Muztahid’s ML Blog">
+<meta name="twitter:description" content="An introductory guide to linear regression concepts followed by a hands-on Python implementation using scikit-learn to predict salary packages based on student CGPA.">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Simple Linear Regression/images/im1.png">
+<meta name="twitter:image-height" content="379">
+<meta name="twitter:image-width" content="1125">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -360,7 +395,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Handling Categorical Feature</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Linear Regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -515,13 +550,11 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
-  <li><a href="#the-two-main-techniques" id="toc-the-two-main-techniques" class="nav-link" data-scroll-target="#the-two-main-techniques">The Two Main Techniques</a></li>
-  <li><a href="#when-to-use-label-encoding-the-target-variable" id="toc-when-to-use-label-encoding-the-target-variable" class="nav-link" data-scroll-target="#when-to-use-label-encoding-the-target-variable">When to Use Label Encoding: The Target Variable</a></li>
-  </ul></li>
-  <li><a href="#ordinal-encoding" id="toc-ordinal-encoding" class="nav-link" data-scroll-target="#ordinal-encoding">Ordinal Encoding</a></li>
-  <li><a href="#one-hot-encoding" id="toc-one-hot-encoding" class="nav-link" data-scroll-target="#one-hot-encoding">One-Hot Encoding</a>
-  <ul class="collapse">
-  <li><a href="#the-drawbacks-of-one-hot-encoding" id="toc-the-drawbacks-of-one-hot-encoding" class="nav-link" data-scroll-target="#the-drawbacks-of-one-hot-encoding">The Drawbacks of One-Hot Encoding</a></li>
+  <li><a href="#types-of-linear-regression" id="toc-types-of-linear-regression" class="nav-link" data-scroll-target="#types-of-linear-regression">Types of Linear Regression</a></li>
+  <li><a href="#simple-linear-regression" id="toc-simple-linear-regression" class="nav-link" data-scroll-target="#simple-linear-regression">Simple Linear Regression</a></li>
+  <li><a href="#multiple-linear-regression" id="toc-multiple-linear-regression" class="nav-link" data-scroll-target="#multiple-linear-regression">Multiple Linear Regression</a></li>
+  <li><a href="#polynomial-linear-regression" id="toc-polynomial-linear-regression" class="nav-link" data-scroll-target="#polynomial-linear-regression">Polynomial Linear Regression</a></li>
+  <li><a href="#equation-of-simple-linear-regression" id="toc-equation-of-simple-linear-regression" class="nav-link" data-scroll-target="#equation-of-simple-linear-regression">Equation of Simple Linear Regression</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -532,12 +565,12 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Handling Categorical Feature</h1>
+<h1 class="title">Linear Regression</h1>
 </div>
 
 <div>
   <div class="description">
-    A comprehensive guide to transforming non-numeric categories into structured, numeric formats that algorithms can effectively process and learn from.
+    An introductory guide to linear regression concepts followed by a hands-on Python implementation using scikit-learn to predict salary packages based on student CGPA.
   </div>
 </div>
 
@@ -554,7 +587,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 20, 2026</p>
+      <p class="date">June 15, 2026</p>
     </div>
   </div>
   
@@ -566,181 +599,155 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Categorical features are variables that contain text labels or categories rather than numerical values (for example: “Color,” “City,” or “Size”).</p>
-<p>The core challenge with categorical data is that most machine learning algorithms are rooted in mathematics. They require numerical inputs to calculate equations, distances, and probabilities. If you try to feed raw text like “New York” or “Red” into a model, it will throw an error. Therefore, handling categorical features is the process of translating these text categories into a numerical format that an algorithm can understand, without losing the underlying information.</p>
-<section id="the-two-main-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="the-two-main-techniques">The Two Main Techniques</h3>
-<p>There are two primary ways to convert categorical data into numbers, depending on whether the data has a natural order:</p>
-<p><strong>1. Ordinal Encoding (For Ordered Categories)</strong><br>
-Use this when your categories have a clear, logical ranking or hierarchy. The technique assigns a distinct integer to each category based on its order.</p>
-<ul>
-<li><strong>Example:</strong> A “Size” column with values <code>Small</code>, <code>Medium</code>, <code>Large</code>.</li>
-<li><strong>Transformation:</strong> <code>Small</code> becomes <strong>1</strong>, <code>Medium</code> becomes <strong>2</strong>, and <code>Large</code> becomes <strong>3</strong>. The model understands that 3 is greater than 1, preserving the inherent rank.</li>
-</ul>
-<p><strong>2. One-Hot Encoding (For Unordered/Nominal Categories)</strong><br>
-Use this when your categories do not have any mathematical relationship or ranking to one another. Instead of assigning a single number (which might trick the model into thinking one category is “greater” than another), One-Hot Encoding creates a new, separate column for every unique category. Each column is filled with <strong>1</strong> (if the category is present) or <strong>0</strong> (if it is not).</p>
-<ul>
-<li><strong>Example:</strong> A “Color” column with values <code>Red</code>, <code>Green</code>, <code>Blue</code>.</li>
-<li><strong>Transformation:</strong> It splits into three new columns: <code>Is_Red</code>, <code>Is_Green</code>, and <code>Is_Blue</code>. A red item would have a <strong>1</strong> in the <code>Is_Red</code> column and a <strong>0</strong> in the others.</li>
-</ul>
-<p>That means if there are ranks in categorical data, we use <code>ordinal encoding</code>. Otherwise, we use <code>one hot encoding</code> for nominal data.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>This is a supervised regression Model. It is used to model the relationship between a single independent variable (X) and a dependent variable (Y) by fitting a straight line to the observed data.</p>
+<p><strong>Why Simple Linear Regression is at the beginning and why not other models?</strong><br>
+1. Easy to understand<br>
+2. It can be used to understand other models as well.</p>
+<section id="types-of-linear-regression" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-linear-regression">Types of Linear Regression</h3>
+<ol type="1">
+<li>Simple Linear Regression</li>
+<li>Multiple Linear Regression</li>
+<li>Polynomial Linear Regression</li>
+<li>Regularized Linear Regression (Ridge, Lasso)</li>
+</ol>
 </section>
-<section id="when-to-use-label-encoding-the-target-variable" class="level3">
-<h3 class="anchored" data-anchor-id="when-to-use-label-encoding-the-target-variable">When to Use Label Encoding: The Target Variable</h3>
-<p>The most common—and mathematically correct—use case for Label Encoding is transforming the <strong>target variable</strong> (the specific outcome your model is trying to predict) into a machine-readable format.</p>
-<p>While applying Label Encoding to input features can sometimes confuse distance-based algorithms into thinking categories have a numerical rank (e.g., assuming category <code>3</code> is “greater” than category <code>1</code>), the target variable does not have this problem. The target is simply the final classification output. In fact, popular machine learning libraries like <code>scikit-learn</code> explicitly expect the target array (typically denoted as <code>y</code>) to be formatted as a single column of encoded integers.</p>
-<p><strong>A Quick Example:</strong><br>
-Imagine you are building a classification model to predict whether an email is spam.</p>
-<ul>
-<li><strong>Your Raw Target Data:</strong> <code>["Spam", "Not Spam", "Not Spam", "Spam"]</code></li>
-<li><strong>Your Encoded Target Data:</strong> <code>[1, 0, 0, 1]</code></li>
-</ul>
-<p>By restricting Label Encoding strictly to your target variable, you ensure your algorithm can efficiently process and predict the correct classes without accidentally skewing the mathematical relationships within your input features.</p>
-<p>Here is a comparison table designed to be clear and reader-friendly for your blog. It breaks down the key distinctions between the three encoding methods:</p>
+<section id="simple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="simple-linear-regression">Simple Linear Regression</h2>
+<p>Simple Linear Regression only works on only the datasets with one input feature and one output feature. Here is an example.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Feature</th>
-<th>Ordinal Encoding</th>
-<th>Nominal (One-Hot) Encoding</th>
-<th>Label Encoding</th>
+<th>CGPA</th>
+<th>Salary(in lakhs)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Best Used For</strong></td>
-<td>Categorical <strong>input features</strong> with a natural order.</td>
-<td>Categorical <strong>input features</strong> with no natural order.</td>
-<td>The <strong>target variable</strong> (the outcome you are trying to predict).</td>
+<td>7.5</td>
+<td>8.5</td>
 </tr>
 <tr class="even">
-<td><strong>How It Works</strong></td>
-<td>Assigns integers based on a logical, predefined hierarchy.</td>
-<td>Creates a new binary column (0 or 1) for every unique category.</td>
-<td>Assigns unique integers to categories arbitrarily (usually alphabetically).</td>
+<td>8.0</td>
+<td>9.0</td>
 </tr>
 <tr class="odd">
-<td><strong>Mathematical Assumption</strong></td>
-<td>The numbers have a meaningful rank (e.g., 3 is greater than 1).</td>
-<td>All categories are strictly equal in weight and distance.</td>
-<td>The numbers imply a rank, which can confuse some algorithms if used on input features.</td>
+<td>8.5</td>
+<td>9.5</td>
 </tr>
 <tr class="even">
-<td><strong>Dimensionality</strong></td>
-<td>Keeps the dataset size the same (1 column remains 1 column).</td>
-<td>Expands the dataset (1 column becomes N columns).</td>
-<td>Keeps the dataset size the same (1 column remains 1 column).</td>
+<td>9.0</td>
+<td>10.0</td>
 </tr>
 <tr class="odd">
-<td><strong>Algorithm Suitability</strong></td>
-<td>Works well with both linear/distance-based and tree-based models.</td>
-<td>Essential for linear/distance-based models (Linear Regression, KNN).</td>
-<td>Safe for tree-based models (Random Forest, XGBoost) and target arrays.</td>
-</tr>
-<tr class="even">
-<td><strong>Example Transformation</strong></td>
-<td><strong>Small, Medium, Large</strong> becomes <strong>1, 2, 3</strong></td>
-<td><strong>Red, Blue</strong> becomes <strong>Is_Red, Is_Blue</strong></td>
-<td><strong>Not Spam, Spam</strong> becomes <strong>0, 1</strong></td>
+<td>9.5</td>
+<td>10.5</td>
 </tr>
 </tbody>
 </table>
+<p>But this model is too simple for the real world datasets. So, we will use the Multiple Linear Regression model.</p>
+</section>
+<section id="multiple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-linear-regression">Multiple Linear Regression</h2>
+<p>Multiple Linear Regression works on datasets with more than one input feature and one output feature. Here is an example.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>CGPA</th>
+<th>Experience(in years)</th>
+<th>Degree</th>
+<th>Salary(in lakhs)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7.5</td>
+<td>2</td>
+<td>Bachelors</td>
+<td>8.5</td>
+</tr>
+<tr class="even">
+<td>8.0</td>
+<td>3</td>
+<td>Masters</td>
+<td>9.0</td>
+</tr>
+<tr class="odd">
+<td>8.5</td>
+<td>4</td>
+<td>PhD</td>
+<td>9.5</td>
+</tr>
+<tr class="even">
+<td>9.0</td>
+<td>5</td>
+<td>Bachelors</td>
+<td>10.0</td>
+</tr>
+</tbody>
+</table>
+<p>Here <code>CGPA</code>, <code>Experience</code> and <code>Degree</code> are the input features and <code>Salary</code> is the output feature.</p>
+</section>
+<section id="polynomial-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="polynomial-linear-regression">Polynomial Linear Regression</h2>
+<p>Polynomial Linear Regression is a type of linear regression where the relationship between the independent variable and the dependent variable is modeled as an nth degree polynomial. The graph of a polynomial regression is not a straight line, it is a curve. Here is an example.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im1.png" class="img-fluid figure-img"></p>
+<figcaption>Linear vs Polynomial Regression</figcaption>
+</figure>
+</div>
 <blockquote class="blockquote">
-<p>Note: When we will work with input features, we will use ordinal encoding or nominal encoding according to our need. But when we will see that the target variable has categorical value, we can use label encoding.</p>
+<p>Note: Linear regression is just a first-degree polynomial. Polynomial regression uses higher-degree polynomials. Both of them are linear models, but the first results in a straight line, the latter gives you a curved line.</p>
 </blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im2.png" class="img-fluid figure-img"></p>
+<figcaption>Scatter Plot</figcaption>
+</figure>
+</div>
+<p>Linear regression will try to fit a straight line through the data points. This graph is highly related to the real world datasets.</p>
 </section>
-</section>
-<section id="ordinal-encoding" class="level2">
-<h2 class="anchored" data-anchor-id="ordinal-encoding">Ordinal Encoding</h2>
-<p>If a question arises that how computer knows the rank by ordinal encoding? We can explain that with an example. Suppose the <code>Education</code> feature has two value: <code>MSc</code> and <code>BSc</code>. The rank of <code>MSc</code> is greater that the rank of <code>BSc</code>. We assign greater value to the <code>MSc</code>(suppose 2) and relatively smaller value to <code>BSc</code>(suppose 1). This is how the computer recognizes the rank.</p>
-<p>Now let’s see them in practical.<br>
-First, import libraries and load the dataset. You can download the dataset from <a href="customer.csv" download="">here</a>.</p>
-<div id="96919042" class="cell" data-execution_count="1">
+<section id="equation-of-simple-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="equation-of-simple-linear-regression">Equation of Simple Linear Regression</h2>
+<p><span class="math display">\[y = mx + c\]</span></p>
+<p>Where:<br>
+- <code>y</code> is the dependent variable (output)<br>
+- <code>x</code> is the independent variable (input)<br>
+- <code>m</code> is the slope of the line (coefficient)<br>
+- <code>c</code> is the y-intercept (constant)</p>
+<p>We try to find the best values of <code>m</code> and <code>c</code> that minimize the difference between the predicted values and the actual values.</p>
+<p>For simple linear regression, there is only one input feature, but when there are two input features, the line becomes a plane and the equation becomes:<br>
+<span class="math display">\[y = m_1x_1 + m_2x_2 + c\]</span></p>
+<p>Where:<br>
+- <code>x_1</code> and <code>x_2</code> are the independent variables (input features)<br>
+- <code>m_1</code> and <code>m_2</code> are the coefficients for the respective input features<br>
+- <code>c</code> is the y-intercept (constant)</p>
+<p>For multiple linear regression with <code>n</code> input features, the equation becomes:</p>
+<p><span class="math display">\[y = m_1x_1 + m_2x_2 + ... + m_nx_n + c\]</span></p>
+<p>Where:<br>
+- <code>x_1</code>, <code>x_2</code>, …, <code>x_n</code> are the independent variables (input features)<br>
+- <code>m_1</code>, <code>m_2</code>, …, <code>m_n</code> are the coefficients<br>
+- <code>c</code> is the y-intercept (constant)</p>
+<p>While model training, we try to reduce the error rate and increase the accuracy rate. Linear regression draws the best fit line applying so many iterations. By the iterations, the linear regression model tries to reduce the error and find the best fit line.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/im3.png" class="img-fluid figure-img"></p>
+<figcaption>Best Fit Line</figcaption>
+</figure>
+</div>
+<p>Now we will try to implement the simple linear regression model in practical.</p>
+<div id="9b19d89c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"customer.csv"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">age</th>
-<th data-quarto-table-cell-role="th">gender</th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-<th data-quarto-table-cell-role="th">purchased</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>30</td>
-<td>Female</td>
-<td>Average</td>
-<td>School</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>68</td>
-<td>Female</td>
-<td>Poor</td>
-<td>UG</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>70</td>
-<td>Female</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>72</td>
-<td>Female</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>16</td>
-<td>Female</td>
-<td>Average</td>
-<td>UG</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</div>
-</div>
-<p>Here,<br>
-<code>age</code> -&gt; Numeric Feature<br>
-<code>gender</code> -&gt; Nominal<br>
-<code>review</code> -&gt; Ordinal<br>
-<code>education</code> -&gt; Ordinal<br>
-<code>purchased</code> -&gt; Label Encoding (Because this is the target variable)<br>
-Actually we won’t use the <code>age</code>and <code>gender</code> columns for our learning. So, we will omit them.</p>
-<div id="83d701dc" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.iloc[:,<span class="dv">2</span>:]</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.sample(<span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>We will use placement dataset to train a simple linear regression model. You can download the dataset from <a href="placement.csv download">here</a>.</p>
+<div id="f4dd9fb1" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'placement.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -749,41 +756,35 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-<th data-quarto-table-cell-role="th">purchased</th>
+<th data-quarto-table-cell-role="th">cgpa</th>
+<th data-quarto-table-cell-role="th">package</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">34</th>
-<td>Average</td>
-<td>School</td>
-<td>No</td>
+<th data-quarto-table-cell-role="th">0</th>
+<td>6.89</td>
+<td>3.26</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">15</th>
-<td>Poor</td>
-<td>UG</td>
-<td>No</td>
+<th data-quarto-table-cell-role="th">1</th>
+<td>5.12</td>
+<td>1.98</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">19</th>
-<td>Poor</td>
-<td>PG</td>
-<td>Yes</td>
+<th data-quarto-table-cell-role="th">2</th>
+<td>7.82</td>
+<td>3.25</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">47</th>
-<td>Good</td>
-<td>PG</td>
-<td>Yes</td>
+<th data-quarto-table-cell-role="th">3</th>
+<td>7.42</td>
+<td>3.67</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">37</th>
-<td>Average</td>
-<td>PG</td>
-<td>Yes</td>
+<th data-quarto-table-cell-role="th">4</th>
+<td>6.94</td>
+<td>3.57</td>
 </tr>
 </tbody>
 </table>
@@ -791,134 +792,33 @@ Actually we won’t use the <code>age</code>and <code>gender</code> columns for 
 </div>
 </div>
 </div>
-<div id="fae6c2ea" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>(50, 3)</code></pre>
+<div id="c6d869ea" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'cgpa'</span>], df[<span class="st">'package'</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'CGPA'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Package'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div id="881c2492" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OrdinalEncoder</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x_train, x_test, y_train, y_test <span class="op">=</span> train_test_split(df.drop(<span class="st">'purchased'</span>, axis<span class="op">=</span><span class="dv">1</span>), df[<span class="st">'purchased'</span>], test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>x_train.shape, x_test.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>((35, 2), (15, 2))</code></pre>
 </div>
+<div id="f11661f7" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'package'</span>])</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">'package'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>During fitting the data into ordinal encoding, we need to do some work manually. We need to specify the ranks manually from lower to higher. Otherwise, it will be randomly ranked.</p>
-<div id="c082988c" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>oe <span class="op">=</span> OrdinalEncoder(categories<span class="op">=</span>[[<span class="st">'Poor'</span>,<span class="st">'Average'</span>,<span class="st">'Good'</span>],[<span class="st">'School'</span>,<span class="st">'UG'</span>,<span class="st">'PG'</span>]])</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>oe.fit(x_train)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x_train <span class="op">=</span> pd.DataFrame(oe.transform(x_train), columns<span class="op">=</span>x_train.columns)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>x_test <span class="op">=</span> pd.DataFrame(oe.transform(x_test), columns<span class="op">=</span>x_test.columns)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>x_train.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5f72fb93" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> LinearRegression()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>lr.fit(X_train, y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>0.0</td>
-<td>2.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>0.0</td>
-<td>2.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>2.0</td>
-<td>1.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>1.0</td>
-<td>1.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="36c5a326" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x_test.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>2.0</td>
-<td>1.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>2.0</td>
-<td>1.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>2.0</td>
-<td>2.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>2.0</td>
-<td>2.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="76b823c8" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>oe.categories_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>[array(['Poor', 'Average', 'Good'], dtype=object),
- array(['School', 'UG', 'PG'], dtype=object)]</code></pre>
-</div>
-</div>
-<p>Now we will use label encoder on our target column <code>purchased</code>.</p>
-<div id="203993cb" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> LabelEncoder</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>le <span class="op">=</span> LabelEncoder()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>le.fit(y_train)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
 <style>#sk-container-id-1 {
   /* Definition of color scheme common for light and dark mode */
   --sklearn-color-text: #000;
@@ -1469,15 +1369,76 @@ a.param-doc-link::before {
     height: 14px;
     cursor: pointer;
 }
-</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LabelEncoder()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LabelEncoder</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.preprocessing.LabelEncoder.html">?<span>Documentation for LabelEncoder</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>LinearRegression</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html">?<span>Documentation for LinearRegression</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
-                <table class="parameters-table">
-                  <tbody>
-                    
-                  </tbody>
-                </table>
+                
+<table class="parameters-table caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=fit_intercept,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">fit_intercept <span class="param-doc-description">fit_intercept: bool, default=True<br>
+<br>
+Whether to calculate the intercept for this model. If set<br>
+to False, no intercept will be used in calculations<br>
+(i.e. data is expected to be centered).</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=copy_X,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">copy_X <span class="param-doc-description">copy_X: bool, default=True<br>
+<br>
+If True, X will be copied; else, it may be overwritten.</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=tol,-float%2C%20default%3D1e-6" class="param-doc-link" rel="noreferrer" target="_blank">tol <span class="param-doc-description">tol: float, default=1e-6<br>
+<br>
+The precision of the solution (`coef_`) is determined by `tol` which<br>
+specifies a different convergence criterion for the `lsqr` solver.<br>
+`tol` is set as `atol` and `btol` of :func:`scipy.sparse.linalg.lsqr` when<br>
+fitting on sparse training data. This parameter has no effect when fitting<br>
+on dense data.<br>
+<br>
+.. versionadded:: 1.7</span></a></td>
+<td class="value">1e-06</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=n_jobs,-int%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">n_jobs <span class="param-doc-description">n_jobs: int, default=None<br>
+<br>
+The number of jobs to use for the computation. This will only provide<br>
+speedup in case of sufficiently large problems, that is if firstly<br>
+`n_targets &gt; 1` and secondly `X` is sparse or if `positive` is set<br>
+to `True`. ``None`` means 1 unless in a<br>
+:obj:`joblib.parallel_backend` context. ``-1`` means using all<br>
+processors. See :term:`Glossary <n_jobs>` for more details.</n_jobs></span></a></td>
+<td class="value">None</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.linear_model.LinearRegression.html#:~:text=positive,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">positive <span class="param-doc-description">positive: bool, default=False<br>
+<br>
+When set to ``True``, forces the coefficients to be positive. This<br>
+option is only supported for dense arrays.<br>
+<br>
+For a comparison between a linear regression model with positive constraints<br>
+on the regression coefficients and a linear regression without such constraints,<br>
+see :ref:`sphx_glr_auto_examples_linear_model_plot_nnls.py`.<br>
+<br>
+.. versionadded:: 0.24</span></a></td>
+<td class="value">False</td>
+</tr>
+</tbody>
+</table>
+
             </details>
         </div>
     </div></div></div></div></div><script>function copyToClipboard(text, element) {
@@ -1598,307 +1559,110 @@ function forceTheme(elementId) {
 forceTheme('sk-container-id-1');</script>
 </div>
 </div>
-<div id="e76e7ca0" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>le.classes_</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="a994bacb" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X_test.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">cgpa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">112</th>
+<td>8.58</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>7.15</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">182</th>
+<td>5.88</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">199</th>
+<td>6.22</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">193</th>
+<td>4.57</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="767217aa" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y_test.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>112    4.10
+29     3.49
+182    2.08
+199    2.33
+193    1.94
+Name: package, dtype: float64</code></pre>
+</div>
+</div>
+<p>Now we will try to predict on test data.</p>
+<div id="e2f3g4h5" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lr.predict(X_test.iloc[[<span class="dv">0</span>]])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>array(['No', 'Yes'], dtype=object)</code></pre>
+<pre><code>array([3.89111601])</code></pre>
 </div>
 </div>
-<div id="c5abb307" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> le.transform(y_train)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> le.transform(y_test)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Look carefully, the prediction is not correct. The model predicted 3.89 for the first row, but the actual value is 4.10. This is because the dataset is small, and the preprocessing and feature engineering steps are not done.</p>
+<div id="ee96584a" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.scatter(df[<span class="st">'cgpa'</span>], df[<span class="st">'package'</span>])</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.plot(X_train, lr.predict(X_train), color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'CGPA'</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Package'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<div id="79c0625e" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>y_train</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<p>This is the best fit line for the data. If we want to see the slope and intercept, we can use the following code:</p>
+<div id="6d762cff" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> lr.coef_</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> lr.intercept_</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>m, b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>array([1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1,
-       1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0])</code></pre>
+<pre><code>(array([0.55795197]), np.float64(-0.8961119222429144))</code></pre>
 </div>
 </div>
-</section>
-<section id="one-hot-encoding" class="level2">
-<h2 class="anchored" data-anchor-id="one-hot-encoding">One-Hot Encoding</h2>
-<p>Suppose we have a table with feature <code>fuel</code>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>fuel</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Diesel</td>
-</tr>
-<tr class="even">
-<td>Petrol</td>
-</tr>
-<tr class="odd">
-<td>Octen</td>
-</tr>
-<tr class="even">
-<td>Diesel</td>
-</tr>
-<tr class="odd">
-<td>Octen</td>
-</tr>
-</tbody>
-</table>
-<p>When we will do one-hot encoding on the fuel feature, the encoder will try to find out the number of unique values present in the feature. Then it will create a table with each unique value as a column.</p>
-<p>Because there are three unique categories in your raw data (<strong>Diesel</strong>, <strong>Petrol</strong>, and <strong>Octen</strong>), One-Hot Encoding splits them into three separate binary columns.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Diesel</th>
-<th>Petrol</th>
-<th>Octen</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>1</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-<p><strong>How it works:</strong><br>
-For each row, the system places a <strong>1</strong> in the column that matches the original category and a <strong>0</strong> in all the other columns. This perfectly translates the text into a mathematical format without accidentally tricking the algorithm into thinking one fuel type is “greater” or “less” than another.</p>
-<p>We can create the table by omiting any one of the columns. Suppose we omit <code>Diesel</code> column. Then if we find all values of other columns are <strong>0</strong>, then it is indicating the <code>Diesel</code> value. This is necessary when we will work with <code>Linear Models</code>. Otherwise, it is optional.</p>
-<section id="the-drawbacks-of-one-hot-encoding" class="level3">
-<h3 class="anchored" data-anchor-id="the-drawbacks-of-one-hot-encoding">The Drawbacks of One-Hot Encoding</h3>
-<p>While it is the standard for nominal data, One-Hot Encoding has four major pitfalls:</p>
-<ul>
-<li><strong>The Curse of Dimensionality:</strong> It creates a massive number of new columns for features with many unique categories, making it harder for models to find patterns.</li>
-<li><strong>Extreme Sparsity:</strong> It generates a dataset filled almost entirely with zeroes, which consumes excessive memory and slows down training times.</li>
-<li><strong>The Dummy Variable Trap:</strong> It introduces perfect multicollinearity (features predicting each other), which will break linear models unless you drop one of the encoded columns.</li>
-<li><strong>Production Brittleness:</strong> It will crash or throw errors in a real-world environment if it encounters a brand-new category it did not see during training.</li>
-</ul>
-<p>Now let’s see them in practical.</p>
-<div id="77a8bbf2" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"customer.csv"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Now we have <code>m</code> and <code>b</code> we can use them to predict the value of <code>y</code> for any given value of <code>x</code> using the formula:</p>
+<p><span class="math display">\[
+y = mx + b
+\]</span></p>
+<div id="2ca1abf4" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">8.58</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> m <span class="op">*</span> x <span class="op">+</span> b</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">age</th>
-<th data-quarto-table-cell-role="th">gender</th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-<th data-quarto-table-cell-role="th">purchased</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>30</td>
-<td>Female</td>
-<td>Average</td>
-<td>School</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>68</td>
-<td>Female</td>
-<td>Poor</td>
-<td>UG</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>70</td>
-<td>Female</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>72</td>
-<td>Female</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>16</td>
-<td>Female</td>
-<td>Average</td>
-<td>UG</td>
-<td>No</td>
-</tr>
-</tbody>
-</table>
-
+<pre><code>array([3.89111601])</code></pre>
 </div>
 </div>
-</div>
-<p>We will use one-hot encoding on the <code>gender</code> column as it is a nominal feature. It we do so, we will find two columns because we have two unique values. Now the number of total columns is 5 and after applying one-hot encoding, there will be 7 columns.</p>
-<div id="760d2d24" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'gender'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<pre><code>gender
-Female    29
-Male      21
-Name: count, dtype: int64</code></pre>
+<p>We can use the predict function to make prediction on <code>x</code>. For this we need to convert <code>x</code> to a dataframe.</p>
+<div id="39f404c3" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> pd.DataFrame([[x]], columns<span class="op">=</span>[<span class="st">'cgpa'</span>])</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>lr.predict(new_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>array([3.89111601])</code></pre>
 </div>
 </div>
-<div id="386a5d4d" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>ohe <span class="op">=</span> OneHotEncoder(sparse_output<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>new_data <span class="op">=</span> ohe.fit_transform(df[[<span class="st">'gender'</span>]])</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(new_data, columns<span class="op">=</span>[<span class="st">"Female"</span>, <span class="st">"Male"</span>]).head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Female</th>
-<th data-quarto-table-cell-role="th">Male</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>1.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>1.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>1.0</td>
-<td>0.0</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>1.0</td>
-<td>0.0</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>1.0</td>
-<td>0.0</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Look here we can see that it has created two columns for two unique values.</p>
-<p>We have one problem that is, we have to add these two columns to the main dataset and remove the <code>gender</code> column. This manual process is time consuming. We can use <code>get_dummies</code> function to automatically add them.</p>
-<div id="bfb27408" class="cell" data-execution_count="15">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>pd.get_dummies(df, columns<span class="op">=</span>[<span class="st">'gender'</span>]).head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">age</th>
-<th data-quarto-table-cell-role="th">review</th>
-<th data-quarto-table-cell-role="th">education</th>
-<th data-quarto-table-cell-role="th">purchased</th>
-<th data-quarto-table-cell-role="th">gender_Female</th>
-<th data-quarto-table-cell-role="th">gender_Male</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>30</td>
-<td>Average</td>
-<td>School</td>
-<td>No</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>68</td>
-<td>Poor</td>
-<td>UG</td>
-<td>No</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>70</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>72</td>
-<td>Good</td>
-<td>PG</td>
-<td>No</td>
-<td>True</td>
-<td>False</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>16</td>
-<td>Average</td>
-<td>UG</td>
-<td>No</td>
-<td>True</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Here <strong>True</strong> means <strong>1</strong> and <strong>False</strong> means <strong>0</strong>. There are also some limitations of this function.</p>
-<ul>
-<li><strong>Production Brittleness:</strong> It doesn’t “remember” your training categories. If new data has unseen or missing categories, it generates the wrong number of columns and crashes your model.</li>
-<li><strong>Pipeline Incompatibility:</strong> It is a Pandas function, not a Scikit-Learn transformer, meaning you cannot cleanly integrate it into automated machine learning pipelines.</li>
-</ul>
-<blockquote class="blockquote">
-<p>Note: Use <code>get_dummies()</code> for quick analysis, but always use <code>OneHotEncoder</code> for real models!.</p>
-</blockquote>
-<p>So, we will use <code>Pipelines</code> or <code>Column Transformation</code> in future.</p>
+<p>Look they are same.</p>
+<p>In machine learning, we don’t call <code>m</code> and <code>b</code> as intercept and slope. We call them as <code>weight</code> and <code>bias</code> respectively.</p>
 
 
 </section>
