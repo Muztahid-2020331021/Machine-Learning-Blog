@@ -5,83 +5,87 @@
     <lastmod>2026-05-06T17:25:51.902Z</lastmod>
   </url>
   <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Linear Regression In-depth Math Intuition/index.html</loc>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html</loc>
     <lastmod>2026-06-18T18:41:21.335Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/index.html</loc>
-    <lastmod>2026-06-09T08:54:10.917Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Train-Test Split &amp; Column Transformer/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.900Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Machine Learning Pipelines/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.906Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/index.html</loc>
-    <lastmod>2026-05-19T17:21:33.539Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Categorical Feature/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.896Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Data Transformation Techniques/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/index.html</loc>
-    <lastmod>2026-05-10T12:00:19.928Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.861Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/about.html</loc>
-    <lastmod>2026-05-06T16:39:04.301Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.857Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.879Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.845Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Feature Scaling/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.893Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Missing Data/index.html</loc>
-    <lastmod>2026-06-09T09:00:53.131Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.881Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Outlier Detection and Removal/index.html</loc>
-    <lastmod>2026-06-09T08:47:37.924Z</lastmod>
-  </url>
-  <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/index.html</loc>
-    <lastmod>2026-05-08T15:09:02.380Z</lastmod>
   </url>
   <url>
     <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Introduction to Machine Learning/index.html</loc>
     <lastmod>2026-06-09T16:59:58.103Z</lastmod>
   </url>
   <url>
-    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Simple Linear Regression/index.html</loc>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/index.html</loc>
+    <lastmod>2026-05-08T15:09:02.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Outlier Detection and Removal/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.924Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Missing Data/index.html</loc>
+    <lastmod>2026-06-09T09:00:53.131Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Feature Scaling/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.893Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.845Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.879Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.857Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/about.html</loc>
+    <lastmod>2026-05-06T16:39:04.301Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.861Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Exploratory Data Analysis (EDA)/index.html</loc>
+    <lastmod>2026-05-10T12:00:19.928Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Data Transformation Techniques/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Handling Categorical Feature/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/index.html</loc>
+    <lastmod>2026-05-19T17:21:33.539Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Machine Learning Pipelines/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.906Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Train-Test Split &amp; Column Transformer/index.html</loc>
+    <lastmod>2026-06-09T08:47:37.900Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/index.html</loc>
+    <lastmod>2026-06-18T19:02:30.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Supervised Machine Learning/index.html</loc>
+    <lastmod>2026-06-18T19:02:00.443Z</lastmod>
+  </url>
+  <url>
+    <loc>https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Supervised Machine Learning/Simple Linear Regression/index.html</loc>
     <lastmod>2026-06-18T11:38:34.520Z</lastmod>
   </url>
 </urlset>
