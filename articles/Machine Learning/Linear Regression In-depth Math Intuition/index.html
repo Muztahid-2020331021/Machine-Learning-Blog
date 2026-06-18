@@ -159,15 +159,15 @@ window.Quarto = {
 
 <meta property="og:title" content="Linear Regression In-depth Math Intuition – Muztahid’s ML Blog">
 <meta property="og:description" content="Master the mathematical mechanics of Linear Regression by walking through step-by-step calculations of Hypothesis functions, Mean Squared Error (MSE), and Gradient Descent parameter optimization.">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Linear Regression In-depth Math Intuition/images/im1.png">
+<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Linear Regression In-depth Math Intuition/index_files/figure-html/cell-2-output-1.png">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta property="og:image:height" content="550">
-<meta property="og:image:width" content="965">
+<meta property="og:image:height" content="475">
+<meta property="og:image:width" content="712">
 <meta name="twitter:title" content="Linear Regression In-depth Math Intuition – Muztahid’s ML Blog">
 <meta name="twitter:description" content="Master the mathematical mechanics of Linear Regression by walking through step-by-step calculations of Hypothesis functions, Mean Squared Error (MSE), and Gradient Descent parameter optimization.">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Linear Regression In-depth Math Intuition/images/im1.png">
-<meta name="twitter:image-height" content="550">
-<meta name="twitter:image-width" content="965">
+<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Machine Learning/Linear Regression In-depth Math Intuition/index_files/figure-html/cell-2-output-1.png">
+<meta name="twitter:image-height" content="475">
+<meta name="twitter:image-width" content="712">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -744,7 +744,7 @@ window.Quarto = {
 <span class="math display">\[ h_\theta(9) = 1 + 1.5 \times 9 = 14.5 \]</span></li>
 </ul>
 <p>These calculated values are our model’s predictions (<span class="math inline">\(\bar{Y}\)</span> or <span class="math inline">\(\hat{y}\)</span>).</p>
-<div id="6c7d8e9f" class="cell">
+<div id="6c7d8e9f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -776,6 +776,13 @@ window.Quarto = {
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="actual-vs.-predicted-values-table" class="level3">
@@ -956,7 +963,7 @@ window.Quarto = {
 <p><span class="math display">\[ J = \frac{1}{8} \left[ (-3)^2 + (-1)^2 + (-7)^2 + (-5)^2 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \left[ 9 + 1 + 49 + 25 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \times 84 = 10.5 \]</span></p>
-<div id="5e6f7a8b" class="cell">
+<div id="5e6f7a8b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -988,6 +995,13 @@ window.Quarto = {
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="calculating-parameter-updates-using-gradient-descent" class="level3">
@@ -1076,7 +1090,7 @@ window.Quarto = {
 <p><span class="math display">\[ J = \frac{1}{8} \left[ (0.3125)^2 + (-0.025)^2 + (0.9875)^2 + (-0.7525)^2 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \left[ 0.09765625 + 0.000625 + 0.97515625 + 0.56625625 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \times 1.63969375 \approx 0.20496 \approx 0.205 \]</span></p>
-<div id="8c9d0e1f" class="cell">
+<div id="8c9d0e1f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1112,6 +1126,13 @@ window.Quarto = {
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="calculating-parameter-updates-for-the-3rd-iteration" class="level3">
@@ -1199,7 +1220,7 @@ window.Quarto = {
 <p><span class="math display">\[ J = \frac{1}{8} \left[ (0.0984)^2 + (-0.0871)^2 + (0.4694)^2 + (-1.0274)^2 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \left[ 0.00968256 + 0.00758641 + 0.22033636 + 1.05555076 \right] \]</span></p>
 <p><span class="math display">\[ J = \frac{1}{8} \times 1.29315609 \approx 0.16164 \approx 0.162 \]</span></p>
-<div id="1b2c3d4e" class="cell">
+<div id="1b2c3d4e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1239,6 +1260,13 @@ window.Quarto = {
 <span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.6</span>)</span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>This is how the iterations will continue, automatically updating <span class="math inline">\(\theta_0\)</span> and <span class="math inline">\(\theta_1\)</span> step-by-step, until the Mean Squared Error (MSE) cost function is minimized and the regression line reaches its best possible fit (global minima).</p>
 </section>
