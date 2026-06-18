@@ -1,0 +1,17 @@
+---
+title: "Supervised Machine Learning"
+date: "2026-06-14 14:45:00"
+description: "A collection of articles on supervised machine learning concepts, algorithms, and applications."
+listing:
+  contents: 
+    - "*/index.qmd"
+    - "*/index.ipynb"
+  sort: "date asc"
+  type: default
+  fields: [title, description, date]
+  field-links: [title]
+toc: true
+page-layout: article
+---
+
+Welcome to the **Supervised Machine Learning** section. Here, we explore various concepts, algorithms, and applications in the field of supervised machine learning.
