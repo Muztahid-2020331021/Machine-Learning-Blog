@@ -42,3 +42,5 @@ website:
         contents:
         - text: Introduction to Machine Learning
           href: articles/Machine%20Learning/Introduction%20to%20Machine%20Learning/index.html
+        - text: Linear Regression
+          href: articles/Machine%20Learning/Simple%20Linear%20Regression/index.html
