@@ -123,6 +123,9 @@ gtag('js', new Date());
 gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="../../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -655,7 +658,22 @@ window.Quarto = {
 - <span class="math inline">\(w_1, w_2, \dots, w_m\)</span> are the weights<br>
 - <span class="math inline">\(w_0\)</span> is the bias / intercept</p>
 <p>In machine learning, we follow the below procedures:</p>
-<pre class="mermaid"><code>graph TD
+<div class="cell" data-layout-align="default">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>graph TD</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    %% Training Phase</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    X_Train[X Train] --&gt; TD[Training Data]</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Y_Train[Y Train] --&gt; TD</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    TD --&gt; LA[Learning Algorithm]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    LA --&gt; H[Hypothesis / Model]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    %% Prediction Phase</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    X_New[X Input] --&gt; H</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    H --&gt; Y_Pred["Y prediction (Y-bar)"]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
     %% Training Phase
     X_Train[X Train] --&gt; TD[Training Data]
     Y_Train[Y Train] --&gt; TD
@@ -664,7 +682,13 @@ window.Quarto = {
     
     %% Prediction Phase
     X_New[X Input] --&gt; H
-    H --&gt; Y_Pred["Y prediction (Y-bar)"]</code></pre>
+    H --&gt; Y_Pred["Y prediction (Y-bar)"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="hypothesis" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis">Hypothesis</h2>
