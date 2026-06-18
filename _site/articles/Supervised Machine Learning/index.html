@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Md Muztahid Hassan">
-<meta name="dcterms.date" content="2026-05-19">
-<meta name="description" content="An introductory article on Feature Engineering">
+<meta name="dcterms.date" content="2026-06-14">
+<meta name="description" content="A collection of articles on supervised machine learning concepts, algorithms, and applications.">
 
-<title>Introduction to Feature Engineering – Muztahid’s ML Blog</title>
+<title>Supervised Machine Learning – Muztahid’s ML Blog</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,66 +25,33 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../../assets/images/favicon.ico" rel="icon">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/images/favicon.ico" rel="icon">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-23bbe8b5e4efc1e257f6d59dce478b08.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-acf12a64177840b8d86f2d4f01b2e9fb.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3eab2ed93281ec434ec81a7d8412bf21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f9578a7fc8f8daaec683282a6b349716.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,6 +79,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description','listing-date',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-title-sort'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HRWVF9ZMF1"></script>
 
 <script type="text/javascript">
@@ -124,19 +119,42 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta property="og:description" content="An introductory article on Feature Engineering">
-<meta property="og:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Supervised Machine Learning – Muztahid’s ML Blog">
+<meta property="og:description" content="A collection of articles on supervised machine learning concepts, algorithms, and applications.">
 <meta property="og:site_name" content="Muztahid’s ML Blog">
-<meta property="og:image:height" content="492">
-<meta property="og:image:width" content="868">
-<meta name="twitter:title" content="Introduction to Feature Engineering – Muztahid’s ML Blog">
-<meta name="twitter:description" content="An introductory article on Feature Engineering">
-<meta name="twitter:image" content="https://muztahid-2020331021.github.io/Machine-Learning-Blog/articles/Feature Engineering/Introduction to Feature Engineering/images/im1.png">
-<meta name="twitter:image-height" content="492">
-<meta name="twitter:image-width" content="868">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Supervised Machine Learning – Muztahid’s ML Blog">
+<meta name="twitter:description" content="A collection of articles on supervised machine learning concepts, algorithms, and applications.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
@@ -308,11 +326,11 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo light-content">
-    <img src="../../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../assets/images/logo.png" alt="" class="navbar-logo light-content">
+    <img src="../../assets/images/logo.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Muztahid’s ML Blog</span>
     </a>
   </div>
@@ -323,15 +341,15 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../../articles/index.html" aria-current="page"> 
+    <a class="nav-link active" href="../../articles/index.html" aria-current="page"> 
 <span class="menu-text">Articles</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -363,7 +381,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Introduction to Feature Engineering</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Supervised Machine Learning</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -380,7 +398,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Articles</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -389,7 +407,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Exploratory Data Analysis (EDA)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -398,25 +416,25 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to EDA</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bivariate and Multivariate Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Titanic Dataset (Project)</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">EDA on Visa Dataset (Project)</span></a>
   </div>
 </li>
@@ -424,7 +442,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Engineering</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -433,49 +451,49 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Introduction to Feature Engineering/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Feature Engineering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Feature Scaling/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Feature Scaling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Handling Categorical Feature/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Handling Categorical Feature</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Train-Test Split %26 Column Transformer/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Train-Test Split %26 Column Transformer/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Train-Test Split &amp; Column Transformer</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Machine Learning Pipelines/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Machine Learning Pipelines/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning Pipelines</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Data Transformation Techniques/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Data Transformation Techniques/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Transformation Techniques</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Outlier Detection and Removal/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Outlier Detection and Removal/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Outlier Detection and Removal</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Feature Engineering/Handling Missing Data/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Feature Engineering/Handling Missing Data/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Handling Missing Data</span></a>
   </div>
 </li>
@@ -483,7 +501,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Machine Learning/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Machine Learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -492,7 +510,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Machine Learning/Introduction to Machine Learning/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Machine Learning/Introduction to Machine Learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to Machine Learning</span></a>
   </div>
 </li>
@@ -500,7 +518,7 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../../articles/Supervised Machine Learning/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../../articles/Supervised Machine Learning/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Supervised Machine Learning</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -509,13 +527,13 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Supervised Machine Learning/Simple Linear Regression/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Supervised Machine Learning/Simple Linear Regression/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Regression</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear Regression In-depth Math Intuition</span></a>
   </div>
 </li>
@@ -528,20 +546,8 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link active" data-scroll-target="#feature-engineering">Feature Engineering</a>
-  <ul class="collapse">
-  <li><a href="#feature-transformation" id="toc-feature-transformation" class="nav-link" data-scroll-target="#feature-transformation">Feature Transformation</a></li>
-  <li><a href="#feature-construction" id="toc-feature-construction" class="nav-link" data-scroll-target="#feature-construction">Feature Construction</a></li>
-  <li><a href="#feature-selection" id="toc-feature-selection" class="nav-link" data-scroll-target="#feature-selection">Feature Selection</a></li>
-  <li><a href="#feature-extraction" id="toc-feature-extraction" class="nav-link" data-scroll-target="#feature-extraction">Feature Extraction</a></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -549,29 +555,23 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Feature Engineering</h1>
+<h1 class="title">Supervised Machine Learning</h1>
 </div>
 
 <div>
   <div class="description">
-    An introductory article on Feature Engineering
+    A collection of articles on supervised machine learning concepts, algorithms, and applications.
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Md Muztahid Hassan </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 19, 2026</p>
+      <p class="date">June 14, 2026</p>
     </div>
   </div>
   
@@ -583,101 +583,50 @@ gtag('config', 'G-HRWVF9ZMF1', { 'anonymize_ip': true});
 </header>
 
 
-<section id="feature-engineering" class="level2">
-<h2 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h2>
-<p>Feature engineering is the process of using domain knowledge to extract features from raw data. These features can be used to improve the performance of machine learning algorithms.</p>
-<p>At first, we do Exploratory Data Analysis (EDA) to understand the data and identify the problem we are trying to solve. These problems are solved in the Feature Engineering step.</p>
-<p>The features are also known as columns or independent variables.</p>
-<p>There is a concept called “GIGO” which stands for “Garbage In, Garbage Out”. That means if we have a poor model and we feed it with good data, we will get good results. But if we have a good model and we feed it with poor data, we will get poor results.</p>
-<p>So, the steps are: <code>Data Loading -&gt; EDA -&gt; Feature Engineering -&gt; Model Training</code></p>
-<p>Let’s try to understand what are in the feature engineering.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Feature Engineering</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── Feature Transformation</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── Missing Value Handling</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   ├── Handling Categorical Feature</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>│   ├── Outlier Detection</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── Feature Scaling</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── Feature Construction</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>├── Feature Selection</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>└── Feature Extraction</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Here is a high-level overview of the feature engineering process.</p>
-<section id="feature-transformation" class="level3">
-<h3 class="anchored" data-anchor-id="feature-transformation">Feature Transformation</h3>
-<ol type="1">
-<li><p><strong>Missing Value Handling</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im1.png" class="img-fluid figure-img"></p>
-<figcaption>Missing Value Handling.png</figcaption>
-</figure>
-</div>
-<p>In the image, we can see that some cells values are <code>NaN</code> which means this dataset contains missing values. The most popular way to handle missing values is to fill them with the mean. In the image, we can fill the missing values with the mean that is 26.0. Sometimes there are outliers in the dataset. In that case, we can fill the missing values with the median. The median is less affected by outliers than the mean. We will see them in practical later.</p></li>
-<li><p><strong>Handling Categorical Feature</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im2.png" class="img-fluid figure-img"></p>
-<figcaption>Handling Categorical Feature.png</figcaption>
-</figure>
-</div>
-<p>We can not use categorical features directly in machine learning algorithms. We need to convert them into numerical features. The most popular way to handle categorical features is to use one-hot encoding. The image shows the one-hot encoding. There are other ways to handle categorical data. We will dicuss more later.</p></li>
-<li><p><strong>Outlier Detection</strong>:</p>
-<p>Here is an image for example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im3.png" class="img-fluid figure-img"></p>
-<figcaption>Outlier Detection.png</figcaption>
-</figure>
-</div>
-<p>In the image, we can see that there are some outliers in the left graph. Thats why the linear regression line is not fitting well. After removing the outliers(right graph), the linear regression line is fitting well. So they must be removed by the IQR method for better performance of some models.</p></li>
-<li><p><strong>Feature Scaling</strong>:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im4.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Scaling.png</figcaption>
-</figure>
-</div>
-<p>If we look at this data, we can see that the value range of the <code>Age</code> column is very lower than the value range of the <code>Salary</code> column. So the dataset is not scaled. If we use this dataset to train the models that works on distance, the model will give more importance to the <code>Salary</code> column than the <code>Age</code> column. So we need to scale the dataset which is not expected. There is another problem with gradient descent(which is used for reducing the loss). If we use this dataset, the gradient descent will not converge because of the different value ranges. So we need to scale the dataset.</p></li>
-</ol>
-</section>
-<section id="feature-construction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-construction">Feature Construction</h3>
-<p>We can create new features from the existing features by feature construction.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im5.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Construction.png</figcaption>
-</figure>
-</div>
-<p>Look at this titanic dataset. We can see that there are two features ‘SibSp’ and ‘Parch’. Suppose we want to create a new feature ‘Family’ which is the sum of ‘SibSp’ and ‘Parch’. By using this new feature, we can create a new feature ‘FamilySize’ which is a categorical feature. If ‘Family’ == 1, then ‘FamilySize’ = ‘Alone’, if ‘Family’ &gt; 1 and ‘Family’ &lt;= 4, then ‘FamilySize’ = ‘Medium’, if ‘Family’ &gt; 4, then ‘FamilySize’ = ‘Large’. This is an example of feature construction. This helps us to reduce the curse of dimensionality.</p>
-</section>
-<section id="feature-selection" class="level3">
-<h3 class="anchored" data-anchor-id="feature-selection">Feature Selection</h3>
-<p>We will use MNIST handwritten digit dataset for this example.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im6.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection1.png</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/im7.png" class="img-fluid figure-img"></p>
-<figcaption>Feature Selection2.png</figcaption>
-</figure>
-</div>
-<p>In the image, we can see that there are so many features we don’t need. We can select the most important features by using feature selection and omit other features. This helps us to reduce the curse of dimensionality and improve the performance of the model.</p>
-</section>
-<section id="feature-extraction" class="level3">
-<h3 class="anchored" data-anchor-id="feature-extraction">Feature Extraction</h3>
-<p>Suppose we have two independent features <code>Number of Rooms</code> and <code>Number of Bedrooms</code> and we have a target variable <code>Price</code>. We have to predict the price of a house based on the number of rooms and bedrooms. Our target is to remove the two features and create a new feature <code>Area</code>. There may be a confusion between feature construction and feature extraction. The difference is that in feature construction, we create new features from the existing features by calculation, but in feature extraction, we try to maintain the meaning of the removed features with the new feature.</p>
+<p>Welcome to the <strong>Supervised Machine Learning</strong> section. Here, we explore various concepts, algorithms, and applications in the field of supervised machine learning.</p>
 
 
-</section>
-</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1781510084000" data-listing-file-modified-sort="1781782714520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="647" data-listing-title-sort="Linear Regression">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../articles/Supervised Machine Learning/Simple Linear Regression/index.html" class="no-external">Linear Regression</a>
+</h3>
+<div class="delink listing-description"><a href="../../articles/Supervised Machine Learning/Simple Linear Regression/index.html" class="no-external">
+<p>An introductory guide to linear regression concepts followed by a hands-on Python implementation using scikit-learn to predict salary packages based on student CGPA.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../articles/Supervised Machine Learning/Simple Linear Regression/index.html" class="no-external">
+<div class="listing-date">
+Jun 15, 2026
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1781806126000" data-listing-file-modified-sort="1781809802145" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2384" data-listing-title-sort="Linear Regression In-depth Math Intuition">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../../articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html" class="no-external">Linear Regression In-depth Math Intuition</a>
+</h3>
+<div class="delink listing-description"><a href="../../articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html" class="no-external">
+<p>Master the mathematical mechanics of Linear Regression by walking through step-by-step calculations of Hypothesis functions, Mean Squared Error (MSE), and Gradient Descent parameter optimization.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../../articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html" class="no-external">
+<div class="listing-date">
+Jun 19, 2026
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -1160,5 +1109,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

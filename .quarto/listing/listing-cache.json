@@ -16,6 +16,10 @@
       "*/index.qmd",
       "*/index.ipynb"
     ],
+    "articles\\Supervised Machine Learning\\index.qmd": [
+      "*/index.qmd",
+      "*/index.ipynb"
+    ],
     "index.qmd": [
       "articles/*/*/index.qmd",
       "articles/*/*/index.ipynb"

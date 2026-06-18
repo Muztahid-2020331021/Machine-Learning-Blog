@@ -42,7 +42,10 @@ website:
         contents:
         - text: Introduction to Machine Learning
           href: articles/Machine%20Learning/Introduction%20to%20Machine%20Learning/index.html
+      - section: Supervised Machine Learning
+        href: articles/Supervised%20Machine%20Learning/index.html
+        contents:
         - text: Linear Regression
-          href: articles/Machine%20Learning/Simple%20Linear%20Regression/index.html
+          href: articles/Supervised%20Machine%20Learning/Simple%20Linear%20Regression/index.html
         - text: Linear Regression In-depth Math Intuition
-          href: articles/Machine%20Learning/Linear%20Regression%20In-depth%20Math%20Intuition/index.html
+          href: articles/Supervised%20Machine%20Learning/Linear%20Regression%20In-depth%20Math%20Intuition/index.html

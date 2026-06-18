@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/articles/Machine Learning/Linear Regression In-depth Math Intuition/index.html",
-      "/articles/Machine Learning/Simple Linear Regression/index.html",
+      "/articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html",
+      "/articles/Supervised Machine Learning/Simple Linear Regression/index.html",
       "/articles/Machine Learning/Introduction to Machine Learning/index.html",
       "/articles/Feature Engineering/Handling Missing Data/index.html",
       "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
@@ -17,36 +17,6 @@
       "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
       "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/Machine Learning/index.html",
-    "items": [
-      "/articles/Machine Learning/Introduction to Machine Learning/index.html",
-      "/articles/Machine Learning/Simple Linear Regression/index.html",
-      "/articles/Machine Learning/Linear Regression In-depth Math Intuition/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/Feature Engineering/index.html",
-    "items": [
-      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
-      "/articles/Feature Engineering/Feature Scaling/index.html",
-      "/articles/Feature Engineering/Handling Categorical Feature/index.html",
-      "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
-      "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
-      "/articles/Feature Engineering/Data Transformation Techniques/index.html",
-      "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
-      "/articles/Feature Engineering/Handling Missing Data/index.html"
-    ]
-  },
-  {
-    "listing": "/articles/Exploratory Data Analysis (EDA)/index.html",
-    "items": [
-      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
-      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
     ]
   },
   {
@@ -65,8 +35,43 @@
       "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
       "/articles/Feature Engineering/Handling Missing Data/index.html",
       "/articles/Machine Learning/Introduction to Machine Learning/index.html",
-      "/articles/Machine Learning/Simple Linear Regression/index.html",
-      "/articles/Machine Learning/Linear Regression In-depth Math Intuition/index.html"
+      "/articles/Supervised Machine Learning/Simple Linear Regression/index.html",
+      "/articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Exploratory Data Analysis (EDA)/index.html",
+    "items": [
+      "/articles/Exploratory Data Analysis (EDA)/Introduction to EDA/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/Bivariate and Multivariate EDA/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/EDA on Titanic Dataset (Project)/index.html",
+      "/articles/Exploratory Data Analysis (EDA)/EDA on Visa Dataset (Project)/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Feature Engineering/index.html",
+    "items": [
+      "/articles/Feature Engineering/Introduction to Feature Engineering/index.html",
+      "/articles/Feature Engineering/Feature Scaling/index.html",
+      "/articles/Feature Engineering/Handling Categorical Feature/index.html",
+      "/articles/Feature Engineering/Train-Test Split & Column Transformer/index.html",
+      "/articles/Feature Engineering/Machine Learning Pipelines/index.html",
+      "/articles/Feature Engineering/Data Transformation Techniques/index.html",
+      "/articles/Feature Engineering/Outlier Detection and Removal/index.html",
+      "/articles/Feature Engineering/Handling Missing Data/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Machine Learning/index.html",
+    "items": [
+      "/articles/Machine Learning/Introduction to Machine Learning/index.html"
+    ]
+  },
+  {
+    "listing": "/articles/Supervised Machine Learning/index.html",
+    "items": [
+      "/articles/Supervised Machine Learning/Simple Linear Regression/index.html",
+      "/articles/Supervised Machine Learning/Linear Regression In-depth Math Intuition/index.html"
     ]
   }
 ]
